@@ -7,21 +7,67 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		726CE75011D31FD74D914887 /* Pods_changeBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F7ABDC689AFA44B179B71C5 /* Pods_changeBook.framework */; };
+		BE01908A1EFC085400FA040E /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0190891EFC085400FA040E /* BaseNavigationController.swift */; };
+		BE01908C1EFC089400FA040E /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE01908B1EFC089400FA040E /* Config.swift */; };
+		BE01908F1EFC096C00FA040E /* UIColor+Polesapp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE01908E1EFC096C00FA040E /* UIColor+Polesapp.swift */; };
+		BE0190911EFC09BD00FA040E /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0190901EFC09BD00FA040E /* MenuViewController.swift */; };
 		BE57F9A41EF16E3E008BE6AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE57F9A31EF16E3E008BE6AD /* AppDelegate.swift */; };
-		BE57F9A61EF16E3E008BE6AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE57F9A51EF16E3E008BE6AD /* ViewController.swift */; };
-		BE57F9A91EF16E3E008BE6AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE57F9A71EF16E3E008BE6AD /* Main.storyboard */; };
 		BE57F9AB1EF16E3E008BE6AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE57F9AA1EF16E3E008BE6AD /* Assets.xcassets */; };
 		BE57F9AE1EF16E3E008BE6AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE57F9AC1EF16E3E008BE6AD /* LaunchScreen.storyboard */; };
+		BE8D53E81EFBF619003850EB /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE8D53D81EFBF619003850EB /* Info.plist */; };
+		BE8D53E91EFBF619003850EB /* STPopupController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D53DB1EFBF619003850EB /* STPopupController.m */; };
+		BE8D53EA1EFBF619003850EB /* STPopupControllerTransitioningFade.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D53DD1EFBF619003850EB /* STPopupControllerTransitioningFade.m */; };
+		BE8D53EB1EFBF619003850EB /* STPopupControllerTransitioningSlideVertical.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D53DF1EFBF619003850EB /* STPopupControllerTransitioningSlideVertical.m */; };
+		BE8D53EC1EFBF619003850EB /* STPopupLeftBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D53E11EFBF619003850EB /* STPopupLeftBarItem.m */; };
+		BE8D53ED1EFBF619003850EB /* STPopupNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D53E31EFBF619003850EB /* STPopupNavigationBar.m */; };
+		BE8D53EE1EFBF619003850EB /* UIResponder+STPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D53E51EFBF619003850EB /* UIResponder+STPopup.m */; };
+		BE8D53EF1EFBF619003850EB /* UIViewController+STPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D53E71EFBF619003850EB /* UIViewController+STPopup.m */; };
+		BE8D53F71EFC001C003850EB /* RECommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D53F21EFC001C003850EB /* RECommonFunctions.m */; };
+		BE8D53F81EFC001C003850EB /* RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D53F41EFC001C003850EB /* RESideMenu.m */; };
+		BE8D53F91EFC001C003850EB /* UIViewController+RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D53F61EFC001C003850EB /* UIViewController+RESideMenu.m */; };
+		BE8D53FB1EFC06A4003850EB /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8D53FA1EFC06A4003850EB /* RootViewController.swift */; };
+		BE8D53FD1EFC06BA003850EB /* RootTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8D53FC1EFC06BA003850EB /* RootTabBarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		111BB78C520EABAE3CC254D1 /* Pods-changeBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-changeBook.debug.xcconfig"; path = "Pods/Target Support Files/Pods-changeBook/Pods-changeBook.debug.xcconfig"; sourceTree = "<group>"; };
+		6F7ABDC689AFA44B179B71C5 /* Pods_changeBook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_changeBook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE0190891EFC085400FA040E /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		BE01908B1EFC089400FA040E /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		BE01908E1EFC096C00FA040E /* UIColor+Polesapp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Polesapp.swift"; sourceTree = "<group>"; };
+		BE0190901EFC09BD00FA040E /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		BE57F9A01EF16E3E008BE6AD /* changeBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = changeBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE57F9A31EF16E3E008BE6AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BE57F9A51EF16E3E008BE6AD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		BE57F9A81EF16E3E008BE6AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BE57F9AA1EF16E3E008BE6AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE57F9AD1EF16E3E008BE6AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE57F9AF1EF16E3E008BE6AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE8D53D21EFBF5C6003850EB /* changeBook-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "changeBook-Bridging-Header.h"; sourceTree = "<group>"; };
+		BE8D53D81EFBF619003850EB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE8D53D91EFBF619003850EB /* STPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPopup.h; sourceTree = "<group>"; };
+		BE8D53DA1EFBF619003850EB /* STPopupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPopupController.h; sourceTree = "<group>"; };
+		BE8D53DB1EFBF619003850EB /* STPopupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPopupController.m; sourceTree = "<group>"; };
+		BE8D53DC1EFBF619003850EB /* STPopupControllerTransitioningFade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPopupControllerTransitioningFade.h; sourceTree = "<group>"; };
+		BE8D53DD1EFBF619003850EB /* STPopupControllerTransitioningFade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPopupControllerTransitioningFade.m; sourceTree = "<group>"; };
+		BE8D53DE1EFBF619003850EB /* STPopupControllerTransitioningSlideVertical.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPopupControllerTransitioningSlideVertical.h; sourceTree = "<group>"; };
+		BE8D53DF1EFBF619003850EB /* STPopupControllerTransitioningSlideVertical.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPopupControllerTransitioningSlideVertical.m; sourceTree = "<group>"; };
+		BE8D53E01EFBF619003850EB /* STPopupLeftBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPopupLeftBarItem.h; sourceTree = "<group>"; };
+		BE8D53E11EFBF619003850EB /* STPopupLeftBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPopupLeftBarItem.m; sourceTree = "<group>"; };
+		BE8D53E21EFBF619003850EB /* STPopupNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPopupNavigationBar.h; sourceTree = "<group>"; };
+		BE8D53E31EFBF619003850EB /* STPopupNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPopupNavigationBar.m; sourceTree = "<group>"; };
+		BE8D53E41EFBF619003850EB /* UIResponder+STPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIResponder+STPopup.h"; sourceTree = "<group>"; };
+		BE8D53E51EFBF619003850EB /* UIResponder+STPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+STPopup.m"; sourceTree = "<group>"; };
+		BE8D53E61EFBF619003850EB /* UIViewController+STPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+STPopup.h"; sourceTree = "<group>"; };
+		BE8D53E71EFBF619003850EB /* UIViewController+STPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+STPopup.m"; sourceTree = "<group>"; };
+		BE8D53F11EFC001C003850EB /* RECommonFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RECommonFunctions.h; sourceTree = "<group>"; };
+		BE8D53F21EFC001C003850EB /* RECommonFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RECommonFunctions.m; sourceTree = "<group>"; };
+		BE8D53F31EFC001C003850EB /* RESideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RESideMenu.h; sourceTree = "<group>"; };
+		BE8D53F41EFC001C003850EB /* RESideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RESideMenu.m; sourceTree = "<group>"; };
+		BE8D53F51EFC001C003850EB /* UIViewController+RESideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+RESideMenu.h"; sourceTree = "<group>"; };
+		BE8D53F61EFC001C003850EB /* UIViewController+RESideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+RESideMenu.m"; sourceTree = "<group>"; };
+		BE8D53FA1EFC06A4003850EB /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		BE8D53FC1EFC06BA003850EB /* RootTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTabBarViewController.swift; sourceTree = "<group>"; };
+		FD24FA76B8D7C13454370158 /* Pods-changeBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-changeBook.release.xcconfig"; path = "Pods/Target Support Files/Pods-changeBook/Pods-changeBook.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +75,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				726CE75011D31FD74D914887 /* Pods_changeBook.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE01908D1EFC096C00FA040E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BE01908E1EFC096C00FA040E /* UIColor+Polesapp.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		BE57F9971EF16E3E008BE6AD = {
 			isa = PBXGroup;
 			children = (
+				BE8D53D11EFBF5AD003850EB /* OC */,
 				BE57F9A21EF16E3E008BE6AD /* changeBook */,
 				BE57F9A11EF16E3E008BE6AD /* Products */,
+				E5BBD58AB3CBAA9D464DBAFE /* Pods */,
+				EF0A03ED7C5124EEDA87C895 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +112,89 @@
 		BE57F9A21EF16E3E008BE6AD /* changeBook */ = {
 			isa = PBXGroup;
 			children = (
+				BE01908D1EFC096C00FA040E /* Extensions */,
 				BE57F9A31EF16E3E008BE6AD /* AppDelegate.swift */,
-				BE57F9A51EF16E3E008BE6AD /* ViewController.swift */,
-				BE57F9A71EF16E3E008BE6AD /* Main.storyboard */,
+				BE8D53FA1EFC06A4003850EB /* RootViewController.swift */,
+				BE8D53FC1EFC06BA003850EB /* RootTabBarViewController.swift */,
+				BE0190901EFC09BD00FA040E /* MenuViewController.swift */,
+				BE0190891EFC085400FA040E /* BaseNavigationController.swift */,
+				BE01908B1EFC089400FA040E /* Config.swift */,
 				BE57F9AA1EF16E3E008BE6AD /* Assets.xcassets */,
 				BE57F9AC1EF16E3E008BE6AD /* LaunchScreen.storyboard */,
 				BE57F9AF1EF16E3E008BE6AD /* Info.plist */,
 			);
 			path = changeBook;
+			sourceTree = "<group>";
+		};
+		BE8D53D11EFBF5AD003850EB /* OC */ = {
+			isa = PBXGroup;
+			children = (
+				BE8D53D61EFBF5F6003850EB /* Vendor */,
+				BE8D53D21EFBF5C6003850EB /* changeBook-Bridging-Header.h */,
+			);
+			path = OC;
+			sourceTree = "<group>";
+		};
+		BE8D53D61EFBF5F6003850EB /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				BE8D53F01EFC001C003850EB /* RESideMenu */,
+				BE8D53D71EFBF619003850EB /* STPopup */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		BE8D53D71EFBF619003850EB /* STPopup */ = {
+			isa = PBXGroup;
+			children = (
+				BE8D53D81EFBF619003850EB /* Info.plist */,
+				BE8D53D91EFBF619003850EB /* STPopup.h */,
+				BE8D53DA1EFBF619003850EB /* STPopupController.h */,
+				BE8D53DB1EFBF619003850EB /* STPopupController.m */,
+				BE8D53DC1EFBF619003850EB /* STPopupControllerTransitioningFade.h */,
+				BE8D53DD1EFBF619003850EB /* STPopupControllerTransitioningFade.m */,
+				BE8D53DE1EFBF619003850EB /* STPopupControllerTransitioningSlideVertical.h */,
+				BE8D53DF1EFBF619003850EB /* STPopupControllerTransitioningSlideVertical.m */,
+				BE8D53E01EFBF619003850EB /* STPopupLeftBarItem.h */,
+				BE8D53E11EFBF619003850EB /* STPopupLeftBarItem.m */,
+				BE8D53E21EFBF619003850EB /* STPopupNavigationBar.h */,
+				BE8D53E31EFBF619003850EB /* STPopupNavigationBar.m */,
+				BE8D53E41EFBF619003850EB /* UIResponder+STPopup.h */,
+				BE8D53E51EFBF619003850EB /* UIResponder+STPopup.m */,
+				BE8D53E61EFBF619003850EB /* UIViewController+STPopup.h */,
+				BE8D53E71EFBF619003850EB /* UIViewController+STPopup.m */,
+			);
+			path = STPopup;
+			sourceTree = "<group>";
+		};
+		BE8D53F01EFC001C003850EB /* RESideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				BE8D53F11EFC001C003850EB /* RECommonFunctions.h */,
+				BE8D53F21EFC001C003850EB /* RECommonFunctions.m */,
+				BE8D53F31EFC001C003850EB /* RESideMenu.h */,
+				BE8D53F41EFC001C003850EB /* RESideMenu.m */,
+				BE8D53F51EFC001C003850EB /* UIViewController+RESideMenu.h */,
+				BE8D53F61EFC001C003850EB /* UIViewController+RESideMenu.m */,
+			);
+			path = RESideMenu;
+			sourceTree = "<group>";
+		};
+		E5BBD58AB3CBAA9D464DBAFE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				111BB78C520EABAE3CC254D1 /* Pods-changeBook.debug.xcconfig */,
+				FD24FA76B8D7C13454370158 /* Pods-changeBook.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		EF0A03ED7C5124EEDA87C895 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6F7ABDC689AFA44B179B71C5 /* Pods_changeBook.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +204,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BE57F9B21EF16E3E008BE6AD /* Build configuration list for PBXNativeTarget "changeBook" */;
 			buildPhases = (
+				D18D03677B7283102FFDD65F /* [CP] Check Pods Manifest.lock */,
 				BE57F99C1EF16E3E008BE6AD /* Sources */,
 				BE57F99D1EF16E3E008BE6AD /* Frameworks */,
 				BE57F99E1EF16E3E008BE6AD /* Resources */,
+				B54E05CB16F5E6984E546DF1 /* [CP] Embed Pods Frameworks */,
+				36DEC9A9A07461A41D280686 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -97,6 +233,7 @@
 					BE57F99F1EF16E3E008BE6AD = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = NLP5PZS8U3;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -124,35 +261,90 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE8D53E81EFBF619003850EB /* Info.plist in Resources */,
 				BE57F9AE1EF16E3E008BE6AD /* LaunchScreen.storyboard in Resources */,
 				BE57F9AB1EF16E3E008BE6AD /* Assets.xcassets in Resources */,
-				BE57F9A91EF16E3E008BE6AD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		36DEC9A9A07461A41D280686 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-changeBook/Pods-changeBook-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B54E05CB16F5E6984E546DF1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-changeBook/Pods-changeBook-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D18D03677B7283102FFDD65F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BE57F99C1EF16E3E008BE6AD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE57F9A61EF16E3E008BE6AD /* ViewController.swift in Sources */,
+				BE8D53F71EFC001C003850EB /* RECommonFunctions.m in Sources */,
+				BE8D53ED1EFBF619003850EB /* STPopupNavigationBar.m in Sources */,
+				BE01908C1EFC089400FA040E /* Config.swift in Sources */,
+				BE8D53FB1EFC06A4003850EB /* RootViewController.swift in Sources */,
+				BE8D53F81EFC001C003850EB /* RESideMenu.m in Sources */,
+				BE8D53EF1EFBF619003850EB /* UIViewController+STPopup.m in Sources */,
+				BE8D53F91EFC001C003850EB /* UIViewController+RESideMenu.m in Sources */,
 				BE57F9A41EF16E3E008BE6AD /* AppDelegate.swift in Sources */,
+				BE8D53EB1EFBF619003850EB /* STPopupControllerTransitioningSlideVertical.m in Sources */,
+				BE01908A1EFC085400FA040E /* BaseNavigationController.swift in Sources */,
+				BE8D53E91EFBF619003850EB /* STPopupController.m in Sources */,
+				BE0190911EFC09BD00FA040E /* MenuViewController.swift in Sources */,
+				BE8D53EA1EFBF619003850EB /* STPopupControllerTransitioningFade.m in Sources */,
+				BE8D53EE1EFBF619003850EB /* UIResponder+STPopup.m in Sources */,
+				BE01908F1EFC096C00FA040E /* UIColor+Polesapp.swift in Sources */,
+				BE8D53EC1EFBF619003850EB /* STPopupLeftBarItem.m in Sources */,
+				BE8D53FD1EFC06BA003850EB /* RootTabBarViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		BE57F9A71EF16E3E008BE6AD /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BE57F9A81EF16E3E008BE6AD /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		BE57F9AC1EF16E3E008BE6AD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -259,26 +451,35 @@
 		};
 		BE57F9B31EF16E3E008BE6AD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 111BB78C520EABAE3CC254D1 /* Pods-changeBook.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = NLP5PZS8U3;
 				INFOPLIST_FILE = changeBook/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jvaeyhcd.changeBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "OC/changeBook-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		BE57F9B41EF16E3E008BE6AD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD24FA76B8D7C13454370158 /* Pods-changeBook.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = NLP5PZS8U3;
 				INFOPLIST_FILE = changeBook/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jvaeyhcd.changeBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "OC/changeBook-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -302,6 +503,7 @@
 				BE57F9B41EF16E3E008BE6AD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

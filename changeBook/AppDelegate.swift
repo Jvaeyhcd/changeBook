@@ -16,7 +16,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        setRootViewController()
+        setGolbalUIConfig()
+        
+        
+        
+        
         return true
+    }
+    
+    private func setRootViewController() {
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.backgroundColor = UIColor.white
+        
+        let rootViewController = RootViewController.init(contentViewController: RootTabBarViewController(), leftMenuViewController: MenuViewController(), rightMenuViewController: nil)
+        window?.rootViewController = rootViewController
+        
+        window?.makeKeyAndVisible()
+    }
+    
+    private func setGolbalUIConfig() {
+        
+        UINavigationBar.appearance().tintColor = UIColor(hex: 0x919191)
+        UINavigationBar.appearance().barTintColor = kMainColor
+        UINavigationBar.appearance().backgroundColor = kMainColor
+        UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: UIFont.boldSystemFont(ofSize: 18),NSForegroundColorAttributeName: kNavTintColor!]
+        
+        // 设置字体颜色
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor(hex: 0x919191)!], for: UIControlState.normal)
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: kMainColor!], for: UIControlState.selected)
+        // 设置字体大小
+        UITabBarItem.appearance().setTitleTextAttributes([NSFontAttributeName: UIFont.systemFont(ofSize: 12.0)], for: UIControlState.normal)
+        // 设置字体偏移
+        UITabBarItem.appearance().titlePositionAdjustment = UIOffsetMake(0.0, -5.0)
+        // 设置图标选中时颜色
+        UITabBar.appearance().tintColor = UIColor.red
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
