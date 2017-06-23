@@ -8,10 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		726CE75011D31FD74D914887 /* Pods_changeBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F7ABDC689AFA44B179B71C5 /* Pods_changeBook.framework */; };
-		BE01908A1EFC085400FA040E /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0190891EFC085400FA040E /* BaseNavigationController.swift */; };
 		BE01908C1EFC089400FA040E /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE01908B1EFC089400FA040E /* Config.swift */; };
 		BE01908F1EFC096C00FA040E /* UIColor+Polesapp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE01908E1EFC096C00FA040E /* UIColor+Polesapp.swift */; };
-		BE0190911EFC09BD00FA040E /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0190901EFC09BD00FA040E /* MenuViewController.swift */; };
+		BE0190951EFD4A4E00FA040E /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0190941EFD4A4E00FA040E /* BaseNavigationController.swift */; };
+		BE0190971EFD4A6400FA040E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0190961EFD4A6400FA040E /* BaseViewController.swift */; };
+		BE01909D1EFD4B0300FA040E /* ArticleHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE01909C1EFD4B0300FA040E /* ArticleHomeViewController.swift */; };
+		BE01909F1EFD4B1000FA040E /* FriendsHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE01909E1EFD4B1000FA040E /* FriendsHomeViewController.swift */; };
+		BE0190A11EFD4B1900FA040E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0190A01EFD4B1900FA040E /* HomeViewController.swift */; };
+		BE0190A31EFD4B2500FA040E /* TeacherHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0190A21EFD4B2500FA040E /* TeacherHomeViewController.swift */; };
+		BE0190A71EFD4B5E00FA040E /* RootTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0190A41EFD4B5E00FA040E /* RootTabBarViewController.swift */; };
+		BE0190A81EFD4B5E00FA040E /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0190A51EFD4B5E00FA040E /* RootViewController.swift */; };
+		BE0190A91EFD4B5E00FA040E /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0190A61EFD4B5E00FA040E /* MenuViewController.swift */; };
 		BE57F9A41EF16E3E008BE6AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE57F9A31EF16E3E008BE6AD /* AppDelegate.swift */; };
 		BE57F9AB1EF16E3E008BE6AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE57F9AA1EF16E3E008BE6AD /* Assets.xcassets */; };
 		BE57F9AE1EF16E3E008BE6AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE57F9AC1EF16E3E008BE6AD /* LaunchScreen.storyboard */; };
@@ -26,17 +33,22 @@
 		BE8D53F71EFC001C003850EB /* RECommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D53F21EFC001C003850EB /* RECommonFunctions.m */; };
 		BE8D53F81EFC001C003850EB /* RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D53F41EFC001C003850EB /* RESideMenu.m */; };
 		BE8D53F91EFC001C003850EB /* UIViewController+RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D53F61EFC001C003850EB /* UIViewController+RESideMenu.m */; };
-		BE8D53FB1EFC06A4003850EB /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8D53FA1EFC06A4003850EB /* RootViewController.swift */; };
-		BE8D53FD1EFC06BA003850EB /* RootTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8D53FC1EFC06BA003850EB /* RootTabBarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		111BB78C520EABAE3CC254D1 /* Pods-changeBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-changeBook.debug.xcconfig"; path = "Pods/Target Support Files/Pods-changeBook/Pods-changeBook.debug.xcconfig"; sourceTree = "<group>"; };
 		6F7ABDC689AFA44B179B71C5 /* Pods_changeBook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_changeBook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BE0190891EFC085400FA040E /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		BE01908B1EFC089400FA040E /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		BE01908E1EFC096C00FA040E /* UIColor+Polesapp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Polesapp.swift"; sourceTree = "<group>"; };
-		BE0190901EFC09BD00FA040E /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		BE0190941EFD4A4E00FA040E /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		BE0190961EFD4A6400FA040E /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		BE01909C1EFD4B0300FA040E /* ArticleHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleHomeViewController.swift; sourceTree = "<group>"; };
+		BE01909E1EFD4B1000FA040E /* FriendsHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsHomeViewController.swift; sourceTree = "<group>"; };
+		BE0190A01EFD4B1900FA040E /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		BE0190A21EFD4B2500FA040E /* TeacherHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherHomeViewController.swift; sourceTree = "<group>"; };
+		BE0190A41EFD4B5E00FA040E /* RootTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTabBarViewController.swift; sourceTree = "<group>"; };
+		BE0190A51EFD4B5E00FA040E /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		BE0190A61EFD4B5E00FA040E /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		BE57F9A01EF16E3E008BE6AD /* changeBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = changeBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE57F9A31EF16E3E008BE6AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE57F9AA1EF16E3E008BE6AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -65,8 +77,6 @@
 		BE8D53F41EFC001C003850EB /* RESideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RESideMenu.m; sourceTree = "<group>"; };
 		BE8D53F51EFC001C003850EB /* UIViewController+RESideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+RESideMenu.h"; sourceTree = "<group>"; };
 		BE8D53F61EFC001C003850EB /* UIViewController+RESideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+RESideMenu.m"; sourceTree = "<group>"; };
-		BE8D53FA1EFC06A4003850EB /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
-		BE8D53FC1EFC06BA003850EB /* RootTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTabBarViewController.swift; sourceTree = "<group>"; };
 		FD24FA76B8D7C13454370158 /* Pods-changeBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-changeBook.release.xcconfig"; path = "Pods/Target Support Files/Pods-changeBook/Pods-changeBook.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,6 +98,62 @@
 				BE01908E1EFC096C00FA040E /* UIColor+Polesapp.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BE0190921EFD4A2800FA040E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BE0190981EFD4AED00FA040E /* Article */,
+				BE0190991EFD4AED00FA040E /* Friends */,
+				BE01909A1EFD4AED00FA040E /* Home */,
+				BE01909B1EFD4AED00FA040E /* Teacher */,
+				BE0190931EFD4A2800FA040E /* Common */,
+				BE0190A41EFD4B5E00FA040E /* RootTabBarViewController.swift */,
+				BE0190A51EFD4B5E00FA040E /* RootViewController.swift */,
+				BE0190A61EFD4B5E00FA040E /* MenuViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		BE0190931EFD4A2800FA040E /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				BE0190941EFD4A4E00FA040E /* BaseNavigationController.swift */,
+				BE0190961EFD4A6400FA040E /* BaseViewController.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		BE0190981EFD4AED00FA040E /* Article */ = {
+			isa = PBXGroup;
+			children = (
+				BE01909C1EFD4B0300FA040E /* ArticleHomeViewController.swift */,
+			);
+			path = Article;
+			sourceTree = "<group>";
+		};
+		BE0190991EFD4AED00FA040E /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				BE01909E1EFD4B1000FA040E /* FriendsHomeViewController.swift */,
+			);
+			path = Friends;
+			sourceTree = "<group>";
+		};
+		BE01909A1EFD4AED00FA040E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				BE0190A01EFD4B1900FA040E /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		BE01909B1EFD4AED00FA040E /* Teacher */ = {
+			isa = PBXGroup;
+			children = (
+				BE0190A21EFD4B2500FA040E /* TeacherHomeViewController.swift */,
+			);
+			path = Teacher;
 			sourceTree = "<group>";
 		};
 		BE57F9971EF16E3E008BE6AD = {
@@ -112,12 +178,9 @@
 		BE57F9A21EF16E3E008BE6AD /* changeBook */ = {
 			isa = PBXGroup;
 			children = (
+				BE0190921EFD4A2800FA040E /* ViewController */,
 				BE01908D1EFC096C00FA040E /* Extensions */,
 				BE57F9A31EF16E3E008BE6AD /* AppDelegate.swift */,
-				BE8D53FA1EFC06A4003850EB /* RootViewController.swift */,
-				BE8D53FC1EFC06BA003850EB /* RootTabBarViewController.swift */,
-				BE0190901EFC09BD00FA040E /* MenuViewController.swift */,
-				BE0190891EFC085400FA040E /* BaseNavigationController.swift */,
 				BE01908B1EFC089400FA040E /* Config.swift */,
 				BE57F9AA1EF16E3E008BE6AD /* Assets.xcassets */,
 				BE57F9AC1EF16E3E008BE6AD /* LaunchScreen.storyboard */,
@@ -324,21 +387,26 @@
 			files = (
 				BE8D53F71EFC001C003850EB /* RECommonFunctions.m in Sources */,
 				BE8D53ED1EFBF619003850EB /* STPopupNavigationBar.m in Sources */,
+				BE0190A31EFD4B2500FA040E /* TeacherHomeViewController.swift in Sources */,
 				BE01908C1EFC089400FA040E /* Config.swift in Sources */,
-				BE8D53FB1EFC06A4003850EB /* RootViewController.swift in Sources */,
+				BE01909D1EFD4B0300FA040E /* ArticleHomeViewController.swift in Sources */,
+				BE0190A11EFD4B1900FA040E /* HomeViewController.swift in Sources */,
 				BE8D53F81EFC001C003850EB /* RESideMenu.m in Sources */,
+				BE0190971EFD4A6400FA040E /* BaseViewController.swift in Sources */,
 				BE8D53EF1EFBF619003850EB /* UIViewController+STPopup.m in Sources */,
 				BE8D53F91EFC001C003850EB /* UIViewController+RESideMenu.m in Sources */,
+				BE01909F1EFD4B1000FA040E /* FriendsHomeViewController.swift in Sources */,
 				BE57F9A41EF16E3E008BE6AD /* AppDelegate.swift in Sources */,
+				BE0190A71EFD4B5E00FA040E /* RootTabBarViewController.swift in Sources */,
 				BE8D53EB1EFBF619003850EB /* STPopupControllerTransitioningSlideVertical.m in Sources */,
-				BE01908A1EFC085400FA040E /* BaseNavigationController.swift in Sources */,
 				BE8D53E91EFBF619003850EB /* STPopupController.m in Sources */,
-				BE0190911EFC09BD00FA040E /* MenuViewController.swift in Sources */,
+				BE0190A91EFD4B5E00FA040E /* MenuViewController.swift in Sources */,
 				BE8D53EA1EFBF619003850EB /* STPopupControllerTransitioningFade.m in Sources */,
 				BE8D53EE1EFBF619003850EB /* UIResponder+STPopup.m in Sources */,
+				BE0190A81EFD4B5E00FA040E /* RootViewController.swift in Sources */,
 				BE01908F1EFC096C00FA040E /* UIColor+Polesapp.swift in Sources */,
+				BE0190951EFD4A4E00FA040E /* BaseNavigationController.swift in Sources */,
 				BE8D53EC1EFBF619003850EB /* STPopupLeftBarItem.m in Sources */,
-				BE8D53FD1EFC06BA003850EB /* RootTabBarViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

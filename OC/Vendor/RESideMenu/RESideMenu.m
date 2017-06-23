@@ -112,6 +112,7 @@
     _contentViewShadowOpacity = 0.4f;
     _contentViewShadowRadius = 8.0f;
     _contentViewFadeOutAlpha = 1.0f;
+    _contentViewFadeOutColor = [UIColor blackColor];
     _contentViewInLandscapeOffsetCenterX = 30.f;
     _contentViewInPortraitOffsetCenterX  = 30.f;
     _contentViewScaleValue = 0.7f;
@@ -296,7 +297,8 @@
         }
 
         self.menuViewContainer.alpha = !self.fadeMenuView ?: 1.0f;
-        self.contentViewContainer.alpha = self.contentViewFadeOutAlpha;
+        self.contentButton.alpha = self.contentViewFadeOutAlpha;
+//        self.contentViewContainer.backgroundColor = self.contentViewFadeOutColor;
         self.menuViewContainer.transform = CGAffineTransformIdentity;
         if (self.scaleBackgroundImageView)
             self.backgroundImageView.transform = CGAffineTransformIdentity;
@@ -339,7 +341,8 @@
         self.contentViewContainer.center = CGPointMake((UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation]) ? -self.contentViewInLandscapeOffsetCenterX : -self.contentViewInPortraitOffsetCenterX), self.contentViewContainer.center.y);
         
         self.menuViewContainer.alpha = !self.fadeMenuView ?: 1.0f;
-        self.contentViewContainer.alpha = self.contentViewFadeOutAlpha;
+        self.contentButton.alpha = self.contentViewFadeOutAlpha;
+//        self.contentViewContainer.backgroundColor = self.contentViewFadeOutColor;
         self.menuViewContainer.transform = CGAffineTransformIdentity;
         if (self.scaleBackgroundImageView)
             self.backgroundImageView.transform = CGAffineTransformIdentity;
@@ -439,6 +442,8 @@
     self.contentButton.autoresizingMask = UIViewAutoresizingNone;
     self.contentButton.frame = self.contentViewContainer.bounds;
     self.contentButton.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    self.contentButton.backgroundColor = self.contentViewFadeOutColor;
+    self.contentButton.alpha = 0.0f;
     [self.contentViewContainer addSubview:self.contentButton];
 }
 
@@ -598,7 +603,8 @@
         }
         
         self.menuViewContainer.alpha = !self.fadeMenuView ?: delta;
-        self.contentViewContainer.alpha = 1 - (1 - self.contentViewFadeOutAlpha) * delta;
+        self.contentButton.alpha = (1 - self.contentViewFadeOutAlpha) * delta;
+//        self.contentViewContainer.backgroundColor = self.contentViewFadeOutColor;
         
         if (self.scaleBackgroundImageView) {
             self.backgroundImageView.transform = CGAffineTransformMakeScale(backgroundViewScale, backgroundViewScale);
