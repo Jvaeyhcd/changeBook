@@ -20,12 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setRootViewController()
         setGolbalUIConfig()
         
-        
-        
-        
         return true
     }
     
+    // 设置根界面
     private func setRootViewController() {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = UIColor.white
@@ -36,6 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
     }
     
+    // 设置全局的UI样式
     private func setGolbalUIConfig() {
         
         UINavigationBar.appearance().tintColor = UIColor(hex: 0x919191)

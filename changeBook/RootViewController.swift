@@ -13,18 +13,18 @@ class RootViewController: RESideMenu, RESideMenuDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.menuPreferredStatusBarStyle = UIStatusBarStyle.default
+        self.menuPreferredStatusBarStyle = UIStatusBarStyle.lightContent
         self.delegate = self
-        self.contentViewShadowColor = UIColor.clear
+        self.contentViewShadowColor = UIColor.black
         self.contentViewShadowOffset = CGSize.zero
-        self.contentViewShadowOpacity = 0.6
-        self.contentViewShadowRadius = 12
+        self.contentViewShadowOpacity = 0.5
+        self.contentViewShadowRadius = 0
         self.contentViewShadowEnabled = true
         self.scaleContentView = false
         self.scaleMenuView = false
         self.scaleBackgroundImageView = false
         self.panGestureEnabled = true
-        self.parallaxEnabled = false
+        self.parallaxEnabled = true
         self.contentViewInPortraitOffsetCenterX = kScreenWidth / 3
         
         NotificationCenter.default.addObserver(self, selector: #selector(disableRESideMenu), name: NSNotification.Name.init(rawValue: "disableRESideMenu"), object: nil)
@@ -75,6 +75,10 @@ class RootViewController: RESideMenu, RESideMenuDelegate {
     
     func sideMenu(_ sideMenu: RESideMenu!, didHideMenuViewController menuViewController: UIViewController!) {
         
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return UIStatusBarStyle.lightContent
     }
 
 }

@@ -23,18 +23,23 @@ class RootTabBarViewController: UITabBarController {
     }
     
     private func initSubviews() {
-        //        UITabBar.appearance().tintColor = kTabbarTintColor
+        
+//        self.view.backgroundColor = UIColor.white
         
         let chargeVC = UIViewController()
+        chargeVC.view.backgroundColor = UIColor.white
         chargeVC.title = "首页"
         
         let circleVC = UIViewController()
+        chargeVC.view.backgroundColor = UIColor.white
         circleVC.title = "老师"
         
         let serviceVC = UIViewController()
+        chargeVC.view.backgroundColor = UIColor.white
         serviceVC.title = "书友"
         
         let mineVC = UIViewController()
+        chargeVC.view.backgroundColor = UIColor.white
         mineVC.title = "文章"
         
         let nav1 = BaseNavigationController.init(rootViewController: chargeVC)
