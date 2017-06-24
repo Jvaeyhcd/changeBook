@@ -9,15 +9,15 @@
 import UIKit
 import SnapKit
 
-class MenuViewController: UIViewController {
+class MenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    lazy var headbgImageView: UIImageView = {
+    private lazy var headbgImageView: UIImageView = {
         let imgView = UIImageView()
         imgView.backgroundColor = kMainColor
         return imgView
     }()
     
-    lazy var userHeadImageView: UIImageView = {
+    private lazy var userHeadImageView: UIImageView = {
         let imgView = UIImageView()
         imgView.clipsToBounds = true
         imgView.layer.cornerRadius = scaleFromiPhone6Desgin(x: 30)
@@ -29,7 +29,7 @@ class MenuViewController: UIViewController {
         return imgView
     }()
     
-    lazy var userNameLbl: UILabel = {
+    private lazy var userNameLbl: UILabel = {
         let lbl = UILabel()
         lbl.textAlignment = .left
         lbl.font = UIFont.systemFont(ofSize: 17)
@@ -37,7 +37,7 @@ class MenuViewController: UIViewController {
         return lbl
     }()
     
-    var menuTableView: UITableView = {
+    private var menuTableView: UITableView = {
         let menuTableView = UITableView.init(frame: CGRect.zero, style: .plain)
         menuTableView.register(MenuTableViewCell.self, forCellReuseIdentifier: kCellIdMenuTableViewCell)
         menuTableView.backgroundColor = UIColor.clear
@@ -45,6 +45,10 @@ class MenuViewController: UIViewController {
         
         return menuTableView
     }()
+    
+    private var menuTitles = [
+        ["我的借阅", "系统消息", "文章中心", "我的积分", "使用指南", "加入我们", "个人设置"]
+    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,6 +63,8 @@ class MenuViewController: UIViewController {
     
     // MAKR: - private
     private func initSubviews() {
+        
+        self.automaticallyAdjustsScrollViewInsets = false
         
         self.view.addSubview(self.headbgImageView)
         self.headbgImageView.snp.makeConstraints { (make) in
@@ -87,12 +93,48 @@ class MenuViewController: UIViewController {
             make.height.equalTo(30)
         }
         
+        self.menuTableView.delegate = self
+        self.menuTableView.dataSource = self
+        self.view.addSubview(self.menuTableView)
+        self.menuTableView.snp.makeConstraints { (make) in
+            make.left.equalTo(0)
+            make.top.equalTo(headbgImageView.snp.bottom).offset(scaleFromiPhone6Desgin(x: 26))
+            make.bottom.equalTo(0)
+            make.right.equalTo(-kScreenWidth / 6)
+        }
+        
     }
     
     @objc private func userHeadClick() {
         
     }
 
+    // MARK: - UITableViewDelegate, UITableViewDataSource
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return menuTitles.count
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let array = menuTitles[section] as Array
+        return array.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: kCellIdMenuTableViewCell, for: indexPath) as! MenuTableViewCell
+        cell.backgroundColor = UIColor.clear
+        let text = menuTitles[indexPath.section][indexPath.row]
+        cell.titleLbl.text = text
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return MenuTableViewCell.cellHeight()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
     /*
     // MARK: - Navigation
 
