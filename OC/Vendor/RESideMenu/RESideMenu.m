@@ -456,6 +456,41 @@
     }
 }
 
+- (void)updateContentViewFrame
+{
+    CGRect frame = self.contentViewContainer.frame;
+    
+    if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_7_1) {
+        
+        // 判断是否是横屏
+        if (UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation])) {
+            if (self.contentViewContainer.frame.origin.x > self.contentViewInLandscapeOffsetCenterX + CGRectGetWidth(self.view.frame) / 2) {
+                frame.origin.x = self.contentViewInLandscapeOffsetCenterX + CGRectGetWidth(self.view.frame) / 2;
+            }
+        } else {
+            if (self.contentViewContainer.frame.origin.x > self.contentViewInPortraitOffsetCenterX + CGRectGetWidth(self.view.frame) / 2) {
+                frame.origin.x = self.contentViewInPortraitOffsetCenterX + CGRectGetWidth(self.view.frame) / 2;
+            }
+        }
+        
+    } else {
+        
+        // 判断是否是横屏
+        if (UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation])) {
+            if (self.contentViewContainer.frame.origin.x > self.contentViewInLandscapeOffsetCenterX + CGRectGetHeight(self.view.frame) / 2) {
+                frame.origin.x = self.contentViewInLandscapeOffsetCenterX + CGRectGetHeight(self.view.frame) / 2;
+            }
+        } else {
+            if (self.contentViewContainer.frame.origin.x > self.contentViewInPortraitOffsetCenterX + CGRectGetWidth(self.view.frame) / 2) {
+                frame.origin.x = self.contentViewInPortraitOffsetCenterX + CGRectGetWidth(self.view.frame) / 2;
+            }
+        }
+        
+    }
+    
+    self.contentViewContainer.frame = frame;
+}
+
 - (void)updateContentViewShadow
 {
     if (self.contentViewShadowEnabled) {
@@ -604,7 +639,6 @@
         
         self.menuViewContainer.alpha = !self.fadeMenuView ?: delta;
         self.contentButton.alpha = (1 - self.contentViewFadeOutAlpha) * delta;
-//        self.contentViewContainer.backgroundColor = self.contentViewFadeOutColor;
         
         if (self.scaleBackgroundImageView) {
             self.backgroundImageView.transform = CGAffineTransformMakeScale(backgroundViewScale, backgroundViewScale);
@@ -676,6 +710,9 @@
         }
         
         [self statusBarNeedsAppearanceUpdate];
+        NSLog(@"self.contentViewContainer.x=%.2f, self.contentViewContainer.centerX=%.2f, point.x=%.2f", self.contentViewContainer.frame.origin.x, self.contentViewContainer.center.x, point.x);
+        
+        [self updateContentViewFrame];
     }
     
    if (recognizer.state == UIGestureRecognizerStateEnded) {

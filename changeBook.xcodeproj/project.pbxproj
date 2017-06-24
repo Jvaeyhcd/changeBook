@@ -19,6 +19,7 @@
 		BE0190A71EFD4B5E00FA040E /* RootTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0190A41EFD4B5E00FA040E /* RootTabBarViewController.swift */; };
 		BE0190A81EFD4B5E00FA040E /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0190A51EFD4B5E00FA040E /* RootViewController.swift */; };
 		BE0190A91EFD4B5E00FA040E /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0190A61EFD4B5E00FA040E /* MenuViewController.swift */; };
+		BE0190AC1EFE0BC900FA040E /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0190AB1EFE0BC900FA040E /* MenuTableViewCell.swift */; };
 		BE57F9A41EF16E3E008BE6AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE57F9A31EF16E3E008BE6AD /* AppDelegate.swift */; };
 		BE57F9AB1EF16E3E008BE6AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE57F9AA1EF16E3E008BE6AD /* Assets.xcassets */; };
 		BE57F9AE1EF16E3E008BE6AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE57F9AC1EF16E3E008BE6AD /* LaunchScreen.storyboard */; };
@@ -49,6 +50,7 @@
 		BE0190A41EFD4B5E00FA040E /* RootTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTabBarViewController.swift; sourceTree = "<group>"; };
 		BE0190A51EFD4B5E00FA040E /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		BE0190A61EFD4B5E00FA040E /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		BE0190AB1EFE0BC900FA040E /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		BE57F9A01EF16E3E008BE6AD /* changeBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = changeBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE57F9A31EF16E3E008BE6AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE57F9AA1EF16E3E008BE6AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 		BE0190921EFD4A2800FA040E /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				BE0190AA1EFE049000FA040E /* Menu */,
 				BE0190981EFD4AED00FA040E /* Article */,
 				BE0190991EFD4AED00FA040E /* Friends */,
 				BE01909A1EFD4AED00FA040E /* Home */,
@@ -154,6 +157,14 @@
 				BE0190A21EFD4B2500FA040E /* TeacherHomeViewController.swift */,
 			);
 			path = Teacher;
+			sourceTree = "<group>";
+		};
+		BE0190AA1EFE049000FA040E /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				BE0190AB1EFE0BC900FA040E /* MenuTableViewCell.swift */,
+			);
+			path = Menu;
 			sourceTree = "<group>";
 		};
 		BE57F9971EF16E3E008BE6AD = {
@@ -394,6 +405,7 @@
 				BE8D53F81EFC001C003850EB /* RESideMenu.m in Sources */,
 				BE0190971EFD4A6400FA040E /* BaseViewController.swift in Sources */,
 				BE8D53EF1EFBF619003850EB /* UIViewController+STPopup.m in Sources */,
+				BE0190AC1EFE0BC900FA040E /* MenuTableViewCell.swift in Sources */,
 				BE8D53F91EFC001C003850EB /* UIViewController+RESideMenu.m in Sources */,
 				BE01909F1EFD4B1000FA040E /* FriendsHomeViewController.swift in Sources */,
 				BE57F9A41EF16E3E008BE6AD /* AppDelegate.swift in Sources */,

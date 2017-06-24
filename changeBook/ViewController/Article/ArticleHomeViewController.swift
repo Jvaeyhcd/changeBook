@@ -14,6 +14,7 @@ class ArticleHomeViewController: BaseViewController {
         super.viewDidLoad()
 
         self.title = "文章"
+        NotificationCenter.default.post(name: NSNotification.Name.init("enableRESideMenu"), object: nil)
     }
 
     override func didReceiveMemoryWarning() {

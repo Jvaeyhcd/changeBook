@@ -14,6 +14,7 @@ class TeacherHomeViewController: BaseViewController {
         super.viewDidLoad()
 
         self.title = "教师"
+        NotificationCenter.default.post(name: NSNotification.Name.init("enableRESideMenu"), object: nil)
     }
 
     override func didReceiveMemoryWarning() {

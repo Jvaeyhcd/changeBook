@@ -14,6 +14,7 @@ class FriendsHomeViewController: BaseViewController {
         super.viewDidLoad()
 
         self.title = "书友"
+        NotificationCenter.default.post(name: NSNotification.Name.init("enableRESideMenu"), object: nil)
     }
 
     override func didReceiveMemoryWarning() {

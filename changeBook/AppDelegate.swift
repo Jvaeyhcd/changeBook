@@ -46,9 +46,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor(hex: 0x919191)!], for: UIControlState.normal)
         UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: kMainColor!], for: UIControlState.selected)
         // 设置字体大小
-        UITabBarItem.appearance().setTitleTextAttributes([NSFontAttributeName: UIFont.systemFont(ofSize: 12.0)], for: UIControlState.normal)
+//        UITabBarItem.appearance().setTitleTextAttributes([NSFontAttributeName: UIFont.systemFont(ofSize: 12.0)], for: UIControlState.normal)
         // 设置字体偏移
-        UITabBarItem.appearance().titlePositionAdjustment = UIOffsetMake(0.0, -5.0)
+//        UITabBarItem.appearance().titlePositionAdjustment = UIOffsetMake(0.0, -5.0)
         // 设置图标选中时颜色
         UITabBar.appearance().tintColor = UIColor.red
     }

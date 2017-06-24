@@ -22,3 +22,7 @@ let kMainBgColor = UIColor(hex: 0xF7F7F7)
 let kMainColor = UIColor(hex: 0xF55C5E)
 let kTabbarTintColor = UIColor(hex: 0x03A9F5)
 let kNavTintColor = UIColor(hex: 0xFFFFFF)
+
+func scaleFromiPhone6Desgin(x : CGFloat)->CGFloat{
+    return (x * (kScreenWidth / 375))
+}

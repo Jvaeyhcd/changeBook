@@ -15,6 +15,7 @@ class BaseViewController: UIViewController {
 
         self.view.backgroundColor = kMainBgColor
         
+        NotificationCenter.default.post(name: NSNotification.Name.init("disableRESideMenu"), object: nil)
     }
 
     override func didReceiveMemoryWarning() {
