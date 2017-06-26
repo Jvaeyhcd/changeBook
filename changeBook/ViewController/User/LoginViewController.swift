@@ -1,14 +1,14 @@
 //
-//  MenuViewController.swift
+//  LoginViewController.swift
 //  changeBook
 //
-//  Created by Jvaeyhcd on 22/06/2017.
+//  Created by Jvaeyhcd on 26/06/2017.
 //  Copyright © 2017 Jvaeyhcd. All rights reserved.
 //
 
 import UIKit
 
-class MenuViewController: UIViewController {
+class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

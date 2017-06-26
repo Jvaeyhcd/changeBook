@@ -1,21 +1,19 @@
 //
-//  HomeViewController.swift
+//  FindPasswordViewController.swift
 //  changeBook
 //
-//  Created by Jvaeyhcd on 23/06/2017.
+//  Created by Jvaeyhcd on 26/06/2017.
 //  Copyright © 2017 Jvaeyhcd. All rights reserved.
 //
 
 import UIKit
 
-class HomeViewController: BaseRootTabViewController {
+class FindPasswordViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "首页"
-        
-        NotificationCenter.default.post(name: NSNotification.Name.init("enableRESideMenu"), object: nil)
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,7 +21,7 @@ class HomeViewController: BaseRootTabViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
+
     /*
     // MARK: - Navigation
 

@@ -47,7 +47,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     }()
     
     private var menuTitles = [
-        ["我的借阅", "系统消息", "文章中心", "我的积分", "使用指南", "加入我们", "个人设置"]
+        ["我的消息", "我的借阅", "文章中心", "我的积分", "使用指南", "加入我们", "个人设置"]
     ]
 
     override func viewDidLoad() {

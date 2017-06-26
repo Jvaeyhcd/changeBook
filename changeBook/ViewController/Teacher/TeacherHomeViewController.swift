@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TeacherHomeViewController: BaseViewController {
+class TeacherHomeViewController: BaseRootTabViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

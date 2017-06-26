@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FriendsHomeViewController: BaseViewController {
+class FriendsHomeViewController: BaseRootTabViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

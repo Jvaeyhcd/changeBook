@@ -34,6 +34,9 @@
 		BE8D53F71EFC001C003850EB /* RECommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D53F21EFC001C003850EB /* RECommonFunctions.m */; };
 		BE8D53F81EFC001C003850EB /* RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D53F41EFC001C003850EB /* RESideMenu.m */; };
 		BE8D53F91EFC001C003850EB /* UIViewController+RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D53F61EFC001C003850EB /* UIViewController+RESideMenu.m */; };
+		BE9AC41E1F01428400C9288A /* BaseRootTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9AC41D1F01428400C9288A /* BaseRootTabViewController.swift */; };
+		BE9AC4211F01495000C9288A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9AC4201F01495000C9288A /* LoginViewController.swift */; };
+		BE9AC4231F01495F00C9288A /* FindPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9AC4221F01495F00C9288A /* FindPasswordViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +82,9 @@
 		BE8D53F41EFC001C003850EB /* RESideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RESideMenu.m; sourceTree = "<group>"; };
 		BE8D53F51EFC001C003850EB /* UIViewController+RESideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+RESideMenu.h"; sourceTree = "<group>"; };
 		BE8D53F61EFC001C003850EB /* UIViewController+RESideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+RESideMenu.m"; sourceTree = "<group>"; };
+		BE9AC41D1F01428400C9288A /* BaseRootTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRootTabViewController.swift; sourceTree = "<group>"; };
+		BE9AC4201F01495000C9288A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		BE9AC4221F01495F00C9288A /* FindPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindPasswordViewController.swift; sourceTree = "<group>"; };
 		FD24FA76B8D7C13454370158 /* Pods-changeBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-changeBook.release.xcconfig"; path = "Pods/Target Support Files/Pods-changeBook/Pods-changeBook.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,6 +111,7 @@
 		BE0190921EFD4A2800FA040E /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				BE9AC41F1F01467D00C9288A /* User */,
 				BE0190AA1EFE049000FA040E /* Menu */,
 				BE0190981EFD4AED00FA040E /* Article */,
 				BE0190991EFD4AED00FA040E /* Friends */,
@@ -123,6 +130,7 @@
 			children = (
 				BE0190941EFD4A4E00FA040E /* BaseNavigationController.swift */,
 				BE0190961EFD4A6400FA040E /* BaseViewController.swift */,
+				BE9AC41D1F01428400C9288A /* BaseRootTabViewController.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -252,6 +260,15 @@
 				BE8D53F61EFC001C003850EB /* UIViewController+RESideMenu.m */,
 			);
 			path = RESideMenu;
+			sourceTree = "<group>";
+		};
+		BE9AC41F1F01467D00C9288A /* User */ = {
+			isa = PBXGroup;
+			children = (
+				BE9AC4201F01495000C9288A /* LoginViewController.swift */,
+				BE9AC4221F01495F00C9288A /* FindPasswordViewController.swift */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 		E5BBD58AB3CBAA9D464DBAFE /* Pods */ = {
@@ -403,17 +420,20 @@
 				BE01909D1EFD4B0300FA040E /* ArticleHomeViewController.swift in Sources */,
 				BE0190A11EFD4B1900FA040E /* HomeViewController.swift in Sources */,
 				BE8D53F81EFC001C003850EB /* RESideMenu.m in Sources */,
+				BE9AC41E1F01428400C9288A /* BaseRootTabViewController.swift in Sources */,
 				BE0190971EFD4A6400FA040E /* BaseViewController.swift in Sources */,
 				BE8D53EF1EFBF619003850EB /* UIViewController+STPopup.m in Sources */,
 				BE0190AC1EFE0BC900FA040E /* MenuTableViewCell.swift in Sources */,
 				BE8D53F91EFC001C003850EB /* UIViewController+RESideMenu.m in Sources */,
 				BE01909F1EFD4B1000FA040E /* FriendsHomeViewController.swift in Sources */,
+				BE9AC4211F01495000C9288A /* LoginViewController.swift in Sources */,
 				BE57F9A41EF16E3E008BE6AD /* AppDelegate.swift in Sources */,
 				BE0190A71EFD4B5E00FA040E /* RootTabBarViewController.swift in Sources */,
 				BE8D53EB1EFBF619003850EB /* STPopupControllerTransitioningSlideVertical.m in Sources */,
 				BE8D53E91EFBF619003850EB /* STPopupController.m in Sources */,
 				BE0190A91EFD4B5E00FA040E /* MenuViewController.swift in Sources */,
 				BE8D53EA1EFBF619003850EB /* STPopupControllerTransitioningFade.m in Sources */,
+				BE9AC4231F01495F00C9288A /* FindPasswordViewController.swift in Sources */,
 				BE8D53EE1EFBF619003850EB /* UIResponder+STPopup.m in Sources */,
 				BE0190A81EFD4B5E00FA040E /* RootViewController.swift in Sources */,
 				BE01908F1EFC096C00FA040E /* UIColor+Polesapp.swift in Sources */,
