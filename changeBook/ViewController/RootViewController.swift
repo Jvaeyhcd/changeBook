@@ -8,30 +8,20 @@
 
 import UIKit
 
-class RootViewController: RESideMenu, RESideMenuDelegate {
+class RootViewController: HcdSideMenu {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.menuPreferredStatusBarStyle = UIStatusBarStyle.lightContent
-        self.delegate = self
-        self.contentViewShadowColor = UIColor.black
-        self.contentViewShadowOffset = CGSize.zero
-        self.contentViewShadowOpacity = 0.5
-        self.contentViewShadowRadius = 0
-        self.contentViewShadowEnabled = true
-        self.scaleContentView = false
-        self.scaleMenuView = false
-        self.scaleBackgroundImageView = false
-        self.panGestureEnabled = true
-        self.parallaxEnabled = true
-        self.contentViewFadeOutAlpha = 0.5
-        
-        self.contentViewInPortraitOffsetCenterX = kScreenWidth / 3
         
         NotificationCenter.default.addObserver(self, selector: #selector(disableRESideMenu), name: NSNotification.Name.init(rawValue: "disableRESideMenu"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(enableRESideMenu), name: NSNotification.Name.init(rawValue: "enableRESideMenu"), object: nil)
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
+        self.panGestureEnabled = true
     }
 
     func enableRESideMenu() {
@@ -57,27 +47,6 @@ class RootViewController: RESideMenu, RESideMenuDelegate {
         // Pass the selected object to the new view controller.
     }
     */
-    
-    // MARK: - RESideMenuDelegate
-    func sideMenu(_ sideMenu: RESideMenu!, didRecognizePanGesture recognizer: UIPanGestureRecognizer!) {
-        
-    }
-    
-    func sideMenu(_ sideMenu: RESideMenu!, didShowMenuViewController menuViewController: UIViewController!) {
-        
-    }
-    
-    func sideMenu(_ sideMenu: RESideMenu!, willHideMenuViewController menuViewController: UIViewController!) {
-        
-    }
-    
-    func sideMenu(_ sideMenu: RESideMenu!, willShowMenuViewController menuViewController: UIViewController!) {
-        
-    }
-    
-    func sideMenu(_ sideMenu: RESideMenu!, didHideMenuViewController menuViewController: UIViewController!) {
-        
-    }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return UIStatusBarStyle.lightContent

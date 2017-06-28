@@ -24,6 +24,11 @@ let kTabbarTintColor = UIColor(hex: 0x03A9F5)
 let kNavTintColor = UIColor(hex: 0xFFFFFF)
 let kSelectedCellBgColor = UIColor(hex: 0xF9F9F9)
 
+//字体大小
+let kBarButtonItemTitleFont = UIFont.systemFont(ofSize: 16)
+let kBaseFont = UIFont.systemFont(ofSize: 14)
+let kSmallTextFont = UIFont.systemFont(ofSize: 12)
+
 func scaleFromiPhone6Desgin(x : CGFloat)->CGFloat{
     return (x * (kScreenWidth / 375))
 }

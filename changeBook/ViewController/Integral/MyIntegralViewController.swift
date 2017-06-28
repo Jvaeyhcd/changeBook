@@ -1,19 +1,24 @@
 //
-//  FindPasswordViewController.swift
+//  MyIntegralViewController.swift
 //  changeBook
 //
-//  Created by Jvaeyhcd on 26/06/2017.
+//  Created by Jvaeyhcd on 28/06/2017.
 //  Copyright © 2017 Jvaeyhcd. All rights reserved.
 //
 
 import UIKit
 
-class FindPasswordViewController: UIViewController {
+class MyIntegralViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.title = "我的积分"
+        self.showBackButton()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = false
     }
 
     override func didReceiveMemoryWarning() {

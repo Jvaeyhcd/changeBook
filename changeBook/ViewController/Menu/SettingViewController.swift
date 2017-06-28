@@ -1,19 +1,24 @@
 //
-//  FindPasswordViewController.swift
+//  SettingViewController.swift
 //  changeBook
 //
-//  Created by Jvaeyhcd on 26/06/2017.
+//  Created by Jvaeyhcd on 28/06/2017.
 //  Copyright © 2017 Jvaeyhcd. All rights reserved.
 //
 
 import UIKit
 
-class FindPasswordViewController: UIViewController {
+class SettingViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.title = "个人设置"
+        self.showBackButton()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = false
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,6 +33,7 @@ class FindPasswordViewController: UIViewController {
     override func rightNavBarButtonClicked() {
         
     }
+    
 
     /*
     // MARK: - Navigation

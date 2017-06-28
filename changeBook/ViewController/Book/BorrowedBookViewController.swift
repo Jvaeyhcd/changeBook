@@ -1,19 +1,24 @@
 //
-//  FindPasswordViewController.swift
+//  BorrowedBookViewController.swift
 //  changeBook
 //
-//  Created by Jvaeyhcd on 26/06/2017.
+//  Created by Jvaeyhcd on 28/06/2017.
 //  Copyright © 2017 Jvaeyhcd. All rights reserved.
 //
 
 import UIKit
 
-class FindPasswordViewController: UIViewController {
+class BorrowedBookViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.title = "我的借阅"
+        self.showBackButton()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = false
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,6 +33,7 @@ class FindPasswordViewController: UIViewController {
     override func rightNavBarButtonClicked() {
         
     }
+    
 
     /*
     // MARK: - Navigation

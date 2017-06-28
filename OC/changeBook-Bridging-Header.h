@@ -6,5 +6,5 @@
 #import "STPopup.h"
 
 // MARK: - RESideMenu
-#import "RESideMenu.h"
-#import "UIViewController+RESideMenu.h"
+#import "HcdSideMenu.h"
+#import "UIViewController+HcdSideMenu.h"
