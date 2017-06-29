@@ -13,6 +13,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     private lazy var headbgImageView: UIImageView = {
         let imgView = UIImageView()
+        imgView.contentMode = .scaleAspectFill
         imgView.backgroundColor = kMainColor
         return imgView
     }()
@@ -66,12 +67,14 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         self.automaticallyAdjustsScrollViewInsets = false
         
+        let width = 0.8 * kScreenWidth
+        self.headbgImageView.image = UIImage(named: "wode_bg")
         self.view.addSubview(self.headbgImageView)
         self.headbgImageView.snp.makeConstraints { (make) in
             make.left.equalTo(0)
             make.top.equalTo(0)
-            make.right.equalTo(0)
-            make.height.equalTo(scaleFromiPhone6Desgin(x: 180))
+            make.width.equalTo(width)
+            make.height.equalTo(width * 13 / 30)
         }
         
         let tapGR = UITapGestureRecognizer.init(target: self, action: #selector(userHeadClick))
@@ -81,7 +84,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
             make.width.equalTo(scaleFromiPhone6Desgin(x: 60))
             make.height.equalTo(scaleFromiPhone6Desgin(x: 60))
             make.left.equalTo(scaleFromiPhone6Desgin(x: 28))
-            make.top.equalTo(scaleFromiPhone6Desgin(x: 60))
+            make.centerY.equalTo(self.headbgImageView.snp.centerY).offset(10)
         }
         
         self.userNameLbl.text = "Jvaeyhcd"
