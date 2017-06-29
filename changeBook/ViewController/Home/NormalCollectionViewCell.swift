@@ -14,7 +14,7 @@ class NormalCollectionViewCell: UICollectionViewCell {
     
     lazy var iconImage: UIImageView = {
         let iconImage = UIImageView()
-        iconImage.backgroundColor = .white
+        iconImage.backgroundColor = .clear
         iconImage.clipsToBounds = true
         iconImage.contentMode = .scaleAspectFill
         return iconImage
