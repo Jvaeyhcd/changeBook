@@ -244,6 +244,15 @@
 		BE57EF5E1F04B1290091F312 /* login_bg_red@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE57EE8A1F04B1290091F312 /* login_bg_red@3x.png */; };
 		BE57EF5F1F04B1290091F312 /* login_icon_qq@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE57EE8B1F04B1290091F312 /* login_icon_qq@2x.png */; };
 		BE57EF601F04B1290091F312 /* login_icon_qq@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE57EE8C1F04B1290091F312 /* login_icon_qq@3x.png */; };
+		BE57EF711F05414A0091F312 /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE57EF641F05414A0091F312 /* TAAbstractDotView.m */; };
+		BE57EF721F05414A0091F312 /* TAAnimatedDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE57EF661F05414A0091F312 /* TAAnimatedDotView.m */; };
+		BE57EF731F05414A0091F312 /* TADotView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE57EF681F05414A0091F312 /* TADotView.m */; };
+		BE57EF741F05414A0091F312 /* TAPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = BE57EF6A1F05414A0091F312 /* TAPageControl.m */; };
+		BE57EF751F05414A0091F312 /* SDCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE57EF6C1F05414A0091F312 /* SDCollectionViewCell.m */; };
+		BE57EF761F05414A0091F312 /* SDCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE57EF6E1F05414A0091F312 /* SDCycleScrollView.m */; };
+		BE57EF771F05414A0091F312 /* UIView+SDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = BE57EF701F05414A0091F312 /* UIView+SDExtension.m */; };
+		BE57EF791F0541CC0091F312 /* HomeHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE57EF781F0541CC0091F312 /* HomeHeadView.swift */; };
+		BE57EF7B1F05442F0091F312 /* NormalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE57EF7A1F05442F0091F312 /* NormalCollectionViewCell.swift */; };
 		BE57F9A41EF16E3E008BE6AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE57F9A31EF16E3E008BE6AD /* AppDelegate.swift */; };
 		BE57F9AB1EF16E3E008BE6AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE57F9AA1EF16E3E008BE6AD /* Assets.xcassets */; };
 		BE57F9AE1EF16E3E008BE6AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE57F9AC1EF16E3E008BE6AD /* LaunchScreen.storyboard */; };
@@ -501,6 +510,22 @@
 		BE57EE8A1F04B1290091F312 /* login_bg_red@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_bg_red@3x.png"; sourceTree = "<group>"; };
 		BE57EE8B1F04B1290091F312 /* login_icon_qq@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_icon_qq@2x.png"; sourceTree = "<group>"; };
 		BE57EE8C1F04B1290091F312 /* login_icon_qq@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_icon_qq@3x.png"; sourceTree = "<group>"; };
+		BE57EF631F05414A0091F312 /* TAAbstractDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAbstractDotView.h; sourceTree = "<group>"; };
+		BE57EF641F05414A0091F312 /* TAAbstractDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAbstractDotView.m; sourceTree = "<group>"; };
+		BE57EF651F05414A0091F312 /* TAAnimatedDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAnimatedDotView.h; sourceTree = "<group>"; };
+		BE57EF661F05414A0091F312 /* TAAnimatedDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAnimatedDotView.m; sourceTree = "<group>"; };
+		BE57EF671F05414A0091F312 /* TADotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TADotView.h; sourceTree = "<group>"; };
+		BE57EF681F05414A0091F312 /* TADotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TADotView.m; sourceTree = "<group>"; };
+		BE57EF691F05414A0091F312 /* TAPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAPageControl.h; sourceTree = "<group>"; };
+		BE57EF6A1F05414A0091F312 /* TAPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAPageControl.m; sourceTree = "<group>"; };
+		BE57EF6B1F05414A0091F312 /* SDCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDCollectionViewCell.h; sourceTree = "<group>"; };
+		BE57EF6C1F05414A0091F312 /* SDCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDCollectionViewCell.m; sourceTree = "<group>"; };
+		BE57EF6D1F05414A0091F312 /* SDCycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDCycleScrollView.h; sourceTree = "<group>"; };
+		BE57EF6E1F05414A0091F312 /* SDCycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDCycleScrollView.m; sourceTree = "<group>"; };
+		BE57EF6F1F05414A0091F312 /* UIView+SDExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SDExtension.h"; sourceTree = "<group>"; };
+		BE57EF701F05414A0091F312 /* UIView+SDExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SDExtension.m"; sourceTree = "<group>"; };
+		BE57EF781F0541CC0091F312 /* HomeHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeHeadView.swift; sourceTree = "<group>"; };
+		BE57EF7A1F05442F0091F312 /* NormalCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NormalCollectionViewCell.swift; sourceTree = "<group>"; };
 		BE57F9A01EF16E3E008BE6AD /* changeBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = changeBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE57F9A31EF16E3E008BE6AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE57F9AA1EF16E3E008BE6AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -602,6 +627,8 @@
 			isa = PBXGroup;
 			children = (
 				BE0190A01EFD4B1900FA040E /* HomeViewController.swift */,
+				BE57EF781F0541CC0091F312 /* HomeHeadView.swift */,
+				BE57EF7A1F05442F0091F312 /* NormalCollectionViewCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -888,6 +915,35 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		BE57EF611F05414A0091F312 /* SDCycleScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				BE57EF621F05414A0091F312 /* PageControl */,
+				BE57EF6B1F05414A0091F312 /* SDCollectionViewCell.h */,
+				BE57EF6C1F05414A0091F312 /* SDCollectionViewCell.m */,
+				BE57EF6D1F05414A0091F312 /* SDCycleScrollView.h */,
+				BE57EF6E1F05414A0091F312 /* SDCycleScrollView.m */,
+				BE57EF6F1F05414A0091F312 /* UIView+SDExtension.h */,
+				BE57EF701F05414A0091F312 /* UIView+SDExtension.m */,
+			);
+			path = SDCycleScrollView;
+			sourceTree = "<group>";
+		};
+		BE57EF621F05414A0091F312 /* PageControl */ = {
+			isa = PBXGroup;
+			children = (
+				BE57EF631F05414A0091F312 /* TAAbstractDotView.h */,
+				BE57EF641F05414A0091F312 /* TAAbstractDotView.m */,
+				BE57EF651F05414A0091F312 /* TAAnimatedDotView.h */,
+				BE57EF661F05414A0091F312 /* TAAnimatedDotView.m */,
+				BE57EF671F05414A0091F312 /* TADotView.h */,
+				BE57EF681F05414A0091F312 /* TADotView.m */,
+				BE57EF691F05414A0091F312 /* TAPageControl.h */,
+				BE57EF6A1F05414A0091F312 /* TAPageControl.m */,
+			);
+			path = PageControl;
+			sourceTree = "<group>";
+		};
 		BE57F9971EF16E3E008BE6AD = {
 			isa = PBXGroup;
 			children = (
@@ -934,6 +990,7 @@
 		BE8D53D61EFBF5F6003850EB /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				BE57EF611F05414A0091F312 /* SDCycleScrollView */,
 				BE57ED8F1F03BC670091F312 /* HcdSideMenu */,
 				BE8D53D71EFBF619003850EB /* STPopup */,
 			);
@@ -1329,14 +1386,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE8D53ED1EFBF619003850EB /* STPopupNavigationBar.m in Sources */,
+				BE57EF731F05414A0091F312 /* TADotView.m in Sources */,
 				BE0190A31EFD4B2500FA040E /* TeacherHomeViewController.swift in Sources */,
 				BE01908C1EFC089400FA040E /* Config.swift in Sources */,
+				BE57EF761F05414A0091F312 /* SDCycleScrollView.m in Sources */,
 				BE57EDAF1F03E8CD0091F312 /* MyIntegralViewController.swift in Sources */,
 				BE57EDA11F03E7250091F312 /* UserArticleViewController.swift in Sources */,
 				BE57ED9F1F03E6E30091F312 /* SettingViewController.swift in Sources */,
 				BE57EDB11F03EFDB0091F312 /* UIViewController+Polesapp.swift in Sources */,
 				BE01909D1EFD4B0300FA040E /* ArticleHomeViewController.swift in Sources */,
+				BE57EF751F05414A0091F312 /* SDCollectionViewCell.m in Sources */,
+				BE57EF721F05414A0091F312 /* TAAnimatedDotView.m in Sources */,
 				BE0190A11EFD4B1900FA040E /* HomeViewController.swift in Sources */,
+				BE57EF791F0541CC0091F312 /* HomeHeadView.swift in Sources */,
+				BE57EF741F05414A0091F312 /* TAPageControl.m in Sources */,
 				BE57ED951F03BCF70091F312 /* HcdSideMenu.m in Sources */,
 				BE9AC41E1F01428400C9288A /* BaseRootTabViewController.swift in Sources */,
 				BE0190971EFD4A6400FA040E /* BaseViewController.swift in Sources */,
@@ -1346,13 +1409,16 @@
 				BE01909F1EFD4B1000FA040E /* FriendsHomeViewController.swift in Sources */,
 				BE57EDB31F03F0EA0091F312 /* String+Polesapp.swift in Sources */,
 				BE57ED981F03BD910091F312 /* UIViewController+HcdSideMenu.m in Sources */,
+				BE57EF771F05414A0091F312 /* UIView+SDExtension.m in Sources */,
 				BE9AC4211F01495000C9288A /* LoginViewController.swift in Sources */,
 				BE57F9A41EF16E3E008BE6AD /* AppDelegate.swift in Sources */,
 				BE57EDAC1F03E87E0091F312 /* MyDepositViewController.swift in Sources */,
 				BE0190A71EFD4B5E00FA040E /* RootTabBarViewController.swift in Sources */,
 				BE57EDA91F03E8140091F312 /* MessageListViewController.swift in Sources */,
 				BE8D53EB1EFBF619003850EB /* STPopupControllerTransitioningSlideVertical.m in Sources */,
+				BE57EF7B1F05442F0091F312 /* NormalCollectionViewCell.swift in Sources */,
 				BE57ED9D1F03E6910091F312 /* MenuViewController.swift in Sources */,
+				BE57EF711F05414A0091F312 /* TAAbstractDotView.m in Sources */,
 				BE8D53E91EFBF619003850EB /* STPopupController.m in Sources */,
 				BE8D53EA1EFBF619003850EB /* STPopupControllerTransitioningFade.m in Sources */,
 				BE9AC4231F01495F00C9288A /* FindPasswordViewController.swift in Sources */,

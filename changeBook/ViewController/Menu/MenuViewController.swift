@@ -50,6 +50,9 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     private var menuTitles = [
         ["我的消息", "我的借阅", "我的押金", "文章中心", "我的积分", "使用指南", "加入我们", "个人设置"]
     ]
+    private var menuIcons = [
+        ["wode_btn_touxiang", "wode_btn_jieyue", "wode_btn_yajin", "wode_btn_wenzhang", "wode_btn_jifen", "wode_btn_bangzhu", "wode_btn_jiaru", "wode_btn_shezhi"]
+    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -126,6 +129,8 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         let cell = tableView.dequeueReusableCell(withIdentifier: kCellIdMenuTableViewCell, for: indexPath) as! MenuTableViewCell
         cell.backgroundColor = UIColor.clear
         let text = menuTitles[indexPath.section][indexPath.row]
+        let imgName = menuIcons[indexPath.section][indexPath.row]
+        cell.iconImageView.image = UIImage(named: imgName)
         cell.titleLbl.text = text
         return cell
     }

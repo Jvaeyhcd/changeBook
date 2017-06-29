@@ -27,15 +27,23 @@ class RootTabBarViewController: UITabBarController {
         self.view.backgroundColor = UIColor.white
         
         let homeVC = HomeViewController()
+        homeVC.tabBarItem.image = UIImage(named: "tab_shouye")
+        homeVC.tabBarItem.selectedImage = UIImage(named: "tab_shouye_pre")
         homeVC.title = "首页"
         
         let teacherVC = TeacherHomeViewController()
+        teacherVC.tabBarItem.image = UIImage(named: "tab_laoshi")
+        teacherVC.tabBarItem.selectedImage = UIImage(named: "tab_laoshi_pre")
         teacherVC.title = "教师"
         
         let friendsVC = FriendsHomeViewController()
+        friendsVC.tabBarItem.image = UIImage(named: "tab_shuyou")
+        friendsVC.tabBarItem.selectedImage = UIImage(named: "tab_shuyou_pre")
         friendsVC.title = "书友"
         
         let articleVC = ArticleHomeViewController()
+        articleVC.tabBarItem.image = UIImage(named: "tab_zixun")
+        articleVC.tabBarItem.selectedImage = UIImage(named: "tab_zixun_pre")
         articleVC.title = "文章"
         
         let nav1 = BaseNavigationController.init(rootViewController: homeVC)

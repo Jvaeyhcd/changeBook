@@ -8,3 +8,5 @@
 // MARK: - RESideMenu
 #import "HcdSideMenu.h"
 #import "UIViewController+HcdSideMenu.h"
+
+#import "SDCycleScrollView.h"

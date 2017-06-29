@@ -9,11 +9,18 @@
 import UIKit
 
 class HomeViewController: BaseRootTabViewController {
+    
+    lazy var headView: HomeHeadView = {
+        let headView = HomeHeadView.init(frame: CGRect(x: 0, y: kNavHeight, width: kScreenWidth, height: kScreenWidth * (150.0 / 375.0 + 0.25) + scaleFromiPhone6Desgin(x: 30)))
+        return headView
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.title = "首页"
+        self.view.addSubview(self.headView)
+        self.automaticallyAdjustsScrollViewInsets = false
         
         NotificationCenter.default.post(name: NSNotification.Name.init("enableRESideMenu"), object: nil)
     }

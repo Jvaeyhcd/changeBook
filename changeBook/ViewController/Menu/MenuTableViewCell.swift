@@ -15,14 +15,14 @@ class MenuTableViewCell: UITableViewCell {
     lazy var iconImageView: UIImageView = {
         let iconImageView = UIImageView.init()
         iconImageView.clipsToBounds = true
-        iconImageView.contentMode = .scaleAspectFill
+        iconImageView.contentMode = .scaleAspectFit
         return iconImageView
     }()
     
     lazy var titleLbl: UILabel = {
         let titleLbl = UILabel.init()
         titleLbl.font = UIFont.systemFont(ofSize: 16)
-        titleLbl.textColor = UIColor.init(hex: 0x232323)
+        titleLbl.textColor = UIColor.init(hex: 0x555555)
         titleLbl.textAlignment = .left
         return titleLbl
     }()
@@ -35,7 +35,7 @@ class MenuTableViewCell: UITableViewCell {
         
         self.addSubview(self.iconImageView)
         self.iconImageView.snp.makeConstraints { (make) in
-            make.left.equalTo(scaleFromiPhone6Desgin(x: 26))
+            make.left.equalTo(scaleFromiPhone6Desgin(x: 52))
             make.width.equalTo(scaleFromiPhone6Desgin(x: 20))
             make.height.equalTo(scaleFromiPhone6Desgin(x: 20))
             make.centerY.equalTo(self.snp.centerY)
@@ -43,15 +43,15 @@ class MenuTableViewCell: UITableViewCell {
         
         self.addSubview(self.titleLbl)
         self.titleLbl.snp.makeConstraints { (make) in
-            make.left.equalTo(iconImageView.snp.right).offset(scaleFromiPhone6Desgin(x: 10))
+            make.left.equalTo(iconImageView.snp.right).offset(scaleFromiPhone6Desgin(x: 26))
             make.height.equalTo(scaleFromiPhone6Desgin(x: 20))
             make.centerY.equalTo(self.snp.centerY)
-            make.right.equalTo(-kScreenWidth / 6 - scaleFromiPhone6Desgin(x: 80))
+            make.right.equalTo(-kScreenWidth * 0.2 - scaleFromiPhone6Desgin(x: 40))
         }
     }
     
     static func cellHeight() -> CGFloat {
-        return scaleFromiPhone6Desgin(x: 54)
+        return scaleFromiPhone6Desgin(x: 56)
     }
     
     required init?(coder aDecoder: NSCoder) {

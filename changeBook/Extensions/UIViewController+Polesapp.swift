@@ -97,5 +97,12 @@ extension UIViewController {
     
     func showLoginViewController() {
         // 显示登录界面
+        
+        let loginNav = UINavigationController(rootViewController: LoginViewController())
+        
+        self.present(loginNav, animated: true, completion: {
+            
+        })
+        
     }
 }
