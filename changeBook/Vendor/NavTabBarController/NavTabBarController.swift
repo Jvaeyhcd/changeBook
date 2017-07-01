@@ -1,26 +1,28 @@
 //
-//  ArticleHomeViewController.swift
-//  changeBook
+//  NavTabBarController.swift
+//  govlan
 //
-//  Created by Jvaeyhcd on 23/06/2017.
-//  Copyright © 2017 Jvaeyhcd. All rights reserved.
+//  Created by polesapp-hcd on 2016/11/2.
+//  Copyright © 2016年 Polesapp. All rights reserved.
 //
 
 import UIKit
 
-class ArticleHomeViewController: BaseRootTabViewController, HcdTabBarDelegate {
+class NavTabBarController: UIViewController, HcdTabBarDelegate {
     
-    private var cates = ["推荐", "理工", "人文", "竞赛", "二手"]
-    private var selectedControllerIndex = -1
-    private var viewControllers = [ArticleListViewController]()
-    lazy var tabBar: SlippedSegmentView = {
-        
+    var tabBar: SlippedSegmentView = {
+    
         let tabBar = SlippedSegmentView.init(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: kNavHeight))
         tabBar.backgroundColor = UIColor.white
         tabBar.showSelectedBgView(show: false)
         return tabBar
         
     }()
+    
+    var canotScrollIndex = -1
+    
+    private var selectedControllerIndex = -1
+    private var viewControllers = [UIViewController]()
     
     lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView.init(frame: CGRect.init(x: 0, y: 0, width: 0, height: 0))
@@ -36,59 +38,37 @@ class ArticleHomeViewController: BaseRootTabViewController, HcdTabBarDelegate {
     
     private var contentViewFrame: CGRect?
     private var contentSwitchAnimated = true
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        initSubviews()
-    }
-    
-    private func initSubviews() {
-        
-        self.title = "文章"
-        NotificationCenter.default.post(name: NSNotification.Name.init("enableRESideMenu"), object: nil)
-        
-        let searchBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
-        searchBtn.setImage(UIImage(named: "jieshu_btn_sousuo"), for: .normal)
-        let searchBarBtn = UIBarButtonItem.init(customView: searchBtn)
-        
-        let addBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
-        addBtn.setImage(UIImage(named: "wenzhang_btn_xinjianwenzhang"), for: .normal)
-        let addBarBtn = UIBarButtonItem.init(customView: addBtn)
-        
-        //用于消除右边边空隙，要不然按钮顶不到最边上
-        let spacer = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
-        spacer.width = -10;
-        
-        self.navigationItem.rightBarButtonItems = [spacer, addBarBtn, searchBarBtn]
         
         self.automaticallyAdjustsScrollViewInsets = false
         self.view.clipsToBounds = true
+        self.view.backgroundColor = UIColor.lightGray
+        
+        // Do any additional setup after loading the view.
+        
+        initSubView()
+        
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: - private
+    private func initSubView() {
         
         self.tabBar.delegate = self
         self.view.addSubview(self.tabBar)
         
         setupFrameOfTabBarAndContentView()
         
+        
         self.scrollView.delegate = self.tabBar
         self.view.insertSubview(self.scrollView, belowSubview: self.tabBar)
         
-        self.tabBar.setItemFontChangeFollowContentScroll(itemFontChangeFollowContentScroll: true)
-        self.tabBar.setItemColorChangeFollowContentScroll(itemColorChangeFollowContentScroll: true)
-        self.tabBar.showSelectedBgView(show: true)
-        self.tabBar.setItemTitleFont(itemTitleFont: kBaseFont)
-        self.tabBar.setItemTitleSelectedFont(itemTitleSelectedFont: kBaseFont)
-        self.tabBar.setItemTitleSelectedColor(itemTitleSelectedColor: kMainColor!)
-        self.tabBar.setItemSelectedBgImageViewColor(itemSelectedBgImageViewColor: kMainColor!)
-        self.tabBar.setItemWidth(itemWidth: kScreenWidth / 5)
-        let padding = scaleFromiPhone6Desgin(x: 10)
-        self.tabBar.setItemSelectedBgInsets(itemSelectedBgInsets: UIEdgeInsetsMake(kSegmentBarHeight - 2, padding, 0, padding))
-        self.tabBar.setFramePadding(top: 0, left: 0, bottom: 0, right: 0)
-        
-        setTabBarFrame(tabBarFrame: CGRect.init(x: 0, y: kNavHeight, width: kScreenWidth, height: kSegmentBarHeight),
-                       contentViewFrame: CGRect.init(x: 0, y: kSegmentBarHeight + kNavHeight, width: kScreenWidth, height: kScreenHeight - kNavHeight - kSegmentBarHeight))
-        
-        updateViewControllers()
     }
     
     private func updateContentViewsFrame() {
@@ -111,26 +91,6 @@ class ArticleHomeViewController: BaseRootTabViewController, HcdTabBarDelegate {
         if nil != selectedController() {
             self.scrollView.scrollRectToVisible(selectedController()!.view.frame, animated: false)
         }
-    }
-    
-    // 更新ViewControllers
-    private func updateViewControllers() {
-        
-        
-        if self.viewControllers.count > 0 {
-            self.viewControllers.removeAll()
-        }
-        
-        for cate in self.cates {
-            
-            let vc = ArticleListViewController()
-            vc.parentVC = self
-            vc.title = cate
-            viewControllers.append(vc)
-            
-        }
-        
-        self.setViewControllers(viewControllers: self.viewControllers)
     }
     
     private func selectedController() -> UIViewController? {
@@ -214,7 +174,7 @@ class ArticleHomeViewController: BaseRootTabViewController, HcdTabBarDelegate {
      
      - parameter viewControllers: ViewController数组
      */
-    func setViewControllers(viewControllers: [ArticleListViewController]) {
+    func setViewControllers(viewControllers: [UIViewController]) {
         
         if viewControllers.count == 0 {
             return
@@ -279,7 +239,11 @@ class ArticleHomeViewController: BaseRootTabViewController, HcdTabBarDelegate {
         if didSelectedItemAtIndex == self.selectedControllerIndex {
             return
         }
-        self.scrollView.isScrollEnabled = true
+        if didSelectedItemAtIndex == self.canotScrollIndex {
+            self.scrollView.isScrollEnabled = false
+        } else {
+            self.scrollView.isScrollEnabled = true
+        }
         
         self.setSelectedControllerIndex(selectedControllerIndex: didSelectedItemAtIndex)
     }
@@ -287,11 +251,12 @@ class ArticleHomeViewController: BaseRootTabViewController, HcdTabBarDelegate {
     func tabBar(tabBar: SlippedSegmentView, willSelectItemAtIndex: Int) -> Bool {
         return true
     }
-
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func leftButtonClicked() {
+        
     }
-
+    
+    func rightButtonClicked() {
+        
+    }
 }

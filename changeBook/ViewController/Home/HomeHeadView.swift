@@ -12,7 +12,7 @@ class HomeHeadView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
     
     let titles = ["借书", "资料", "捐赠", "上传"]
     let icons = ["home_btn_jieshu", "home_btn_ziliao", "home_btn_juanzeng-", "home_btn_shangchuan"]
-    
+    var selectCollectionIndex: ((Int)->())?
 
     lazy var cycleScrollView: SDCycleScrollView = {
         let cycleView = SDCycleScrollView.init(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kScreenWidth * 150.0 / 375.0))
@@ -75,6 +75,13 @@ class HomeHeadView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
     //每行间距
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        if nil != self.selectCollectionIndex {
+            self.selectCollectionIndex?(indexPath.row)
+        }
     }
 
 }

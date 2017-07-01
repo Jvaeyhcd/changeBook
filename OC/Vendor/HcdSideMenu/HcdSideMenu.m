@@ -136,6 +136,7 @@ static CGFloat MaxCoverAlpha = 0.3;
     if (CGRectGetMaxX(_rootViewController.view.frame) < self.emptyWidth) {
         _rootViewController.view.center = CGPointMake(_rootViewController.view.bounds.size.width/2 - self.menuWidth, _rootViewController.view.center.y);
     }
+    
     //判断显示左菜单还是右菜单
     if (CGRectGetMinX(_rootViewController.view.frame) > 0) {
         //显示左菜单

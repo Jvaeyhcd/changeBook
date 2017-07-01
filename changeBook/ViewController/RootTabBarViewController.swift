@@ -47,9 +47,9 @@ class RootTabBarViewController: UITabBarController {
         articleVC.title = "文章"
         
         let nav1 = BaseNavigationController.init(rootViewController: homeVC)
-        let nav2 = BaseNavigationController.init(rootViewController: teacherVC)
-        let nav3 = BaseNavigationController.init(rootViewController: friendsVC)
-        let nav4 = BaseNavigationController.init(rootViewController: articleVC)
+        let nav2 = BaseNavigationController.init(rootViewController: friendsVC)
+        let nav3 = BaseNavigationController.init(rootViewController: articleVC)
+        let nav4 = BaseNavigationController.init(rootViewController: teacherVC)
         
         self.viewControllers = [nav1, nav2, nav3, nav4]
         

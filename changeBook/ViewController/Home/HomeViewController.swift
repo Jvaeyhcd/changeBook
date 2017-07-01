@@ -20,6 +20,30 @@ class HomeViewController: BaseRootTabViewController {
 
         self.title = "首页"
         self.view.addSubview(self.headView)
+        self.showBarButtonItem(position: RIGHT, withImage: UIImage(named: "home_btn_shubao")!)
+        self.headView.selectCollectionIndex = {
+            [weak self] (index) in
+            switch index {
+            case 0:
+                let vc = BorrowBookViewController()
+                vc.hidesBottomBarWhenPushed = true
+                self?.pushViewController(viewContoller: vc, animated: true)
+                break
+            case 1:
+                let vc = DataViewController()
+                vc.hidesBottomBarWhenPushed = true
+                self?.pushViewController(viewContoller: vc, animated: true)
+                break
+            case 2:
+                
+                break
+            case 3:
+                
+                break
+            default:
+                break
+            }
+        }
         self.automaticallyAdjustsScrollViewInsets = false
         
         NotificationCenter.default.post(name: NSNotification.Name.init("enableRESideMenu"), object: nil)
