@@ -11,7 +11,7 @@ import UIKit
 class HomeViewController: BaseRootTabViewController {
     
     lazy var headView: HomeHeadView = {
-        let headView = HomeHeadView.init(frame: CGRect(x: 0, y: kNavHeight, width: kScreenWidth, height: kScreenWidth * (150.0 / 375.0 + 0.25) + scaleFromiPhone6Desgin(x: 30)))
+        let headView = HomeHeadView.init(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kScreenWidth * (150.0 / 375.0 + 0.25) + scaleFromiPhone6Desgin(x: 30)))
         return headView
     }()
 

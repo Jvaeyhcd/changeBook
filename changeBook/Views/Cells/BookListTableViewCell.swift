@@ -102,6 +102,7 @@ class BookListTableViewCell: UITableViewCell {
             make.right.equalTo(-kBasePadding)
         }
         
+        self.rateStar.value = 4.2
         self.addSubview(self.rateStar)
         self.rateStar.snp.makeConstraints { (make) in
             make.left.equalTo(self.coverImg.snp.right).offset(kBasePadding)

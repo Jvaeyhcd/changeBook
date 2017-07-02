@@ -8,13 +8,64 @@
 
 import UIKit
 
-class BorrowedBookViewController: BaseViewController {
+class BorrowedBookViewController: NavTabBarController {
+    
+    private var viewControllers = [UIViewController]()
+    private var cates = ["全部", "待发货", "待收货", "借阅中", "已逾期", "已归还"];
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        initSubviews()
+    }
+    
+    private func initSubviews() {
         self.title = "我的借阅"
+        self.view.backgroundColor = kMainBgColor
         self.showBackButton()
+        
+        self.tabBar.delegate = self
+        self.view.addSubview(self.tabBar)
+        
+        
+        self.scrollView.delegate = self.tabBar
+        self.view.insertSubview(self.scrollView, belowSubview: self.tabBar)
+        
+        self.tabBar.setItemFontChangeFollowContentScroll(itemFontChangeFollowContentScroll: true)
+        self.tabBar.setItemColorChangeFollowContentScroll(itemColorChangeFollowContentScroll: true)
+        self.tabBar.showSelectedBgView(show: true)
+        self.tabBar.setItemTitleFont(itemTitleFont: kBaseFont)
+        self.tabBar.setItemTitleSelectedFont(itemTitleSelectedFont: kBaseFont)
+        self.tabBar.setItemTitleSelectedColor(itemTitleSelectedColor: kMainColor!)
+        self.tabBar.setItemSelectedBgImageViewColor(itemSelectedBgImageViewColor: kMainColor!)
+        self.tabBar.setItemWidth(itemWidth: kScreenWidth / 6)
+        let padding = scaleFromiPhone6Desgin(x: 4)
+        self.tabBar.setItemSelectedBgInsets(itemSelectedBgInsets: UIEdgeInsetsMake(kSegmentBarHeight - 2, padding, 0, padding))
+        self.tabBar.setFramePadding(top: 0, left: 0, bottom: 0, right: 0)
+        
+        setTabBarFrame(tabBarFrame: CGRect.init(x: 0, y: 0, width: kScreenWidth, height: kSegmentBarHeight),
+                       contentViewFrame: CGRect.init(x: 0, y: kSegmentBarHeight, width: kScreenWidth, height: kScreenHeight - kSegmentBarHeight))
+        
+        updateViewControllers()
+    }
+    
+    private func updateViewControllers() {
+        
+        
+        if self.viewControllers.count > 0 {
+            self.viewControllers.removeAll()
+        }
+        
+        for cate in self.cates {
+            
+            let vc = BookOrderListViewController()
+            vc.parentVC = self
+            vc.title = cate
+            viewControllers.append(vc)
+            
+        }
+        
+        self.setViewControllers(viewControllers: self.viewControllers)
     }
     
     override func viewWillAppear(_ animated: Bool) {

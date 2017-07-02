@@ -33,7 +33,7 @@ extension UIViewController {
         let btn = UIButton(frame: CGRect(x: 0, y: 0, width: width, height: 30))
         btn.titleLabel?.font = kBaseFont
         btn.setTitle(withStr, for: UIControlState.normal)
-        btn.setTitleColor(UIColor(hex: 0x232323), for: .normal)
+        btn.setTitleColor(UIColor(hex: 0xFFFFFF), for: .normal)
         btn.setTitleColor(UIColor(hex: 0xBDBDBD), for: .disabled)
         let item = UIBarButtonItem(customView: btn)
         if LEFT == position {
@@ -51,7 +51,7 @@ extension UIViewController {
         let btn = UIButton(frame: CGRect(x: 0, y: 0, width: width, height: 30))
         btn.titleLabel?.font = kBaseFont
         btn.setTitle(withStr, for: UIControlState.normal)
-        btn.setTitleColor(UIColor(hex: 0x232323), for: .normal)
+        btn.setTitleColor(UIColor(hex: 0xFFFFFF), for: .normal)
         btn.setTitleColor(UIColor(hex: 0xBDBDBD), for: .disabled)
         let item = UIBarButtonItem(customView: btn)
         if LEFT == position {

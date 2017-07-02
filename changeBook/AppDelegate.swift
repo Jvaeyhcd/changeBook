@@ -28,10 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = UIColor.white
         
-//        let rootViewController = RootViewController.init(contentViewController: RootTabBarViewController(), leftMenuViewController: MenuViewController(), rightMenuViewController: nil)
         let rootViewController = RootViewController.init(rootViewController: RootTabBarViewController())
         rootViewController?.leftViewController = MenuViewController()
-        window?.rootViewController = UINavigationController.init(rootViewController: rootViewController!)
+        window?.rootViewController = BaseNavigationController.init(rootViewController: rootViewController!)
         
         window?.makeKeyAndVisible()
     }
@@ -39,8 +38,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // 设置全局的UI样式
     private func setGolbalUIConfig() {
         
-        UINavigationBar.appearance().tintColor = UIColor(hex: 0x919191)
-        UINavigationBar.appearance().barTintColor = kMainColor
+//        UINavigationBar.appearance().tintColor = UIColor(hex: 0x919191)
+//        UINavigationBar.appearance().barTintColor = kMainColor
         UINavigationBar.appearance().backgroundColor = kMainColor
         UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: UIFont.boldSystemFont(ofSize: 18),NSForegroundColorAttributeName: kNavTintColor!]
         
@@ -52,7 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // 设置字体偏移
 //        UITabBarItem.appearance().titlePositionAdjustment = UIOffsetMake(0.0, -5.0)
         // 设置图标选中时颜色
-        UITabBar.appearance().tintColor = UIColor.red
+        UITabBar.appearance().tintColor = kMainColor
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

@@ -10,3 +10,6 @@
 #import "UIViewController+HcdSideMenu.h"
 
 #import "SDCycleScrollView.h"
+
+// MARK: - Category
+#import "UIImage+Polesapp.h"

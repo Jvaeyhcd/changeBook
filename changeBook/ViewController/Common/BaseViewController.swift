@@ -14,7 +14,7 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
 
         self.view.backgroundColor = kMainBgColor
-        
+        self.automaticallyAdjustsScrollViewInsets = false
         NotificationCenter.default.post(name: NSNotification.Name.init("disableRESideMenu"), object: nil)
     }
 

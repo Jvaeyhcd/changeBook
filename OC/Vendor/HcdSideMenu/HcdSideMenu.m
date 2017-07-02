@@ -94,7 +94,14 @@ static CGFloat MaxCoverAlpha = 0.3;
     switch (pan.state) {
             //记录起始位置 方便拖拽移动
         case UIGestureRecognizerStateBegan:
+        {
             _originalPoint = _rootViewController.view.center;
+            if (_coverView) {
+                [_coverView removeFromSuperview];
+            }
+            
+            [_rootViewController.view addSubview:_coverView];
+        }
             break;
         case UIGestureRecognizerStateChanged:
             [self panChanged:pan];
@@ -222,6 +229,11 @@ static CGFloat MaxCoverAlpha = 0.3;
 //显示左侧菜单
 -(void)showLeftViewControllerAnimated:(BOOL)animated{
     if (!_leftViewController) {return;}
+    if (_coverView) {
+        [_coverView removeFromSuperview];
+    }
+    
+    [_rootViewController.view addSubview:_coverView];
     [self.view sendSubviewToBack:_rightViewController.view];
     _coverView.hidden = false;
     [UIView animateWithDuration:[self animationDurationAnimated:animated] animations:^{
@@ -233,6 +245,11 @@ static CGFloat MaxCoverAlpha = 0.3;
 //显示右侧菜单
 -(void)showRightViewControllerAnimated:(BOOL)animated{
     if (!_rightViewController) {return;}
+    if (_coverView) {
+        [_coverView removeFromSuperview];
+    }
+    
+    [_rootViewController.view addSubview:_coverView];
     _coverView.hidden = false;
     [self.view sendSubviewToBack:_leftViewController.view];
     [UIView animateWithDuration:[self animationDurationAnimated:animated] animations:^{

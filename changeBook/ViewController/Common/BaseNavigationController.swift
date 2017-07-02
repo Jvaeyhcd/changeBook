@@ -16,6 +16,8 @@ class BaseNavigationController: UINavigationController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        self.navigationBar.setBackgroundImage(UIImage.init(color: kMainColor, size: CGSize(width: kScreenWidth, height: kNavHeight)), for: .default)
+        self.navigationBar.shadowImage = UIImage()
     }
     
     override func viewWillAppear(_ animated: Bool) {

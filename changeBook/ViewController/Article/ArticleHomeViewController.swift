@@ -15,7 +15,7 @@ class ArticleHomeViewController: BaseRootTabViewController, HcdTabBarDelegate {
     private var viewControllers = [ArticleListViewController]()
     lazy var tabBar: SlippedSegmentView = {
         
-        let tabBar = SlippedSegmentView.init(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: kNavHeight))
+        let tabBar = SlippedSegmentView.init(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: kSegmentBarHeight))
         tabBar.backgroundColor = UIColor.white
         tabBar.showSelectedBgView(show: false)
         return tabBar
@@ -85,8 +85,8 @@ class ArticleHomeViewController: BaseRootTabViewController, HcdTabBarDelegate {
         self.tabBar.setItemSelectedBgInsets(itemSelectedBgInsets: UIEdgeInsetsMake(kSegmentBarHeight - 2, padding, 0, padding))
         self.tabBar.setFramePadding(top: 0, left: 0, bottom: 0, right: 0)
         
-        setTabBarFrame(tabBarFrame: CGRect.init(x: 0, y: kNavHeight, width: kScreenWidth, height: kSegmentBarHeight),
-                       contentViewFrame: CGRect.init(x: 0, y: kSegmentBarHeight + kNavHeight, width: kScreenWidth, height: kScreenHeight - kNavHeight - kSegmentBarHeight))
+        setTabBarFrame(tabBarFrame: CGRect.init(x: 0, y: 0, width: kScreenWidth, height: kSegmentBarHeight),
+                       contentViewFrame: CGRect.init(x: 0, y: kSegmentBarHeight, width: kScreenWidth, height: kScreenHeight - kSegmentBarHeight))
         
         updateViewControllers()
     }
