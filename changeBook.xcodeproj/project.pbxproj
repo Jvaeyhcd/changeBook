@@ -278,6 +278,9 @@
 		BE57EFAF1F088FE20091F312 /* BookOrderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE57EFAE1F088FE20091F312 /* BookOrderListViewController.swift */; };
 		BE57EFB31F08D31B0091F312 /* UIImage+Polesapp.m in Sources */ = {isa = PBXBuildFile; fileRef = BE57EFB21F08D31B0091F312 /* UIImage+Polesapp.m */; };
 		BE57EFB51F08D99B0091F312 /* IntegralLogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE57EFB41F08D99B0091F312 /* IntegralLogTableViewCell.swift */; };
+		BE57EFB81F0A12830091F312 /* top_btn_close_black@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE57EFB61F0A12830091F312 /* top_btn_close_black@2x.png */; };
+		BE57EFB91F0A12830091F312 /* top_btn_close_black@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE57EFB71F0A12830091F312 /* top_btn_close_black@3x.png */; };
+		BE57EFBB1F0A4D460091F312 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE57EFBA1F0A4D460091F312 /* RegisterViewController.swift */; };
 		BE57F9A41EF16E3E008BE6AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE57F9A31EF16E3E008BE6AD /* AppDelegate.swift */; };
 		BE57F9AB1EF16E3E008BE6AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE57F9AA1EF16E3E008BE6AD /* Assets.xcassets */; };
 		BE57F9AE1EF16E3E008BE6AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE57F9AC1EF16E3E008BE6AD /* LaunchScreen.storyboard */; };
@@ -577,6 +580,9 @@
 		BE57EFB11F08D31B0091F312 /* UIImage+Polesapp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Polesapp.h"; sourceTree = "<group>"; };
 		BE57EFB21F08D31B0091F312 /* UIImage+Polesapp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Polesapp.m"; sourceTree = "<group>"; };
 		BE57EFB41F08D99B0091F312 /* IntegralLogTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntegralLogTableViewCell.swift; sourceTree = "<group>"; };
+		BE57EFB61F0A12830091F312 /* top_btn_close_black@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "top_btn_close_black@2x.png"; sourceTree = "<group>"; };
+		BE57EFB71F0A12830091F312 /* top_btn_close_black@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "top_btn_close_black@3x.png"; sourceTree = "<group>"; };
+		BE57EFBA1F0A4D460091F312 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		BE57F9A01EF16E3E008BE6AD /* changeBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = changeBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE57F9A31EF16E3E008BE6AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE57F9AA1EF16E3E008BE6AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -755,6 +761,8 @@
 		BE57EDB41F03F1640091F312 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				BE57EFB61F0A12830091F312 /* top_btn_close_black@2x.png */,
+				BE57EFB71F0A12830091F312 /* top_btn_close_black@3x.png */,
 				BE57EF9A1F07DF780091F312 /* com_pic_star1@2x.png */,
 				BE57EF9B1F07DF780091F312 /* com_pic_star1@3x.png */,
 				BE57EF9C1F07DF780091F312 /* com_pic_star2@2x.png */,
@@ -1142,6 +1150,7 @@
 			children = (
 				BE9AC4201F01495000C9288A /* LoginViewController.swift */,
 				BE9AC4221F01495F00C9288A /* FindPasswordViewController.swift */,
+				BE57EFBA1F0A4D460091F312 /* RegisterViewController.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -1353,6 +1362,7 @@
 				BE57EF3B1F04B1290091F312 /* home_btn_ziliao@2x.png in Resources */,
 				BE57EED01F04B1290091F312 /* wode_btn_xiayibu@2x.png in Resources */,
 				BE57EEB41F04B1290091F312 /* yajin_bg@3x.png in Resources */,
+				BE57EFB81F0A12830091F312 /* top_btn_close_black@2x.png in Resources */,
 				BE57EF5F1F04B1290091F312 /* login_icon_qq@2x.png in Resources */,
 				BE57EE9E1F04B1290091F312 /* laoshi_icon_blue_1@3x.png in Resources */,
 				BE57EEB91F04B1290091F312 /* pingjia_btn_star2@2x.png in Resources */,
@@ -1390,6 +1400,7 @@
 				BE57EE941F04B1290091F312 /* shuyou_rb@3x.png in Resources */,
 				BE57EEB01F04B1290091F312 /* wenzhang_btn_xinjianwenzhang@3x.png in Resources */,
 				BE57EEA31F04B1290091F312 /* laoshi_icon_red@2x.png in Resources */,
+				BE57EFB91F0A12830091F312 /* top_btn_close_black@3x.png in Resources */,
 				BE57EF541F04B1290091F312 /* login_icon_3_pre@3x.png in Resources */,
 				BE57EF181F04B1290091F312 /* home_icon_pdf@3x.png in Resources */,
 				BE57EFA21F07DF780091F312 /* com_pic_star2@2x.png in Resources */,
@@ -1529,6 +1540,7 @@
 				BE57EF791F0541CC0091F312 /* HomeHeadView.swift in Sources */,
 				BE57EF741F05414A0091F312 /* TAPageControl.m in Sources */,
 				BE57ED951F03BCF70091F312 /* HcdSideMenu.m in Sources */,
+				BE57EFBB1F0A4D460091F312 /* RegisterViewController.swift in Sources */,
 				BE57EF871F07AA1C0091F312 /* TeacherListViewController.swift in Sources */,
 				BE9AC41E1F01428400C9288A /* BaseRootTabViewController.swift in Sources */,
 				BE57EFAF1F088FE20091F312 /* BookOrderListViewController.swift in Sources */,

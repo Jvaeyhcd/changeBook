@@ -38,8 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // 设置全局的UI样式
     private func setGolbalUIConfig() {
         
-//        UINavigationBar.appearance().tintColor = UIColor(hex: 0x919191)
-//        UINavigationBar.appearance().barTintColor = kMainColor
+        UINavigationBar.appearance().barTintColor = kMainColor
         UINavigationBar.appearance().backgroundColor = kMainColor
         UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: UIFont.boldSystemFont(ofSize: 18),NSForegroundColorAttributeName: kNavTintColor!]
         

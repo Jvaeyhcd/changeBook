@@ -15,6 +15,7 @@ let kNavHeight = CGFloat(64)
 let kTabBarHeight = CGFloat(49)
 let kStatusBarHeight = CGFloat(20)
 let kSegmentBarHeight = CGFloat(44)
+let kBasePadding = scaleFromiPhone6Desgin(x: 15)
 
 // 分割线背景颜色
 let kSplitLineBgColor = UIColor(hex: 0xEEEEEE)
@@ -24,8 +25,16 @@ let kMainColor = UIColor(hex: 0xF85B5A)
 let kTabbarTintColor = UIColor(hex: 0x03A9F5)
 let kNavTintColor = UIColor(hex: 0xFFFFFF)
 let kSelectedCellBgColor = UIColor(hex: 0xF9F9F9)
-let kBasePadding = scaleFromiPhone6Desgin(x: 15)
-
+//蓝色
+let kBlueColor = UIColor(hex: 0x03a9f5)
+//灰色
+let kGaryColor = UIColor(hex: 0xBDBDBD)
+//按钮默认状态背景颜色
+let kBtnNormalBgColor = UIColor(hex: 0xF85B5A)
+//按钮按下背景颜色
+let kBtnTouchInBgColor = UIColor(hex: 0x0394D7)
+//按钮不可点击背景颜色
+let kBtnDisableBgColor = UIColor(hex: 0xDBDBDB)
 
 //字体大小
 let kBarButtonItemTitleFont = UIFont.systemFont(ofSize: 16)
