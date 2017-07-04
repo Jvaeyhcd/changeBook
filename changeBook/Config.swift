@@ -41,6 +41,25 @@ let kBarButtonItemTitleFont = UIFont.systemFont(ofSize: 16)
 let kBaseFont = UIFont.systemFont(ofSize: 14)
 let kSmallTextFont = UIFont.systemFont(ofSize: 12)
 
+
+let kHost = "http://120.77.85.241/app.php/"
+//服务器基本地址
+let kBaseUrl = kHost + "api/1.0"
+
+let TIMEOUTTIME = 10
+let TIMEOUTCODE = -1001
+
+let kUserDefaults = UserDefaults.standard
+
+let kServerSuccessCode = "200"
+let kServerNeedLoginCode = "302"
+let kServerFailedCode = "300"
+let kOtherFailedCode = "500"
+let kNoNeedCache = "noNeedCache"
+
+// 全局变量判断是否显示登录界面
+var showedLogin = false
+
 func scaleFromiPhone6Desgin(x : CGFloat)->CGFloat{
     return (x * (kScreenWidth / 375))
 }

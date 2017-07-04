@@ -284,6 +284,21 @@
 		BE57F9A41EF16E3E008BE6AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE57F9A31EF16E3E008BE6AD /* AppDelegate.swift */; };
 		BE57F9AB1EF16E3E008BE6AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE57F9AA1EF16E3E008BE6AD /* Assets.xcassets */; };
 		BE57F9AE1EF16E3E008BE6AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE57F9AC1EF16E3E008BE6AD /* LaunchScreen.storyboard */; };
+		BE7CA9A61F0BD3DA007CB195 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7CA9A41F0BD3DA007CB195 /* Status.swift */; };
+		BE7CA9A71F0BD3DA007CB195 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7CA9A51F0BD3DA007CB195 /* User.swift */; };
+		BE7CA9A91F0BD40B007CB195 /* Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7CA9A81F0BD40B007CB195 /* Decodable.swift */; };
+		BE7CA9AB1F0BD79D007CB195 /* UserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7CA9AA1F0BD79D007CB195 /* UserAPI.swift */; };
+		BE7CA9AD1F0BE6B5007CB195 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7CA9AC1F0BE6B5007CB195 /* Global.swift */; };
+		BE7CA9B01F0BE7C5007CB195 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7CA9AF1F0BE7C5007CB195 /* ViewModelProtocol.swift */; };
+		BE7CA9B21F0BE819007CB195 /* APIResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7CA9B11F0BE819007CB195 /* APIResult.swift */; };
+		BE7CA9B61F0BE9D3007CB195 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7CA9B31F0BE9D3007CB195 /* LoginViewModel.swift */; };
+		BE7CA9B71F0BE9D3007CB195 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7CA9B41F0BE9D3007CB195 /* RegisterViewModel.swift */; };
+		BE7CA9B81F0BE9D3007CB195 /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7CA9B51F0BE9D3007CB195 /* ResetPasswordViewModel.swift */; };
+		BE7CA9BA1F0BE9FE007CB195 /* RequestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7CA9B91F0BE9FE007CB195 /* RequestResult.swift */; };
+		BE7CA9BC1F0BEA1D007CB195 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7CA9BB1F0BEA1D007CB195 /* ActivityIndicator.swift */; };
+		BE7CA9BE1F0BEA68007CB195 /* Decodable+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7CA9BD1F0BEA68007CB195 /* Decodable+Rx.swift */; };
+		BE7CA9C11F0BEDDE007CB195 /* NSObject+Polesapp.m in Sources */ = {isa = PBXBuildFile; fileRef = BE7CA9C01F0BEDDE007CB195 /* NSObject+Polesapp.m */; };
+		BE7CA9C51F0BEE38007CB195 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = BE7CA9C41F0BEE38007CB195 /* MBProgressHUD.m */; };
 		BE8D53E81EFBF619003850EB /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE8D53D81EFBF619003850EB /* Info.plist */; };
 		BE8D53E91EFBF619003850EB /* STPopupController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D53DB1EFBF619003850EB /* STPopupController.m */; };
 		BE8D53EA1EFBF619003850EB /* STPopupControllerTransitioningFade.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D53DD1EFBF619003850EB /* STPopupControllerTransitioningFade.m */; };
@@ -588,6 +603,23 @@
 		BE57F9AA1EF16E3E008BE6AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE57F9AD1EF16E3E008BE6AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE57F9AF1EF16E3E008BE6AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE7CA9A41F0BD3DA007CB195 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		BE7CA9A51F0BD3DA007CB195 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BE7CA9A81F0BD40B007CB195 /* Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Decodable.swift; sourceTree = "<group>"; };
+		BE7CA9AA1F0BD79D007CB195 /* UserAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAPI.swift; sourceTree = "<group>"; };
+		BE7CA9AC1F0BE6B5007CB195 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		BE7CA9AF1F0BE7C5007CB195 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
+		BE7CA9B11F0BE819007CB195 /* APIResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIResult.swift; sourceTree = "<group>"; };
+		BE7CA9B31F0BE9D3007CB195 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		BE7CA9B41F0BE9D3007CB195 /* RegisterViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		BE7CA9B51F0BE9D3007CB195 /* ResetPasswordViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewModel.swift; sourceTree = "<group>"; };
+		BE7CA9B91F0BE9FE007CB195 /* RequestResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestResult.swift; sourceTree = "<group>"; };
+		BE7CA9BB1F0BEA1D007CB195 /* ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		BE7CA9BD1F0BEA68007CB195 /* Decodable+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Decodable+Rx.swift"; sourceTree = "<group>"; };
+		BE7CA9BF1F0BEDDE007CB195 /* NSObject+Polesapp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Polesapp.h"; sourceTree = "<group>"; };
+		BE7CA9C01F0BEDDE007CB195 /* NSObject+Polesapp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Polesapp.m"; sourceTree = "<group>"; };
+		BE7CA9C31F0BEE38007CB195 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		BE7CA9C41F0BEE38007CB195 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		BE8D53D21EFBF5C6003850EB /* changeBook-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "changeBook-Bridging-Header.h"; sourceTree = "<group>"; };
 		BE8D53D81EFBF619003850EB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE8D53D91EFBF619003850EB /* STPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPopup.h; sourceTree = "<group>"; };
@@ -1060,6 +1092,8 @@
 		BE57EFB01F08D31B0091F312 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				BE7CA9BF1F0BEDDE007CB195 /* NSObject+Polesapp.h */,
+				BE7CA9C01F0BEDDE007CB195 /* NSObject+Polesapp.m */,
 				BE57EFB11F08D31B0091F312 /* UIImage+Polesapp.h */,
 				BE57EFB21F08D31B0091F312 /* UIImage+Polesapp.m */,
 			);
@@ -1089,17 +1123,63 @@
 		BE57F9A21EF16E3E008BE6AD /* changeBook */ = {
 			isa = PBXGroup;
 			children = (
+				BE7CA9A21F0BD3DA007CB195 /* API */,
+				BE7CA9A31F0BD3DA007CB195 /* Model */,
 				BE57EF7C1F0797F60091F312 /* Vendor */,
 				BE0190921EFD4A2800FA040E /* ViewController */,
+				BE7CA9AE1F0BE7AD007CB195 /* ViewModel */,
 				BE57EF881F07AB1D0091F312 /* Views */,
 				BE01908D1EFC096C00FA040E /* Extensions */,
 				BE57F9A31EF16E3E008BE6AD /* AppDelegate.swift */,
 				BE01908B1EFC089400FA040E /* Config.swift */,
+				BE7CA9AC1F0BE6B5007CB195 /* Global.swift */,
 				BE57F9AA1EF16E3E008BE6AD /* Assets.xcassets */,
 				BE57F9AC1EF16E3E008BE6AD /* LaunchScreen.storyboard */,
 				BE57F9AF1EF16E3E008BE6AD /* Info.plist */,
 			);
 			path = changeBook;
+			sourceTree = "<group>";
+		};
+		BE7CA9A21F0BD3DA007CB195 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				BE7CA9AA1F0BD79D007CB195 /* UserAPI.swift */,
+				BE7CA9B91F0BE9FE007CB195 /* RequestResult.swift */,
+				BE7CA9BB1F0BEA1D007CB195 /* ActivityIndicator.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		BE7CA9A31F0BD3DA007CB195 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BE7CA9A81F0BD40B007CB195 /* Decodable.swift */,
+				BE7CA9A41F0BD3DA007CB195 /* Status.swift */,
+				BE7CA9BD1F0BEA68007CB195 /* Decodable+Rx.swift */,
+				BE7CA9B11F0BE819007CB195 /* APIResult.swift */,
+				BE7CA9A51F0BD3DA007CB195 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BE7CA9AE1F0BE7AD007CB195 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BE7CA9AF1F0BE7C5007CB195 /* ViewModelProtocol.swift */,
+				BE7CA9B31F0BE9D3007CB195 /* LoginViewModel.swift */,
+				BE7CA9B41F0BE9D3007CB195 /* RegisterViewModel.swift */,
+				BE7CA9B51F0BE9D3007CB195 /* ResetPasswordViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BE7CA9C21F0BEE38007CB195 /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				BE7CA9C31F0BEE38007CB195 /* MBProgressHUD.h */,
+				BE7CA9C41F0BEE38007CB195 /* MBProgressHUD.m */,
+			);
+			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
 		BE8D53D11EFBF5AD003850EB /* OC */ = {
@@ -1115,6 +1195,7 @@
 		BE8D53D61EFBF5F6003850EB /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				BE7CA9C21F0BEE38007CB195 /* MBProgressHUD */,
 				BE57EF611F05414A0091F312 /* SDCycleScrollView */,
 				BE57ED8F1F03BC670091F312 /* HcdSideMenu */,
 				BE8D53D71EFBF619003850EB /* STPopup */,
@@ -1519,12 +1600,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE7CA9BC1F0BEA1D007CB195 /* ActivityIndicator.swift in Sources */,
 				BE8D53ED1EFBF619003850EB /* STPopupNavigationBar.m in Sources */,
 				BE57EF731F05414A0091F312 /* TADotView.m in Sources */,
 				BE0190A31EFD4B2500FA040E /* TeacherHomeViewController.swift in Sources */,
+				BE7CA9B71F0BE9D3007CB195 /* RegisterViewModel.swift in Sources */,
 				BE01908C1EFC089400FA040E /* Config.swift in Sources */,
+				BE7CA9A71F0BD3DA007CB195 /* User.swift in Sources */,
 				BE57EF761F05414A0091F312 /* SDCycleScrollView.m in Sources */,
 				BE57EF931F07AC4A0091F312 /* MenuTableViewCell.swift in Sources */,
+				BE7CA9C11F0BEDDE007CB195 /* NSObject+Polesapp.m in Sources */,
 				BE57EDAF1F03E8CD0091F312 /* MyIntegralViewController.swift in Sources */,
 				BE57EF831F0798080091F312 /* SlippedSegmentView.swift in Sources */,
 				BE57EDA11F03E7250091F312 /* UserArticleViewController.swift in Sources */,
@@ -1536,30 +1621,40 @@
 				BE57EF751F05414A0091F312 /* SDCollectionViewCell.m in Sources */,
 				BE57EFAD1F086D7E0091F312 /* OrderListTableViewCell.swift in Sources */,
 				BE57EF721F05414A0091F312 /* TAAnimatedDotView.m in Sources */,
+				BE7CA9A91F0BD40B007CB195 /* Decodable.swift in Sources */,
 				BE0190A11EFD4B1900FA040E /* HomeViewController.swift in Sources */,
 				BE57EF791F0541CC0091F312 /* HomeHeadView.swift in Sources */,
 				BE57EF741F05414A0091F312 /* TAPageControl.m in Sources */,
 				BE57ED951F03BCF70091F312 /* HcdSideMenu.m in Sources */,
 				BE57EFBB1F0A4D460091F312 /* RegisterViewController.swift in Sources */,
 				BE57EF871F07AA1C0091F312 /* TeacherListViewController.swift in Sources */,
+				BE7CA9A61F0BD3DA007CB195 /* Status.swift in Sources */,
+				BE7CA9AD1F0BE6B5007CB195 /* Global.swift in Sources */,
 				BE9AC41E1F01428400C9288A /* BaseRootTabViewController.swift in Sources */,
 				BE57EFAF1F088FE20091F312 /* BookOrderListViewController.swift in Sources */,
 				BE0190971EFD4A6400FA040E /* BaseViewController.swift in Sources */,
 				BE57EDA61F03E7CA0091F312 /* BorrowedBookViewController.swift in Sources */,
 				BE8D53EF1EFBF619003850EB /* UIViewController+STPopup.m in Sources */,
+				BE7CA9B01F0BE7C5007CB195 /* ViewModelProtocol.swift in Sources */,
 				BE57EF8D1F07AB530091F312 /* TeacherListTableViewCell.swift in Sources */,
 				BE01909F1EFD4B1000FA040E /* FriendsHomeViewController.swift in Sources */,
 				BE57EDB31F03F0EA0091F312 /* String+Polesapp.swift in Sources */,
 				BE57ED981F03BD910091F312 /* UIViewController+HcdSideMenu.m in Sources */,
+				BE7CA9AB1F0BD79D007CB195 /* UserAPI.swift in Sources */,
 				BE57EFA91F07E5EA0091F312 /* DataListViewController.swift in Sources */,
 				BE57EF851F07A3E50091F312 /* ArticleListViewController.swift in Sources */,
 				BE57EF991F07DB4B0091F312 /* BookListViewController.swift in Sources */,
 				BE57EF771F05414A0091F312 /* UIView+SDExtension.m in Sources */,
+				BE7CA9B21F0BE819007CB195 /* APIResult.swift in Sources */,
 				BE9AC4211F01495000C9288A /* LoginViewController.swift in Sources */,
 				BE57EFA71F07E5D30091F312 /* DataViewController.swift in Sources */,
+				BE7CA9C51F0BEE38007CB195 /* MBProgressHUD.m in Sources */,
+				BE7CA9BE1F0BEA68007CB195 /* Decodable+Rx.swift in Sources */,
 				BE57EF821F0798080091F312 /* SlippedSegmentItem.swift in Sources */,
 				BE57F9A41EF16E3E008BE6AD /* AppDelegate.swift in Sources */,
+				BE7CA9BA1F0BE9FE007CB195 /* RequestResult.swift in Sources */,
 				BE57EDAC1F03E87E0091F312 /* MyDepositViewController.swift in Sources */,
+				BE7CA9B61F0BE9D3007CB195 /* LoginViewModel.swift in Sources */,
 				BE0190A71EFD4B5E00FA040E /* RootTabBarViewController.swift in Sources */,
 				BE57EDA91F03E8140091F312 /* MessageListViewController.swift in Sources */,
 				BE57EFAB1F086C170091F312 /* OrderBookTableViewCell.swift in Sources */,
@@ -1575,6 +1670,7 @@
 				BE57EF911F07ABE10091F312 /* DataListTableViewCell.swift in Sources */,
 				BE9AC4231F01495F00C9288A /* FindPasswordViewController.swift in Sources */,
 				BE8D53EE1EFBF619003850EB /* UIResponder+STPopup.m in Sources */,
+				BE7CA9B81F0BE9D3007CB195 /* ResetPasswordViewModel.swift in Sources */,
 				BE0190A81EFD4B5E00FA040E /* RootViewController.swift in Sources */,
 				BE57EF811F0798080091F312 /* NavTabBarController.swift in Sources */,
 				BE57EF8B1F07AB450091F312 /* ArticleListTableViewCell.swift in Sources */,

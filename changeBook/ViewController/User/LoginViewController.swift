@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import SwiftyJSON
+import Moya
+import RxSwift
+import RxCocoa
 
 class LoginViewController: UIViewController {
     
@@ -93,11 +97,15 @@ class LoginViewController: UIViewController {
         
         return btn
     }()
+    
+    private lazy var viewModel = LoginViewModel(provider: UserAPIProvider)
+    private let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         initSubviews()
+        bindToRx()
     }
 
     override func didReceiveMemoryWarning() {
@@ -126,6 +134,7 @@ class LoginViewController: UIViewController {
             make.height.equalTo(scaleFromiPhone6Desgin(x: 54))
             make.top.equalTo(kNavHeight + scaleFromiPhone6Desgin(x: 24))
         }
+        self.userNameTextField.rx.text.orEmpty.bindTo(viewModel.username).addDisposableTo(disposeBag)
         
         let userNameTextFieldLine = UIView()
         userNameTextFieldLine.backgroundColor = UIColor(hex: 0xDDDDDD)
@@ -144,6 +153,7 @@ class LoginViewController: UIViewController {
             make.height.equalTo(scaleFromiPhone6Desgin(x: 54))
             make.top.equalTo(userNameTextField.snp.bottom).offset(scaleFromiPhone6Desgin(x: 6))
         }
+        self.passwordTextField.rx.text.orEmpty.bindTo(viewModel.password).addDisposableTo(disposeBag)
         
         let passwordTextFieldLine = UIView()
         passwordTextFieldLine.backgroundColor = UIColor(hex: 0xDDDDDD)
@@ -162,6 +172,9 @@ class LoginViewController: UIViewController {
             make.height.equalTo(scaleFromiPhone6Desgin(x: 52))
             make.top.equalTo(self.passwordTextField.snp.bottom).offset(scaleFromiPhone6Desgin(x: 26))
         }
+        
+        loginBtn.rx.tap.bindTo(viewModel.loginTaps).addDisposableTo(disposeBag)
+        viewModel.loginEnabled.drive(loginBtn.rx.isEnabled).addDisposableTo(disposeBag)
         
         self.registerBtn.addTarget(self, action: #selector(btnClicked(btn:)), for: .touchUpInside)
         self.view.addSubview(self.registerBtn)
@@ -219,6 +232,45 @@ class LoginViewController: UIViewController {
             make.height.width.equalTo(scaleFromiPhone6Desgin(x: 48))
             make.top.equalTo(thirdLoginlb.snp.bottom).offset(scaleFromiPhone6Desgin(x: 36))
         }
+    }
+    
+    private func bindToRx() {
+        
+        
+        viewModel.loginExecuting.drive(onNext: { [weak self] executing  in
+            UIApplication.shared.isNetworkActivityIndicatorVisible = executing
+            if executing {
+                self?.view.endEditing(true)
+                self?.showHudLoadingTipStr("")
+            } else {
+                self?.hideHud()
+            }
+        }).addDisposableTo(disposeBag)
+        
+        viewModel.loginFinished.drive(onNext: { [weak self] loginResult  in
+            
+            self?.hideHud()
+            
+            switch loginResult {
+            case .Failed(let message):
+                self?.showHudTipStr(message, in: self?.view)
+            case .Scuccess:
+                showedLogin = false
+                
+                //标记不是三方登录
+                kUserDefaults.set(false, forKey: "thirdLoginSuccess")
+                kUserDefaults.set(0, forKey: "ThirdLoginType")
+                
+                kUserDefaults.set(true, forKey: "canAutoLogin")
+                kUserDefaults.synchronize()
+                
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "refreshUserInfo"), object: nil)
+                
+                self?.dismiss(animated: true, completion: nil)
+            }
+            
+        }).addDisposableTo(disposeBag)
+        
     }
     
     //view点击事件

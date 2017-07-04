@@ -30,7 +30,8 @@ class BaseRootTabViewController: BaseViewController {
     }
     
     @objc private func userHeadClick() {
-        self.hcd_sideMenu.showLeftViewController(animated: true)
+//        self.hcd_sideMenu.showLeftViewController(animated: true)
+        self.showLoginViewController()
     }
 
     override func didReceiveMemoryWarning() {

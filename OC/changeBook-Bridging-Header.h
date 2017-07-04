@@ -13,3 +13,4 @@
 
 // MARK: - Category
 #import "UIImage+Polesapp.h"
+#import "NSObject+Polesapp.h"
