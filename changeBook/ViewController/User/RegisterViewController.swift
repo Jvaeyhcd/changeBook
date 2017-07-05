@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import SwiftyJSON
+import Moya
+import RxSwift
+import RxCocoa
 
 class RegisterViewController: UIViewController {
     
@@ -35,7 +39,7 @@ class RegisterViewController: UIViewController {
         btn.titleLabel?.font = kBaseFont
         btn.setTitleColor(UIColor.init(hex: 0x79C505), for: UIControlState.normal)
         btn.setTitleColor(kBtnDisableBgColor, for: UIControlState.disabled)
-        btn.backgroundColor = UIColor.clear
+        btn.backgroundColor = kMainBgColor
         btn.contentHorizontalAlignment = .right
         btn.setTitle("获取验证码", for: UIControlState.normal)
         btn.sizeToFit()
@@ -67,13 +71,53 @@ class RegisterViewController: UIViewController {
         return btn
     }()
     
-    lazy var agreementlb = UILabel()
-    lazy var agreementBtn = UIButton()
+    fileprivate lazy var viewModel = RegisterViewModel(provider: UserAPIProvider)
+    fileprivate let disposeBag = DisposeBag()
+    
+    //用NSTimer实现倒计时
+    var countdownTimer: Timer?
+    
+    //开启和关闭倒计时的变量
+    var isCounting = false {
+        willSet{
+            if newValue {
+                countdownTimer = Timer.scheduledTimer(timeInterval: 1,
+                                                      target: self,
+                                                      selector: #selector(updateTime(timer:)),
+                                                      userInfo: nil,
+                                                      repeats: true)
+                
+                verificationCodeBtn.backgroundColor = kMainBgColor
+                verificationCodeBtn.layer.borderColor = kDisableColor?.cgColor
+                
+            } else {
+                countdownTimer?.invalidate()
+                countdownTimer = nil
+                verificationCodeBtn.layer.borderColor = UIColor.init(hex: 0x79C505)?.cgColor
+                verificationCodeBtn.backgroundColor = kMainBgColor
+                verificationCodeBtn.setTitle("获取验证码", for: UIControlState.normal)
+            }
+            
+            verificationCodeBtn.isEnabled = !newValue
+        }
+    }
+    
+    //当前倒计时剩余的秒数
+    var remainingSeconds: Int = 0{
+        willSet{
+            verificationCodeBtn.setTitle("\(newValue)秒后重试", for: .normal)
+            if newValue <= 0{
+                verificationCodeBtn.setTitle("获取验证码", for: .normal)
+                isCounting = false
+            }
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         initSubviews()
+        bindToRx()
     }
     
     private func initSubviews() {
@@ -88,6 +132,7 @@ class RegisterViewController: UIViewController {
         item.tintColor = UIColor(hex: 0x232323)
         self.navigationItem.leftBarButtonItem = item
         
+        userNameTextField.addTarget(self, action: #selector(textfieldDidChange(textField:)), for: UIControlEvents.editingChanged)
         self.view.addSubview(userNameTextField)
         userNameTextField.snp.makeConstraints{
             make -> Void in
@@ -96,6 +141,7 @@ class RegisterViewController: UIViewController {
             make.height.equalTo(scaleFromiPhone6Desgin(x: 54))
             make.top.equalTo(kNavHeight + scaleFromiPhone6Desgin(x: 24))
         }
+        userNameTextField.rx.text.orEmpty.bindTo(viewModel.username).addDisposableTo(disposeBag)
         
         let userNameTextFieldBottomView = UIView()
         userNameTextFieldBottomView.backgroundColor = UIColor.init(hex: 0xdddddd)
@@ -108,15 +154,16 @@ class RegisterViewController: UIViewController {
             make.bottom.equalTo(userNameTextField.snp.bottom)
         }
         
-        
+        verificationCodetf.addTarget(self, action: #selector(textfieldDidChange(textField:)), for: UIControlEvents.editingChanged)
         self.view.addSubview(verificationCodetf)
         verificationCodetf.snp.makeConstraints{
             make -> Void in
             make.left.equalTo(scaleFromiPhone6Desgin(x: 30))
-            make.right.equalTo(-scaleFromiPhone6Desgin(x: 30))
+            make.width.equalTo(scaleFromiPhone6Desgin(x: 200))
             make.height.equalTo(scaleFromiPhone6Desgin(x: 54))
             make.top.equalTo(userNameTextField.snp.bottom).offset(scaleFromiPhone6Desgin(x: 6))
         }
+        verificationCodetf.rx.text.orEmpty.bindTo(viewModel.vcode).addDisposableTo(disposeBag)
         
         let verificationCodetfBottomView = UIView()
         verificationCodetfBottomView.backgroundColor = UIColor.init(hex: 0xDDDDDD)
@@ -124,7 +171,7 @@ class RegisterViewController: UIViewController {
         verificationCodetfBottomView.snp.makeConstraints{
             make -> Void in
             make.left.equalTo(verificationCodetf.snp.left)
-            make.right.equalTo(verificationCodetf.snp.right)
+            make.right.equalTo(-scaleFromiPhone6Desgin(x: 30))
             make.height.equalTo(scaleFromiPhone6Desgin(x: 0.5))
             make.bottom.equalTo(verificationCodetf.snp.bottom)
         }
@@ -133,11 +180,24 @@ class RegisterViewController: UIViewController {
         self.view.addSubview(verificationCodeBtn)
         verificationCodeBtn.snp.makeConstraints{
             make -> Void in
-            make.right.equalTo(verificationCodetf.snp.right)
+            make.right.equalTo(-scaleFromiPhone6Desgin(x: 30))
             make.centerY.equalTo(verificationCodetf.snp.centerY)
             make.height.equalTo(scaleFromiPhone6Desgin(x: 20))
         }
+        self.checkCountTime()
+        verificationCodeBtn.rx.tap.bindTo(viewModel.vcodeTaps).addDisposableTo(disposeBag)
+        viewModel.getVcodeEnabled
+            .drive(onNext: { [weak self] enabled in
+                self?.verificationCodeBtn.isEnabled = enabled && !(self?.isCounting)!
+                if (self?.verificationCodeBtn.isEnabled)! {
+                    self?.verificationCodeBtn.layer.borderColor = UIColor.init(hex: 0x79C505)?.cgColor
+                } else {
+                    self?.verificationCodeBtn.layer.borderColor = kDisableColor?.cgColor
+                }
+            })
+            .addDisposableTo(disposeBag)
         
+        passwordTextField.addTarget(self, action: #selector(textfieldDidChange(textField:)), for: UIControlEvents.editingChanged)
         self.view.addSubview(passwordTextField)
         passwordTextField.snp.makeConstraints{
             make -> Void in
@@ -146,6 +206,7 @@ class RegisterViewController: UIViewController {
             make.height.equalTo(scaleFromiPhone6Desgin(x: 54))
             make.top.equalTo(verificationCodetf.snp.bottom).offset(scaleFromiPhone6Desgin(x: 6))
         }
+        passwordTextField.rx.text.orEmpty.bindTo(viewModel.password).addDisposableTo(disposeBag)
         
         let passwordTextFieldLine = UIView()
         passwordTextFieldLine.backgroundColor = UIColor.init(hex: 0xDDDDDD)
@@ -167,6 +228,98 @@ class RegisterViewController: UIViewController {
             make.top.equalTo(passwordTextField.snp.bottom).offset(scaleFromiPhone6Desgin(x: 26))
         }
         
+        registerBtn.rx.tap.bindTo(viewModel.registerTaps).addDisposableTo(disposeBag)
+        viewModel.passwordEnabled
+            .drive(onNext: { enabled in
+                if enabled == false {
+                    self.registerBtn.setTitle("密码长度不够", for: UIControlState.normal)
+                }
+            }).addDisposableTo(disposeBag)
+        viewModel.registerEnabled
+            .drive(onNext: { enabled in
+                self.registerBtn.isEnabled = enabled
+                if enabled == true {
+                    self.registerBtn.setTitle("立即注册", for: UIControlState.normal)
+                }
+            })
+            .addDisposableTo(disposeBag)
+        
+    }
+    
+    private func bindToRx() {
+        
+        viewModel.registerExecuting
+            .drive(onNext: { [weak self] executing in
+                UIApplication.shared.isNetworkActivityIndicatorVisible = executing
+                if executing {
+                    self?.showHudLoadingTipStr("")
+                } else {
+                    self?.hideHud()
+                }
+            })
+            .addDisposableTo(disposeBag)
+        
+        viewModel.getVcodeExecuting
+            .drive(onNext: { [weak self] executing in
+                UIApplication.shared.isNetworkActivityIndicatorVisible = executing
+                if executing {
+                    self?.showHudLoadingTipStr("")
+                } else {
+                    self?.hideHud()
+                }
+            })
+            .addDisposableTo(disposeBag)
+        
+        viewModel.registerFinished
+            .drive(onNext: { [weak self] loginResult in
+                
+                switch loginResult {
+                case .Failed(let message):
+                    self?.showHudTipStr(message, in: self?.view)
+                case .Scuccess:
+                    // 注册成功自动登录
+                    break
+                }
+            })
+            .addDisposableTo(disposeBag)
+        
+        viewModel.getVcodeFinished
+            .drive(onNext: { [weak self] requestResult in
+                
+                switch requestResult {
+                case .Failed(let message):
+                    self?.showHudTipStr(message, in: self?.view)
+                case .Scuccess:
+                    self?.showHudTipStr("验证码发送成功，请注意查收", in: self?.view)
+                    // 得到发送验证码成功的时间
+                    let date = NSDate().timeIntervalSince1970
+                    kUserDefaults.set(date, forKey: "lastSendRegisterCodeDateTime")
+                    kUserDefaults.synchronize()
+                    // 启动倒计时
+                    self!.remainingSeconds = 60
+                    self!.isCounting = true
+                }
+            })
+            .addDisposableTo(disposeBag)
+    }
+    
+    func updateTime(timer:Timer) -> Void {
+        //计时开始时，逐秒减少remainingSeconds的值
+        remainingSeconds -= 1
+    }
+    
+    // 检测倒计时
+    private func checkCountTime() {
+        // 判断是否在倒计时
+        let lastSendRegisterCodeDateTime = Int64(kUserDefaults.double(forKey: "lastSendRegisterCodeDateTime"))
+        let nowTime = Int64(NSDate().timeIntervalSince1970)
+        
+        if nowTime - lastSendRegisterCodeDateTime > Int64(60) {
+            isCounting = false
+        } else {
+            remainingSeconds = Int(Int64(60) - (nowTime - lastSendRegisterCodeDateTime))
+            isCounting = true
+        }
     }
     
     //view点击事件
@@ -174,6 +327,24 @@ class RegisterViewController: UIViewController {
         self.userNameTextField.resignFirstResponder()
         self.passwordTextField.resignFirstResponder()
         self.verificationCodetf.resignFirstResponder()
+    }
+    
+    func textfieldDidChange(textField: UITextField) {
+        var maxLength = 0
+        switch textField {
+        case userNameTextField:
+            maxLength = 11
+        case passwordTextField:
+            maxLength = 20
+        case verificationCodetf:
+            maxLength = 6
+        default:
+            maxLength = 0
+        }
+        let text = textField.text
+        if text!.characters.count > maxLength {
+            textField.text = text?.subStrToIndex(index: maxLength)
+        }
     }
     
     override func leftNavBarButtonClicked() {

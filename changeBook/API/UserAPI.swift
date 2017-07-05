@@ -51,7 +51,7 @@ extension UserAPI: TargetType {
         case .register(userName: _, password: _, identifyCode: _, inviteCode: _):
             return "/user/register"
         case .registerGetCode(userName: _):
-            return "/user/register"
+            return "/user/register/getCode"
         case .login(userName: _, password: _):
             return "/user/login"
         case .getUserInfo():
@@ -86,12 +86,13 @@ extension UserAPI: TargetType {
             return [
                 "userName":userName,
                 "password":password,
-                "identifyCode":identifyCode,
-                "inviteCode":inviteCode,
-                "action":"register"
+                "code":identifyCode,
+                "inviteCode":inviteCode
             ]
         case .registerGetCode(let userName):
-            return ["userName":userName,"action":"getCodeRegister"]
+            return [
+                "userName":userName
+            ]
         case .login(let userName, let password):
             kUserDefaults.setValue(userName, forKey: "userName")
             kUserDefaults.setValue(password, forKey: "password")

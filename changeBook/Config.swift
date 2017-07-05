@@ -35,6 +35,8 @@ let kBtnNormalBgColor = UIColor(hex: 0xF85B5A)
 let kBtnTouchInBgColor = UIColor(hex: 0x0394D7)
 //按钮不可点击背景颜色
 let kBtnDisableBgColor = UIColor(hex: 0xDBDBDB)
+//不可用颜色
+let kDisableColor = UIColor(hex: 0xDEDEDE)
 
 //字体大小
 let kBarButtonItemTitleFont = UIFont.systemFont(ofSize: 16)

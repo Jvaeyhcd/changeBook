@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import SwiftyJSON
+import Moya
+import RxSwift
+import RxCocoa
 
 class FindPasswordViewController: UIViewController {
     
@@ -45,7 +49,7 @@ class FindPasswordViewController: UIViewController {
         btn.titleLabel?.font = kBaseFont
         btn.setTitleColor(UIColor.init(hex: 0x79C505), for: UIControlState.normal)
         btn.setTitleColor(kBtnDisableBgColor, for: UIControlState.disabled)
-        btn.backgroundColor = UIColor.clear
+        btn.backgroundColor = kMainBgColor
         btn.contentHorizontalAlignment = .right
         btn.setTitle("获取验证码", for: UIControlState.normal)
         btn.sizeToFit()
@@ -90,10 +94,53 @@ class FindPasswordViewController: UIViewController {
         return btn
     }()
     
+    //用NSTimer实现倒计时
+    var countdownTimer: Timer?
+    
+    //开启和关闭倒计时的变量
+    var isCounting = false{
+        willSet{
+            if newValue {
+                countdownTimer = Timer.scheduledTimer(timeInterval: 1,
+                                                      target: self,
+                                                      selector: #selector(updateTime(timer:)),
+                                                      userInfo: nil,
+                                                      repeats: true)
+                
+                verificationCodeBtn.backgroundColor = kMainBgColor
+                verificationCodeBtn.layer.borderColor = kDisableColor?.cgColor
+                
+            } else {
+                countdownTimer?.invalidate()
+                countdownTimer = nil
+                verificationCodeBtn.layer.borderColor = UIColor.init(hex: 0x79C505)?.cgColor
+                verificationCodeBtn.backgroundColor = kMainBgColor
+                verificationCodeBtn.setTitle("获取验证码", for: UIControlState.normal)
+            }
+            
+            verificationCodeBtn.isEnabled = !newValue
+        }
+    }
+    
+    //当前倒计时剩余的秒数
+    var remainingSeconds: Int = 0{
+        willSet{
+            verificationCodeBtn.setTitle("\(newValue)秒后重试", for: .normal)
+            if newValue <= 0{
+                verificationCodeBtn.setTitle("获取验证码", for: .normal)
+                isCounting = false
+            }
+        }
+    }
+    
+    lazy var viewModel = ResetPasswordViewModel(provider: UserAPIProvider)
+    private let disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         initSubviews()
+        bindToRx()
     }
     
     private func initSubviews() {
@@ -112,6 +159,7 @@ class FindPasswordViewController: UIViewController {
         item.tintColor = UIColor(hex: 0x232323)
         self.navigationItem.leftBarButtonItem = item
         
+        self.userNameTextField.addTarget(self, action: #selector(textfieldDidChange(textField:)), for: UIControlEvents.editingChanged)
         self.view.addSubview(self.userNameTextField)
         self.userNameTextField.snp.makeConstraints { (make) in
             make.left.equalTo(scaleFromiPhone6Desgin(x: 30))
@@ -119,6 +167,7 @@ class FindPasswordViewController: UIViewController {
             make.height.equalTo(scaleFromiPhone6Desgin(x: 54))
             make.top.equalTo(kNavHeight + scaleFromiPhone6Desgin(x: 24))
         }
+        self.userNameTextField.rx.text.orEmpty.bindTo(viewModel.username).addDisposableTo(disposeBag)
         
         let userNameTextFieldLine = UIView()
         userNameTextFieldLine.backgroundColor = UIColor(hex: 0xDDDDDD)
@@ -130,6 +179,7 @@ class FindPasswordViewController: UIViewController {
             make.bottom.equalTo(userNameTextField.snp.bottom)
         }
         
+        self.verificationCodeTF.addTarget(self, action: #selector(textfieldDidChange(textField:)), for: UIControlEvents.editingChanged)
         self.view.addSubview(self.verificationCodeTF)
         self.verificationCodeTF.snp.makeConstraints { (make) in
             make.left.equalTo(scaleFromiPhone6Desgin(x: 30))
@@ -137,6 +187,7 @@ class FindPasswordViewController: UIViewController {
             make.height.equalTo(scaleFromiPhone6Desgin(x: 54))
             make.top.equalTo(userNameTextField.snp.bottom).offset(scaleFromiPhone6Desgin(x: 6))
         }
+        self.verificationCodeTF.rx.text.orEmpty.bindTo(viewModel.vcode).addDisposableTo(disposeBag)
         
         let verificationCodeTFLine = UIView()
         verificationCodeTFLine.backgroundColor = UIColor(hex: 0xDDDDDD)
@@ -155,6 +206,20 @@ class FindPasswordViewController: UIViewController {
             make.height.equalTo(scaleFromiPhone6Desgin(x: 20))
         }
         
+        self.checkCountTime()
+        verificationCodeBtn.rx.tap.bindTo(viewModel.vcodeTaps).addDisposableTo(disposeBag)
+        viewModel.getVcodeEnabled
+            .drive(onNext: { [weak self] enabled in
+                self?.verificationCodeBtn.isEnabled = enabled && !(self?.isCounting)!
+                if (self?.verificationCodeBtn.isEnabled)! {
+                    self?.verificationCodeBtn.layer.borderColor = kMainColor?.cgColor
+                } else {
+                    self?.verificationCodeBtn.layer.borderColor = kDisableColor?.cgColor
+                }
+            })
+            .addDisposableTo(disposeBag)
+        
+        self.passwordTextField.addTarget(self, action: #selector(textfieldDidChange(textField:)), for: UIControlEvents.editingChanged)
         self.view.addSubview(self.passwordTextField)
         self.passwordTextField.snp.makeConstraints { (make) in
             make.left.equalTo(scaleFromiPhone6Desgin(x: 30))
@@ -162,6 +227,7 @@ class FindPasswordViewController: UIViewController {
             make.height.equalTo(scaleFromiPhone6Desgin(x: 54))
             make.top.equalTo(verificationCodeTF.snp.bottom).offset(scaleFromiPhone6Desgin(x: 6))
         }
+        self.passwordTextField.rx.text.orEmpty.bindTo(viewModel.password).addDisposableTo(disposeBag)
         
         let passwordTextFieldLine = UIView()
         passwordTextFieldLine.backgroundColor = UIColor(hex: 0xDDDDDD)
@@ -173,6 +239,7 @@ class FindPasswordViewController: UIViewController {
             make.bottom.equalTo(passwordTextField.snp.bottom)
         }
         
+        self.repetPassTextField.addTarget(self, action: #selector(textfieldDidChange(textField:)), for: UIControlEvents.editingChanged)
         self.view.addSubview(self.repetPassTextField)
         self.repetPassTextField.snp.makeConstraints { (make) in
             make.left.equalTo(scaleFromiPhone6Desgin(x: 30))
@@ -180,6 +247,8 @@ class FindPasswordViewController: UIViewController {
             make.height.equalTo(scaleFromiPhone6Desgin(x: 54))
             make.top.equalTo(passwordTextField.snp.bottom).offset(scaleFromiPhone6Desgin(x: 6))
         }
+        
+        self.repetPassTextField.rx.text.orEmpty.bindTo(viewModel.repeatPassword).addDisposableTo(disposeBag)
         
         let repetPassTextFieldLine = UIView()
         repetPassTextFieldLine.backgroundColor = UIColor(hex: 0xDDDDDD)
@@ -198,6 +267,136 @@ class FindPasswordViewController: UIViewController {
             make.right.equalTo(-scaleFromiPhone6Desgin(x: 30))
             make.height.equalTo(scaleFromiPhone6Desgin(x: 52))
             make.top.equalTo(repetPassTextField.snp.bottom).offset(scaleFromiPhone6Desgin(x: 26))
+        }
+        
+        resetPassworBtn.rx.tap.bindTo(viewModel.changedTaps).addDisposableTo(disposeBag)
+        viewModel.changedEnabled
+            .drive(onNext: { enabled in
+                self.resetPassworBtn.isEnabled = enabled
+                if enabled == true {
+                    self.resetPassworBtn.setTitle("确认提交", for: UIControlState.normal)
+                }
+            })
+            .addDisposableTo(disposeBag)
+        
+        viewModel.samePassword
+            .drive(onNext: { same in
+                if true == same {
+                    self.resetPassworBtn.setTitle("确认提交", for: UIControlState.normal)
+                } else {
+                    self.resetPassworBtn.setTitle("两次密码不一致", for: UIControlState.normal)
+                }
+            })
+            .addDisposableTo(disposeBag)
+        
+        viewModel.passwordEnabled
+            .drive(onNext: { enabled in
+                if false == enabled {
+                    self.resetPassworBtn.setTitle("密码长度不够", for: UIControlState.normal)
+                }
+            }).addDisposableTo(disposeBag)
+        
+    }
+    
+    private func bindToRx() {
+        viewModel.changedExecuting
+            .drive(onNext: { [weak self] executing in
+                UIApplication.shared.isNetworkActivityIndicatorVisible = executing
+                if executing {
+                    self?.showHudLoadingTipStr("")
+                } else {
+                    self?.hideHud()
+                }
+            })
+            .addDisposableTo(disposeBag)
+        
+        viewModel.getVcodeExecuting
+            .drive(onNext: { [weak self] executing in
+                UIApplication.shared.isNetworkActivityIndicatorVisible = executing
+                if executing {
+                    self?.showHudLoadingTipStr("")
+                } else {
+                    self?.hideHud()
+                }
+            })
+            .addDisposableTo(disposeBag)
+        
+        viewModel.changedFinished
+            .drive(onNext: { [weak self] loginResult in
+                
+                self?.hideHud()
+                
+                switch loginResult {
+                case .Failed(let message):
+                    self?.showHudTipStr(message, in: self?.view)
+                case .Scuccess:
+                    self?.showHudTipStr("修改成功", in: UIApplication.shared.keyWindow)
+                    
+                    self?.popViewController(animated: true)
+                }
+            })
+            .addDisposableTo(disposeBag)
+        
+        viewModel.getVcodeFinished
+            .drive(onNext: { [weak self] requestResult in
+                
+                self?.hideHud()
+                
+                switch requestResult {
+                case .Failed(let message):
+                    self?.showHudTipStr(message, in: self?.view)
+                case .Scuccess:
+                    
+                    self?.showHudTipStr("验证码发送成功，请注意查收", in: self?.view)
+                    
+                    // 得到发送验证码成功的时间
+                    let date = NSDate().timeIntervalSince1970
+                    kUserDefaults.set(date, forKey: "lastSendResetCodeDateTime")
+                    kUserDefaults.synchronize()
+                    
+                    self!.remainingSeconds = 60
+                    self!.isCounting = true
+                }
+            })
+            .addDisposableTo(disposeBag)
+    }
+    
+    // 检测倒计时
+    private func checkCountTime() {
+        // 判断是否在倒计时
+        let lastSendRegisterCodeDateTime = Int64(kUserDefaults.double(forKey: "lastSendRegisterCodeDateTime"))
+        let nowTime = Int64(NSDate().timeIntervalSince1970)
+        
+        if nowTime - lastSendRegisterCodeDateTime > Int64(60) {
+            isCounting = false
+        } else {
+            remainingSeconds = Int(Int64(60) - (nowTime - lastSendRegisterCodeDateTime))
+            isCounting = true
+        }
+    }
+    
+    func updateTime(timer: Timer) -> Void {
+        //计时开始时，逐秒减少remainingSeconds的值
+        remainingSeconds -= 1
+    }
+    
+    func textfieldDidChange(textField: UITextField) {
+        var maxLength = 0
+        switch textField {
+        case userNameTextField:
+            maxLength = 11
+        case passwordTextField:
+            maxLength = 20
+        case verificationCodeTF:
+            maxLength = 6
+        case repetPassTextField:
+            maxLength = 20
+        default:
+            maxLength = 0
+        }
+        let text = textField.text
+        if text!.characters.count > maxLength {
+            textField.text = text?.subStrToIndex(index: maxLength)
         }
     }
     

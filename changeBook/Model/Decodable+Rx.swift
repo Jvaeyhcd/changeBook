@@ -24,7 +24,28 @@ extension ObservableType where E == Response {
     
     func checkIfRateLimitExceeded() -> Observable<E> {
         return self.map { response -> E in
+            let json = try response.mapJSON() as! NSDictionary
+            NSLog("%@", json)
             
+            guard let httpResponse = response.response as? HTTPURLResponse else {
+                throw BError.Generic
+            }
+            
+            let remainingCount = httpResponse.allHeaderFields
+            NSLog("%d", remainingCount.count)
+            
+            //            guard let status = Status.fromJSON(json["status"]) else {
+            //                throw ServerError.Generic
+            //            }
+            
+            
+            //            guard let remainingCount = httpResponse.allHeaderFields["X-RateLimit-Remaining"] else {
+            //                throw ServerError.Generic
+            //            }
+            
+            //            guard remainingCount.integerValue! != 0 else {
+            //                throw ServerError.RateLimitExceeded
+            //            }
             return response
         }
     }
