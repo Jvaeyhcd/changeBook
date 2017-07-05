@@ -65,3 +65,11 @@ var showedLogin = false
 func scaleFromiPhone6Desgin(x : CGFloat)->CGFloat{
     return (x * (kScreenWidth / 375))
 }
+
+let isDebug = true
+
+func BLog(log:String) {
+    if isDebug == true {
+        print(log)
+    }
+}

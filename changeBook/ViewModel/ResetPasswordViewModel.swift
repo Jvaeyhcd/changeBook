@@ -87,7 +87,7 @@ class ResetPasswordViewModel {
             .asObservable()
             .withLatestFrom(changeParms)
             .flatMapLatest { (username, password, vcode) in
-                provider.request(UserAPI.ForgetPasswordChangePassword(userName: username, newPassword: password, identifyCode:vcode))
+                provider.request(UserAPI.changePassword(userName: username, newPassword: password, identifyCode:vcode))
                     .retry(3)
                     .trackActivity(activityIndicator)
                     .observeOn(MainScheduler.instance)
@@ -112,7 +112,7 @@ class ResetPasswordViewModel {
             .asObservable()
             .withLatestFrom(usernameObservable)
             .flatMapLatest { (username) in
-                provider.request(UserAPI.ForgetPasswordGetCode(userName: username))
+                provider.request(UserAPI.forgetPasswordGetCode(userName: username))
                     .retry(3)
                     .trackActivity(activityIndicator)
                     .observeOn(MainScheduler.instance)

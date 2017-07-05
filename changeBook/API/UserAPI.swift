@@ -34,9 +34,9 @@ public enum UserAPI {
     //修改个人信息
     case changeUserInfo(headPic:String,nickName:String,sex:String,desc_:String)
     //忘记密码获取验证码
-    case ForgetPasswordGetCode(userName:String)
+    case forgetPasswordGetCode(userName:String)
     //忘记密码修改密码
-    case ForgetPasswordChangePassword(userName:String,newPassword:String,identifyCode:String)
+    case changePassword(userName:String,newPassword:String,identifyCode:String)
 }
 
 extension UserAPI: TargetType {
@@ -49,7 +49,7 @@ extension UserAPI: TargetType {
         case .logout():
             return "/user/logout"
         case .register(userName: _, password: _, identifyCode: _, inviteCode: _):
-            return "/user/register"
+            return "/user/register/register"
         case .registerGetCode(userName: _):
             return "/user/register/getCode"
         case .login(userName: _, password: _):
@@ -58,9 +58,9 @@ extension UserAPI: TargetType {
             return "/user/getUserInfo"
         case .changeUserInfo(headPic: _, nickName: _, sex: _, desc_: _):
             return "/user/editUserInfo"
-        case .ForgetPasswordGetCode(userName: _):
+        case .forgetPasswordGetCode(userName: _):
             return "/user/forgetPassword"
-        case .ForgetPasswordChangePassword(userName: _, newPassword: _, identifyCode: _):
+        case .changePassword(userName: _, newPassword: _, identifyCode: _):
             return "/user/forgetPassword"
         }
     }
@@ -106,9 +106,9 @@ extension UserAPI: TargetType {
             return ["token":token,"userId":userId]
         case .changeUserInfo(let headPic, let nickName, let sex, let desc_):
             return ["token":token,"userId":userId,"headPic":headPic,"nickName":nickName,"sex":sex,"desc_":desc_]
-        case .ForgetPasswordGetCode(let userName):
+        case .forgetPasswordGetCode(let userName):
             return ["userName":userName,"action":"getCodeForgetPassword"]
-        case .ForgetPasswordChangePassword(let userName, let newPassword, let identifyCode):
+        case .changePassword(let userName, let newPassword, let identifyCode):
             return ["userName":userName,"action":"changePassword","newPassword":newPassword,"identifyCode":identifyCode]
             
         }

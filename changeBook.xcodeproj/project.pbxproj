@@ -299,6 +299,9 @@
 		BE7CA9BE1F0BEA68007CB195 /* Decodable+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7CA9BD1F0BEA68007CB195 /* Decodable+Rx.swift */; };
 		BE7CA9C11F0BEDDE007CB195 /* NSObject+Polesapp.m in Sources */ = {isa = PBXBuildFile; fileRef = BE7CA9C01F0BEDDE007CB195 /* NSObject+Polesapp.m */; };
 		BE7CA9C51F0BEE38007CB195 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = BE7CA9C41F0BEE38007CB195 /* MBProgressHUD.m */; };
+		BE7CA9C71F0CEA7E007CB195 /* HotBookListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7CA9C61F0CEA7E007CB195 /* HotBookListViewController.swift */; };
+		BE7CA9C91F0CEAA5007CB195 /* HotArticleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7CA9C81F0CEAA5007CB195 /* HotArticleListViewController.swift */; };
+		BE7CA9CB1F0CEE67007CB195 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7CA9CA1F0CEE67007CB195 /* BaseTableViewController.swift */; };
 		BE8D53E81EFBF619003850EB /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE8D53D81EFBF619003850EB /* Info.plist */; };
 		BE8D53E91EFBF619003850EB /* STPopupController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D53DB1EFBF619003850EB /* STPopupController.m */; };
 		BE8D53EA1EFBF619003850EB /* STPopupControllerTransitioningFade.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D53DD1EFBF619003850EB /* STPopupControllerTransitioningFade.m */; };
@@ -620,6 +623,9 @@
 		BE7CA9C01F0BEDDE007CB195 /* NSObject+Polesapp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Polesapp.m"; sourceTree = "<group>"; };
 		BE7CA9C31F0BEE38007CB195 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		BE7CA9C41F0BEE38007CB195 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		BE7CA9C61F0CEA7E007CB195 /* HotBookListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotBookListViewController.swift; sourceTree = "<group>"; };
+		BE7CA9C81F0CEAA5007CB195 /* HotArticleListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotArticleListViewController.swift; sourceTree = "<group>"; };
+		BE7CA9CA1F0CEE67007CB195 /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		BE8D53D21EFBF5C6003850EB /* changeBook-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "changeBook-Bridging-Header.h"; sourceTree = "<group>"; };
 		BE8D53D81EFBF619003850EB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE8D53D91EFBF619003850EB /* STPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPopup.h; sourceTree = "<group>"; };
@@ -692,6 +698,7 @@
 				BE0190941EFD4A4E00FA040E /* BaseNavigationController.swift */,
 				BE0190961EFD4A6400FA040E /* BaseViewController.swift */,
 				BE9AC41D1F01428400C9288A /* BaseRootTabViewController.swift */,
+				BE7CA9CA1F0CEE67007CB195 /* BaseTableViewController.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -700,6 +707,7 @@
 			isa = PBXGroup;
 			children = (
 				BE01909C1EFD4B0300FA040E /* ArticleHomeViewController.swift */,
+				BE7CA9C81F0CEAA5007CB195 /* HotArticleListViewController.swift */,
 				BE57EF841F07A3E50091F312 /* ArticleListViewController.swift */,
 				BE57EDA01F03E7250091F312 /* UserArticleViewController.swift */,
 			);
@@ -762,6 +770,7 @@
 				BE57EF981F07DB4B0091F312 /* BookListViewController.swift */,
 				BE57EFA61F07E5D30091F312 /* DataViewController.swift */,
 				BE57EFA81F07E5EA0091F312 /* DataListViewController.swift */,
+				BE7CA9C61F0CEA7E007CB195 /* HotBookListViewController.swift */,
 			);
 			path = Book;
 			sourceTree = "<group>";
@@ -1603,6 +1612,7 @@
 				BE7CA9BC1F0BEA1D007CB195 /* ActivityIndicator.swift in Sources */,
 				BE8D53ED1EFBF619003850EB /* STPopupNavigationBar.m in Sources */,
 				BE57EF731F05414A0091F312 /* TADotView.m in Sources */,
+				BE7CA9C71F0CEA7E007CB195 /* HotBookListViewController.swift in Sources */,
 				BE0190A31EFD4B2500FA040E /* TeacherHomeViewController.swift in Sources */,
 				BE7CA9B71F0BE9D3007CB195 /* RegisterViewModel.swift in Sources */,
 				BE01908C1EFC089400FA040E /* Config.swift in Sources */,
@@ -1639,7 +1649,9 @@
 				BE57EF8D1F07AB530091F312 /* TeacherListTableViewCell.swift in Sources */,
 				BE01909F1EFD4B1000FA040E /* FriendsHomeViewController.swift in Sources */,
 				BE57EDB31F03F0EA0091F312 /* String+Polesapp.swift in Sources */,
+				BE7CA9C91F0CEAA5007CB195 /* HotArticleListViewController.swift in Sources */,
 				BE57ED981F03BD910091F312 /* UIViewController+HcdSideMenu.m in Sources */,
+				BE7CA9CB1F0CEE67007CB195 /* BaseTableViewController.swift in Sources */,
 				BE7CA9AB1F0BD79D007CB195 /* UserAPI.swift in Sources */,
 				BE57EFA91F07E5EA0091F312 /* DataListViewController.swift in Sources */,
 				BE57EF851F07A3E50091F312 /* ArticleListViewController.swift in Sources */,

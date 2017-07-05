@@ -86,7 +86,7 @@ class ArticleHomeViewController: BaseRootTabViewController, HcdTabBarDelegate {
         self.tabBar.setFramePadding(top: 0, left: 0, bottom: 0, right: 0)
         
         setTabBarFrame(tabBarFrame: CGRect.init(x: 0, y: 0, width: kScreenWidth, height: kSegmentBarHeight),
-                       contentViewFrame: CGRect.init(x: 0, y: kSegmentBarHeight, width: kScreenWidth, height: kScreenHeight - kSegmentBarHeight))
+                       contentViewFrame: CGRect.init(x: 0, y: kSegmentBarHeight, width: kScreenWidth, height: kScreenHeight - kSegmentBarHeight - kNavHeight))
         
         updateViewControllers()
     }
