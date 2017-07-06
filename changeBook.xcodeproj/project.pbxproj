@@ -302,6 +302,12 @@
 		BE7CA9C71F0CEA7E007CB195 /* HotBookListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7CA9C61F0CEA7E007CB195 /* HotBookListViewController.swift */; };
 		BE7CA9C91F0CEAA5007CB195 /* HotArticleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7CA9C81F0CEAA5007CB195 /* HotArticleListViewController.swift */; };
 		BE7CA9CB1F0CEE67007CB195 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7CA9CA1F0CEE67007CB195 /* BaseTableViewController.swift */; };
+		BE7CA9D21F0DEB32007CB195 /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7CA9D11F0DEB32007CB195 /* MineViewController.swift */; };
+		BE7CA9D41F0DEC83007CB195 /* MineUserInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7CA9D31F0DEC83007CB195 /* MineUserInfoTableViewCell.swift */; };
+		BE7CA9D61F0DF3CA007CB195 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7CA9D51F0DF3CA007CB195 /* SettingTableViewCell.swift */; };
+		BE7CA9D81F0E1C84007CB195 /* default_pic.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE7CA9D71F0E1C84007CB195 /* default_pic.jpg */; };
+		BE7CA9DA1F0E3CC6007CB195 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7CA9D91F0E3CC6007CB195 /* UserViewModel.swift */; };
+		BE7CA9DC1F0E452A007CB195 /* ButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7CA9DB1F0E452A007CB195 /* ButtonTableViewCell.swift */; };
 		BE8D53E81EFBF619003850EB /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE8D53D81EFBF619003850EB /* Info.plist */; };
 		BE8D53E91EFBF619003850EB /* STPopupController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D53DB1EFBF619003850EB /* STPopupController.m */; };
 		BE8D53EA1EFBF619003850EB /* STPopupControllerTransitioningFade.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D53DD1EFBF619003850EB /* STPopupControllerTransitioningFade.m */; };
@@ -626,6 +632,12 @@
 		BE7CA9C61F0CEA7E007CB195 /* HotBookListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotBookListViewController.swift; sourceTree = "<group>"; };
 		BE7CA9C81F0CEAA5007CB195 /* HotArticleListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotArticleListViewController.swift; sourceTree = "<group>"; };
 		BE7CA9CA1F0CEE67007CB195 /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
+		BE7CA9D11F0DEB32007CB195 /* MineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
+		BE7CA9D31F0DEC83007CB195 /* MineUserInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineUserInfoTableViewCell.swift; sourceTree = "<group>"; };
+		BE7CA9D51F0DF3CA007CB195 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
+		BE7CA9D71F0E1C84007CB195 /* default_pic.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default_pic.jpg; sourceTree = "<group>"; };
+		BE7CA9D91F0E3CC6007CB195 /* UserViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		BE7CA9DB1F0E452A007CB195 /* ButtonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonTableViewCell.swift; sourceTree = "<group>"; };
 		BE8D53D21EFBF5C6003850EB /* changeBook-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "changeBook-Bridging-Header.h"; sourceTree = "<group>"; };
 		BE8D53D81EFBF619003850EB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE8D53D91EFBF619003850EB /* STPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPopup.h; sourceTree = "<group>"; };
@@ -675,6 +687,7 @@
 		BE0190921EFD4A2800FA040E /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				BE7CA9D01F0DEB26007CB195 /* Mine */,
 				BE57EDAD1F03E8C10091F312 /* Integral */,
 				BE57EDAA1F03E8710091F312 /* Deposit */,
 				BE57EDA71F03E8030091F312 /* Message */,
@@ -805,6 +818,7 @@
 				BE57EFB61F0A12830091F312 /* top_btn_close_black@2x.png */,
 				BE57EFB71F0A12830091F312 /* top_btn_close_black@3x.png */,
 				BE57EF9A1F07DF780091F312 /* com_pic_star1@2x.png */,
+				BE7CA9D71F0E1C84007CB195 /* default_pic.jpg */,
 				BE57EF9B1F07DF780091F312 /* com_pic_star1@3x.png */,
 				BE57EF9C1F07DF780091F312 /* com_pic_star2@2x.png */,
 				BE57EF9D1F07DF780091F312 /* com_pic_star2@3x.png */,
@@ -1088,12 +1102,15 @@
 			children = (
 				BE57EF921F07AC4A0091F312 /* MenuTableViewCell.swift */,
 				BE57EF8A1F07AB450091F312 /* ArticleListTableViewCell.swift */,
+				BE7CA9DB1F0E452A007CB195 /* ButtonTableViewCell.swift */,
 				BE57EF8C1F07AB530091F312 /* TeacherListTableViewCell.swift */,
 				BE57EF8E1F07AB6C0091F312 /* BookListTableViewCell.swift */,
 				BE57EF901F07ABE10091F312 /* DataListTableViewCell.swift */,
 				BE57EFAA1F086C170091F312 /* OrderBookTableViewCell.swift */,
 				BE57EFAC1F086D7E0091F312 /* OrderListTableViewCell.swift */,
 				BE57EFB41F08D99B0091F312 /* IntegralLogTableViewCell.swift */,
+				BE7CA9D31F0DEC83007CB195 /* MineUserInfoTableViewCell.swift */,
+				BE7CA9D51F0DF3CA007CB195 /* SettingTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1178,6 +1195,7 @@
 				BE7CA9B31F0BE9D3007CB195 /* LoginViewModel.swift */,
 				BE7CA9B41F0BE9D3007CB195 /* RegisterViewModel.swift */,
 				BE7CA9B51F0BE9D3007CB195 /* ResetPasswordViewModel.swift */,
+				BE7CA9D91F0E3CC6007CB195 /* UserViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1189,6 +1207,14 @@
 				BE7CA9C41F0BEE38007CB195 /* MBProgressHUD.m */,
 			);
 			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		BE7CA9D01F0DEB26007CB195 /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				BE7CA9D11F0DEB32007CB195 /* MineViewController.swift */,
+			);
+			path = Mine;
 			sourceTree = "<group>";
 		};
 		BE8D53D11EFBF5AD003850EB /* OC */ = {
@@ -1530,6 +1556,7 @@
 				BE57EDB81F03F1640091F312 /* top_btn_back@3x.png in Resources */,
 				BE57EEBD1F04B1290091F312 /* xiaoxi_btn_xiangce@2x.png in Resources */,
 				BE57EF221F04B1290091F312 /* home_icon_star_1@3x.png in Resources */,
+				BE7CA9D81F0E1C84007CB195 /* default_pic.jpg in Resources */,
 				BE57EEEE1F04B1290091F312 /* zhifu_rb_pre@3x.png in Resources */,
 				BE57EEE01F04B1290091F312 /* xiangqing_icon_pdf@2x.png in Resources */,
 				BE57EEFA1F04B1290091F312 /* fenxiang_btn_pyq@3x.png in Resources */,
@@ -1609,6 +1636,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE7CA9D61F0DF3CA007CB195 /* SettingTableViewCell.swift in Sources */,
 				BE7CA9BC1F0BEA1D007CB195 /* ActivityIndicator.swift in Sources */,
 				BE8D53ED1EFBF619003850EB /* STPopupNavigationBar.m in Sources */,
 				BE57EF731F05414A0091F312 /* TADotView.m in Sources */,
@@ -1628,6 +1656,7 @@
 				BE57EDB11F03EFDB0091F312 /* UIViewController+Polesapp.swift in Sources */,
 				BE57EFB51F08D99B0091F312 /* IntegralLogTableViewCell.swift in Sources */,
 				BE01909D1EFD4B0300FA040E /* ArticleHomeViewController.swift in Sources */,
+				BE7CA9D41F0DEC83007CB195 /* MineUserInfoTableViewCell.swift in Sources */,
 				BE57EF751F05414A0091F312 /* SDCollectionViewCell.m in Sources */,
 				BE57EFAD1F086D7E0091F312 /* OrderListTableViewCell.swift in Sources */,
 				BE57EF721F05414A0091F312 /* TAAnimatedDotView.m in Sources */,
@@ -1647,6 +1676,7 @@
 				BE8D53EF1EFBF619003850EB /* UIViewController+STPopup.m in Sources */,
 				BE7CA9B01F0BE7C5007CB195 /* ViewModelProtocol.swift in Sources */,
 				BE57EF8D1F07AB530091F312 /* TeacherListTableViewCell.swift in Sources */,
+				BE7CA9D21F0DEB32007CB195 /* MineViewController.swift in Sources */,
 				BE01909F1EFD4B1000FA040E /* FriendsHomeViewController.swift in Sources */,
 				BE57EDB31F03F0EA0091F312 /* String+Polesapp.swift in Sources */,
 				BE7CA9C91F0CEAA5007CB195 /* HotArticleListViewController.swift in Sources */,
@@ -1667,11 +1697,13 @@
 				BE7CA9BA1F0BE9FE007CB195 /* RequestResult.swift in Sources */,
 				BE57EDAC1F03E87E0091F312 /* MyDepositViewController.swift in Sources */,
 				BE7CA9B61F0BE9D3007CB195 /* LoginViewModel.swift in Sources */,
+				BE7CA9DA1F0E3CC6007CB195 /* UserViewModel.swift in Sources */,
 				BE0190A71EFD4B5E00FA040E /* RootTabBarViewController.swift in Sources */,
 				BE57EDA91F03E8140091F312 /* MessageListViewController.swift in Sources */,
 				BE57EFAB1F086C170091F312 /* OrderBookTableViewCell.swift in Sources */,
 				BE8D53EB1EFBF619003850EB /* STPopupControllerTransitioningSlideVertical.m in Sources */,
 				BE57EF7B1F05442F0091F312 /* NormalCollectionViewCell.swift in Sources */,
+				BE7CA9DC1F0E452A007CB195 /* ButtonTableViewCell.swift in Sources */,
 				BE57ED9D1F03E6910091F312 /* MenuViewController.swift in Sources */,
 				BE57EFB31F08D31B0091F312 /* UIImage+Polesapp.m in Sources */,
 				BE57EF8F1F07AB6C0091F312 /* BookListTableViewCell.swift in Sources */,

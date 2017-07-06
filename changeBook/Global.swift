@@ -15,6 +15,7 @@ class Global {
     static let sharedGlobal = Global()
     private var user = User()
     private var realm: Realm?
+    private var token = Token()
     
     func getRealm() -> Realm {
         //if nil == self.realm {
@@ -26,6 +27,14 @@ class Global {
     func saveUser(user: User) {
         self.user = user
         User.saveLoginUser(user: user)
+    }
+    
+    func getToken() -> Token {
+        return self.token
+    }
+    
+    func saveToken(token: String) {
+        self.token.token = token
     }
     
     // 获取全局的User

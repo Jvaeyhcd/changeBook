@@ -31,11 +31,6 @@ class RootTabBarViewController: UITabBarController {
         homeVC.tabBarItem.selectedImage = UIImage(named: "tab_shouye_pre")
         homeVC.title = "首页"
         
-        let teacherVC = TeacherHomeViewController()
-        teacherVC.tabBarItem.image = UIImage(named: "tab_laoshi")
-        teacherVC.tabBarItem.selectedImage = UIImage(named: "tab_laoshi_pre")
-        teacherVC.title = "教师"
-        
         let friendsVC = FriendsHomeViewController()
         friendsVC.tabBarItem.image = UIImage(named: "tab_shuyou")
         friendsVC.tabBarItem.selectedImage = UIImage(named: "tab_shuyou_pre")
@@ -45,6 +40,11 @@ class RootTabBarViewController: UITabBarController {
         articleVC.tabBarItem.image = UIImage(named: "tab_zixun")
         articleVC.tabBarItem.selectedImage = UIImage(named: "tab_zixun_pre")
         articleVC.title = "文章"
+        
+        let teacherVC = MineViewController()
+        teacherVC.tabBarItem.image = UIImage(named: "tab_laoshi")
+        teacherVC.tabBarItem.selectedImage = UIImage(named: "tab_laoshi_pre")
+        teacherVC.title = "我的"
         
         let nav1 = BaseNavigationController.init(rootViewController: homeVC)
         let nav2 = BaseNavigationController.init(rootViewController: friendsVC)

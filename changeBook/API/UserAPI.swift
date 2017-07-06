@@ -32,7 +32,7 @@ public enum UserAPI {
     //获取个人信息
     case getUserInfo()
     //修改个人信息
-    case changeUserInfo(headPic:String,nickName:String,sex:String,desc_:String)
+    case changeUserInfo(headPic:String,nickName:String,sex:String,introduce:String)
     //忘记密码获取验证码
     case forgetPasswordGetCode(userName:String)
     //忘记密码修改密码
@@ -56,12 +56,12 @@ extension UserAPI: TargetType {
             return "/user/login"
         case .getUserInfo():
             return "/user/getUserInfo"
-        case .changeUserInfo(headPic: _, nickName: _, sex: _, desc_: _):
+        case .changeUserInfo(headPic: _, nickName: _, sex: _, introduce: _):
             return "/user/editUserInfo"
         case .forgetPasswordGetCode(userName: _):
-            return "/user/forgetPassword"
+            return "/user/updatePassword/getCode"
         case .changePassword(userName: _, newPassword: _, identifyCode: _):
-            return "/user/forgetPassword"
+            return "/user/updatePassword/updatePassword"
         }
     }
     
@@ -104,12 +104,26 @@ extension UserAPI: TargetType {
             ]
         case .getUserInfo():
             return ["token":token,"userId":userId]
-        case .changeUserInfo(let headPic, let nickName, let sex, let desc_):
-            return ["token":token,"userId":userId,"headPic":headPic,"nickName":nickName,"sex":sex,"desc_":desc_]
+        case .changeUserInfo(let headPic, let nickName, let sex, let introduce):
+            return [
+                "token":token,
+                "userId":userId,
+                "headPic":headPic,
+                "nickName":nickName,
+                "sex":sex,
+                "introduce":introduce
+            ]
         case .forgetPasswordGetCode(let userName):
-            return ["userName":userName,"action":"getCodeForgetPassword"]
+            return [
+                "userName":userName,
+                "action":"getCodeForgetPassword"
+            ]
         case .changePassword(let userName, let newPassword, let identifyCode):
-            return ["userName":userName,"action":"changePassword","newPassword":newPassword,"identifyCode":identifyCode]
+            return [
+                "userName": userName,
+                "password": newPassword,
+                "code": identifyCode
+            ]
             
         }
     }

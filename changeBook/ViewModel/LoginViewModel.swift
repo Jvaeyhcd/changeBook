@@ -65,14 +65,11 @@ class LoginViewModel {
                     return RequestResult.Failed(message: status.message)
                 } else {
                     
-                    //拿到token
-                    var appToken = Token()
                     let data = json["data"]
-                    appToken.token = json["data"]["token"].stringValue
-//                    appToken.token = data["token"]
                     
                     let loginUser = User.fromJSON(json: data["user"])
                     
+                    sharedGlobal.saveToken(token: data["token"].stringValue)
                     sharedGlobal.saveUser(user: loginUser)
                     
                     return RequestResult.Scuccess

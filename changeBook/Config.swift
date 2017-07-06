@@ -43,6 +43,8 @@ let kBarButtonItemTitleFont = UIFont.systemFont(ofSize: 16)
 let kBaseFont = UIFont.systemFont(ofSize: 14)
 let kSmallTextFont = UIFont.systemFont(ofSize: 12)
 
+//默认头像
+let kUserDefaultImage = UIImage(named: "default_pic.jpg")
 
 let kHost = "http://120.77.85.241/app.php/"
 //服务器基本地址
@@ -50,6 +52,9 @@ let kBaseUrl = kHost + "api/1.0"
 
 let TIMEOUTTIME = 10
 let TIMEOUTCODE = -1001
+
+let MAN = "1"
+let WOMAN = "2"
 
 let kUserDefaults = UserDefaults.standard
 

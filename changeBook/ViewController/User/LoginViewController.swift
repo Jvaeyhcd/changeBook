@@ -127,6 +127,7 @@ class LoginViewController: UIViewController {
         item.tintColor = UIColor(hex: 0x232323)
         self.navigationItem.leftBarButtonItem = item
         
+        self.userNameTextField.addTarget(self, action: #selector(textfieldDidChange(textField:)), for: UIControlEvents.editingChanged)
         self.view.addSubview(self.userNameTextField)
         self.userNameTextField.snp.makeConstraints { (make) in
             make.left.equalTo(scaleFromiPhone6Desgin(x: 30))
@@ -146,6 +147,7 @@ class LoginViewController: UIViewController {
             make.bottom.equalTo(userNameTextField.snp.bottom)
         }
         
+        self.passwordTextField.addTarget(self, action: #selector(textfieldDidChange(textField:)), for: UIControlEvents.editingChanged)
         self.view.addSubview(self.passwordTextField)
         self.passwordTextField.snp.makeConstraints { (make) in
             make.left.equalTo(scaleFromiPhone6Desgin(x: 30))
@@ -271,6 +273,22 @@ class LoginViewController: UIViewController {
             
         }).addDisposableTo(disposeBag)
         
+    }
+    
+    func textfieldDidChange(textField: UITextField) {
+        var maxLength = 0
+        switch textField {
+        case userNameTextField:
+            maxLength = 11
+        case passwordTextField:
+            maxLength = 20
+        default:
+            maxLength = 0
+        }
+        let text = textField.text
+        if text!.characters.count > maxLength {
+            textField.text = text?.subStrToIndex(index: maxLength)
+        }
     }
     
     //view点击事件
