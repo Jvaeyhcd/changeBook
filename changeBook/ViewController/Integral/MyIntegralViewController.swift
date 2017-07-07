@@ -7,8 +7,13 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class MyIntegralViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    fileprivate var viewModel: UserViewModel = UserViewModel()
+    fileprivate var logList = [IntegralLog]()
+    fileprivate var pageInfo: PageInfo = PageInfo()
     
     private lazy var integralLbl: UILabel = {
         let lbl = UILabel()
@@ -19,8 +24,8 @@ class MyIntegralViewController: BaseViewController, UITableViewDelegate, UITable
         return lbl
     }()
     
-    private lazy var tableView: UITableView = {
-        let tableView = UITableView.init(frame: CGRect.zero, style: .plain)
+    private lazy var tableView: UIRefreshTableView = {
+        let tableView = UIRefreshTableView.init(frame: CGRect.zero, style: .plain)
         tableView.backgroundColor = UIColor.white
         tableView.separatorStyle = .none
         tableView.register(IntegralLogTableViewCell.self, forCellReuseIdentifier: kCellIdIntegralLogTableViewCell)
@@ -38,7 +43,7 @@ class MyIntegralViewController: BaseViewController, UITableViewDelegate, UITable
         self.showBackButton()
         self.showBarButtonItem(position: RIGHT, withStr: "积分须知")
         
-        self.integralLbl.text = "100"
+        self.integralLbl.text = sharedGlobal.getSavedUser().integral
         self.view.addSubview(self.integralLbl)
         self.integralLbl.snp.makeConstraints { (make) in
             make.top.equalTo(0)
@@ -50,6 +55,14 @@ class MyIntegralViewController: BaseViewController, UITableViewDelegate, UITable
         self.view.addSubview(self.tableView)
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        self.tableView.setPullingHeader()
+        self.tableView.setPullingFooter()
+        self.tableView.headerRefreshBlock = {
+            self.getUserIntegralLog(page: 1)
+        }
+        self.tableView.footerRefreshBlock = {
+            self.getUserIntegralLog(page: self.pageInfo.currentPage + 1)
+        }
         self.tableView.snp.makeConstraints { (make) in
             make.top.equalTo(self.integralLbl.snp.bottom)
             make.left.equalTo(0)
@@ -58,13 +71,43 @@ class MyIntegralViewController: BaseViewController, UITableViewDelegate, UITable
         }
     }
     
+    private func getUserIntegralLog(page: Int) {
+        self.viewModel.getUserIntegralLog(page: page, cache: { [weak self] (data) in
+            self?.updateData(data: data)
+        }, success: { [weak self] (data) in
+            self?.updateData(data: data)
+        }, fail: { [weak self] (message) in
+            self?.showHudTipStr(message)
+        }) { 
+            
+        }
+    }
+    
+    private func updateData(data: JSON) {
+        
+        self.pageInfo = PageInfo.fromJSON(json: data["pageInfo"])
+        let logs = IntegralLog.fromJSONArray(json: data["entities"].arrayObject!)
+        
+        if self.logList.count > 0 {
+            for log in logs {
+                self.logList.append(log)
+            }
+        } else {
+            self.logList = logs
+        }
+        
+        self.tableView.mj_header.endRefreshing()
+        self.tableView.mj_footer.endRefreshing()
+        
+    }
+    
     // MARK :- UITableViewDelegate, UITableViewDataSource
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return self.logList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

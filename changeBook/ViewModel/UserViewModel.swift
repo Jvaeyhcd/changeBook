@@ -46,4 +46,22 @@ class UserViewModel: ViewModelProtocol {
         }
     }
     
+    // 获取积分记录
+    func getUserIntegralLog(page: Int,
+                            cache: @escaping DataBlock,
+                            success: @escaping DataBlock,
+                            fail: @escaping MessageBlock,
+                            loginSuccess: @escaping VoidBlock) {
+        var cacheName = ""
+        if page == 1 {
+            cacheName = "getInviteLog\(sharedGlobal.getSavedUser().userId)"
+            self.getCacheData(cacheName: cacheName, cacheData: cache)
+        } else {
+            cacheName = kNoNeedCache
+        }
+        UserAPIProvider.request(UserAPI.getUserIntegralLog()) { (result) in
+            self.request(cacheName: cacheName, result: result, success: success, fail: fail, loginSuccess: loginSuccess)
+        }
+    }
+    
 }

@@ -258,11 +258,7 @@ class SettingViewController: BaseViewController, UITableViewDelegate, UITableVie
     
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if section == 0 {
-            return CGFloat(0)
-        } else if section == 2 {
-            return CGFloat(0)
-        }
+        
         return kBasePadding
     }
     

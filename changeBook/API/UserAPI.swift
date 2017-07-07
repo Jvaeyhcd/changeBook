@@ -37,6 +37,8 @@ public enum UserAPI {
     case forgetPasswordGetCode(userName:String)
     //忘记密码修改密码
     case changePassword(userName:String,newPassword:String,identifyCode:String)
+    //获取积分记录
+    case getUserIntegralLog()
 }
 
 extension UserAPI: TargetType {
@@ -62,6 +64,8 @@ extension UserAPI: TargetType {
             return "/user/updatePassword/getCode"
         case .changePassword(userName: _, newPassword: _, identifyCode: _):
             return "/user/updatePassword/updatePassword"
+        case .getUserIntegralLog():
+            return "/user/getUserIntegral"
         }
     }
     
@@ -123,6 +127,11 @@ extension UserAPI: TargetType {
                 "userName": userName,
                 "password": newPassword,
                 "code": identifyCode
+            ]
+        case .getUserIntegralLog():
+            return [
+                "token":token,
+                "userId":userId
             ]
             
         }

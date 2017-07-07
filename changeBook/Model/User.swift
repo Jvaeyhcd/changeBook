@@ -16,7 +16,7 @@ struct User {
     var sex: String = ""
     var nickName: String = ""
     var lcc : String = ""
-    var desc_ : String = ""
+    var introduce : String = ""
     var money: String = ""
     var lv : String = ""
     var isAuthentication : String = ""
@@ -49,7 +49,7 @@ struct User {
         sex = ""
         nickName = ""
         lcc = ""
-        desc_ = ""
+        introduce = ""
         money = ""
         lv = ""
         isAuthentication = ""
@@ -83,7 +83,7 @@ struct User {
         sex = json["sex"].stringValue
         nickName = json["nickName"].stringValue
         lcc = json["lcc"].stringValue
-        desc_ = json["desc_"].stringValue
+        introduce = json["introduce"].stringValue
         money = json["money"].stringValue
         lv = json["lv"].stringValue
         isAuthentication = json["isAuthentication"].stringValue
@@ -164,8 +164,8 @@ extension User: Decodable {
             user.nickName = nickName
         }
         
-        if let desc_ = kUserDefaults.string(forKey: "desc_") {
-            user.desc_ = desc_
+        if let introduce = kUserDefaults.string(forKey: "introduce") {
+            user.introduce = introduce
         }
         
         if let money = kUserDefaults.string(forKey: "money") {
@@ -253,7 +253,7 @@ extension User: Decodable {
         kUserDefaults.removeObject(forKey: "sex")
         kUserDefaults.removeObject(forKey: "nickName")
         kUserDefaults.removeObject(forKey: "lcc")
-        kUserDefaults.removeObject(forKey: "desc_")
+        kUserDefaults.removeObject(forKey: "introduce")
         kUserDefaults.removeObject(forKey: "money")
         kUserDefaults.removeObject(forKey: "lat")
         kUserDefaults.removeObject(forKey: "lng")
@@ -297,7 +297,7 @@ extension User: Decodable {
         kUserDefaults.set(user.sex, forKey: "sex")
         kUserDefaults.set(user.nickName, forKey: "nickName")
         kUserDefaults.set(user.lcc, forKey: "lcc")
-        kUserDefaults.set(user.desc_, forKey: "desc_")
+        kUserDefaults.set(user.introduce, forKey: "introduce")
         kUserDefaults.set(user.money, forKey: "money")
         kUserDefaults.set(user.lv, forKey: "lv")
         kUserDefaults.set(user.isAuthentication, forKey: "isAuthentication")
@@ -349,8 +349,8 @@ extension User: Decodable {
         self.headPic = headPic
     }
     
-    mutating func setDesc_(desc_: String) -> Void {
-        self.desc_ = desc_
+    mutating func setIntroduce(introduce: String) -> Void {
+        self.introduce = introduce
     }
     
     mutating func setMoney(money: String) -> Void {

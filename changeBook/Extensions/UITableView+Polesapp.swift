@@ -8,6 +8,108 @@
 
 import UIKit
 
+private var TABLEVIEW_HEADER_PROPERTY = 0
+private var TABLEVIEW_FOOTER_PROPERTY = 1
+
+// 封装带有分页的tableView
+class UIRefreshTableView: UITableView, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+    
+    var headerRefreshBlock: VoidBlock?
+    var footerRefreshBlock: VoidBlock?
+    
+    override init(frame: CGRect, style: UITableViewStyle) {
+        super.init(frame: frame, style: style)
+        self.footerRefresh()
+        self.headerRefresh()
+        self.emptyDataSetSource = self
+        self.emptyDataSetDelegate = self
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // 设置下拉刷新动画
+    func setPullingHeader() {
+        let header = MJRefreshGifHeader()
+        header.stateLabel.isHidden = true
+        header.lastUpdatedTimeLabel.isHidden = true
+        header.setImages([UIImage(named: "refresh00")!, UIImage(named: "refresh01")!, UIImage(named: "refresh02")!, UIImage(named: "refresh03")!, UIImage(named: "refresh04")!, UIImage(named: "refresh05")!, UIImage(named: "refresh06")!, UIImage(named: "refresh07")!, UIImage(named: "refresh08")!, UIImage(named: "refresh09")!, UIImage(named: "refresh10")!], for: .pulling)
+        header.setImages([UIImage(named: "refresh00")!, UIImage(named: "refresh01")!, UIImage(named: "refresh02")!, UIImage(named: "refresh03")!, UIImage(named: "refresh04")!, UIImage(named: "refresh05")!, UIImage(named: "refresh06")!, UIImage(named: "refresh07")!, UIImage(named: "refresh08")!, UIImage(named: "refresh09")!, UIImage(named: "refresh10")!], for: .refreshing)
+        header.setRefreshingTarget(self, refreshingAction: #selector(headerRefresh))
+        self.mj_header = header
+    }
+    
+    // 设置上拉加载跟多动画
+    func setPullingFooter() {
+        // 底部刷新
+        let footer = MJRefreshAutoNormalFooter()
+        footer.setTitle("加载更多", for: MJRefreshState.idle)
+        footer.setRefreshingTarget(self, refreshingAction: #selector(footerRefresh))
+        self.mj_footer = footer
+    }
+    
+    @objc private func headerRefresh() {
+        if nil != self.headerRefreshBlock {
+            self.headerRefreshBlock!()
+        }
+    }
+    
+    @objc private func footerRefresh() {
+        if nil != self.footerRefreshBlock {
+            self.footerRefreshBlock!()
+        }
+    }
+    
+    // MARK: - DZNEmptyDataSetSource, DZNEmptyDataSetDelegate
+
+    func emptyDataSetShouldDisplay(_ scrollView: UIScrollView!) -> Bool {
+        return true
+    }
+    
+    func emptyDataSetWillAppear(_ scrollView: UIScrollView!) {
+        self.mj_footer.isHidden = true
+        self.mj_header.isHidden = true
+    }
+    
+    func emptyDataSetWillDisappear(_ scrollView: UIScrollView!) {
+        self.mj_footer.isHidden = false
+        self.mj_header.isHidden = false
+    }
+    
+    func image(forEmptyDataSet scrollView: UIScrollView!) -> UIImage! {
+        let networkWorked = kUserDefaults.bool(forKey: "networkWorked")
+        if networkWorked{
+            //有网
+            return UIImage(named: "pic_null")
+        }else{
+            //无网
+            return UIImage(named: "pic_network_null")
+        }
+        
+    }
+    
+    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        var text = ""
+        let attributes = [NSFontAttributeName: UIFont.systemFont(ofSize: 16),
+                          NSForegroundColorAttributeName: UIColor(hex: 0xBBD4F3)]
+        
+        let networkWorked = kUserDefaults.bool(forKey: "networkWorked")
+        if networkWorked{
+            //有网
+            text = "暂时没有相关内容"
+        }else{
+            //无网
+            text = "无网络连接，点击页面重试"
+        }
+        
+        return NSAttributedString.init(string: text, attributes: attributes)
+        
+        
+    }
+    
+}
+
 extension UITableView {
     
     func addLineforPlainCell(cell:UITableViewCell, indexPath:IndexPath, leftSpace:CGFloat) {

@@ -7,20 +7,32 @@
 //
 
 import UIKit
+import ReachabilitySwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var reachability: Reachability = Reachability()!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         setRootViewController()
         setGolbalUIConfig()
+        startReachability()
         
         return true
+    }
+    
+    // 开始观察网络变化
+    private func startReachability() {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.reachabilityChanged),name: ReachabilityChangedNotification,object: reachability)
+        do{
+            try reachability.startNotifier()
+        }catch{
+            print("could not start reachability notifier")
+        }
     }
     
     // 设置根界面
@@ -73,6 +85,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    // MARK: - ReachabilitySwift
+    
+    func reachabilityChanged(note: NSNotification) {
+        
+        let reachability = note.object as! Reachability
+        
+        if reachability.isReachable {
+            if reachability.isReachableViaWiFi {
+                BLog(log: "Reachable via WiFi")
+            } else {
+                BLog(log: "Reachable via Cellular")
+            }
+            kUserDefaults.set(true, forKey: "networkWorked")
+            kUserDefaults.synchronize()
+        } else {
+            kUserDefaults.set(false, forKey: "networkWorked")
+            kUserDefaults.synchronize()
+        }
+        
+        
     }
 
 
