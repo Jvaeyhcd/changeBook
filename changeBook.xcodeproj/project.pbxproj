@@ -21,7 +21,6 @@
 		BE57ED951F03BCF70091F312 /* HcdSideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = BE57ED941F03BCF70091F312 /* HcdSideMenu.m */; };
 		BE57ED981F03BD910091F312 /* UIViewController+HcdSideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = BE57ED971F03BD910091F312 /* UIViewController+HcdSideMenu.m */; };
 		BE57ED9D1F03E6910091F312 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE57ED9C1F03E6910091F312 /* MenuViewController.swift */; };
-		BE57ED9F1F03E6E30091F312 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE57ED9E1F03E6E30091F312 /* SettingViewController.swift */; };
 		BE57EDA11F03E7250091F312 /* UserArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE57EDA01F03E7250091F312 /* UserArticleViewController.swift */; };
 		BE57EDA61F03E7CA0091F312 /* BorrowedBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE57EDA51F03E7CA0091F312 /* BorrowedBookViewController.swift */; };
 		BE57EDA91F03E8140091F312 /* MessageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE57EDA81F03E8140091F312 /* MessageListViewController.swift */; };
@@ -350,6 +349,8 @@
 		BE7CAA4B1F0F8EC8007CB195 /* pic_null@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE7CAA431F0F8EC8007CB195 /* pic_null@3x.png */; };
 		BE7CAA4C1F0F8EC8007CB195 /* pic_order_null@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE7CAA441F0F8EC8007CB195 /* pic_order_null@2x.png */; };
 		BE7CAA4D1F0F8EC8007CB195 /* pic_order_null@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE7CAA451F0F8EC8007CB195 /* pic_order_null@3x.png */; };
+		BE7CAA4F1F0F96FE007CB195 /* AddressListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7CAA4E1F0F96FE007CB195 /* AddressListViewController.swift */; };
+		BE7CAA511F0F9F49007CB195 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7CAA501F0F9F49007CB195 /* SettingViewController.swift */; };
 		BE8D53E81EFBF619003850EB /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE8D53D81EFBF619003850EB /* Info.plist */; };
 		BE8D53E91EFBF619003850EB /* STPopupController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D53DB1EFBF619003850EB /* STPopupController.m */; };
 		BE8D53EA1EFBF619003850EB /* STPopupControllerTransitioningFade.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D53DD1EFBF619003850EB /* STPopupControllerTransitioningFade.m */; };
@@ -361,6 +362,7 @@
 		BE9AC41E1F01428400C9288A /* BaseRootTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9AC41D1F01428400C9288A /* BaseRootTabViewController.swift */; };
 		BE9AC4211F01495000C9288A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9AC4201F01495000C9288A /* LoginViewController.swift */; };
 		BE9AC4231F01495F00C9288A /* FindPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9AC4221F01495F00C9288A /* FindPasswordViewController.swift */; };
+		BEB94CDF1F13BF7300181DC2 /* UserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB94CDE1F13BF7300181DC2 /* UserInfoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -381,7 +383,6 @@
 		BE57ED961F03BD910091F312 /* UIViewController+HcdSideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+HcdSideMenu.h"; sourceTree = "<group>"; };
 		BE57ED971F03BD910091F312 /* UIViewController+HcdSideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+HcdSideMenu.m"; sourceTree = "<group>"; };
 		BE57ED9C1F03E6910091F312 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
-		BE57ED9E1F03E6E30091F312 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		BE57EDA01F03E7250091F312 /* UserArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserArticleViewController.swift; sourceTree = "<group>"; };
 		BE57EDA51F03E7CA0091F312 /* BorrowedBookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorrowedBookViewController.swift; sourceTree = "<group>"; };
 		BE57EDA81F03E8140091F312 /* MessageListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageListViewController.swift; sourceTree = "<group>"; };
@@ -743,6 +744,8 @@
 		BE7CAA431F0F8EC8007CB195 /* pic_null@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pic_null@3x.png"; sourceTree = "<group>"; };
 		BE7CAA441F0F8EC8007CB195 /* pic_order_null@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pic_order_null@2x.png"; sourceTree = "<group>"; };
 		BE7CAA451F0F8EC8007CB195 /* pic_order_null@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pic_order_null@3x.png"; sourceTree = "<group>"; };
+		BE7CAA4E1F0F96FE007CB195 /* AddressListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressListViewController.swift; sourceTree = "<group>"; };
+		BE7CAA501F0F9F49007CB195 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		BE8D53D21EFBF5C6003850EB /* changeBook-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "changeBook-Bridging-Header.h"; sourceTree = "<group>"; };
 		BE8D53D81EFBF619003850EB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE8D53D91EFBF619003850EB /* STPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPopup.h; sourceTree = "<group>"; };
@@ -763,6 +766,7 @@
 		BE9AC41D1F01428400C9288A /* BaseRootTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRootTabViewController.swift; sourceTree = "<group>"; };
 		BE9AC4201F01495000C9288A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BE9AC4221F01495F00C9288A /* FindPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindPasswordViewController.swift; sourceTree = "<group>"; };
+		BEB94CDE1F13BF7300181DC2 /* UserInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoView.swift; sourceTree = "<group>"; };
 		FD24FA76B8D7C13454370158 /* Pods-changeBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-changeBook.release.xcconfig"; path = "Pods/Target Support Files/Pods-changeBook/Pods-changeBook.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -863,7 +867,6 @@
 			isa = PBXGroup;
 			children = (
 				BE57ED9C1F03E6910091F312 /* MenuViewController.swift */,
-				BE57ED9E1F03E6E30091F312 /* SettingViewController.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -1216,6 +1219,7 @@
 		BE57EF881F07AB1D0091F312 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BEB94CDD1F13BF5F00181DC2 /* Custom */,
 				BE57EF891F07AB2D0091F312 /* Cells */,
 			);
 			path = Views;
@@ -1339,6 +1343,8 @@
 			isa = PBXGroup;
 			children = (
 				BE7CA9D11F0DEB32007CB195 /* MineViewController.swift */,
+				BE7CAA4E1F0F96FE007CB195 /* AddressListViewController.swift */,
+				BE7CAA501F0F9F49007CB195 /* SettingViewController.swift */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -1501,6 +1507,14 @@
 				BE57EFBA1F0A4D460091F312 /* RegisterViewController.swift */,
 			);
 			path = User;
+			sourceTree = "<group>";
+		};
+		BEB94CDD1F13BF5F00181DC2 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				BEB94CDE1F13BF7300181DC2 /* UserInfoView.swift */,
+			);
+			path = Custom;
 			sourceTree = "<group>";
 		};
 		E5BBD58AB3CBAA9D464DBAFE /* Pods */ = {
@@ -1909,9 +1923,9 @@
 				BE57EF831F0798080091F312 /* SlippedSegmentView.swift in Sources */,
 				BE57EDA11F03E7250091F312 /* UserArticleViewController.swift in Sources */,
 				BE57EF951F07BA030091F312 /* UITableView+Polesapp.swift in Sources */,
-				BE57ED9F1F03E6E30091F312 /* SettingViewController.swift in Sources */,
 				BE57EDB11F03EFDB0091F312 /* UIViewController+Polesapp.swift in Sources */,
 				BE57EFB51F08D99B0091F312 /* IntegralLogTableViewCell.swift in Sources */,
+				BE7CAA511F0F9F49007CB195 /* SettingViewController.swift in Sources */,
 				BE01909D1EFD4B0300FA040E /* ArticleHomeViewController.swift in Sources */,
 				BE7CA9D41F0DEC83007CB195 /* MineUserInfoTableViewCell.swift in Sources */,
 				BE57EF751F05414A0091F312 /* SDCollectionViewCell.m in Sources */,
@@ -1935,6 +1949,7 @@
 				BE0190971EFD4A6400FA040E /* BaseViewController.swift in Sources */,
 				BE57EDA61F03E7CA0091F312 /* BorrowedBookViewController.swift in Sources */,
 				BE8D53EF1EFBF619003850EB /* UIViewController+STPopup.m in Sources */,
+				BEB94CDF1F13BF7300181DC2 /* UserInfoView.swift in Sources */,
 				BE7CA9B01F0BE7C5007CB195 /* ViewModelProtocol.swift in Sources */,
 				BE57EF8D1F07AB530091F312 /* TeacherListTableViewCell.swift in Sources */,
 				BE7CA9D21F0DEB32007CB195 /* MineViewController.swift in Sources */,
@@ -1951,6 +1966,7 @@
 				BE57EF771F05414A0091F312 /* UIView+SDExtension.m in Sources */,
 				BE7CA9B21F0BE819007CB195 /* APIResult.swift in Sources */,
 				BE9AC4211F01495000C9288A /* LoginViewController.swift in Sources */,
+				BE7CAA4F1F0F96FE007CB195 /* AddressListViewController.swift in Sources */,
 				BE7CAA261F0F3F08007CB195 /* MJRefreshAutoFooter.m in Sources */,
 				BE57EFA71F07E5D30091F312 /* DataViewController.swift in Sources */,
 				BE7CA9DE1F0F24F5007CB195 /* IntegralLog.swift in Sources */,

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ArticleHomeViewController: BaseRootTabViewController, HcdTabBarDelegate {
+class ArticleHomeViewController: BaseViewController, HcdTabBarDelegate {
     
     private var cates = ["推荐", "理工", "人文", "竞赛", "二手"]
     private var selectedControllerIndex = -1
@@ -46,21 +46,7 @@ class ArticleHomeViewController: BaseRootTabViewController, HcdTabBarDelegate {
     private func initSubviews() {
         
         self.title = "文章"
-        NotificationCenter.default.post(name: NSNotification.Name.init("enableRESideMenu"), object: nil)
-        
-        let searchBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
-        searchBtn.setImage(UIImage(named: "jieshu_btn_sousuo"), for: .normal)
-        let searchBarBtn = UIBarButtonItem.init(customView: searchBtn)
-        
-        let addBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
-        addBtn.setImage(UIImage(named: "wenzhang_btn_xinjianwenzhang"), for: .normal)
-        let addBarBtn = UIBarButtonItem.init(customView: addBtn)
-        
-        //用于消除右边边空隙，要不然按钮顶不到最边上
-        let spacer = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
-        spacer.width = -10;
-        
-        self.navigationItem.rightBarButtonItems = [spacer, addBarBtn, searchBarBtn]
+        self.showBarButtonItem(position: RIGHT, withImage: UIImage(named: "jieshu_btn_sousuo")!)
         
         self.automaticallyAdjustsScrollViewInsets = false
         self.view.clipsToBounds = true

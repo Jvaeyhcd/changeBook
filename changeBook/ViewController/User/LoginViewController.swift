@@ -305,7 +305,7 @@ class LoginViewController: UIViewController {
             break
         case 101:
             let vc = FindPasswordViewController()
-            vc.type = .reset
+            vc.type = .forget
             self.pushViewController(viewContoller: vc, animated: true)
             break
         case 200:

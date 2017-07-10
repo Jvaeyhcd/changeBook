@@ -10,7 +10,7 @@ import UIKit
 
 class HomeHeadView: UIView, UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout, SDCycleScrollViewDelegate {
     
-    let titles = ["借书", "资料", "捐赠", "上传"]
+    let titles = ["书籍", "资料", "捐赠", "打印"]
     let icons = ["home_btn_jieshu", "home_btn_ziliao", "home_btn_juanzeng-", "home_btn_shangchuan"]
     var selectCollectionIndex: ((Int)->())?
 

@@ -1,22 +1,25 @@
 //
-//  FriendsHomeViewController.swift
+//  AddressListViewController.swift
 //  changeBook
 //
-//  Created by Jvaeyhcd on 23/06/2017.
+//  Created by Jvaeyhcd on 07/07/2017.
 //  Copyright © 2017 Jvaeyhcd. All rights reserved.
 //
 
 import UIKit
 
-class FriendsHomeViewController: BaseViewController {
+class AddressListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "书友"
-        NotificationCenter.default.post(name: NSNotification.Name.init("enableRESideMenu"), object: nil)
+        initSubviews()
     }
 
+    private func initSubviews() {
+        self.title = "收货地址"
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -40,9 +40,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = UIColor.white
         
-        let rootViewController = RootViewController.init(rootViewController: RootTabBarViewController())
-        rootViewController?.leftViewController = MenuViewController()
-        window?.rootViewController = BaseNavigationController.init(rootViewController: rootViewController!)
+//        let rootViewController = RootViewController.init(rootViewController: RootTabBarViewController())
+//        rootViewController?.leftViewController = MenuViewController()
+        window?.rootViewController = RootTabBarViewController()//BaseNavigationController.init(rootViewController: rootViewController!)
         
         window?.makeKeyAndVisible()
     }

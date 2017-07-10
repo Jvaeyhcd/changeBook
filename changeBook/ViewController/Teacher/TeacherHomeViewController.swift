@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TeacherHomeViewController: BaseRootTabViewController, HcdTabBarDelegate {
+class TeacherHomeViewController: BaseViewController, HcdTabBarDelegate {
 
     private var cates = ["推荐", "理工", "社科", "教辅", "课外"];
     private var selectedControllerIndex = -1

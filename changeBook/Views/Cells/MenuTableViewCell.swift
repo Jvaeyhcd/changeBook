@@ -30,12 +30,14 @@ class MenuTableViewCell: UITableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        self.accessoryType = .disclosureIndicator
+        
         self.selectedBackgroundView = UIView.init(frame: self.frame)
         self.selectedBackgroundView?.backgroundColor = kSelectedCellBgColor
         
         self.addSubview(self.iconImageView)
         self.iconImageView.snp.makeConstraints { (make) in
-            make.left.equalTo(scaleFromiPhone6Desgin(x: 52))
+            make.left.equalTo(kBasePadding)
             make.width.equalTo(scaleFromiPhone6Desgin(x: 20))
             make.height.equalTo(scaleFromiPhone6Desgin(x: 20))
             make.centerY.equalTo(self.snp.centerY)
@@ -43,7 +45,7 @@ class MenuTableViewCell: UITableViewCell {
         
         self.addSubview(self.titleLbl)
         self.titleLbl.snp.makeConstraints { (make) in
-            make.left.equalTo(iconImageView.snp.right).offset(scaleFromiPhone6Desgin(x: 26))
+            make.left.equalTo(iconImageView.snp.right).offset(kBasePadding)
             make.height.equalTo(scaleFromiPhone6Desgin(x: 20))
             make.centerY.equalTo(self.snp.centerY)
             make.right.equalTo(-kScreenWidth * 0.2 - scaleFromiPhone6Desgin(x: 40))

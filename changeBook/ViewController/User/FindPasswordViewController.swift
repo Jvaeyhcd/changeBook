@@ -156,7 +156,15 @@ class FindPasswordViewController: UIViewController {
         self.view.addGestureRecognizer(tapGesture)
         
         let item = UIBarButtonItem(image: UIImage(named: "top_btn_back"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(leftNavBarButtonClicked))
-        item.tintColor = UIColor(hex: 0x232323)
+        
+        var top = scaleFromiPhone6Desgin(x: 24)
+        if self.type == .forget {
+            top = kNavHeight + scaleFromiPhone6Desgin(x: 24)
+            item.tintColor = UIColor(hex: 0x232323)
+        } else if self.type == .reset {
+            top = scaleFromiPhone6Desgin(x: 24)
+            item.tintColor = UIColor(hex: 0xFFFFFF)
+        }
         self.navigationItem.leftBarButtonItem = item
         
         self.userNameTextField.addTarget(self, action: #selector(textfieldDidChange(textField:)), for: UIControlEvents.editingChanged)
@@ -165,7 +173,7 @@ class FindPasswordViewController: UIViewController {
             make.left.equalTo(scaleFromiPhone6Desgin(x: 30))
             make.right.equalTo(-scaleFromiPhone6Desgin(x: 30))
             make.height.equalTo(scaleFromiPhone6Desgin(x: 54))
-            make.top.equalTo(kNavHeight + scaleFromiPhone6Desgin(x: 24))
+            make.top.equalTo(top)
         }
         self.userNameTextField.rx.text.orEmpty.bindTo(viewModel.username).addDisposableTo(disposeBag)
         

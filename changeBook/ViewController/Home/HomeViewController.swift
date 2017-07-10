@@ -10,7 +10,7 @@ import UIKit
 
 let kHomeHeadViewHeight = kScreenWidth * (150.0 / 375.0 + 0.25) + scaleFromiPhone6Desgin(x: 30)
 
-class HomeViewController: BaseRootTabViewController, HcdTabBarDelegate {
+class HomeViewController: BaseViewController, HcdTabBarDelegate {
     
     // tableview的偏移量
     fileprivate var tableViewOffsetY = CGFloat(0)
