@@ -27,6 +27,8 @@ struct User {
     var needIntegral : String = ""
     var carPic: String = ""
     var couponNum : String = ""
+    var schoolName: String = ""
+    var address: String = ""
     
     //三方绑定状态
     var bindWeChat = "0"
@@ -90,6 +92,8 @@ struct User {
         inviteNum = json["inviteNum"].stringValue
         integral = json["integral"].stringValue
         needIntegral = json["needIntegral"].stringValue
+        address = json["address"].stringValue
+        schoolName = json["schoolName"].stringValue
         
         inviteCode = json["inviteCode"].stringValue
         inviteReword = json["inviteReword"].stringValue

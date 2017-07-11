@@ -8,9 +8,10 @@
 
 import UIKit
 import HcdActionSheet
+import MobileCoreServices
 import SDWebImage
 
-class SettingViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
+class SettingViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     fileprivate lazy var viewModel = UserViewModel()
     fileprivate var savedUser = sharedGlobal.getSavedUser()
@@ -19,10 +20,6 @@ class SettingViewController: BaseViewController, UITableViewDelegate, UITableVie
     var imgBackUrl = ""
     //性别
     var sexSelected = MAN
-    //昵称
-    var userName = ""
-    //个人介绍
-    var introduce = ""
     
     //fileprivate上传的图片
     fileprivate var uploadImg : UIImage?
@@ -57,6 +54,7 @@ class SettingViewController: BaseViewController, UITableViewDelegate, UITableVie
         super.viewDidLoad()
 
         initSubviews()
+        getUserInfo()
     }
     
     // MARK: - private function
@@ -90,13 +88,13 @@ class SettingViewController: BaseViewController, UITableViewDelegate, UITableVie
     
     // 获取用户信息
     private func getUserInfo() {
-        self.viewModel.getUserInfo(success: { (data) in
-            self.savedUser = User.fromJSON(json: data["user"].object)
-            sharedGlobal.saveUser(user: self.savedUser)
+        self.viewModel.getUserInfo(success: { [weak self] (data) in
+            self?.savedUser = User.fromJSON(json: data["user"].object)
+            sharedGlobal.saveUser(user: (self?.savedUser)!)
             
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "refreshUserInfo"), object: nil)
             
-            self.tableView.reloadData()
+            self?.tableView.reloadData()
         }, fail: { [weak self] (message) in
             self!.showHudTipStr(message)
         }) { 
@@ -139,8 +137,10 @@ class SettingViewController: BaseViewController, UITableViewDelegate, UITableVie
             [weak self] index in
             if 1 == index{
                 //拍照
+                self?.showCameraPicker()
             }else if 2 == index{
                 //相册
+                self?.showPhotoPicker()
             }
         }
         
@@ -153,7 +153,7 @@ class SettingViewController: BaseViewController, UITableViewDelegate, UITableVie
                 self?.sexSelected = WOMAN
             }
             if oldSex != self?.sexSelected {
-                self?.changeUserInfo(headPic: (self?.imgBackUrl)!, nickName: (self?.userName)!, sex: (self?.sexSelected)!, introduce: (self?.introduce)!)
+                self?.changeUserInfo(headPic: (self?.imgBackUrl)!, nickName: (self?.savedUser.nickName)!, sex: (self?.sexSelected)!, introduce: (self?.savedUser.introduce)!)
             }
         }
         
@@ -163,13 +163,52 @@ class SettingViewController: BaseViewController, UITableViewDelegate, UITableVie
                 self?.userLogout()
             }
         }
+        
     }
     
     //按钮点击事件
-    func btnClick() {
+    @objc private func btnClick() {
         UIApplication.shared.keyWindow?.addSubview(self.loginOutSheet)
         self.loginOutSheet.show()
         
+    }
+    
+    private func showPhotoPicker() {
+        let picker = UIImagePickerController()
+        picker.sourceType = .photoLibrary
+        picker.delegate = self
+        picker.allowsEditing = true
+        picker.navigationBar.isTranslucent = false
+        picker.modalPresentationStyle = .currentContext
+        picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: picker.sourceType)!
+        self.navigationController?.present(picker, animated: true, completion: nil)
+    }
+    
+    private func showCameraPicker() {
+        let picker = UIImagePickerController()
+        picker.sourceType = .camera
+        picker.delegate = self
+        picker.allowsEditing = true
+        picker.navigationBar.isTranslucent = false
+        picker.modalPresentationStyle = .currentContext
+        picker.mediaTypes = [kUTTypeImage as String]
+        self.navigationController?.present(picker, animated: true, completion: nil)
+    }
+    
+    // 上传头像
+    private func uploadPicture() {
+        let uploadManager = QiniuManager()
+        uploadManager.images = [UIImage.fixOrientation(uploadImg)]
+        uploadManager.type = "u"
+        uploadManager.uploadImages(successBlock: { [weak self] (picList) in
+            
+            self!.hideHud()
+            self!.imgBackUrl = picList
+            self?.changeUserInfo(headPic: (self?.imgBackUrl)!, nickName: (self?.savedUser.nickName)!, sex: (self?.savedUser.sex)!, introduce: (self?.savedUser.introduce)!)
+            
+        }) { [weak self] (message) in
+            self!.showHudTipStr(message)
+        }
     }
     
     // MARK: - UITableViewDelegate, UITableViewDataSource
@@ -220,14 +259,17 @@ class SettingViewController: BaseViewController, UITableViewDelegate, UITableVie
                 cell.titleLbl.text = "学校"
                 cell.descLbl.isHidden = false
                 cell.portraitImageView.isHidden = true
+                cell.descLbl.text = self.savedUser.schoolName
             } else if indexPath.row == 4 {
                 cell.titleLbl.text = "地址"
                 cell.descLbl.isHidden = false
                 cell.portraitImageView.isHidden = true
+                cell.descLbl.text = self.savedUser.address
             } else if indexPath.row == 5 {
                 cell.titleLbl.text = "个人简介"
                 cell.descLbl.isHidden = false
                 cell.portraitImageView.isHidden = true
+                cell.descLbl.text = self.savedUser.introduce
             }
             cell.accessoryType = .disclosureIndicator
             tableView.addLineforPlainCell(cell: cell, indexPath: indexPath, leftSpace: kBasePadding)
@@ -296,10 +338,37 @@ class SettingViewController: BaseViewController, UITableViewDelegate, UITableVie
                 self.choseHeadSheet.show()
             } else if 1 == indexPath.row {
                 // 修改昵称
+                let vc = EditNickNameViewController()
+                vc.changeNickNameBlock = {
+                    [weak self] (nickName) in
+                    self?.savedUser.nickName = nickName
+                    self?.tableView.reloadData()
+                }
+                self.pushViewController(viewContoller: vc, animated: true)
             } else if 2 == indexPath.row {
                 // 修改性别
                 UIApplication.shared.keyWindow?.addSubview(self.choseSexSheet)
                 self.choseSexSheet.show()
+            } else if 3 == indexPath.row {
+                // 修改学校
+                let vc = SchoolListViewController()
+                vc.changeSchoolBlock = {
+                    [weak self] (school) in
+                    self?.savedUser.schoolName = school.schoolName
+                    self?.tableView.reloadData()
+                }
+                self.pushViewController(viewContoller: vc, animated: true)
+            } else if 4 == indexPath.row {
+                // 修改地址
+                
+            } else if 5 == indexPath.row {
+                let vc = EditIntroduceViewController()
+                vc.changeIntroduceBlock = {
+                    [weak self] (introduce) in
+                    self?.savedUser.introduce = introduce
+                    self?.tableView.reloadData()
+                }
+                self.pushViewController(viewContoller: vc, animated: true)
             }
         } else if 2 == indexPath.section {
             if 0 == indexPath.row {
@@ -323,6 +392,16 @@ class SettingViewController: BaseViewController, UITableViewDelegate, UITableVie
             return ButtonTableViewCell.cellHeight()
         }
         return SettingTableViewCell.cellHeight()
+    }
+    
+    // MARK: - UIImagePickerControllerDelegate
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if nil != info[UIImagePickerControllerOriginalImage] {
+            let img = info[UIImagePickerControllerOriginalImage] as! UIImage
+            self.uploadImg = img
+            self.uploadPicture()
+        }
+        picker.dismiss(animated: true, completion: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {

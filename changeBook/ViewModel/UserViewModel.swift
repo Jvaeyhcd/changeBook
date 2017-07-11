@@ -64,4 +64,77 @@ class UserViewModel: ViewModelProtocol {
         }
     }
     
+    // 获取学校列表
+    func getSchoolList(cache: @escaping DataBlock,
+                       success: @escaping DataBlock,
+                       fail: @escaping MessageBlock,
+                       loginSuccess: @escaping VoidBlock) {
+        
+        let cacheName = "getSchoolList"
+        
+        self.getCacheData(cacheName: cacheName, cacheData: cache)
+        UserAPIProvider.request(UserAPI.getSchoolList()) { (result) in
+            self.request(cacheName: cacheName, result: result, success: success, fail: fail, loginSuccess: loginSuccess)
+        }
+    }
+    
+    // 绑定学校
+    func bindSchool(schoolId: String,
+                    success: @escaping DataBlock,
+                    fail: @escaping MessageBlock,
+                    loginSuccess: @escaping VoidBlock) {
+        UserAPIProvider.request(UserAPI.bindSchool(schoolId: schoolId)) { (result) in
+            self.request(cacheName: kNoNeedCache, result: result, success: success, fail: fail, loginSuccess: loginSuccess)
+        }
+    }
+    
+    // 设置默认收货地址
+    func setDefaultAddress(addressId: String,
+                           success: @escaping DataBlock,
+                           fail: @escaping MessageBlock,
+                           loginSuccess: @escaping VoidBlock) {
+        UserAPIProvider.request(UserAPI.setDefaultAddress(addressId: addressId)) { (result) in
+            self.request(cacheName: kNoNeedCache, result: result, success: success, fail: fail, loginSuccess: loginSuccess)
+        }
+    }
+    
+    // 获取用户收货地址
+    func getUserAddressList(cache: @escaping DataBlock,
+                            success: @escaping DataBlock,
+                            fail: @escaping MessageBlock,
+                            loginSuccess: @escaping VoidBlock) {
+        let cacheName = "getUserAddressList"
+        
+        self.getCacheData(cacheName: cacheName, cacheData: cache)
+        UserAPIProvider.request(UserAPI.getUserAddressList()) { (result) in
+            self.request(cacheName: cacheName, result: result, success: success, fail: fail, loginSuccess: loginSuccess)
+        }
+    }
+    
+    // 添加收货地址
+    func addAddress(userName: String,
+                    phone: String,
+                    addressDetail: String,
+                    isDefault: Int,
+                    success: @escaping DataBlock,
+                    fail: @escaping MessageBlock,
+                    loginSuccess: @escaping VoidBlock) {
+        UserAPIProvider.request(UserAPI.addAddress(userName: userName, phone: phone, addressDetail: addressDetail, isDefault: isDefault)) { (result) in
+            self.request(cacheName: kNoNeedCache, result: result, success: success, fail: fail, loginSuccess: loginSuccess)
+        }
+    }
+    
+    // 编辑收货地址
+    func editAddress(addressId: String,
+                     userName: String,
+                     phone: String,
+                     addressDetail: String,
+                     isDefault: Int,
+                     success: @escaping DataBlock,
+                     fail: @escaping MessageBlock,
+                     loginSuccess: @escaping VoidBlock) {
+        UserAPIProvider.request(UserAPI.editAddress(addressId: addressId, userName: userName, phone: phone, addressDetail: addressDetail, isDefault: isDefault)) { (result) in
+            self.request(cacheName: kNoNeedCache, result: result, success: success, fail: fail, loginSuccess: loginSuccess)
+        }
+    }
 }

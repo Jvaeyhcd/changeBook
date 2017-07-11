@@ -39,6 +39,18 @@ public enum UserAPI {
     case changePassword(userName:String,newPassword:String,identifyCode:String)
     //获取积分记录
     case getUserIntegralLog()
+    //获取学校列表
+    case getSchoolList()
+    //绑定学校
+    case bindSchool(schoolId: String)
+    //设置默认收货地址
+    case setDefaultAddress(addressId: String)
+    //获取用户收货地址
+    case getUserAddressList()
+    //添加收货地址
+    case addAddress(userName: String, phone: String, addressDetail: String, isDefault: Int)
+    //编辑收货地址
+    case editAddress(addressId: String, userName: String, phone: String, addressDetail: String, isDefault: Int)
 }
 
 extension UserAPI: TargetType {
@@ -66,6 +78,18 @@ extension UserAPI: TargetType {
             return "/user/updatePassword/updatePassword"
         case .getUserIntegralLog():
             return "/user/getUserIntegral"
+        case .getSchoolList():
+            return "/user/getSchoolList"
+        case .bindSchool(schoolId: _):
+            return "/user/bindSchool"
+        case .setDefaultAddress(addressId: _):
+            return "/user/setDefaultAddress"
+        case .getUserAddressList():
+            return "/user/userAddress"
+        case .addAddress(userName: _, phone: _, addressDetail: _, isDefault: _):
+            return "/user/addAddress"
+        case .editAddress(addressId: _, userName: _, phone: _, addressDetail: _, isDefault: _):
+            return ""
         }
     }
     
@@ -133,7 +157,47 @@ extension UserAPI: TargetType {
                 "token":token,
                 "userId":userId
             ]
-            
+        case .getSchoolList():
+            return [
+                "token":token,
+                "userId":userId
+            ]
+        case .bindSchool(let schoolId):
+            return [
+                "token": token,
+                "userId": userId,
+                "schoolId": schoolId
+            ]
+        case .getUserAddressList():
+            return [
+                "token":token,
+                "userId":userId
+            ]
+        case .setDefaultAddress(let addressId):
+            return [
+                "token": token,
+                "userId": userId,
+                "addressId": addressId
+            ]
+        case .addAddress(let userName, let phone, let addressDetail, let isDefault):
+            return [
+                "token": token,
+                "userId": userId,
+                "userName": userName,
+                "phone": phone,
+                "addressDetail": addressDetail,
+                "isDefault": isDefault
+            ]
+        case .editAddress(let addressId, let userName, let phone, let addressDetail, let isDefault):
+            return [
+                "token": token,
+                "userId": userId,
+                "addressId": addressId,
+                "userName": userName,
+                "phone": phone,
+                "addressDetail": addressDetail,
+                "isDefault": isDefault
+            ]
         }
     }
     

@@ -12,6 +12,7 @@
 #import "SDCycleScrollView.h"
 #import "MJRefresh.h"
 #import "UIScrollView+EmptyDataSet.h"
+#import "UIPlaceHolderTextView.h"
 
 // MARK: - Category
 #import "UIImage+Polesapp.h"
