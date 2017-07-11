@@ -45,7 +45,7 @@ class DataListTableViewCell: UITableViewCell {
         return star
     }()
     
-    private var soreLbl: UILabel = {
+    private var scoreLbl: UILabel = {
         let lbl = UILabel()
         lbl.font = UIFont.systemFont(ofSize: 12)
         lbl.textAlignment = .left
@@ -129,9 +129,9 @@ class DataListTableViewCell: UITableViewCell {
             make.top.equalTo(self.titleLbl.snp.bottom)
         }
         
-        self.soreLbl.text = "4.2"
-        self.addSubview(self.soreLbl)
-        self.soreLbl.snp.makeConstraints { (make) in
+        self.scoreLbl.text = "4.2"
+        self.addSubview(self.scoreLbl)
+        self.scoreLbl.snp.makeConstraints { (make) in
             make.left.equalTo(self.rateStar.snp.right).offset(scaleFromiPhone6Desgin(x: 6))
             make.centerY.equalTo(self.rateStar.snp.centerY)
             make.height.equalTo(scaleFromiPhone6Desgin(x: 20))
@@ -147,7 +147,7 @@ class DataListTableViewCell: UITableViewCell {
             make.right.equalTo(-kBasePadding)
         }
         
-        self.otherLbl.text = "剩余20本 10条评论"
+        self.otherLbl.text = "20次查阅 10条评论"
         self.addSubview(self.otherLbl)
         self.otherLbl.snp.makeConstraints { (make) in
             make.left.equalTo(self.coverImg.snp.right).offset(kBasePadding)
@@ -155,6 +155,29 @@ class DataListTableViewCell: UITableViewCell {
             make.top.equalTo(self.authorLbl.snp.bottom)
             make.right.equalTo(-kBasePadding)
         }
+    }
+    
+    func setDocument(document: Document) {
+        
+        self.coverImg.sd_setImage(with: URL.init(string: document.documentCover), placeholderImage: kNoImgDefaultImage)
+        self.authorLbl.text = document.uploader + " 上传"
+        self.titleLbl.text = document.documentName
+        self.otherLbl.text = document.readNum + "查阅 " + document.commentNum + "条评论"
+        self.scoreLbl.text = document.score
+        self.rateStar.value = CGFloat(document.score.floatValue)
+        
+        if kDocumentTypeDOC == document.fileFormat {
+            self.tagImgView.image = UIImage(named: "home_icon_doc")
+        } else if kDocumentTypeEXC == document.fileFormat {
+            self.tagImgView.image = UIImage(named: "home_icon_doc")
+        } else if kDocumentTypePDF == document.fileFormat {
+            self.tagImgView.image = UIImage(named: "home_icon_pdf")
+        } else if kDocumentTypePPT == document.fileFormat {
+            self.tagImgView.image = UIImage(named: "home_icon_ppt")
+        } else if kDocumentTypeTXT == document.fileFormat {
+            self.tagImgView.image = UIImage(named: "home_icon_txt")
+        }
+        
     }
     
     static func cellHeight() -> CGFloat {

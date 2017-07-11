@@ -47,7 +47,7 @@ class SlippedSegmentView: UIView, UIScrollViewDelegate {
     // 选中的Item的index
     private var selectedItemIndex = -1
     private var scrollView: UIScrollView?
-    
+    private var bottomLineView: UIView?
     private var items: [SlippedSegmentItem] = [SlippedSegmentItem]()
     private var itemSelectedBgImageView: UIImageView?
     private var itemSelectedBgImageViewColor: UIColor = UIColor.red
@@ -378,6 +378,12 @@ class SlippedSegmentView: UIView, UIScrollViewDelegate {
             self.itemSelectedBgImageView = UIImageView.init(frame: .zero)
             self.itemSelectedBgImageView?.backgroundColor = itemSelectedBgImageViewColor
         }
+        
+        if nil == self.bottomLineView {
+            self.bottomLineView = UIView.init(frame: CGRect.zero)
+            self.bottomLineView?.backgroundColor = kMainBgColor
+            self.scrollView?.addSubview(self.bottomLineView!)
+        }
     }
     
     private func initDatas() {
@@ -395,10 +401,10 @@ class SlippedSegmentView: UIView, UIScrollViewDelegate {
         // 将item从superview上删除
         self.items.forEach{ $0.removeFromSuperview() }
         self.itemSelectedBgImageView!.removeFromSuperview()
+        self.bottomLineView?.removeFromSuperview()
         
         if nil != self.scrollView {
-            self.itemSelectedBgImageView?.backgroundColor = itemSelectedBgImageViewColor
-            self.scrollView?.addSubview(self.itemSelectedBgImageView!)
+            
             var x = self.leftAndRightSpacing
             var index = 0
             for item in self.items {
@@ -428,6 +434,10 @@ class SlippedSegmentView: UIView, UIScrollViewDelegate {
                 index = index + 1
                 self.scrollView?.addSubview(item)
             }
+            
+            self.scrollView?.addSubview(self.bottomLineView!)
+            self.itemSelectedBgImageView?.backgroundColor = itemSelectedBgImageViewColor
+            self.scrollView?.addSubview(self.itemSelectedBgImageView!)
             
             self.scrollView?.contentSize = CGSize(width: MAX(value1: x + self.leftAndRightSpacing, value2: self.scrollView!.frame.size.width), height: self.scrollView!.frame.size.height)
             
@@ -461,7 +471,7 @@ class SlippedSegmentView: UIView, UIScrollViewDelegate {
             self.scrollView?.frame = CGRect(x: x, y: y, width: width, height: height)
         }
         
-        
+        self.bottomLineView?.frame = CGRect(x: 0, y: (self.scrollView?.frame.size.height)! - 1, width: (self.scrollView?.frame.size.width)!, height: 1)
         self.updateItemsFrame()
     }
     

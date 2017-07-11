@@ -1,5 +1,5 @@
 //
-//  HotBookListViewController.swift
+//  HotDataListViewController.swift
 //  changeBook
 //
 //  Created by Jvaeyhcd on 05/07/2017.
@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import SwiftyJSON
 
-class HotBookListViewController: BaseTableViewController, UITableViewDelegate, UITableViewDataSource {
+class HotDataListViewController: BaseTableViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    fileprivate lazy var viewModel = DocumentViewModel()
+    fileprivate var documentList = [Document]()
     
     var parentVC: UIViewController?
 
@@ -28,7 +32,7 @@ class HotBookListViewController: BaseTableViewController, UITableViewDelegate, U
                                                                    bottom: 0,
                                                                    right: 0)
         
-        self.tableView.register(BookListTableViewCell.self, forCellReuseIdentifier: kCellIdBookListTableViewCell)
+        self.tableView.register(DataListTableViewCell.self, forCellReuseIdentifier: kCellIdDataListTableViewCell)
         self.view.addSubview(self.tableView)
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -38,6 +42,29 @@ class HotBookListViewController: BaseTableViewController, UITableViewDelegate, U
             make.bottom.equalTo(0)
             make.left.equalTo(0)
         }
+        
+        self.getHotDocument()
+    }
+    
+    // MARK: - private
+    private func getHotDocument() {
+        
+        self.viewModel.getHotDocument(cache: { [weak self] (data) in
+            self?.updateHotDocument(data: data)
+        }, success: { [weak self] (data) in
+            self?.updateHotDocument(data: data)
+        }, fail: { [weak self] (message) in
+            self?.showHudTipStr(message)
+        }) { 
+            
+        }
+    }
+    
+    private func updateHotDocument(data: JSON) {
+        
+        self.documentList = Document.fromJSONArray(json: data.arrayObject!)
+        self.tableView.reloadData()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,17 +77,25 @@ class HotBookListViewController: BaseTableViewController, UITableViewDelegate, U
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return self.documentList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: kCellIdBookListTableViewCell, for: indexPath) as! BookListTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: kCellIdDataListTableViewCell, for: indexPath) as! DataListTableViewCell
         tableView.addLineforPlainCell(cell: cell, indexPath: indexPath, leftSpace: 0)
+        
+        let document = self.documentList[indexPath.row]
+        cell.setDocument(document: document)
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return BookListTableViewCell.cellHeight()
+        return DataListTableViewCell.cellHeight()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     override func didReceiveMemoryWarning() {

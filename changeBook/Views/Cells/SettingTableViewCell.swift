@@ -35,7 +35,7 @@ class SettingTableViewCell: UITableViewCell {
     lazy var descLbl: UILabel = {
         let lbl = UILabel()
         lbl.textAlignment = .right
-        lbl.font = kBarButtonItemTitleFont
+        lbl.font = UIFont.systemFont(ofSize: 14)
         lbl.textColor = UIColor(hex: 0x888888)
         return lbl
     }()

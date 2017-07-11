@@ -90,6 +90,9 @@ class EditIntroduceViewController: BaseViewController, UITextViewDelegate {
     }
     
     override func rightNavBarButtonClicked() {
+        
+        self.view.endEditing(true)
+        
         if "" == self.textView.text{
             self.showHudTipStr("请输入昵称")
         } else {

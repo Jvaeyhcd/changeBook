@@ -8,7 +8,7 @@
 
 import UIKit
 
-let kHomeHeadViewHeight = kScreenWidth * (150.0 / 375.0 + 0.25) + scaleFromiPhone6Desgin(x: 30)
+let kHomeHeadViewHeight = kScreenWidth * (150.0 / 375.0 + 0.25) + scaleFromiPhone6Desgin(x: 30) + kBasePadding
 
 class HomeViewController: BaseViewController, HcdTabBarDelegate {
     
@@ -66,9 +66,9 @@ class HomeViewController: BaseViewController, HcdTabBarDelegate {
         self.controllersScrollView.delegate = self.tabBar
         self.view.insertSubview(self.controllersScrollView, belowSubview: self.tabBar)
         
-        let vc1 = HotBookListViewController()
+        let vc1 = HotDataListViewController()
         vc1.parentVC = self
-        vc1.title = "热门书籍"
+        vc1.title = "热门资料"
         
         let vc2 = HotArticleListViewController()
         vc2.parentVC = self

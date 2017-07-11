@@ -27,6 +27,14 @@ class HomeHeadView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
         return collectionView
     }()
     
+    lazy var lineView: UIView = {
+    
+        let view = UIView()
+        view.backgroundColor = kMainBgColor
+        return view
+        
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -35,6 +43,9 @@ class HomeHeadView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         self.addSubview(self.collectionView)
+        
+        self.lineView.frame = CGRect(x: 0, y: self.collectionView.frame.maxY, width: kScreenWidth, height: kBasePadding)
+        self.addSubview(self.lineView)
     }
     
     required init?(coder aDecoder: NSCoder) {

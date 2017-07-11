@@ -87,6 +87,9 @@ class EditNickNameViewController: BaseViewController {
     }
     
     override func rightNavBarButtonClicked() {
+        
+        self.view.endEditing(true)
+        
         if "" == self.nameTextField.text{
             self.showHudTipStr("请输入昵称")
         } else {
