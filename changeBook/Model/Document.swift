@@ -31,6 +31,7 @@ struct Document {
     var needIntegral: String
     var fileSize: String
     var isRead: Int
+    var introduce: String
     
     init(json: JSON) {
         self.id = json["id"].stringValue
@@ -45,6 +46,7 @@ struct Document {
         self.needIntegral = json["needIntegral"].stringValue
         self.fileSize = json["fileSize"].stringValue
         self.isRead = json["isRead"].intValue
+        self.introduce = json["introduce"].stringValue
     }
 }
 

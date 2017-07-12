@@ -169,7 +169,7 @@ class DataListTableViewCell: UITableViewCell {
         if kDocumentTypeDOC == document.fileFormat {
             self.tagImgView.image = UIImage(named: "home_icon_doc")
         } else if kDocumentTypeEXC == document.fileFormat {
-            self.tagImgView.image = UIImage(named: "home_icon_doc")
+            self.tagImgView.image = UIImage(named: "home_icon_xls")
         } else if kDocumentTypePDF == document.fileFormat {
             self.tagImgView.image = UIImage(named: "home_icon_pdf")
         } else if kDocumentTypePPT == document.fileFormat {

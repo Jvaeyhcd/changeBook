@@ -90,6 +90,8 @@ class HomeViewController: BaseViewController, HcdTabBarDelegate {
         
         self.view.addSubview(self.headView)
         self.showBarButtonItem(position: RIGHT, withImage: UIImage(named: "home_btn_shubao")!)
+        self.showBarButtonItem(position: LEFT, withImage: UIImage(named: "home_btn_saoyisao")!)
+        
         self.headView.selectCollectionIndex = {
             [weak self] (index) in
             switch index {
@@ -314,6 +316,14 @@ class HomeViewController: BaseViewController, HcdTabBarDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func leftNavBarButtonClicked() {
+        
+    }
+    
+    override func rightNavBarButtonClicked() {
+        
     }
     
     

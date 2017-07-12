@@ -11,7 +11,7 @@ import UIKit
 class HomeHeadView: UIView, UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout, SDCycleScrollViewDelegate {
     
     let titles = ["书籍", "资料", "捐赠", "打印"]
-    let icons = ["home_btn_jieshu", "home_btn_ziliao", "home_btn_juanzeng-", "home_btn_shangchuan"]
+    let icons = ["home_btn_jieshu", "home_btn_ziliao", "home_btn_juanzeng-", "home_btn_dayin"]
     var selectCollectionIndex: ((Int)->())?
 
     lazy var cycleScrollView: SDCycleScrollView = {

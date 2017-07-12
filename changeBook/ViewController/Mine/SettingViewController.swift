@@ -360,6 +360,8 @@ class SettingViewController: BaseViewController, UITableViewDelegate, UITableVie
                 self.pushViewController(viewContoller: vc, animated: true)
             } else if 4 == indexPath.row {
                 // 修改地址
+                let vc = AddressListViewController()
+                self.pushViewController(viewContoller: vc, animated: true)
                 
             } else if 5 == indexPath.row {
                 let vc = EditIntroduceViewController()
