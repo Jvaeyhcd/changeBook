@@ -87,7 +87,7 @@ class EditAddressViewController: BaseViewController, UITableViewDelegate, UITabl
         } else if 1 == indexPath.row {
             cell.lbTitle.text = "联系电话"
             cell.inputText.placeholder = "请输入联系人电话"
-            cell.inputText.keyboardType = .phonePad
+            cell.inputText.keyboardType = .numberPad
             cell.inputText.text = self.address.phone
         } else if 2 == indexPath.row {
             cell.lbTitle.text = "联系地址"
