@@ -32,6 +32,8 @@ extension ViewModelProtocol {
         case .success(let response):
             let json = JSON.init(data: response.data)
             
+            BLog(log: "\(json)")
+            
             let status = Status.fromJSON(json: json["status"].object)
             if kServerSuccessCode == status.code {
                 let data = json["data"]

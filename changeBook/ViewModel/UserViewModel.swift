@@ -129,12 +129,21 @@ class UserViewModel: ViewModelProtocol {
                      userName: String,
                      phone: String,
                      addressDetail: String,
-                     isDefault: Int,
                      success: @escaping DataBlock,
                      fail: @escaping MessageBlock,
                      loginSuccess: @escaping VoidBlock) {
-        UserAPIProvider.request(UserAPI.editAddress(addressId: addressId, userName: userName, phone: phone, addressDetail: addressDetail, isDefault: isDefault)) { (result) in
+        UserAPIProvider.request(UserAPI.editAddress(addressId: addressId, userName: userName, phone: phone, addressDetail: addressDetail)) { (result) in
             self.request(cacheName: kNoNeedCache, result: result, success: success, fail: fail, loginSuccess: loginSuccess)
+        }
+    }
+    
+    // 删除收货地址
+    func deleteAddress(addressId: String,
+                       success: @escaping DataBlock,
+                       fail: @escaping MessageBlock,
+                       loginSuccess: @escaping VoidBlock) {
+        UserAPIProvider.request(UserAPI.deleteAddress(addressId: addressId)) { [weak self] (result) in
+            self?.request(cacheName: kNoNeedCache, result: result, success: success, fail: fail, loginSuccess: loginSuccess)
         }
     }
 }

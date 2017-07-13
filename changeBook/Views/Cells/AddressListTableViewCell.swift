@@ -14,7 +14,7 @@ class AddressListTableViewCell: UITableViewCell {
     
     private lazy var nameAndPhoneLbl: UILabel = {
         let lbl = UILabel()
-        lbl.font = UIFont.boldSystemFont(ofSize: 16)
+        lbl.font = UIFont.systemFont(ofSize: 16)
         lbl.textColor = UIColor(hex: 0x555555)
         lbl.textAlignment = .left
         return lbl
@@ -28,39 +28,39 @@ class AddressListTableViewCell: UITableViewCell {
         return lbl
     }()
     
-    private var defaultBtn: UIButton = {
+    var defaultBtn: UIButton = {
         let btn = UIButton()
         btn.setTitle("默认地址", for: .selected)
         btn.setTitle("设为默认", for: .normal)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
         btn.imageView?.contentMode = .scaleAspectFit
         btn.setTitleColor(UIColor(hex: 0x888888), for: .normal)
-        btn.setImage(UIImage(named: "zhifu_rb_pre"), for: .normal)
-        btn.setImage(UIImage(named: "zhifu_rb"), for: .selected)
+        btn.setImage(UIImage(named: "zhifu_rb"), for: .normal)
+        btn.setImage(UIImage(named: "zhifu_rb_pre"), for: .selected)
         btn.imageEdgeInsets = UIEdgeInsetsMake(0, -3, 0, 3)
         btn.titleEdgeInsets = UIEdgeInsetsMake(0, 3, 0, -3)
         return btn
     }()
     
-    private var editBtn: UIButton = {
+    var editBtn: UIButton = {
         let btn = UIButton()
         btn.setTitle("编辑", for: .normal)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
         btn.imageView?.contentMode = .scaleAspectFit
         btn.setTitleColor(UIColor(hex: 0x888888), for: .normal)
-        btn.setImage(UIImage(named: "wenzhang_btn_xiugai"), for: .normal)
+        btn.setImage(UIImage(named: "dizhi_btn_xiugai"), for: .normal)
         btn.imageEdgeInsets = UIEdgeInsetsMake(0, -3, 0, 3)
         btn.titleEdgeInsets = UIEdgeInsetsMake(0, 3, 0, -3)
         return btn
     }()
     
-    private var deleteBtn: UIButton = {
+    var deleteBtn: UIButton = {
         let btn = UIButton()
         btn.setTitle("删除", for: .normal)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
         btn.imageView?.contentMode = .scaleAspectFit
         btn.setTitleColor(UIColor(hex: 0x888888), for: .normal)
-        btn.setImage(UIImage(named: "wenzhang_btn_xiugai"), for: .normal)
+        btn.setImage(UIImage(named: "dizhi_btn_shanchu"), for: .normal)
         btn.imageEdgeInsets = UIEdgeInsetsMake(0, -3, 0, 3)
         btn.titleEdgeInsets = UIEdgeInsetsMake(0, 3, 0, -3)
         return btn
@@ -68,9 +68,6 @@ class AddressListTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        self.selectedBackgroundView = UIView.init(frame: self.frame)
-        self.selectedBackgroundView?.backgroundColor = kSelectedCellBgColor
         
         initSubviews()
     }
@@ -140,6 +137,13 @@ class AddressListTableViewCell: UITableViewCell {
             make.height.equalTo(scaleFromiPhone6Desgin(x: 30))
             make.width.equalTo(54)
         }
+    }
+    
+    func setAddress(address: Address) {
+        self.addressLbl.text = address.addressDetail
+        self.nameAndPhoneLbl.text = address.userName + "  " + address.phone
+        self.defaultBtn.isSelected = address.isDefault
+        
     }
     
     static func cellHeight() -> CGFloat {

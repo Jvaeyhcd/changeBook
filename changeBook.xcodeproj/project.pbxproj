@@ -305,6 +305,12 @@
 		BE57F9A41EF16E3E008BE6AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE57F9A31EF16E3E008BE6AD /* AppDelegate.swift */; };
 		BE57F9AB1EF16E3E008BE6AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE57F9AA1EF16E3E008BE6AD /* Assets.xcassets */; };
 		BE57F9AE1EF16E3E008BE6AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE57F9AC1EF16E3E008BE6AD /* LaunchScreen.storyboard */; };
+		BE5AEF891F17B17000475B90 /* dizhi_btn_shanchu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5AEF851F17B17000475B90 /* dizhi_btn_shanchu@2x.png */; };
+		BE5AEF8A1F17B17000475B90 /* dizhi_btn_shanchu@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5AEF861F17B17000475B90 /* dizhi_btn_shanchu@3x.png */; };
+		BE5AEF8B1F17B17000475B90 /* dizhi_btn_xiugai@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5AEF871F17B17000475B90 /* dizhi_btn_xiugai@2x.png */; };
+		BE5AEF8C1F17B17000475B90 /* dizhi_btn_xiugai@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5AEF881F17B17000475B90 /* dizhi_btn_xiugai@3x.png */; };
+		BE5AEF8E1F17B27C00475B90 /* AddressInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5AEF8D1F17B27C00475B90 /* AddressInfoTableViewCell.swift */; };
+		BE5AEF901F17BBEB00475B90 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5AEF8F1F17BBEB00475B90 /* Address.swift */; };
 		BE7CA9A61F0BD3DA007CB195 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7CA9A41F0BD3DA007CB195 /* Status.swift */; };
 		BE7CA9A71F0BD3DA007CB195 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7CA9A51F0BD3DA007CB195 /* User.swift */; };
 		BE7CA9A91F0BD40B007CB195 /* Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7CA9A81F0BD40B007CB195 /* Decodable.swift */; };
@@ -711,6 +717,12 @@
 		BE57F9AA1EF16E3E008BE6AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE57F9AD1EF16E3E008BE6AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE57F9AF1EF16E3E008BE6AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE5AEF851F17B17000475B90 /* dizhi_btn_shanchu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dizhi_btn_shanchu@2x.png"; sourceTree = "<group>"; };
+		BE5AEF861F17B17000475B90 /* dizhi_btn_shanchu@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dizhi_btn_shanchu@3x.png"; sourceTree = "<group>"; };
+		BE5AEF871F17B17000475B90 /* dizhi_btn_xiugai@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dizhi_btn_xiugai@2x.png"; sourceTree = "<group>"; };
+		BE5AEF881F17B17000475B90 /* dizhi_btn_xiugai@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dizhi_btn_xiugai@3x.png"; sourceTree = "<group>"; };
+		BE5AEF8D1F17B27C00475B90 /* AddressInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressInfoTableViewCell.swift; sourceTree = "<group>"; };
+		BE5AEF8F1F17BBEB00475B90 /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		BE7CA9A41F0BD3DA007CB195 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		BE7CA9A51F0BD3DA007CB195 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BE7CA9A81F0BD40B007CB195 /* Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Decodable.swift; sourceTree = "<group>"; };
@@ -1001,6 +1013,10 @@
 				BE4B35051F1651F50008548D /* home_icon_xls@2x.png */,
 				BE4B35061F1651F50008548D /* home_icon_xls@3x.png */,
 				BE4B35071F1651F50008548D /* xiangqing_icon_xls@2x.png */,
+				BE5AEF851F17B17000475B90 /* dizhi_btn_shanchu@2x.png */,
+				BE5AEF861F17B17000475B90 /* dizhi_btn_shanchu@3x.png */,
+				BE5AEF871F17B17000475B90 /* dizhi_btn_xiugai@2x.png */,
+				BE5AEF881F17B17000475B90 /* dizhi_btn_xiugai@3x.png */,
 				BE4B35081F1651F60008548D /* xiangqing_icon_xls@3x.png */,
 				BE4B35091F1651F60008548D /* yinsishezhi_btn_on@2x.png */,
 				BE4B350A1F1651F60008548D /* yinsishezhi_btn_on@3x.png */,
@@ -1332,6 +1348,7 @@
 				BE7CA9D51F0DF3CA007CB195 /* SettingTableViewCell.swift */,
 				BEB94CE21F14516000181DC2 /* SchoolListTableViewCell.swift */,
 				BE4B352D1F16608B0008548D /* AddressListTableViewCell.swift */,
+				BE5AEF8D1F17B27C00475B90 /* AddressInfoTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1412,6 +1429,7 @@
 				BE7CA9DD1F0F24F5007CB195 /* IntegralLog.swift */,
 				BEB94CE41F146B5400181DC2 /* School.swift */,
 				BEB94CF61F15059F00181DC2 /* Document.swift */,
+				BE5AEF8F1F17BBEB00475B90 /* Address.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1769,10 +1787,12 @@
 				BE57EED61F04B1290091F312 /* wode_btn_wenzhang@3x.png in Resources */,
 				BE7CAA481F0F8EC8007CB195 /* pic_network_null@2x.png in Resources */,
 				BE57EF591F04B1290091F312 /* login_icon_4_pre@2x.png in Resources */,
+				BE5AEF8A1F17B17000475B90 /* dizhi_btn_shanchu@3x.png in Resources */,
 				BE57EFA41F07DF780091F312 /* com_pic_star3@2x.png in Resources */,
 				BE57EF581F04B1290091F312 /* login_icon_4@3x.png in Resources */,
 				BE57EEFE1F04B1290091F312 /* fenxiang_btn_wxhy@3x.png in Resources */,
 				BE57EEFD1F04B1290091F312 /* fenxiang_btn_wxhy@2x.png in Resources */,
+				BE5AEF8B1F17B17000475B90 /* dizhi_btn_xiugai@2x.png in Resources */,
 				BE57EF2B1F04B1290091F312 /* tab_shouye@2x.png in Resources */,
 				BE57EF521F04B1290091F312 /* login_icon_2@3x.png in Resources */,
 				BE57EF201F04B1290091F312 /* home_icon_txt@3x.png in Resources */,
@@ -1815,6 +1835,7 @@
 				BE7CA9F61F0F3192007CB195 /* refresh10.png in Resources */,
 				BE57EF391F04B1290091F312 /* home_btn_shubao@2x.png in Resources */,
 				BE57EFA11F07DF780091F312 /* com_pic_star1@3x.png in Resources */,
+				BE5AEF8C1F17B17000475B90 /* dizhi_btn_xiugai@3x.png in Resources */,
 				BE57EEA81F04B1290091F312 /* laoshi_icon_red@3x.png in Resources */,
 				BE4B35201F1651F60008548D /* yinsishezhi_btn_off@3x.png in Resources */,
 				BE57EEFC1F04B1290091F312 /* fenxiang_btn_qqhy@3x.png in Resources */,
@@ -1872,6 +1893,7 @@
 				BE7CAA461F0F8EC8007CB195 /* pic_msg_null@2x.png in Resources */,
 				BE4B351F1F1651F60008548D /* yinsishezhi_btn_off@2x.png in Resources */,
 				BE57EFB81F0A12830091F312 /* top_btn_close_black@2x.png in Resources */,
+				BE5AEF891F17B17000475B90 /* dizhi_btn_shanchu@2x.png in Resources */,
 				BE57EF5F1F04B1290091F312 /* login_icon_qq@2x.png in Resources */,
 				BE57EE9E1F04B1290091F312 /* laoshi_icon_blue_1@3x.png in Resources */,
 				BE57EEB91F04B1290091F312 /* pingjia_btn_star2@2x.png in Resources */,
@@ -2052,6 +2074,7 @@
 				BE7CA9C71F0CEA7E007CB195 /* HotDataListViewController.swift in Sources */,
 				BE7CA9E01F0F2623007CB195 /* PageInfo.swift in Sources */,
 				BE7CAA321F0F3F08007CB195 /* MJRefreshNormalHeader.m in Sources */,
+				BE5AEF901F17BBEB00475B90 /* Address.swift in Sources */,
 				BE0190A31EFD4B2500FA040E /* TeacherHomeViewController.swift in Sources */,
 				BE7CAA331F0F3F08007CB195 /* MJRefreshStateHeader.m in Sources */,
 				BE7CA9B71F0BE9D3007CB195 /* RegisterViewModel.swift in Sources */,
@@ -2117,6 +2140,7 @@
 				BE57EF991F07DB4B0091F312 /* BookListViewController.swift in Sources */,
 				BEB94CF01F147DF900181DC2 /* QiniuManager.swift in Sources */,
 				BEB94CE51F146B5400181DC2 /* School.swift in Sources */,
+				BE5AEF8E1F17B27C00475B90 /* AddressInfoTableViewCell.swift in Sources */,
 				BE57EF771F05414A0091F312 /* UIView+SDExtension.m in Sources */,
 				BE7CA9B21F0BE819007CB195 /* APIResult.swift in Sources */,
 				BE4B35301F16734D0008548D /* EditAddressViewController.swift in Sources */,

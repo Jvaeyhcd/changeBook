@@ -50,7 +50,9 @@ public enum UserAPI {
     //添加收货地址
     case addAddress(userName: String, phone: String, addressDetail: String, isDefault: Int)
     //编辑收货地址
-    case editAddress(addressId: String, userName: String, phone: String, addressDetail: String, isDefault: Int)
+    case editAddress(addressId: String, userName: String, phone: String, addressDetail: String)
+    //删除收货地址
+    case deleteAddress(addressId: String)
 }
 
 extension UserAPI: TargetType {
@@ -88,8 +90,10 @@ extension UserAPI: TargetType {
             return "/user/userAddress"
         case .addAddress(userName: _, phone: _, addressDetail: _, isDefault: _):
             return "/user/addAddress"
-        case .editAddress(addressId: _, userName: _, phone: _, addressDetail: _, isDefault: _):
-            return ""
+        case .editAddress(addressId: _, userName: _, phone: _, addressDetail: _):
+            return "/user/editAddress"
+        case .deleteAddress(addressId: _):
+            return "/user/deleteAddress"
         }
     }
     
@@ -188,15 +192,20 @@ extension UserAPI: TargetType {
                 "addressDetail": addressDetail,
                 "isDefault": isDefault
             ]
-        case .editAddress(let addressId, let userName, let phone, let addressDetail, let isDefault):
+        case .editAddress(let addressId, let userName, let phone, let addressDetail):
             return [
                 "token": token,
                 "userId": userId,
                 "addressId": addressId,
                 "userName": userName,
                 "phone": phone,
-                "addressDetail": addressDetail,
-                "isDefault": isDefault
+                "addressDetail": addressDetail
+            ]
+        case .deleteAddress(let addressId):
+            return [
+                "token": token,
+                "userId": userId,
+                "addressId": addressId
             ]
         }
     }
