@@ -34,6 +34,7 @@ class BagViewController: BaseViewController, UITableViewDelegate, UITableViewDat
         btn.setTitleColor(UIColor(hex: 0x888888), for: .normal)
         btn.setImage(UIImage(named: "zhifu_rb"), for: .normal)
         btn.setImage(UIImage(named: "zhifu_rb_pre"), for: .selected)
+        btn.setImage(UIImage(named: "zhifu_rb_pre"), for: .highlighted)
         btn.imageEdgeInsets = UIEdgeInsetsMake(0, -3, 0, 3)
         btn.titleEdgeInsets = UIEdgeInsetsMake(0, 3, 0, -3)
         return btn
@@ -54,6 +55,16 @@ class BagViewController: BaseViewController, UITableViewDelegate, UITableViewDat
         tableView.backgroundColor = kMainBgColor
         return tableView
     }()
+    
+    lazy var rightBtn: UIButton = {
+        let btn = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+        btn.titleLabel?.font = kBaseFont
+        btn.setTitle("编辑", for: UIControlState.normal)
+        btn.setTitle("完成", for: UIControlState.selected)
+        btn.setTitleColor(UIColor(hex: 0xFFFFFF), for: .normal)
+        btn.setTitleColor(UIColor(hex: 0xBDBDBD), for: .disabled)
+        return btn
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,6 +75,10 @@ class BagViewController: BaseViewController, UITableViewDelegate, UITableViewDat
     private func initSubviews() {
         self.title = "书包"
         self.showBackButton()
+        
+        let item = UIBarButtonItem(customView: self.rightBtn)
+        self.navigationItem.rightBarButtonItem = item
+        self.rightBtn.addTarget(self, action: #selector(rightNavBarButtonClicked), for: UIControlEvents.touchUpInside)
         
         self.view.addSubview(self.bottomView)
         self.bottomView.snp.makeConstraints { (make) in
@@ -82,6 +97,7 @@ class BagViewController: BaseViewController, UITableViewDelegate, UITableViewDat
         }
         
         self.bottomView.addSubview(self.allBtn)
+        self.allBtn.addTarget(self, action: #selector(allBtnClicked), for: .touchUpInside)
         self.allBtn.snp.makeConstraints { (make) in
             make.left.equalTo(kBasePadding)
             make.centerY.equalTo(self.bottomView.snp.centerY)
@@ -92,10 +108,10 @@ class BagViewController: BaseViewController, UITableViewDelegate, UITableViewDat
         self.totalLbl.text = "共3本书 ￥120"
         self.bottomView.addSubview(self.totalLbl)
         self.totalLbl.snp.makeConstraints { (make) in
-            make.left.equalTo(self.allBtn.snp.right)
+            make.left.equalTo(self.allBtn.snp.right).offset(8)
             make.centerY.equalTo(self.bottomView.snp.centerY)
             make.height.equalTo(scaleFromiPhone6Desgin(x: 30))
-            make.right.equalTo(self.okBtn.snp.left).offset(8)
+            make.right.equalTo(self.okBtn.snp.left).offset(-8)
         }
         
         self.view.addSubview(self.tableView)
@@ -112,6 +128,14 @@ class BagViewController: BaseViewController, UITableViewDelegate, UITableViewDat
     override func leftNavBarButtonClicked() {
         self.popViewController(animated: true)
     }
+    
+    override func rightNavBarButtonClicked() {
+        self.rightBtn.isSelected = !self.rightBtn.isSelected
+    }
+    
+    func allBtnClicked() {
+        self.allBtn.isSelected = !self.allBtn.isSelected
+    }
 
     // MARK: - UITableViewDelegate, UITableViewDataSource
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -119,7 +143,7 @@ class BagViewController: BaseViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -139,6 +163,8 @@ class BagViewController: BaseViewController, UITableViewDelegate, UITableViewDat
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         self.view.endEditing(true)
     }
+    
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
