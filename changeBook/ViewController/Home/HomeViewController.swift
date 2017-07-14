@@ -323,7 +323,9 @@ class HomeViewController: BaseViewController, HcdTabBarDelegate {
     }
     
     override func rightNavBarButtonClicked() {
-        
+        let vc = BagViewController()
+        vc.hidesBottomBarWhenPushed = true
+        self.pushViewController(viewContoller: vc, animated: true)
     }
     
     

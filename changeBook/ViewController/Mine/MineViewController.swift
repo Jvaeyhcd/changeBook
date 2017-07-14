@@ -151,15 +151,13 @@ class MineViewController: UIViewController, UITableViewDelegate, UITableViewData
                 vc.hidesBottomBarWhenPushed = true
                 self.pushViewController(viewContoller: vc, animated: true)
             } else if indexPath.row == 3 {
-                let vc = UserArticleViewController()
+                let vc = MyIntegralViewController()
                 vc.hidesBottomBarWhenPushed = true
                 self.pushViewController(viewContoller: vc, animated: true)
             }
         } else if 1 == indexPath.section {
             if indexPath.row == 0 {
-                let vc = MyIntegralViewController()
-                vc.hidesBottomBarWhenPushed = true
-                self.pushViewController(viewContoller: vc, animated: true)
+                
             } else if indexPath.row == 1 {
                 
             } else if indexPath.row == 2 {

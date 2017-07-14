@@ -311,6 +311,13 @@
 		BE5AEF8C1F17B17000475B90 /* dizhi_btn_xiugai@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5AEF881F17B17000475B90 /* dizhi_btn_xiugai@3x.png */; };
 		BE5AEF8E1F17B27C00475B90 /* AddressInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5AEF8D1F17B27C00475B90 /* AddressInfoTableViewCell.swift */; };
 		BE5AEF901F17BBEB00475B90 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5AEF8F1F17BBEB00475B90 /* Address.swift */; };
+		BE5AEF921F19020900475B90 /* BagTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5AEF911F19020900475B90 /* BagTableViewCell.swift */; };
+		BE5AEF941F1905B200475B90 /* BagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5AEF931F1905B200475B90 /* BagViewController.swift */; };
+		BE5AEF981F190B7700475B90 /* PPNumberButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5AEF971F190B7700475B90 /* PPNumberButton.m */; };
+		BE5AEFA21F19141400475B90 /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5AEF9B1F19141400475B90 /* TPKeyboardAvoidingCollectionView.m */; };
+		BE5AEFA31F19141400475B90 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5AEF9D1F19141400475B90 /* TPKeyboardAvoidingScrollView.m */; };
+		BE5AEFA41F19141400475B90 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5AEF9F1F19141400475B90 /* TPKeyboardAvoidingTableView.m */; };
+		BE5AEFA51F19141400475B90 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5AEFA11F19141400475B90 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
 		BE7CA9A61F0BD3DA007CB195 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7CA9A41F0BD3DA007CB195 /* Status.swift */; };
 		BE7CA9A71F0BD3DA007CB195 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7CA9A51F0BD3DA007CB195 /* User.swift */; };
 		BE7CA9A91F0BD40B007CB195 /* Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7CA9A81F0BD40B007CB195 /* Decodable.swift */; };
@@ -723,6 +730,18 @@
 		BE5AEF881F17B17000475B90 /* dizhi_btn_xiugai@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dizhi_btn_xiugai@3x.png"; sourceTree = "<group>"; };
 		BE5AEF8D1F17B27C00475B90 /* AddressInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressInfoTableViewCell.swift; sourceTree = "<group>"; };
 		BE5AEF8F1F17BBEB00475B90 /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		BE5AEF911F19020900475B90 /* BagTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BagTableViewCell.swift; sourceTree = "<group>"; };
+		BE5AEF931F1905B200475B90 /* BagViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BagViewController.swift; sourceTree = "<group>"; };
+		BE5AEF961F190B7700475B90 /* PPNumberButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPNumberButton.h; sourceTree = "<group>"; };
+		BE5AEF971F190B7700475B90 /* PPNumberButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPNumberButton.m; sourceTree = "<group>"; };
+		BE5AEF9A1F19141400475B90 /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
+		BE5AEF9B1F19141400475B90 /* TPKeyboardAvoidingCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingCollectionView.m; sourceTree = "<group>"; };
+		BE5AEF9C1F19141400475B90 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		BE5AEF9D1F19141400475B90 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
+		BE5AEF9E1F19141400475B90 /* TPKeyboardAvoidingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingTableView.h; sourceTree = "<group>"; };
+		BE5AEF9F1F19141400475B90 /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
+		BE5AEFA01F19141400475B90 /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
+		BE5AEFA11F19141400475B90 /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
 		BE7CA9A41F0BD3DA007CB195 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		BE7CA9A51F0BD3DA007CB195 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BE7CA9A81F0BD40B007CB195 /* Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Decodable.swift; sourceTree = "<group>"; };
@@ -975,6 +994,7 @@
 				BE57EFA61F07E5D30091F312 /* DataViewController.swift */,
 				BE57EFA81F07E5EA0091F312 /* DataListViewController.swift */,
 				BE7CA9C61F0CEA7E007CB195 /* HotDataListViewController.swift */,
+				BE5AEF931F1905B200475B90 /* BagViewController.swift */,
 			);
 			path = Book;
 			sourceTree = "<group>";
@@ -1349,6 +1369,7 @@
 				BEB94CE21F14516000181DC2 /* SchoolListTableViewCell.swift */,
 				BE4B352D1F16608B0008548D /* AddressListTableViewCell.swift */,
 				BE5AEF8D1F17B27C00475B90 /* AddressInfoTableViewCell.swift */,
+				BE5AEF911F19020900475B90 /* BagTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1403,6 +1424,30 @@
 				BE57F9AF1EF16E3E008BE6AD /* Info.plist */,
 			);
 			path = changeBook;
+			sourceTree = "<group>";
+		};
+		BE5AEF951F190B7700475B90 /* PPNumberButton */ = {
+			isa = PBXGroup;
+			children = (
+				BE5AEF961F190B7700475B90 /* PPNumberButton.h */,
+				BE5AEF971F190B7700475B90 /* PPNumberButton.m */,
+			);
+			path = PPNumberButton;
+			sourceTree = "<group>";
+		};
+		BE5AEF991F19141400475B90 /* TPKeyboardAvoiding */ = {
+			isa = PBXGroup;
+			children = (
+				BE5AEF9A1F19141400475B90 /* TPKeyboardAvoidingCollectionView.h */,
+				BE5AEF9B1F19141400475B90 /* TPKeyboardAvoidingCollectionView.m */,
+				BE5AEF9C1F19141400475B90 /* TPKeyboardAvoidingScrollView.h */,
+				BE5AEF9D1F19141400475B90 /* TPKeyboardAvoidingScrollView.m */,
+				BE5AEF9E1F19141400475B90 /* TPKeyboardAvoidingTableView.h */,
+				BE5AEF9F1F19141400475B90 /* TPKeyboardAvoidingTableView.m */,
+				BE5AEFA01F19141400475B90 /* UIScrollView+TPKeyboardAvoidingAdditions.h */,
+				BE5AEFA11F19141400475B90 /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
+			);
+			path = TPKeyboardAvoiding;
 			sourceTree = "<group>";
 		};
 		BE7CA9A21F0BD3DA007CB195 /* API */ = {
@@ -1587,6 +1632,8 @@
 		BE8D53D61EFBF5F6003850EB /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				BE5AEF991F19141400475B90 /* TPKeyboardAvoiding */,
+				BE5AEF951F190B7700475B90 /* PPNumberButton */,
 				BEB94CE81F147C5500181DC2 /* UIPlaceHolderTextView */,
 				BE7CAA3A1F0F8AF9007CB195 /* DZNEmptyDataSet */,
 				BE7CA9F71F0F3F08007CB195 /* MJRefresh */,
@@ -2084,6 +2131,7 @@
 				BE57EF761F05414A0091F312 /* SDCycleScrollView.m in Sources */,
 				BE7CAA2A1F0F3F08007CB195 /* MJRefreshHeader.m in Sources */,
 				BEB94CE31F14516000181DC2 /* SchoolListTableViewCell.swift in Sources */,
+				BE5AEFA21F19141400475B90 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				BE57EF931F07AC4A0091F312 /* MenuTableViewCell.swift in Sources */,
 				BE7CA9C11F0BEDDE007CB195 /* NSObject+Polesapp.m in Sources */,
 				BE7CAA361F0F3F08007CB195 /* NSBundle+MJRefresh.m in Sources */,
@@ -2097,6 +2145,7 @@
 				BE7CAA511F0F9F49007CB195 /* SettingViewController.swift in Sources */,
 				BE01909D1EFD4B0300FA040E /* ArticleHomeViewController.swift in Sources */,
 				BE7CA9D41F0DEC83007CB195 /* MineUserInfoTableViewCell.swift in Sources */,
+				BE5AEF921F19020900475B90 /* BagTableViewCell.swift in Sources */,
 				BE57EF751F05414A0091F312 /* SDCollectionViewCell.m in Sources */,
 				BE57EFAD1F086D7E0091F312 /* OrderListTableViewCell.swift in Sources */,
 				BE57EF721F05414A0091F312 /* TAAnimatedDotView.m in Sources */,
@@ -2112,6 +2161,8 @@
 				BE7CAA281F0F3F08007CB195 /* MJRefreshComponent.m in Sources */,
 				BE7CA9A61F0BD3DA007CB195 /* Status.swift in Sources */,
 				BE7CAA291F0F3F08007CB195 /* MJRefreshFooter.m in Sources */,
+				BE5AEFA51F19141400475B90 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
+				BE5AEF981F190B7700475B90 /* PPNumberButton.m in Sources */,
 				BE4B352E1F16608B0008548D /* AddressListTableViewCell.swift in Sources */,
 				BE7CAA351F0F3F08007CB195 /* MJRefreshConst.m in Sources */,
 				BE7CA9AD1F0BE6B5007CB195 /* Global.swift in Sources */,
@@ -2135,6 +2186,7 @@
 				BE7CAA381F0F3F08007CB195 /* UIScrollView+MJRefresh.m in Sources */,
 				BE7CA9CB1F0CEE67007CB195 /* BaseTableViewController.swift in Sources */,
 				BE7CA9AB1F0BD79D007CB195 /* UserAPI.swift in Sources */,
+				BE5AEF941F1905B200475B90 /* BagViewController.swift in Sources */,
 				BE57EFA91F07E5EA0091F312 /* DataListViewController.swift in Sources */,
 				BE57EF851F07A3E50091F312 /* ArticleListViewController.swift in Sources */,
 				BE57EF991F07DB4B0091F312 /* BookListViewController.swift in Sources */,
@@ -2152,6 +2204,7 @@
 				BE7CA9C51F0BEE38007CB195 /* MBProgressHUD.m in Sources */,
 				BE7CA9BE1F0BEA68007CB195 /* Decodable+Rx.swift in Sources */,
 				BE57EF821F0798080091F312 /* SlippedSegmentItem.swift in Sources */,
+				BE5AEFA31F19141400475B90 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				BE7CAA2F1F0F3F08007CB195 /* MJRefreshBackNormalFooter.m in Sources */,
 				BE57F9A41EF16E3E008BE6AD /* AppDelegate.swift in Sources */,
 				BE7CA9BA1F0BE9FE007CB195 /* RequestResult.swift in Sources */,
@@ -2182,6 +2235,7 @@
 				BE9AC4231F01495F00C9288A /* FindPasswordViewController.swift in Sources */,
 				BE8D53EE1EFBF619003850EB /* UIResponder+STPopup.m in Sources */,
 				BE7CA9B81F0BE9D3007CB195 /* ResetPasswordViewModel.swift in Sources */,
+				BE5AEFA41F19141400475B90 /* TPKeyboardAvoidingTableView.m in Sources */,
 				BE7CAA301F0F3F08007CB195 /* MJRefreshBackStateFooter.m in Sources */,
 				BE0190A81EFD4B5E00FA040E /* RootViewController.swift in Sources */,
 				BE57EF811F0798080091F312 /* NavTabBarController.swift in Sources */,

@@ -52,7 +52,7 @@ class AddressListViewController: BaseViewController, UITableViewDelegate, UITabl
             make.left.equalTo(0)
             make.right.equalTo(0)
             make.bottom.equalTo(0)
-            make.height.equalTo(scaleFromiPhone6Desgin(x: 50))
+            make.height.equalTo(kTabBarHeight)
         }
         
         self.tableView.delegate = self

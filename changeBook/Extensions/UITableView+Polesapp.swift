@@ -91,8 +91,6 @@ class UIRefreshTableView: UITableView, DZNEmptyDataSetSource, DZNEmptyDataSetDel
     
     func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
         var text = ""
-        let attributes = [NSFontAttributeName: UIFont.systemFont(ofSize: 16),
-                          NSForegroundColorAttributeName: UIColor(hex: 0xBBD4F3)]
         
         let networkWorked = kUserDefaults.bool(forKey: "networkWorked")
         if networkWorked{
@@ -103,7 +101,7 @@ class UIRefreshTableView: UITableView, DZNEmptyDataSetSource, DZNEmptyDataSetDel
             text = "无网络连接，点击页面重试"
         }
         
-        return NSAttributedString.init(string: text, attributes: attributes)
+        return NSAttributedString.init(string: text, attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 16), NSForegroundColorAttributeName: UIColor(hex: 0xBBD4F3)!])
         
         
     }
