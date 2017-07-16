@@ -67,6 +67,13 @@ class HomeViewController: BaseViewController, HcdTabBarDelegate {
         self.view.insertSubview(self.controllersScrollView, belowSubview: self.tabBar)
         
         let vc1 = HotDataListViewController()
+        vc1.selectedDocumentBlock = {
+            [weak self] (document) in
+            let vc = DataDetailViewController()
+            vc.document = document
+            vc.hidesBottomBarWhenPushed = true
+            self?.pushViewController(viewContoller: vc, animated: true)
+        }
         vc1.parentVC = self
         vc1.title = "热门资料"
         

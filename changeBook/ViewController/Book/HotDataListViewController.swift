@@ -11,6 +11,7 @@ import SwiftyJSON
 
 class HotDataListViewController: BaseTableViewController, UITableViewDelegate, UITableViewDataSource {
     
+    var selectedDocumentBlock: ((Document)->())!
     fileprivate lazy var viewModel = DocumentViewModel()
     fileprivate var documentList = [Document]()
     
@@ -96,6 +97,12 @@ class HotDataListViewController: BaseTableViewController, UITableViewDelegate, U
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        let document = self.documentList[indexPath.row]
+        if nil != self.selectedDocumentBlock {
+            self.selectedDocumentBlock(document)
+        }
+        
     }
     
     override func didReceiveMemoryWarning() {

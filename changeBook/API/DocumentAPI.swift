@@ -36,13 +36,19 @@ public enum DocumentAPI {
     case likeDocumentComment(documentCommentId: String)
     
     // 获取评论详情
-    case getCommentDetail(documentCommentId: String, page: String)
+    case getCommentDetail(documentCommentId: String, page: Int)
     
     // 获取资料评论
-    case getDocumentComment(documentId: String, page: String)
+    case getDocumentComment(documentId: String, page: Int)
     
     // 评论资料
     case addDocumentComment(documentId: String, content: String, commentType: String, score: String, documentCommentId: String, receiverId: String)
+    
+    // 获取资料详情
+    case getDocumentDetail(documentId: String)
+    
+    // 筛选资料
+    case filterDocument(type: Int, rule: Int, page: Int)
 }
 
 extension DocumentAPI: TargetType {
@@ -69,6 +75,10 @@ extension DocumentAPI: TargetType {
             return "/document/getDocumentComment"
         case .addDocumentComment(documentId: _, content: _, commentType: _, score: _, documentCommentId: _, receiverId: _):
             return "/document/addDocumentComment"
+        case .getDocumentDetail(documentId: _):
+            return "/document/getDocumentDetail"
+        case .filterDocument(type: _, rule: _, page: _):
+            return "/document/filterDocument"
         }
     }
     
@@ -138,6 +148,18 @@ extension DocumentAPI: TargetType {
                 "score": score,
                 "documentCommentId": documentCommentId,
                 "receiverId": receiverId
+            ]
+        case .getDocumentDetail(let documentId):
+            return [
+                "token": token,
+                "userId": userId,
+                "documentId": documentId
+            ]
+        case .filterDocument(let type, let rule, let page):
+            return [
+                "type": type,
+                "rule": rule,
+                "page": page
             ]
         }
     }
