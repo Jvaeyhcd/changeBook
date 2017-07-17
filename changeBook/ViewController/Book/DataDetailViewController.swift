@@ -16,6 +16,7 @@ class DataDetailViewController: BaseViewController, UITableViewDelegate, UITable
     lazy var tableView: UITableView = {
         let tableView = UITableView.init(frame: CGRect.zero, style: .plain)
         tableView.register(DocumentTableViewCell.self, forCellReuseIdentifier: kCellIdDocumentTableViewCell)
+        tableView.register(InfoDetailTableViewCell.self, forCellReuseIdentifier: kCellIdInfoDetailTableViewCell)
         tableView.separatorStyle = .none
         tableView.backgroundColor = UIColor.white
         return tableView
@@ -52,10 +53,12 @@ class DataDetailViewController: BaseViewController, UITableViewDelegate, UITable
         self.viewModel.getDocumentDetail(documentId: self.document.id, cache: { [weak self] (data) in
             
             self?.document = Document.fromJSON(json: data.object)
+            self?.tableView.reloadData()
             
         }, success: { [weak self] (data) in
             
             self?.document = Document.fromJSON(json: data.object)
+            self?.tableView.reloadData()
             
         }, fail: { [weak self] (message) in
             self?.showHudTipStr(message)
@@ -70,17 +73,28 @@ class DataDetailViewController: BaseViewController, UITableViewDelegate, UITable
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: kCellIdDocumentTableViewCell, for: indexPath) as! DocumentTableViewCell
-        tableView.addLineforPlainCell(cell: cell, indexPath: indexPath, leftSpace: 0)
+        if 0 == indexPath.row {
+            let cell = tableView.dequeueReusableCell(withIdentifier: kCellIdDocumentTableViewCell, for: indexPath) as! DocumentTableViewCell
+            tableView.addLineforPlainCell(cell: cell, indexPath: indexPath, leftSpace: 0)
+            
+            return cell
+        }
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: kCellIdInfoDetailTableViewCell, for: indexPath) as! InfoDetailTableViewCell
+        cell.titleLbl.text = "资料简介"
+        cell.detailLbl.text = self.document.introduce
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return DocumentTableViewCell.cellHeight()
+        if 0 == indexPath.row {
+            return DocumentTableViewCell.cellHeight()
+        }
+        return InfoDetailTableViewCell.cellHeightWithStr(str: self.document.introduce)
     }
     
     override func leftNavBarButtonClicked() {
