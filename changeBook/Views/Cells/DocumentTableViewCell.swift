@@ -190,6 +190,30 @@ class DocumentTableViewCell: UITableViewCell {
         
     }
     
+    func setDocument(document: Document) {
+        
+        self.coverImg.sd_setImage(with: URL.init(string: document.documentCover), placeholderImage: kNoImgDefaultImage)
+        self.authorLbl.text = "上传者：" + document.uploader
+        self.titleLbl.text = document.documentName
+        self.seeLbl.text = "浏览次数：" + document.readNum
+        self.sizeLbl.text = "文件大小：" + document.fileSize + "MB"
+        self.scoreLbl.text = document.score
+        self.rateStar.value = CGFloat(document.score.floatValue)
+        
+        if kDocumentTypeDOC == document.fileFormat {
+            self.tagImgView.image = UIImage(named: "home_icon_doc")
+        } else if kDocumentTypeEXC == document.fileFormat {
+            self.tagImgView.image = UIImage(named: "home_icon_xls")
+        } else if kDocumentTypePDF == document.fileFormat {
+            self.tagImgView.image = UIImage(named: "home_icon_pdf")
+        } else if kDocumentTypePPT == document.fileFormat {
+            self.tagImgView.image = UIImage(named: "home_icon_ppt")
+        } else if kDocumentTypeTXT == document.fileFormat {
+            self.tagImgView.image = UIImage(named: "home_icon_txt")
+        }
+        
+    }
+    
     static func cellHeight()->CGFloat {
         return scaleFromiPhone6Desgin(x: 280) + 3 * kBasePadding
     }

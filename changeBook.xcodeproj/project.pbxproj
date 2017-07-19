@@ -18,6 +18,17 @@
 		BE0190A31EFD4B2500FA040E /* TeacherHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0190A21EFD4B2500FA040E /* TeacherHomeViewController.swift */; };
 		BE0190A71EFD4B5E00FA040E /* RootTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0190A41EFD4B5E00FA040E /* RootTabBarViewController.swift */; };
 		BE0190A81EFD4B5E00FA040E /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0190A51EFD4B5E00FA040E /* RootViewController.swift */; };
+		BE4907271F1F32EC0031024F /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4907261F1F32EC0031024F /* Comment.swift */; };
+		BE49072A1F1F774B0031024F /* pingjia_btn_comment@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE4907281F1F774B0031024F /* pingjia_btn_comment@2x.png */; };
+		BE49072B1F1F774B0031024F /* pingjia_btn_comment@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE4907291F1F774B0031024F /* pingjia_btn_comment@3x.png */; };
+		BE49072E1F1F77630031024F /* pingjia_btn_like@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE49072C1F1F77630031024F /* pingjia_btn_like@2x.png */; };
+		BE49072F1F1F77630031024F /* pingjia_btn_like@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE49072D1F1F77630031024F /* pingjia_btn_like@3x.png */; };
+		BE4907311F1F79980031024F /* DocumentCommentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4907301F1F79980031024F /* DocumentCommentDetailViewController.swift */; };
+		BE4907331F1F7A4D0031024F /* DocumentCommentListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4907321F1F7A4D0031024F /* DocumentCommentListViewController.swift */; };
+		BE4907351F1F912F0031024F /* AddCommentBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4907341F1F912F0031024F /* AddCommentBottomView.swift */; };
+		BE4907391F1F957A0031024F /* HcdReplyView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4907381F1F957A0031024F /* HcdReplyView.m */; };
+		BE49073C1F1F96680031024F /* NSString+Polesapp.m in Sources */ = {isa = PBXBuildFile; fileRef = BE49073B1F1F96680031024F /* NSString+Polesapp.m */; };
+		BE49073F1F1FAA3E0031024F /* NSDate+Polesapp.m in Sources */ = {isa = PBXBuildFile; fileRef = BE49073E1F1FAA3E0031024F /* NSDate+Polesapp.m */; };
 		BE4B35191F1651F60008548D /* home_icon_xls@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE4B35051F1651F50008548D /* home_icon_xls@2x.png */; };
 		BE4B351A1F1651F60008548D /* home_icon_xls@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE4B35061F1651F50008548D /* home_icon_xls@3x.png */; };
 		BE4B351B1F1651F60008548D /* xiangqing_icon_xls@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE4B35071F1651F50008548D /* xiangqing_icon_xls@2x.png */; };
@@ -397,6 +408,7 @@
 		BE8D53ED1EFBF619003850EB /* STPopupNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D53E31EFBF619003850EB /* STPopupNavigationBar.m */; };
 		BE8D53EE1EFBF619003850EB /* UIResponder+STPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D53E51EFBF619003850EB /* UIResponder+STPopup.m */; };
 		BE8D53EF1EFBF619003850EB /* UIViewController+STPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D53E71EFBF619003850EB /* UIViewController+STPopup.m */; };
+		BE973D941F1E51A80018DF70 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE973D931F1E51A80018DF70 /* CommentTableViewCell.swift */; };
 		BE9AC41E1F01428400C9288A /* BaseRootTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9AC41D1F01428400C9288A /* BaseRootTabViewController.swift */; };
 		BE9AC4211F01495000C9288A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9AC4201F01495000C9288A /* LoginViewController.swift */; };
 		BE9AC4231F01495F00C9288A /* FindPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9AC4221F01495F00C9288A /* FindPasswordViewController.swift */; };
@@ -428,6 +440,20 @@
 		BE0190A21EFD4B2500FA040E /* TeacherHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherHomeViewController.swift; sourceTree = "<group>"; };
 		BE0190A41EFD4B5E00FA040E /* RootTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTabBarViewController.swift; sourceTree = "<group>"; };
 		BE0190A51EFD4B5E00FA040E /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		BE4907261F1F32EC0031024F /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		BE4907281F1F774B0031024F /* pingjia_btn_comment@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pingjia_btn_comment@2x.png"; sourceTree = "<group>"; };
+		BE4907291F1F774B0031024F /* pingjia_btn_comment@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pingjia_btn_comment@3x.png"; sourceTree = "<group>"; };
+		BE49072C1F1F77630031024F /* pingjia_btn_like@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pingjia_btn_like@2x.png"; sourceTree = "<group>"; };
+		BE49072D1F1F77630031024F /* pingjia_btn_like@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pingjia_btn_like@3x.png"; sourceTree = "<group>"; };
+		BE4907301F1F79980031024F /* DocumentCommentDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentCommentDetailViewController.swift; sourceTree = "<group>"; };
+		BE4907321F1F7A4D0031024F /* DocumentCommentListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentCommentListViewController.swift; sourceTree = "<group>"; };
+		BE4907341F1F912F0031024F /* AddCommentBottomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCommentBottomView.swift; sourceTree = "<group>"; };
+		BE4907371F1F957A0031024F /* HcdReplyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HcdReplyView.h; sourceTree = "<group>"; };
+		BE4907381F1F957A0031024F /* HcdReplyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HcdReplyView.m; sourceTree = "<group>"; };
+		BE49073A1F1F96680031024F /* NSString+Polesapp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Polesapp.h"; sourceTree = "<group>"; };
+		BE49073B1F1F96680031024F /* NSString+Polesapp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Polesapp.m"; sourceTree = "<group>"; };
+		BE49073D1F1FAA3E0031024F /* NSDate+Polesapp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Polesapp.h"; sourceTree = "<group>"; };
+		BE49073E1F1FAA3E0031024F /* NSDate+Polesapp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Polesapp.m"; sourceTree = "<group>"; };
 		BE4B35051F1651F50008548D /* home_icon_xls@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_icon_xls@2x.png"; sourceTree = "<group>"; };
 		BE4B35061F1651F50008548D /* home_icon_xls@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_icon_xls@3x.png"; sourceTree = "<group>"; };
 		BE4B35071F1651F50008548D /* xiangqing_icon_xls@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "xiangqing_icon_xls@2x.png"; sourceTree = "<group>"; };
@@ -856,6 +882,7 @@
 		BE8D53E51EFBF619003850EB /* UIResponder+STPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+STPopup.m"; sourceTree = "<group>"; };
 		BE8D53E61EFBF619003850EB /* UIViewController+STPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+STPopup.h"; sourceTree = "<group>"; };
 		BE8D53E71EFBF619003850EB /* UIViewController+STPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+STPopup.m"; sourceTree = "<group>"; };
+		BE973D931F1E51A80018DF70 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		BE9AC41D1F01428400C9288A /* BaseRootTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRootTabViewController.swift; sourceTree = "<group>"; };
 		BE9AC4201F01495000C9288A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BE9AC4221F01495F00C9288A /* FindPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindPasswordViewController.swift; sourceTree = "<group>"; };
@@ -979,6 +1006,15 @@
 			path = Menu;
 			sourceTree = "<group>";
 		};
+		BE4907361F1F957A0031024F /* HcdReplyView */ = {
+			isa = PBXGroup;
+			children = (
+				BE4907371F1F957A0031024F /* HcdReplyView.h */,
+				BE4907381F1F957A0031024F /* HcdReplyView.m */,
+			);
+			path = HcdReplyView;
+			sourceTree = "<group>";
+		};
 		BE57ED8F1F03BC670091F312 /* HcdSideMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -1000,6 +1036,8 @@
 				BE57EFA61F07E5D30091F312 /* DataViewController.swift */,
 				BE57EFA81F07E5EA0091F312 /* DataListViewController.swift */,
 				BE5AEFA61F1B836A00475B90 /* DataDetailViewController.swift */,
+				BE4907301F1F79980031024F /* DocumentCommentDetailViewController.swift */,
+				BE4907321F1F7A4D0031024F /* DocumentCommentListViewController.swift */,
 				BE7CA9C61F0CEA7E007CB195 /* HotDataListViewController.swift */,
 				BE5AEF931F1905B200475B90 /* BagViewController.swift */,
 			);
@@ -1033,6 +1071,10 @@
 		BE57EDB41F03F1640091F312 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				BE4907281F1F774B0031024F /* pingjia_btn_comment@2x.png */,
+				BE4907291F1F774B0031024F /* pingjia_btn_comment@3x.png */,
+				BE49072C1F1F77630031024F /* pingjia_btn_like@2x.png */,
+				BE49072D1F1F77630031024F /* pingjia_btn_like@3x.png */,
 				BE7CA9E11F0F3192007CB195 /* refresh00.png */,
 				BE7CA9E21F0F3192007CB195 /* refresh01.png */,
 				BE7CA9E31F0F3192007CB195 /* refresh02.png */,
@@ -1379,6 +1421,7 @@
 				BE5AEF911F19020900475B90 /* BagTableViewCell.swift */,
 				BE5AEFA81F1B9E3000475B90 /* DocumentTableViewCell.swift */,
 				BE5AEFAA1F1D053800475B90 /* InfoDetailTableViewCell.swift */,
+				BE973D931F1E51A80018DF70 /* CommentTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1386,6 +1429,10 @@
 		BE57EFB01F08D31B0091F312 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				BE49073D1F1FAA3E0031024F /* NSDate+Polesapp.h */,
+				BE49073E1F1FAA3E0031024F /* NSDate+Polesapp.m */,
+				BE49073A1F1F96680031024F /* NSString+Polesapp.h */,
+				BE49073B1F1F96680031024F /* NSString+Polesapp.m */,
 				BE7CA9BF1F0BEDDE007CB195 /* NSObject+Polesapp.h */,
 				BE7CA9C01F0BEDDE007CB195 /* NSObject+Polesapp.m */,
 				BE57EFB11F08D31B0091F312 /* UIImage+Polesapp.h */,
@@ -1484,6 +1531,7 @@
 				BEB94CE41F146B5400181DC2 /* School.swift */,
 				BEB94CF61F15059F00181DC2 /* Document.swift */,
 				BE5AEF8F1F17BBEB00475B90 /* Address.swift */,
+				BE4907261F1F32EC0031024F /* Comment.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1641,6 +1689,7 @@
 		BE8D53D61EFBF5F6003850EB /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				BE4907361F1F957A0031024F /* HcdReplyView */,
 				BE5AEF991F19141400475B90 /* TPKeyboardAvoiding */,
 				BE5AEF951F190B7700475B90 /* PPNumberButton */,
 				BEB94CE81F147C5500181DC2 /* UIPlaceHolderTextView */,
@@ -1691,6 +1740,7 @@
 			isa = PBXGroup;
 			children = (
 				BEB94CDE1F13BF7300181DC2 /* UserInfoView.swift */,
+				BE4907341F1F912F0031024F /* AddCommentBottomView.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -1817,6 +1867,7 @@
 				BE57EEDE1F04B1290091F312 /* xiangqing_icon_doc@3x.png in Resources */,
 				BE57EF571F04B1290091F312 /* login_icon_4@2x.png in Resources */,
 				BE57EF1D1F04B1290091F312 /* home_icon_ppt@2x.png in Resources */,
+				BE49072A1F1F774B0031024F /* pingjia_btn_comment@2x.png in Resources */,
 				BE57EF261F04B1290091F312 /* tab_laoshi@3x.png in Resources */,
 				BE4B352B1F1651F60008548D /* home_btn_dayin@2x.png in Resources */,
 				BE57EEB71F04B1290091F312 /* pingjia_btn_star1@2x.png in Resources */,
@@ -1940,6 +1991,7 @@
 				BE57EF471F04B1290091F312 /* login_btn@2x.png in Resources */,
 				BE57EEF11F04B1290091F312 /* dingdan_icon_dizhi@2x.png in Resources */,
 				BE57EEBF1F04B1290091F312 /* xiaoxi_btn_biaoqing@2x.png in Resources */,
+				BE49072F1F1F77630031024F /* pingjia_btn_like@3x.png in Resources */,
 				BE57EEF71F04B1290091F312 /* dingdan_icon_shangpin@2x.png in Resources */,
 				BE57EF3B1F04B1290091F312 /* home_btn_ziliao@2x.png in Resources */,
 				BE7CA9EC1F0F3192007CB195 /* refresh00.png in Resources */,
@@ -1967,6 +2019,7 @@
 				BE57EECB1F04B1290091F312 /* wode_btn_bangzhu@2x.png in Resources */,
 				BE57EF0A1F04B1290091F312 /* xiangqing_btn_shubao@3x.png in Resources */,
 				BE57EF021F04B1290091F312 /* pingjia_btn_pinglun@3x.png in Resources */,
+				BE49072B1F1F774B0031024F /* pingjia_btn_comment@3x.png in Resources */,
 				BE7CA9F11F0F3192007CB195 /* refresh05.png in Resources */,
 				BE57EE911F04B1290091F312 /* shuyou_rb_pre@2x.png in Resources */,
 				BE57EEB31F04B1290091F312 /* yajin_bg@2x.png in Resources */,
@@ -1992,6 +2045,7 @@
 				BE57EEA31F04B1290091F312 /* laoshi_icon_red@2x.png in Resources */,
 				BE57EFB91F0A12830091F312 /* top_btn_close_black@3x.png in Resources */,
 				BE57EF541F04B1290091F312 /* login_icon_3_pre@3x.png in Resources */,
+				BE49072E1F1F77630031024F /* pingjia_btn_like@2x.png in Resources */,
 				BE57EF181F04B1290091F312 /* home_icon_pdf@3x.png in Resources */,
 				BE57EFA21F07DF780091F312 /* com_pic_star2@2x.png in Resources */,
 				BE57EEB21F04B1290091F312 /* yajin_icon_tuikuan@3x.png in Resources */,
@@ -2136,6 +2190,7 @@
 				BE7CA9B71F0BE9D3007CB195 /* RegisterViewModel.swift in Sources */,
 				BE01908C1EFC089400FA040E /* Config.swift in Sources */,
 				BE7CA9A71F0BD3DA007CB195 /* User.swift in Sources */,
+				BE49073C1F1F96680031024F /* NSString+Polesapp.m in Sources */,
 				BEB94CF51F14CB8800181DC2 /* EditIntroduceViewController.swift in Sources */,
 				BE57EF761F05414A0091F312 /* SDCycleScrollView.m in Sources */,
 				BE7CAA2A1F0F3F08007CB195 /* MJRefreshHeader.m in Sources */,
@@ -2161,12 +2216,14 @@
 				BE57EF721F05414A0091F312 /* TAAnimatedDotView.m in Sources */,
 				BE7CA9A91F0BD40B007CB195 /* Decodable.swift in Sources */,
 				BE0190A11EFD4B1900FA040E /* HomeViewController.swift in Sources */,
+				BE4907311F1F79980031024F /* DocumentCommentDetailViewController.swift in Sources */,
 				BE57EF791F0541CC0091F312 /* HomeHeadView.swift in Sources */,
 				BE57EF741F05414A0091F312 /* TAPageControl.m in Sources */,
 				BE7CAA391F0F3F08007CB195 /* UIView+MJExtension.m in Sources */,
 				BE57ED951F03BCF70091F312 /* HcdSideMenu.m in Sources */,
 				BEB94CEB1F147C5500181DC2 /* UIPlaceHolderTextView.m in Sources */,
 				BE57EFBB1F0A4D460091F312 /* RegisterViewController.swift in Sources */,
+				BE4907271F1F32EC0031024F /* Comment.swift in Sources */,
 				BE57EF871F07AA1C0091F312 /* TeacherListViewController.swift in Sources */,
 				BE7CAA281F0F3F08007CB195 /* MJRefreshComponent.m in Sources */,
 				BE7CA9A61F0BD3DA007CB195 /* Status.swift in Sources */,
@@ -2179,6 +2236,7 @@
 				BEB94CF71F15059F00181DC2 /* Document.swift in Sources */,
 				BE9AC41E1F01428400C9288A /* BaseRootTabViewController.swift in Sources */,
 				BE57EFAF1F088FE20091F312 /* BookOrderListViewController.swift in Sources */,
+				BE4907331F1F7A4D0031024F /* DocumentCommentListViewController.swift in Sources */,
 				BE0190971EFD4A6400FA040E /* BaseViewController.swift in Sources */,
 				BE57EDA61F03E7CA0091F312 /* BorrowedBookViewController.swift in Sources */,
 				BE8D53EF1EFBF619003850EB /* UIViewController+STPopup.m in Sources */,
@@ -2194,6 +2252,7 @@
 				BE7CA9C91F0CEAA5007CB195 /* HotArticleListViewController.swift in Sources */,
 				BEB94CE11F144DE600181DC2 /* SchoolListViewController.swift in Sources */,
 				BE57ED981F03BD910091F312 /* UIViewController+HcdSideMenu.m in Sources */,
+				BE4907391F1F957A0031024F /* HcdReplyView.m in Sources */,
 				BE7CAA381F0F3F08007CB195 /* UIScrollView+MJRefresh.m in Sources */,
 				BE7CA9CB1F0CEE67007CB195 /* BaseTableViewController.swift in Sources */,
 				BE7CA9AB1F0BD79D007CB195 /* UserAPI.swift in Sources */,
@@ -2212,6 +2271,7 @@
 				BE7CAA261F0F3F08007CB195 /* MJRefreshAutoFooter.m in Sources */,
 				BE57EFA71F07E5D30091F312 /* DataViewController.swift in Sources */,
 				BE7CA9DE1F0F24F5007CB195 /* IntegralLog.swift in Sources */,
+				BE973D941F1E51A80018DF70 /* CommentTableViewCell.swift in Sources */,
 				BE7CA9C51F0BEE38007CB195 /* MBProgressHUD.m in Sources */,
 				BE7CA9BE1F0BEA68007CB195 /* Decodable+Rx.swift in Sources */,
 				BE57EF821F0798080091F312 /* SlippedSegmentItem.swift in Sources */,
@@ -2243,6 +2303,7 @@
 				BE57EF911F07ABE10091F312 /* DataListTableViewCell.swift in Sources */,
 				BE7CAA311F0F3F08007CB195 /* MJRefreshGifHeader.m in Sources */,
 				BE7CAA3D1F0F8AF9007CB195 /* UIScrollView+EmptyDataSet.m in Sources */,
+				BE49073F1F1FAA3E0031024F /* NSDate+Polesapp.m in Sources */,
 				BE7CAA371F0F3F08007CB195 /* UIScrollView+MJExtension.m in Sources */,
 				BE9AC4231F01495F00C9288A /* FindPasswordViewController.swift in Sources */,
 				BE8D53EE1EFBF619003850EB /* UIResponder+STPopup.m in Sources */,
@@ -2254,6 +2315,7 @@
 				BE57EF8B1F07AB450091F312 /* ArticleListTableViewCell.swift in Sources */,
 				BE01908F1EFC096C00FA040E /* UIColor+Polesapp.swift in Sources */,
 				BE0190951EFD4A4E00FA040E /* BaseNavigationController.swift in Sources */,
+				BE4907351F1F912F0031024F /* AddCommentBottomView.swift in Sources */,
 				BE7CAA2B1F0F3F08007CB195 /* MJRefreshAutoGifFooter.m in Sources */,
 				BE8D53EC1EFBF619003850EB /* STPopupLeftBarItem.m in Sources */,
 			);

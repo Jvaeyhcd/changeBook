@@ -71,6 +71,23 @@ class DocumentViewModel: ViewModelProtocol {
         }
     }
     
+    func getDocumentComment(documentId: String,
+                            page: Int,
+                            cache: @escaping DataBlock,
+                            success: @escaping DataBlock,
+                            fail: @escaping MessageBlock,
+                            loginSuccess: @escaping VoidBlock) {
+        var cacheName = kNoNeedCache
+        if 1 == page {
+            cacheName = "getDocumentComment" + documentId
+            self.getCacheData(cacheName: cacheName, cacheData: cache)
+        }
+        
+        DocumentProvider.request(DocumentAPI.getDocumentComment(documentId: documentId, page: page)) { [weak self] (result) in
+            self?.request(cacheName: cacheName, result: result, success: success, fail: fail, loginSuccess: loginSuccess)
+        }
+    }
+    
     // 获取评论详情
     func getCommentDetail(documentCommentId: String,
                           page: Int,
@@ -100,7 +117,7 @@ class DocumentViewModel: ViewModelProtocol {
                             success: @escaping DataBlock,
                             fail: @escaping MessageBlock,
                             loginSuccess: @escaping VoidBlock) {
-        DocumentProvider.request(DocumentAPI.addDocumentComment(documentId: documentCommentId, content: content, commentType: commentType, score: score, documentCommentId: documentCommentId, receiverId: receiverId)) { [weak self] (result) in
+        DocumentProvider.request(DocumentAPI.addDocumentComment(documentId: documentId, content: content, commentType: commentType, score: score, documentCommentId: documentCommentId, receiverId: receiverId)) { [weak self] (result) in
             self?.request(cacheName: kNoNeedCache, result: result, success: success, fail: fail, loginSuccess: loginSuccess)
         }
     }

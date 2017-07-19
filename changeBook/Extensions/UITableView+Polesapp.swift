@@ -46,6 +46,7 @@ class UIRefreshTableView: UITableView, DZNEmptyDataSetSource, DZNEmptyDataSetDel
         let footer = MJRefreshAutoNormalFooter()
         footer.setTitle("加载更多", for: MJRefreshState.idle)
         footer.setRefreshingTarget(self, refreshingAction: #selector(footerRefresh))
+        footer.isAutomaticallyHidden = true
         self.mj_footer = footer
     }
     
@@ -68,13 +69,22 @@ class UIRefreshTableView: UITableView, DZNEmptyDataSetSource, DZNEmptyDataSetDel
     }
     
     func emptyDataSetWillAppear(_ scrollView: UIScrollView!) {
-        self.mj_footer.isHidden = true
-        self.mj_header.isHidden = true
+        if (nil != self.mj_footer) {
+            self.mj_footer.isHidden = true
+        }
+        if nil != self.mj_header {
+            self.mj_header.isHidden = true
+        }
+    
     }
     
     func emptyDataSetWillDisappear(_ scrollView: UIScrollView!) {
-        self.mj_footer.isHidden = false
-        self.mj_header.isHidden = false
+        if (nil != self.mj_footer) {
+            self.mj_footer.isHidden = false
+        }
+        if nil != self.mj_header {
+            self.mj_header.isHidden = false
+        }
     }
     
     func image(forEmptyDataSet scrollView: UIScrollView!) -> UIImage! {
