@@ -20,7 +20,7 @@ class InfomationToolBarView: UIView {
     
     fileprivate lazy var commentBtn: UIButton = {
         let commentBtn = UIButton()
-        commentBtn.setTitle("90", for: .normal)
+        commentBtn.setTitle("", for: .normal)
         commentBtn.setImage(UIImage.init(named: "pingjia_btn_pinglun"), for: .normal)
         commentBtn.contentMode = .scaleAspectFit
         commentBtn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
@@ -33,7 +33,7 @@ class InfomationToolBarView: UIView {
     
     fileprivate lazy var praiseBtn: UIButton = {
         let praiseBtn = UIButton()
-        praiseBtn.setTitle("190", for: .normal)
+        praiseBtn.setTitle("", for: .normal)
         praiseBtn.setImage(UIImage.init(named: "pingjia_btn_zan"), for: .normal)
         praiseBtn.setImage(UIImage.init(named: "pingjia_btn_zan_pre"), for: .selected)
         praiseBtn.contentMode = .scaleAspectFit
@@ -133,6 +133,14 @@ class InfomationToolBarView: UIView {
         } else {
             self.praiseBtn.setImage(UIImage.init(named: "pingjia_btn_zan"), for: .normal)
         }
+    }
+    
+    func setReplyNumber(number: String) {
+        self.commentBtn.setTitle(number, for: .normal)
+    }
+    
+    func setPraiseNumber(number: String) {
+        self.praiseBtn.setTitle(number, for: .normal)
     }
     
     required init?(coder aDecoder: NSCoder) {

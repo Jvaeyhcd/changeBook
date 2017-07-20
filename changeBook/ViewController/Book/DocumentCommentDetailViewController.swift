@@ -62,7 +62,7 @@ class DocumentCommentDetailViewController: BaseViewController, UITableViewDelega
         }
         self.toolBarBottomView.praiseBlock = {
             [weak self] (Void) in
-            
+            self?.praiseComment()
         }
         
         self.toolBarBottomView.snp.makeConstraints { (make) in
@@ -115,11 +115,21 @@ class DocumentCommentDetailViewController: BaseViewController, UITableViewDelega
         }
     }
     
+    // 评论点赞
     private func praiseComment() {
+        
+        if (INT_TRUE == self.comment.isLike) {
+            return
+        }
+        
         self.viewModel.likeDocumentComment(documentCommentId: self.comment.id, success: { [weak self] (data) in
             
             self?.comment.isLike = INT_TRUE
             self?.toolBarBottomView.setLiked(isLike: (self?.comment.isLike)!)
+            
+            let likeNum = (self?.comment.likeNum.intValue)! + 1
+            self?.comment.likeNum = String(format: "%d", likeNum)
+            self?.toolBarBottomView.setPraiseNumber(number: (self?.comment.likeNum)!)
             
         }, fail: { [weak self] (message) in
             self?.showHudTipStr(message)
@@ -146,7 +156,7 @@ class DocumentCommentDetailViewController: BaseViewController, UITableViewDelega
         
         self.showHudLoadingTipStr("")
         
-        self.viewModel.addDocumentComment(documentId: self.documentId, content: content, commentType: kCommentLv2, score: "", documentCommentId: self.comment.id, receiverId: "", success: { [weak self] (data) in
+        self.viewModel.addDocumentComment(documentId: self.documentId, content: content, commentType: kCommentLv2, score: "5", documentCommentId: self.comment.id, receiverId: self.comment.sender.userId, success: { [weak self] (data) in
             self?.showHudTipStr("评论成功")
         }, fail: { [weak self] (message) in
             self?.showHudTipStr(message)
@@ -199,6 +209,8 @@ class DocumentCommentDetailViewController: BaseViewController, UITableViewDelega
             }
         }
         
+        self.toolBarBottomView.setPraiseNumber(number: self.comment.likeNum)
+        self.toolBarBottomView.setReplyNumber(number: self.comment.commentNum)
         self.tableView.reloadData()
     }
     

@@ -33,7 +33,7 @@ public enum DocumentAPI {
     case buyDocument(documentId: String)
     
     // 资料评论点赞
-    case likeDocumentComment(documentCommentId: String)
+    case likeComment(commentId: String, likeType: Int)
     
     // 获取评论详情
     case getCommentDetail(documentCommentId: String, page: Int)
@@ -67,7 +67,7 @@ extension DocumentAPI: TargetType {
             return "/document/recommendDocument"
         case .buyDocument(documentId: _):
             return "/document/buyDocument"
-        case .likeDocumentComment(documentCommentId: _):
+        case .likeComment(commentId: _, likeType: _):
             return "/document/likeComment"
         case .getCommentDetail(documentCommentId: _, page: _):
             return "/document/getCommentDetail"
@@ -118,11 +118,12 @@ extension DocumentAPI: TargetType {
                 "userId": userId,
                 "documentId": documentId
             ]
-        case .likeDocumentComment(let documentCommentId):
+        case .likeComment(let commentId, let likeType):
             return [
                 "token": token,
                 "userId": userId,
-                "documentCommentId": documentCommentId
+                "commentId": commentId,
+                "likeType": likeType
             ]
         case .getCommentDetail(let documentCommentId, let page):
             return [

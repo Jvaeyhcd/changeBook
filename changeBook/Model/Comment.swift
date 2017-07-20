@@ -12,6 +12,9 @@ import SwiftyJSON
 let kCommentLv1 = "1"
 let kCommentLv2 = "2"
 
+let kLikeDataCommentType = 1
+let kLikeBookCommentType = 2
+
 struct Comment {
     var id: String
     var commentContent: String

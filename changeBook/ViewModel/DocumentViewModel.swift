@@ -66,7 +66,7 @@ class DocumentViewModel: ViewModelProtocol {
                              success: @escaping DataBlock,
                              fail: @escaping MessageBlock,
                              loginSuccess: @escaping VoidBlock) {
-        DocumentProvider.request(DocumentAPI.likeDocumentComment(documentCommentId: documentCommentId)) { [weak self] (result) in
+        DocumentProvider.request(DocumentAPI.likeComment(commentId: documentCommentId, likeType: kLikeDataCommentType)) { [weak self] (result) in
             self?.request(cacheName: kNoNeedCache, result: result, success: success, fail: fail, loginSuccess: loginSuccess)
         }
     }
