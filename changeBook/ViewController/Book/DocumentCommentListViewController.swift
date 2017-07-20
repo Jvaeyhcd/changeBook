@@ -174,6 +174,13 @@ class DocumentCommentListViewController: BaseViewController, UITableViewDelegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        let comment = self.commentList[indexPath.row]
+        let vc = DocumentCommentDetailViewController()
+        vc.documentId = self.documentId
+        vc.comment = comment
+        self.pushViewController(viewContoller: vc, animated: true)
+        
     }
     
     override func leftNavBarButtonClicked() {

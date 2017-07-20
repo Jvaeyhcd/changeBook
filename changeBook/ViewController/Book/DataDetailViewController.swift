@@ -16,8 +16,8 @@ class DataDetailViewController: BaseViewController, UITableViewDelegate, UITable
     private var commentList = [Comment]()
     private var pageInfo = PageInfo()
     
-    private lazy var tableView: UITableView = {
-        let tableView = UITableView.init(frame: CGRect.zero, style: .plain)
+    private lazy var tableView: UIRefreshTableView = {
+        let tableView = UIRefreshTableView.init(frame: CGRect.zero, style: .plain)
         tableView.register(DocumentTableViewCell.self, forCellReuseIdentifier: kCellIdDocumentTableViewCell)
         tableView.register(InfoDetailTableViewCell.self, forCellReuseIdentifier: kCellIdInfoDetailTableViewCell)
         tableView.register(CommentTableViewCell.self, forCellReuseIdentifier: kCellIdCommentTableViewCell)
@@ -65,7 +65,7 @@ class DataDetailViewController: BaseViewController, UITableViewDelegate, UITable
         super.viewDidLoad()
 
         initSubviews()
-        getDocumentDetail()
+        self.getDocumentDetail()
         self.getDocumentComments(page: 1)
     }
     
@@ -82,8 +82,14 @@ class DataDetailViewController: BaseViewController, UITableViewDelegate, UITable
         }
         
         self.view.addSubview(self.tableView)
+        self.tableView.setPullingHeader()
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        self.tableView.headerRefreshBlock = {
+            [weak self] (Void) in
+            self?.getDocumentDetail()
+            self?.getDocumentComments(page: 1)
+        }
         self.tableView.snp.makeConstraints { (make) in
             make.top.equalTo(0)
             make.right.equalTo(0)
@@ -158,6 +164,10 @@ class DataDetailViewController: BaseViewController, UITableViewDelegate, UITable
             for comment in comments {
                 self.commentList.append(comment)
             }
+        }
+        
+        if nil != self.tableView.mj_header {
+            self.tableView.mj_header.endRefreshing()
         }
         
         self.tableView.reloadData()
@@ -256,6 +266,14 @@ class DataDetailViewController: BaseViewController, UITableViewDelegate, UITable
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        if 1 == indexPath.section {
+            let comment = self.commentList[indexPath.row]
+            let vc = DocumentCommentDetailViewController()
+            vc.documentId = self.document.id
+            vc.comment = comment
+            self.pushViewController(viewContoller: vc, animated: true)
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

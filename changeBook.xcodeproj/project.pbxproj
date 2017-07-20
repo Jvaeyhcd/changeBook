@@ -18,6 +18,8 @@
 		BE0190A31EFD4B2500FA040E /* TeacherHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0190A21EFD4B2500FA040E /* TeacherHomeViewController.swift */; };
 		BE0190A71EFD4B5E00FA040E /* RootTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0190A41EFD4B5E00FA040E /* RootTabBarViewController.swift */; };
 		BE0190A81EFD4B5E00FA040E /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0190A51EFD4B5E00FA040E /* RootViewController.swift */; };
+		BE1A0BE91F20E9880005C632 /* CommentReplyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1A0BE81F20E9880005C632 /* CommentReplyTableViewCell.swift */; };
+		BE1A0BEB1F20F6920005C632 /* InfomationToolBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1A0BEA1F20F6920005C632 /* InfomationToolBarView.swift */; };
 		BE4907271F1F32EC0031024F /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4907261F1F32EC0031024F /* Comment.swift */; };
 		BE49072A1F1F774B0031024F /* pingjia_btn_comment@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE4907281F1F774B0031024F /* pingjia_btn_comment@2x.png */; };
 		BE49072B1F1F774B0031024F /* pingjia_btn_comment@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE4907291F1F774B0031024F /* pingjia_btn_comment@3x.png */; };
@@ -440,6 +442,8 @@
 		BE0190A21EFD4B2500FA040E /* TeacherHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherHomeViewController.swift; sourceTree = "<group>"; };
 		BE0190A41EFD4B5E00FA040E /* RootTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTabBarViewController.swift; sourceTree = "<group>"; };
 		BE0190A51EFD4B5E00FA040E /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		BE1A0BE81F20E9880005C632 /* CommentReplyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentReplyTableViewCell.swift; sourceTree = "<group>"; };
+		BE1A0BEA1F20F6920005C632 /* InfomationToolBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfomationToolBarView.swift; sourceTree = "<group>"; };
 		BE4907261F1F32EC0031024F /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		BE4907281F1F774B0031024F /* pingjia_btn_comment@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pingjia_btn_comment@2x.png"; sourceTree = "<group>"; };
 		BE4907291F1F774B0031024F /* pingjia_btn_comment@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pingjia_btn_comment@3x.png"; sourceTree = "<group>"; };
@@ -1422,6 +1426,7 @@
 				BE5AEFA81F1B9E3000475B90 /* DocumentTableViewCell.swift */,
 				BE5AEFAA1F1D053800475B90 /* InfoDetailTableViewCell.swift */,
 				BE973D931F1E51A80018DF70 /* CommentTableViewCell.swift */,
+				BE1A0BE81F20E9880005C632 /* CommentReplyTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1741,6 +1746,7 @@
 			children = (
 				BEB94CDE1F13BF7300181DC2 /* UserInfoView.swift */,
 				BE4907341F1F912F0031024F /* AddCommentBottomView.swift */,
+				BE1A0BEA1F20F6920005C632 /* InfomationToolBarView.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -2211,6 +2217,7 @@
 				BE01909D1EFD4B0300FA040E /* ArticleHomeViewController.swift in Sources */,
 				BE7CA9D41F0DEC83007CB195 /* MineUserInfoTableViewCell.swift in Sources */,
 				BE5AEF921F19020900475B90 /* BagTableViewCell.swift in Sources */,
+				BE1A0BEB1F20F6920005C632 /* InfomationToolBarView.swift in Sources */,
 				BE57EF751F05414A0091F312 /* SDCollectionViewCell.m in Sources */,
 				BE57EFAD1F086D7E0091F312 /* OrderListTableViewCell.swift in Sources */,
 				BE57EF721F05414A0091F312 /* TAAnimatedDotView.m in Sources */,
@@ -2251,6 +2258,7 @@
 				BE57EDB31F03F0EA0091F312 /* String+Polesapp.swift in Sources */,
 				BE7CA9C91F0CEAA5007CB195 /* HotArticleListViewController.swift in Sources */,
 				BEB94CE11F144DE600181DC2 /* SchoolListViewController.swift in Sources */,
+				BE1A0BE91F20E9880005C632 /* CommentReplyTableViewCell.swift in Sources */,
 				BE57ED981F03BD910091F312 /* UIViewController+HcdSideMenu.m in Sources */,
 				BE4907391F1F957A0031024F /* HcdReplyView.m in Sources */,
 				BE7CAA381F0F3F08007CB195 /* UIScrollView+MJRefresh.m in Sources */,

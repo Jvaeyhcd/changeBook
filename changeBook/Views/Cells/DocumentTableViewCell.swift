@@ -37,9 +37,8 @@ class DocumentTableViewCell: UITableViewCell {
         star.maximumValue = 5
         star.minimumValue = 0
         star.allowsHalfStars = true
-        star.emptyStarImage = UIImage(named: "com_pic_star3")
-        star.halfStarImage = UIImage(named: "com_pic_star2")
-        star.filledStarImage = UIImage(named: "com_pic_star1")
+        star.emptyStarImage = UIImage(named: "pingjia_btn_star2")
+        star.filledStarImage = UIImage(named: "pingjia_btn_star1")
         star.backgroundColor = UIColor.clear
         star.isUserInteractionEnabled = false
         return star
