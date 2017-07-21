@@ -427,6 +427,7 @@
 		BEB94CF71F15059F00181DC2 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB94CF61F15059F00181DC2 /* Document.swift */; };
 		BEB94CF91F150CAA00181DC2 /* DocumentAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB94CF81F150CAA00181DC2 /* DocumentAPI.swift */; };
 		BEB94CFB1F15134800181DC2 /* DocumentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB94CFA1F15134800181DC2 /* DocumentViewModel.swift */; };
+		BEBD37691F224CCB0035E49E /* BookAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBD37681F224CCB0035E49E /* BookAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -905,6 +906,7 @@
 		BEB94CF61F15059F00181DC2 /* Document.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
 		BEB94CF81F150CAA00181DC2 /* DocumentAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentAPI.swift; sourceTree = "<group>"; };
 		BEB94CFA1F15134800181DC2 /* DocumentViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentViewModel.swift; sourceTree = "<group>"; };
+		BEBD37681F224CCB0035E49E /* BookAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookAPI.swift; sourceTree = "<group>"; };
 		FD24FA76B8D7C13454370158 /* Pods-changeBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-changeBook.release.xcconfig"; path = "Pods/Target Support Files/Pods-changeBook/Pods-changeBook.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1519,6 +1521,7 @@
 				BEB94CEC1F147D6800181DC2 /* FileAPI.swift */,
 				BE7CA9B91F0BE9FE007CB195 /* RequestResult.swift */,
 				BE7CA9BB1F0BEA1D007CB195 /* ActivityIndicator.swift */,
+				BEBD37681F224CCB0035E49E /* BookAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -2184,6 +2187,7 @@
 				BEB94CF21F147E4900181DC2 /* UIImage+Polesapp.swift in Sources */,
 				BE7CA9D61F0DF3CA007CB195 /* SettingTableViewCell.swift in Sources */,
 				BE7CA9BC1F0BEA1D007CB195 /* ActivityIndicator.swift in Sources */,
+				BEBD37691F224CCB0035E49E /* BookAPI.swift in Sources */,
 				BE8D53ED1EFBF619003850EB /* STPopupNavigationBar.m in Sources */,
 				BEB94CE71F1477F600181DC2 /* EditNickNameViewController.swift in Sources */,
 				BE57EF731F05414A0091F312 /* TADotView.m in Sources */,
