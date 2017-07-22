@@ -20,6 +20,9 @@
 		BE0190A81EFD4B5E00FA040E /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0190A51EFD4B5E00FA040E /* RootViewController.swift */; };
 		BE1A0BE91F20E9880005C632 /* CommentReplyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1A0BE81F20E9880005C632 /* CommentReplyTableViewCell.swift */; };
 		BE1A0BEB1F20F6920005C632 /* InfomationToolBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1A0BEA1F20F6920005C632 /* InfomationToolBarView.swift */; };
+		BE1ED75E1F22CE21000222D6 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1ED75D1F22CE21000222D6 /* Book.swift */; };
+		BE1ED7601F22D074000222D6 /* BookOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1ED75F1F22D074000222D6 /* BookOrder.swift */; };
+		BE1ED7621F22E5FF000222D6 /* BookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1ED7611F22E5FF000222D6 /* BookViewModel.swift */; };
 		BE4907271F1F32EC0031024F /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4907261F1F32EC0031024F /* Comment.swift */; };
 		BE49072A1F1F774B0031024F /* pingjia_btn_comment@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE4907281F1F774B0031024F /* pingjia_btn_comment@2x.png */; };
 		BE49072B1F1F774B0031024F /* pingjia_btn_comment@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE4907291F1F774B0031024F /* pingjia_btn_comment@3x.png */; };
@@ -445,6 +448,9 @@
 		BE0190A51EFD4B5E00FA040E /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		BE1A0BE81F20E9880005C632 /* CommentReplyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentReplyTableViewCell.swift; sourceTree = "<group>"; };
 		BE1A0BEA1F20F6920005C632 /* InfomationToolBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfomationToolBarView.swift; sourceTree = "<group>"; };
+		BE1ED75D1F22CE21000222D6 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		BE1ED75F1F22D074000222D6 /* BookOrder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookOrder.swift; sourceTree = "<group>"; };
+		BE1ED7611F22E5FF000222D6 /* BookViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookViewModel.swift; sourceTree = "<group>"; };
 		BE4907261F1F32EC0031024F /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		BE4907281F1F774B0031024F /* pingjia_btn_comment@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pingjia_btn_comment@2x.png"; sourceTree = "<group>"; };
 		BE4907291F1F774B0031024F /* pingjia_btn_comment@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pingjia_btn_comment@3x.png"; sourceTree = "<group>"; };
@@ -1540,6 +1546,8 @@
 				BEB94CF61F15059F00181DC2 /* Document.swift */,
 				BE5AEF8F1F17BBEB00475B90 /* Address.swift */,
 				BE4907261F1F32EC0031024F /* Comment.swift */,
+				BE1ED75D1F22CE21000222D6 /* Book.swift */,
+				BE1ED75F1F22D074000222D6 /* BookOrder.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1553,6 +1561,7 @@
 				BE7CA9B51F0BE9D3007CB195 /* ResetPasswordViewModel.swift */,
 				BE7CA9D91F0E3CC6007CB195 /* UserViewModel.swift */,
 				BEB94CFA1F15134800181DC2 /* DocumentViewModel.swift */,
+				BE1ED7611F22E5FF000222D6 /* BookViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -2186,6 +2195,7 @@
 			files = (
 				BEB94CF21F147E4900181DC2 /* UIImage+Polesapp.swift in Sources */,
 				BE7CA9D61F0DF3CA007CB195 /* SettingTableViewCell.swift in Sources */,
+				BE1ED75E1F22CE21000222D6 /* Book.swift in Sources */,
 				BE7CA9BC1F0BEA1D007CB195 /* ActivityIndicator.swift in Sources */,
 				BEBD37691F224CCB0035E49E /* BookAPI.swift in Sources */,
 				BE8D53ED1EFBF619003850EB /* STPopupNavigationBar.m in Sources */,
@@ -2224,6 +2234,7 @@
 				BE1A0BEB1F20F6920005C632 /* InfomationToolBarView.swift in Sources */,
 				BE57EF751F05414A0091F312 /* SDCollectionViewCell.m in Sources */,
 				BE57EFAD1F086D7E0091F312 /* OrderListTableViewCell.swift in Sources */,
+				BE1ED7601F22D074000222D6 /* BookOrder.swift in Sources */,
 				BE57EF721F05414A0091F312 /* TAAnimatedDotView.m in Sources */,
 				BE7CA9A91F0BD40B007CB195 /* Decodable.swift in Sources */,
 				BE0190A11EFD4B1900FA040E /* HomeViewController.swift in Sources */,
@@ -2271,6 +2282,7 @@
 				BE5AEF941F1905B200475B90 /* BagViewController.swift in Sources */,
 				BE57EFA91F07E5EA0091F312 /* DataListViewController.swift in Sources */,
 				BE57EF851F07A3E50091F312 /* ArticleListViewController.swift in Sources */,
+				BE1ED7621F22E5FF000222D6 /* BookViewModel.swift in Sources */,
 				BE57EF991F07DB4B0091F312 /* BookListViewController.swift in Sources */,
 				BEB94CF01F147DF900181DC2 /* QiniuManager.swift in Sources */,
 				BEB94CE51F146B5400181DC2 /* School.swift in Sources */,

@@ -28,6 +28,18 @@ public enum BookAPI {
     case deleteShopCar(shopCarIdList: String)
     // 添加书包
     case addShopCar(bookId: String, bookCount: Int)
+    // 获取图书评论详情
+    case getBookCommentDetail(bookCommentId: String, page: Int)
+    // 获取图书评论
+    case getBookComment(bookId: String, page: Int)
+    // 添加评论图书
+    case addBookComment(bookId: String, content: String, commentType: String, score: String, bookCommentId: String, receiverId: String)
+    // 获取图书详情
+    case getBookDetail(bookId: String)
+    // 搜索图书
+    case searchBook(keyWords: String, page: Int)
+    // 我的借阅
+    case getUserBookOrder(orderStatus: Int)
 }
 
 extension BookAPI: TargetType {
@@ -45,6 +57,18 @@ extension BookAPI: TargetType {
             return "/book/deleteShopCar"
         case .addShopCar(bookId: _, bookCount: _):
             return "/book/addShopCar"
+        case .getBookCommentDetail(bookCommentId: _, page: _):
+            return "/book/getCommentDetail"
+        case .getBookComment(bookId: _, page: _):
+            return "/book/getBookComment"
+        case .addBookComment(bookId: _, content: _, commentType: _, score: _, bookCommentId: _, receiverId: _):
+            return "/book/addBookComment"
+        case .getBookDetail(bookId: _):
+            return "/book/getBookDetail"
+        case .searchBook(keyWords: _, page: _):
+            return "/book/searchBook"
+        case .getUserBookOrder(orderStatus: _):
+            return "/book/getUserBookOrder"
         }
     }
     
@@ -89,6 +113,50 @@ extension BookAPI: TargetType {
                 "userId": userId,
                 "bookId": bookId,
                 "bookCount": bookCount
+            ]
+        case .getBookCommentDetail(let bookCommentId, let page):
+            return [
+                "token": token,
+                "userId": userId,
+                "bookCommentId": bookCommentId,
+                "page": page
+            ]
+        case .getBookComment(let bookId, let page):
+            return [
+                "token": token,
+                "userId": userId,
+                "bookId": bookId,
+                "page": page
+            ]
+        case .addBookComment(let bookId, let content, let commentType, let score, let bookCommentId, let receiverId):
+            return [
+                "token": token,
+                "userId": userId,
+                "bookId": bookId,
+                "content": content,
+                "commentType": commentType,
+                "score": score,
+                "bookCommentId": bookCommentId,
+                "receiverId": receiverId
+            ]
+        case .getBookDetail(let bookId):
+            return [
+                "token": token,
+                "userId": userId,
+                "bookId": bookId
+            ]
+        case .searchBook(let keyWords, let page):
+            return [
+                "token": token,
+                "userId": userId,
+                "keyWords": keyWords,
+                "page": page
+            ]
+        case .getUserBookOrder(let orderStatus):
+            return [
+                "token": token,
+                "userId": userId,
+                "orderStatus": orderStatus
             ]
         }
     }
