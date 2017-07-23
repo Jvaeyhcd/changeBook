@@ -142,7 +142,7 @@ class BookViewModel: ViewModelProtocol {
     }
     
     // 我的借阅
-    func getUserBookOrder(orderStatus: String,
+    func getUserBookOrder(orderStatus: Int,
                           cache: @escaping DataBlock,
                           success: @escaping DataBlock,
                           fail: @escaping MessageBlock,

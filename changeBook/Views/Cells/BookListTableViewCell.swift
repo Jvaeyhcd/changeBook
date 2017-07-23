@@ -18,6 +18,7 @@ class BookListTableViewCell: UITableViewCell {
         let coverImg = UIImageView.init()
         coverImg.backgroundColor = kMainBgColor
         coverImg.contentMode = .scaleAspectFill
+        coverImg.clipsToBounds = true
         return coverImg
     }()
     
@@ -92,7 +93,7 @@ class BookListTableViewCell: UITableViewCell {
             make.height.equalTo(scaleFromiPhone6Desgin(x: 80))
         }
         
-        self.titleLbl.text = "Nodejs学习过程"
+        self.titleLbl.text = ""
         self.addSubview(self.titleLbl)
         self.titleLbl.snp.makeConstraints { (make) in
             make.left.equalTo(self.coverImg.snp.right).offset(kBasePadding)
@@ -110,7 +111,7 @@ class BookListTableViewCell: UITableViewCell {
             make.top.equalTo(self.titleLbl.snp.bottom)
         }
         
-        self.soreLbl.text = "4.2"
+        self.soreLbl.text = ""
         self.addSubview(self.soreLbl)
         self.soreLbl.snp.makeConstraints { (make) in
             make.left.equalTo(self.rateStar.snp.right).offset(scaleFromiPhone6Desgin(x: 6))
@@ -119,7 +120,7 @@ class BookListTableViewCell: UITableViewCell {
             make.width.equalTo(scaleFromiPhone6Desgin(x: 40))
         }
         
-        self.authorLbl.text = "黄成达著"
+        self.authorLbl.text = ""
         self.addSubview(self.authorLbl)
         self.authorLbl.snp.makeConstraints { (make) in
             make.left.equalTo(self.coverImg.snp.right).offset(kBasePadding)
@@ -128,7 +129,7 @@ class BookListTableViewCell: UITableViewCell {
             make.right.equalTo(-kBasePadding)
         }
         
-        self.otherLbl.text = "剩余20本 10条评论"
+        self.otherLbl.text = ""
         self.addSubview(self.otherLbl)
         self.otherLbl.snp.makeConstraints { (make) in
             make.left.equalTo(self.coverImg.snp.right).offset(kBasePadding)
@@ -136,6 +137,15 @@ class BookListTableViewCell: UITableViewCell {
             make.top.equalTo(self.authorLbl.snp.bottom)
             make.right.equalTo(-kBasePadding)
         }
+    }
+    
+    func setBook(book: Book) {
+        self.coverImg.sd_setImage(with: URL.init(string: book.bookCover), placeholderImage: kNoImgDefaultImage)
+        self.titleLbl.text = book.bookName
+        self.soreLbl.text = book.score
+        self.rateStar.value = CGFloat(book.score.floatValue)
+        self.authorLbl.text = book.publisher + " 著"
+        self.otherLbl.text = "剩余" + book.bookCount + "本 " + book.commentNum + "条评论"
     }
     
     static func cellHeight() -> CGFloat {

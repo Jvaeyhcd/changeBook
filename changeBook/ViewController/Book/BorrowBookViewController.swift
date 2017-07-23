@@ -11,7 +11,8 @@ import UIKit
 class BorrowBookViewController: NavTabBarController {
     
     private var viewControllers = [UIViewController]()
-    private var cates = ["推荐", "理工", "社科", "教辅", "课外"];
+    private var cates = ["推荐", "理工", "社科", "教辅", "课外"]
+    private var filters = [kBookFilterRecommend, kBookFilterPolytechnic, kBookFilterSocial, kBookFilterSupplementary, kBookFilterExtracurricular]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,10 +27,12 @@ class BorrowBookViewController: NavTabBarController {
         
         let searchBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
         searchBtn.setImage(UIImage(named: "jieshu_btn_sousuo"), for: .normal)
+        searchBtn.addTarget(self, action: #selector(goToSearchBook), for: .touchUpInside)
         let searchBarBtn = UIBarButtonItem.init(customView: searchBtn)
         
         let bagBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
         bagBtn.setImage(UIImage(named: "home_btn_shubao"), for: .normal)
+        bagBtn.addTarget(self, action: #selector(bagBtnClicked), for: .touchUpInside)
         let bagBarBtn = UIBarButtonItem.init(customView: bagBtn)
         
         //用于消除右边边空隙，要不然按钮顶不到最边上
@@ -58,7 +61,7 @@ class BorrowBookViewController: NavTabBarController {
         self.tabBar.setFramePadding(top: 0, left: 0, bottom: 0, right: 0)
         
         setTabBarFrame(tabBarFrame: CGRect.init(x: 0, y: 0, width: kScreenWidth, height: kSegmentBarHeight),
-                       contentViewFrame: CGRect.init(x: 0, y: kSegmentBarHeight, width: kScreenWidth, height: kScreenHeight - kSegmentBarHeight))
+                       contentViewFrame: CGRect.init(x: 0, y: kSegmentBarHeight, width: kScreenWidth, height: kScreenHeight - kSegmentBarHeight - kNavHeight))
         
         updateViewControllers()
     }
@@ -71,13 +74,16 @@ class BorrowBookViewController: NavTabBarController {
             self.viewControllers.removeAll()
         }
         
-        for cate in self.cates {
+        for i in 0..<self.cates.count {
+            
+            let cate = self.cates[i]
+            let filter = self.filters[i]
             
             let vc = BookListViewController()
             vc.parentVC = self
+            vc.bookType = filter
             vc.title = cate
             viewControllers.append(vc)
-            
         }
         
         self.setViewControllers(viewControllers: self.viewControllers)
@@ -92,6 +98,16 @@ class BorrowBookViewController: NavTabBarController {
         self.popViewController(animated: true)
     }
 
+    @objc private func goToSearchBook() {
+        let vc = SearchBookViewController()
+        self.pushViewController(viewContoller: vc, animated: true)
+    }
+    
+    @objc private func bagBtnClicked() {
+        let vc = BagViewController()
+        self.pushViewController(viewContoller: vc, animated: true)
+    }
+    
     /*
     // MARK: - Navigation
 

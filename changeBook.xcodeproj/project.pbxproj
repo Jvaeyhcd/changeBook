@@ -23,6 +23,11 @@
 		BE1ED75E1F22CE21000222D6 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1ED75D1F22CE21000222D6 /* Book.swift */; };
 		BE1ED7601F22D074000222D6 /* BookOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1ED75F1F22D074000222D6 /* BookOrder.swift */; };
 		BE1ED7621F22E5FF000222D6 /* BookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1ED7611F22E5FF000222D6 /* BookViewModel.swift */; };
+		BE1ED7641F235DC0000222D6 /* BookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1ED7631F235DC0000222D6 /* BookDetailViewController.swift */; };
+		BE1ED7661F235FF5000222D6 /* BookDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1ED7651F235FF5000222D6 /* BookDetailTableViewCell.swift */; };
+		BE1ED7681F245379000222D6 /* BookCommentListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1ED7671F245379000222D6 /* BookCommentListViewController.swift */; };
+		BE1ED76A1F247644000222D6 /* BookCommentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1ED7691F247644000222D6 /* BookCommentDetailViewController.swift */; };
+		BE1ED76C1F2479BC000222D6 /* SearchBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1ED76B1F2479BC000222D6 /* SearchBookViewController.swift */; };
 		BE4907271F1F32EC0031024F /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4907261F1F32EC0031024F /* Comment.swift */; };
 		BE49072A1F1F774B0031024F /* pingjia_btn_comment@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE4907281F1F774B0031024F /* pingjia_btn_comment@2x.png */; };
 		BE49072B1F1F774B0031024F /* pingjia_btn_comment@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE4907291F1F774B0031024F /* pingjia_btn_comment@3x.png */; };
@@ -451,6 +456,11 @@
 		BE1ED75D1F22CE21000222D6 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		BE1ED75F1F22D074000222D6 /* BookOrder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookOrder.swift; sourceTree = "<group>"; };
 		BE1ED7611F22E5FF000222D6 /* BookViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookViewModel.swift; sourceTree = "<group>"; };
+		BE1ED7631F235DC0000222D6 /* BookDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
+		BE1ED7651F235FF5000222D6 /* BookDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailTableViewCell.swift; sourceTree = "<group>"; };
+		BE1ED7671F245379000222D6 /* BookCommentListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookCommentListViewController.swift; sourceTree = "<group>"; };
+		BE1ED7691F247644000222D6 /* BookCommentDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookCommentDetailViewController.swift; sourceTree = "<group>"; };
+		BE1ED76B1F2479BC000222D6 /* SearchBookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBookViewController.swift; sourceTree = "<group>"; };
 		BE4907261F1F32EC0031024F /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		BE4907281F1F774B0031024F /* pingjia_btn_comment@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pingjia_btn_comment@2x.png"; sourceTree = "<group>"; };
 		BE4907291F1F774B0031024F /* pingjia_btn_comment@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pingjia_btn_comment@3x.png"; sourceTree = "<group>"; };
@@ -1045,6 +1055,10 @@
 				BE57EFAE1F088FE20091F312 /* BookOrderListViewController.swift */,
 				BE57EF961F07C8A40091F312 /* BorrowBookViewController.swift */,
 				BE57EF981F07DB4B0091F312 /* BookListViewController.swift */,
+				BE1ED7631F235DC0000222D6 /* BookDetailViewController.swift */,
+				BE1ED7671F245379000222D6 /* BookCommentListViewController.swift */,
+				BE1ED7691F247644000222D6 /* BookCommentDetailViewController.swift */,
+				BE1ED76B1F2479BC000222D6 /* SearchBookViewController.swift */,
 				BE57EFA61F07E5D30091F312 /* DataViewController.swift */,
 				BE57EFA81F07E5EA0091F312 /* DataListViewController.swift */,
 				BE5AEFA61F1B836A00475B90 /* DataDetailViewController.swift */,
@@ -1435,6 +1449,7 @@
 				BE5AEFAA1F1D053800475B90 /* InfoDetailTableViewCell.swift */,
 				BE973D931F1E51A80018DF70 /* CommentTableViewCell.swift */,
 				BE1A0BE81F20E9880005C632 /* CommentReplyTableViewCell.swift */,
+				BE1ED7651F235FF5000222D6 /* BookDetailTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -2196,6 +2211,7 @@
 				BEB94CF21F147E4900181DC2 /* UIImage+Polesapp.swift in Sources */,
 				BE7CA9D61F0DF3CA007CB195 /* SettingTableViewCell.swift in Sources */,
 				BE1ED75E1F22CE21000222D6 /* Book.swift in Sources */,
+				BE1ED76C1F2479BC000222D6 /* SearchBookViewController.swift in Sources */,
 				BE7CA9BC1F0BEA1D007CB195 /* ActivityIndicator.swift in Sources */,
 				BEBD37691F224CCB0035E49E /* BookAPI.swift in Sources */,
 				BE8D53ED1EFBF619003850EB /* STPopupNavigationBar.m in Sources */,
@@ -2240,6 +2256,7 @@
 				BE0190A11EFD4B1900FA040E /* HomeViewController.swift in Sources */,
 				BE4907311F1F79980031024F /* DocumentCommentDetailViewController.swift in Sources */,
 				BE57EF791F0541CC0091F312 /* HomeHeadView.swift in Sources */,
+				BE1ED7681F245379000222D6 /* BookCommentListViewController.swift in Sources */,
 				BE57EF741F05414A0091F312 /* TAPageControl.m in Sources */,
 				BE7CAA391F0F3F08007CB195 /* UIView+MJExtension.m in Sources */,
 				BE57ED951F03BCF70091F312 /* HcdSideMenu.m in Sources */,
@@ -2257,6 +2274,7 @@
 				BE7CA9AD1F0BE6B5007CB195 /* Global.swift in Sources */,
 				BEB94CF71F15059F00181DC2 /* Document.swift in Sources */,
 				BE9AC41E1F01428400C9288A /* BaseRootTabViewController.swift in Sources */,
+				BE1ED76A1F247644000222D6 /* BookCommentDetailViewController.swift in Sources */,
 				BE57EFAF1F088FE20091F312 /* BookOrderListViewController.swift in Sources */,
 				BE4907331F1F7A4D0031024F /* DocumentCommentListViewController.swift in Sources */,
 				BE0190971EFD4A6400FA040E /* BaseViewController.swift in Sources */,
@@ -2284,6 +2302,7 @@
 				BE57EF851F07A3E50091F312 /* ArticleListViewController.swift in Sources */,
 				BE1ED7621F22E5FF000222D6 /* BookViewModel.swift in Sources */,
 				BE57EF991F07DB4B0091F312 /* BookListViewController.swift in Sources */,
+				BE1ED7661F235FF5000222D6 /* BookDetailTableViewCell.swift in Sources */,
 				BEB94CF01F147DF900181DC2 /* QiniuManager.swift in Sources */,
 				BEB94CE51F146B5400181DC2 /* School.swift in Sources */,
 				BE5AEF8E1F17B27C00475B90 /* AddressInfoTableViewCell.swift in Sources */,
@@ -2297,6 +2316,7 @@
 				BE7CA9DE1F0F24F5007CB195 /* IntegralLog.swift in Sources */,
 				BE973D941F1E51A80018DF70 /* CommentTableViewCell.swift in Sources */,
 				BE7CA9C51F0BEE38007CB195 /* MBProgressHUD.m in Sources */,
+				BE1ED7641F235DC0000222D6 /* BookDetailViewController.swift in Sources */,
 				BE7CA9BE1F0BEA68007CB195 /* Decodable+Rx.swift in Sources */,
 				BE57EF821F0798080091F312 /* SlippedSegmentItem.swift in Sources */,
 				BE5AEFA31F19141400475B90 /* TPKeyboardAvoidingScrollView.m in Sources */,
