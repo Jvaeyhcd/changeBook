@@ -97,6 +97,13 @@ class ArticleListTableViewCell: UITableViewCell {
     static func cellHeight() -> CGFloat {
         return scaleFromiPhone6Desgin(x: 80) + 2 * kBasePadding
     }
+    
+    func setArticle(article: Article) {
+        self.coverImg.sd_setImage(with: URL.init(string: article.cover), placeholderImage: kNoImgDefaultImage)
+        self.titleLbl.text = article.title
+        self.authorLbl.text = "作者：" + article.user.nickName
+        self.timeLbl.text = "发表时间" + article.createAt
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()

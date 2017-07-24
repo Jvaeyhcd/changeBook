@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class ArticleHomeViewController: BaseViewController, HcdTabBarDelegate {
     
-    private var cates = ["推荐", "理工", "人文", "竞赛", "二手"]
+    private var cates = [ArticleCategory]()
     private var selectedControllerIndex = -1
     private var viewControllers = [ArticleListViewController]()
+    private var viewModel: ArticleViewModel = ArticleViewModel()
     lazy var tabBar: SlippedSegmentView = {
         
         let tabBar = SlippedSegmentView.init(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: kSegmentBarHeight))
@@ -41,6 +43,7 @@ class ArticleHomeViewController: BaseViewController, HcdTabBarDelegate {
         super.viewDidLoad()
 
         initSubviews()
+        getArticleCategories()
     }
     
     private func initSubviews() {
@@ -77,6 +80,31 @@ class ArticleHomeViewController: BaseViewController, HcdTabBarDelegate {
         updateViewControllers()
     }
     
+    private func getArticleCategories() {
+        self.viewModel.getArticleCategory(cache: { [weak self] (data) in
+            self?.updateCategories(data: data)
+        }, success: { [weak self] (data) in
+            self?.updateCategories(data: data)
+        }, fail: { [weak self] (message) in
+            self?.showHudTipStr(message)
+        }) { 
+            
+        }
+    }
+    
+    private func updateCategories(data: JSON) {
+        
+        if JSON.null == data {
+            return
+        }
+        
+        let articleCates = ArticleCategory.fromJSONArray(json: data.arrayObject!)
+        if articleCates.count > 0 {
+            self.cates = articleCates
+            self.updateViewControllers()
+        }
+    }
+    
     private func updateContentViewsFrame() {
         self.scrollView.frame = self.contentViewFrame!
         
@@ -111,7 +139,8 @@ class ArticleHomeViewController: BaseViewController, HcdTabBarDelegate {
             
             let vc = ArticleListViewController()
             vc.parentVC = self
-            vc.title = cate
+            vc.category = cate
+            vc.title = cate.category
             viewControllers.append(vc)
             
         }

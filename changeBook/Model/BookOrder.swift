@@ -51,7 +51,7 @@ extension BookOrder: Decodable {
         if json is JSON {
             data = json as! JSON
         }
-        let bookOrder = BookOrder.fromJSON(json: data)
+        let bookOrder = BookOrder.init(json: data)
         return bookOrder
     }
 }

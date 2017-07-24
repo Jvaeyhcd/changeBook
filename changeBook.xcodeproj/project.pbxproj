@@ -28,6 +28,9 @@
 		BE1ED7681F245379000222D6 /* BookCommentListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1ED7671F245379000222D6 /* BookCommentListViewController.swift */; };
 		BE1ED76A1F247644000222D6 /* BookCommentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1ED7691F247644000222D6 /* BookCommentDetailViewController.swift */; };
 		BE1ED76C1F2479BC000222D6 /* SearchBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1ED76B1F2479BC000222D6 /* SearchBookViewController.swift */; };
+		BE1ED76E1F262E04000222D6 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1ED76D1F262E04000222D6 /* Article.swift */; };
+		BE1ED7701F263068000222D6 /* ArticleAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1ED76F1F263068000222D6 /* ArticleAPI.swift */; };
+		BE1ED7721F263C70000222D6 /* ArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1ED7711F263C70000222D6 /* ArticleViewModel.swift */; };
 		BE4907271F1F32EC0031024F /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4907261F1F32EC0031024F /* Comment.swift */; };
 		BE49072A1F1F774B0031024F /* pingjia_btn_comment@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE4907281F1F774B0031024F /* pingjia_btn_comment@2x.png */; };
 		BE49072B1F1F774B0031024F /* pingjia_btn_comment@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE4907291F1F774B0031024F /* pingjia_btn_comment@3x.png */; };
@@ -461,6 +464,9 @@
 		BE1ED7671F245379000222D6 /* BookCommentListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookCommentListViewController.swift; sourceTree = "<group>"; };
 		BE1ED7691F247644000222D6 /* BookCommentDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookCommentDetailViewController.swift; sourceTree = "<group>"; };
 		BE1ED76B1F2479BC000222D6 /* SearchBookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBookViewController.swift; sourceTree = "<group>"; };
+		BE1ED76D1F262E04000222D6 /* Article.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		BE1ED76F1F263068000222D6 /* ArticleAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleAPI.swift; sourceTree = "<group>"; };
+		BE1ED7711F263C70000222D6 /* ArticleViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleViewModel.swift; sourceTree = "<group>"; };
 		BE4907261F1F32EC0031024F /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		BE4907281F1F774B0031024F /* pingjia_btn_comment@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pingjia_btn_comment@2x.png"; sourceTree = "<group>"; };
 		BE4907291F1F774B0031024F /* pingjia_btn_comment@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pingjia_btn_comment@3x.png"; sourceTree = "<group>"; };
@@ -1543,6 +1549,7 @@
 				BE7CA9B91F0BE9FE007CB195 /* RequestResult.swift */,
 				BE7CA9BB1F0BEA1D007CB195 /* ActivityIndicator.swift */,
 				BEBD37681F224CCB0035E49E /* BookAPI.swift */,
+				BE1ED76F1F263068000222D6 /* ArticleAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -1563,6 +1570,7 @@
 				BE4907261F1F32EC0031024F /* Comment.swift */,
 				BE1ED75D1F22CE21000222D6 /* Book.swift */,
 				BE1ED75F1F22D074000222D6 /* BookOrder.swift */,
+				BE1ED76D1F262E04000222D6 /* Article.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1577,6 +1585,7 @@
 				BE7CA9D91F0E3CC6007CB195 /* UserViewModel.swift */,
 				BEB94CFA1F15134800181DC2 /* DocumentViewModel.swift */,
 				BE1ED7611F22E5FF000222D6 /* BookViewModel.swift */,
+				BE1ED7711F263C70000222D6 /* ArticleViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -2213,10 +2222,12 @@
 				BE1ED75E1F22CE21000222D6 /* Book.swift in Sources */,
 				BE1ED76C1F2479BC000222D6 /* SearchBookViewController.swift in Sources */,
 				BE7CA9BC1F0BEA1D007CB195 /* ActivityIndicator.swift in Sources */,
+				BE1ED7701F263068000222D6 /* ArticleAPI.swift in Sources */,
 				BEBD37691F224CCB0035E49E /* BookAPI.swift in Sources */,
 				BE8D53ED1EFBF619003850EB /* STPopupNavigationBar.m in Sources */,
 				BEB94CE71F1477F600181DC2 /* EditNickNameViewController.swift in Sources */,
 				BE57EF731F05414A0091F312 /* TADotView.m in Sources */,
+				BE1ED7721F263C70000222D6 /* ArticleViewModel.swift in Sources */,
 				BE7CA9C71F0CEA7E007CB195 /* HotDataListViewController.swift in Sources */,
 				BE7CA9E01F0F2623007CB195 /* PageInfo.swift in Sources */,
 				BE7CAA321F0F3F08007CB195 /* MJRefreshNormalHeader.m in Sources */,
@@ -2327,6 +2338,7 @@
 				BE7CA9B61F0BE9D3007CB195 /* LoginViewModel.swift in Sources */,
 				BE7CA9DA1F0E3CC6007CB195 /* UserViewModel.swift in Sources */,
 				BE0190A71EFD4B5E00FA040E /* RootTabBarViewController.swift in Sources */,
+				BE1ED76E1F262E04000222D6 /* Article.swift in Sources */,
 				BE57EDA91F03E8140091F312 /* MessageListViewController.swift in Sources */,
 				BE57EFAB1F086C170091F312 /* OrderBookTableViewCell.swift in Sources */,
 				BE8D53EB1EFBF619003850EB /* STPopupControllerTransitioningSlideVertical.m in Sources */,
