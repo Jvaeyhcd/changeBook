@@ -36,6 +36,7 @@ class MyIntegralViewController: BaseViewController, UITableViewDelegate, UITable
         super.viewDidLoad()
 
         initSubviews()
+        getUserIntegralLog(page: 1)
     }
     
     private func initSubviews() {
@@ -58,10 +59,16 @@ class MyIntegralViewController: BaseViewController, UITableViewDelegate, UITable
         self.tableView.setPullingHeader()
         self.tableView.setPullingFooter()
         self.tableView.headerRefreshBlock = {
-            self.getUserIntegralLog(page: 1)
+            [weak self] (Void) in
+            self?.getUserIntegralLog(page: 1)
         }
         self.tableView.footerRefreshBlock = {
-            self.getUserIntegralLog(page: self.pageInfo.currentPage + 1)
+            [weak self] (Void) in
+            self?.getUserIntegralLog(page: (self?.pageInfo.currentPage)! + 1)
+        }
+        self.tableView.reloadBlock = {
+            [weak self] (Void) in
+            self?.getUserIntegralLog(page: 1)
         }
         self.tableView.snp.makeConstraints { (make) in
             make.top.equalTo(self.integralLbl.snp.bottom)

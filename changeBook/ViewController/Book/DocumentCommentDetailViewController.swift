@@ -90,6 +90,11 @@ class DocumentCommentDetailViewController: BaseViewController, UITableViewDelega
             
         }
         
+        self.tableView.reloadBlock = {
+            [weak self] (Void) in
+            self?.getCommentDetail(page: 1)
+        }
+        
         self.view.addSubview(self.tableView)
         self.tableView.snp.makeConstraints { (make) in
             make.top.equalTo(0)

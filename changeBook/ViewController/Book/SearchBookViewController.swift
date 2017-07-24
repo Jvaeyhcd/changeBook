@@ -16,9 +16,10 @@ class SearchBookViewController: BaseViewController {
         
         search.layer.cornerRadius = 4
         search.clipsToBounds = true
-//        search.backgroundImage = UIImage.init(color: UIColor(hex: 0xF4F4F4))
-//        search.scopeBarBackgroundImage = UIImage.init(color: UIColor(hex: 0xF4F4F4))
-//        search.barTintColor = UIColor(hex: 0xF4F4F4)
+        search.backgroundImage = UIImage.init(color: UIColor(hex: 0xF4F4F4))
+        search.scopeBarBackgroundImage = UIImage.init(color: UIColor(hex: 0xF4F4F4))
+        search.barTintColor = UIColor(hex: 0xF4F4F4)
+        search.clipsToBounds = true
         search.placeholder = "请输入搜索内容"
         
 //        search.setSearchFieldBackgroundImage(UIImage.init(color: UIColor.init(hex: 0xF4F4F4)!,

@@ -34,6 +34,7 @@ class DocumentCommentListViewController: BaseViewController, UITableViewDelegate
         super.viewDidLoad()
 
         initSubviews()
+        getDocumentComments(page: 1)
     }
 
     override func didReceiveMemoryWarning() {
@@ -81,14 +82,18 @@ class DocumentCommentListViewController: BaseViewController, UITableViewDelegate
             }
             
         }
+        self.tableView.reloadBlock = {
+            [weak self] (Void) in
+            self?.getDocumentComments(page: 1)
+        }
+        
         self.tableView.snp.makeConstraints { (make) in
             make.left.equalTo(0)
             make.top.equalTo(0)
             make.right.equalTo(0)
             make.bottom.equalTo(self.addCommentView.snp.top)
         }
-        
-        getDocumentComments(page: 1)
+
     }
     
     // 获取资料评论

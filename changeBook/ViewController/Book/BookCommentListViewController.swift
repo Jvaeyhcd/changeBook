@@ -82,6 +82,10 @@ class BookCommentListViewController: BaseViewController, UITableViewDelegate, UI
             }
             
         }
+        self.tableView.reloadBlock = {
+            [weak self] (Void) in
+            self?.getBookComments(page: 1)
+        }
         self.tableView.snp.makeConstraints { (make) in
             make.left.equalTo(0)
             make.top.equalTo(0)

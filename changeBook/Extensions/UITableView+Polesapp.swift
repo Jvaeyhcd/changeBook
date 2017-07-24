@@ -16,6 +16,7 @@ class UIRefreshTableView: UITableView, DZNEmptyDataSetSource, DZNEmptyDataSetDel
     
     var headerRefreshBlock: VoidBlock?
     var footerRefreshBlock: VoidBlock?
+    var reloadBlock: VoidBlock?
     
     override init(frame: CGRect, style: UITableViewStyle) {
         super.init(frame: frame, style: style)
@@ -114,6 +115,24 @@ class UIRefreshTableView: UITableView, DZNEmptyDataSetSource, DZNEmptyDataSetDel
         return NSAttributedString.init(string: text, attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 16), NSForegroundColorAttributeName: UIColor(hex: 0xBBD4F3)!])
         
         
+    }
+    
+    func emptyDataSetShouldAllowTouch(_ scrollView: UIScrollView!) -> Bool {
+        let networkWorked = kUserDefaults.bool(forKey: "networkWorked")
+        if networkWorked{
+            //有网
+            return false
+        }else{
+            //无网
+            return true
+        }
+    }
+    
+    func emptyDataSet(_ scrollView: UIScrollView!, didTap view: UIView!) {
+        BLog(log: "点击了界面")
+        if nil != self.reloadBlock {
+            self.reloadBlock!()
+        }
     }
     
 }

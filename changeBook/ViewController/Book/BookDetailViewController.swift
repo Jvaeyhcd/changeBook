@@ -94,6 +94,11 @@ class BookDetailViewController: BaseViewController, UITableViewDelegate, UITable
             self?.getBookDetail()
             self?.getBookComments(page: 1)
         }
+        self.tableView.reloadBlock = {
+            [weak self] (Void) in
+            self?.getBookDetail()
+            self?.getBookComments(page: 1)
+        }
         self.view.addSubview(self.tableView)
         self.tableView.snp.makeConstraints { (make) in
             make.top.equalTo(0)

@@ -52,6 +52,10 @@ class BookListViewController: UIViewController, UITableViewDelegate, UITableView
                 self?.filterBook(page: (self?.pageInfo?.nextPage)!)
             }
         }
+        self.tableView.reloadBlock = {
+            [weak self] (Void) in
+            self?.filterBook(page: 1)
+        }
         self.tableView.snp.makeConstraints { (make) in
             make.top.equalTo(0)
             make.right.equalTo(0)

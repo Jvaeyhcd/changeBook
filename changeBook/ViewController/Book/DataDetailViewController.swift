@@ -90,6 +90,11 @@ class DataDetailViewController: BaseViewController, UITableViewDelegate, UITable
             self?.getDocumentDetail()
             self?.getDocumentComments(page: 1)
         }
+        self.tableView.reloadBlock = {
+            [weak self] (Void) in
+            self?.getDocumentDetail()
+            self?.getDocumentComments(page: 1)
+        }
         self.tableView.snp.makeConstraints { (make) in
             make.top.equalTo(0)
             make.right.equalTo(0)
