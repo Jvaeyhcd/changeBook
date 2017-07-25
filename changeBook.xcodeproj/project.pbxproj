@@ -31,6 +31,8 @@
 		BE1ED76E1F262E04000222D6 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1ED76D1F262E04000222D6 /* Article.swift */; };
 		BE1ED7701F263068000222D6 /* ArticleAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1ED76F1F263068000222D6 /* ArticleAPI.swift */; };
 		BE1ED7721F263C70000222D6 /* ArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1ED7711F263C70000222D6 /* ArticleViewModel.swift */; };
+		BE3251F61F27766400B6B4AF /* ArticleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3251F51F27766400B6B4AF /* ArticleDetailViewController.swift */; };
+		BE3251F81F2783D600B6B4AF /* ArticleDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3251F71F2783D600B6B4AF /* ArticleDetailTableViewCell.swift */; };
 		BE4907271F1F32EC0031024F /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4907261F1F32EC0031024F /* Comment.swift */; };
 		BE49072A1F1F774B0031024F /* pingjia_btn_comment@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE4907281F1F774B0031024F /* pingjia_btn_comment@2x.png */; };
 		BE49072B1F1F774B0031024F /* pingjia_btn_comment@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE4907291F1F774B0031024F /* pingjia_btn_comment@3x.png */; };
@@ -467,6 +469,8 @@
 		BE1ED76D1F262E04000222D6 /* Article.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		BE1ED76F1F263068000222D6 /* ArticleAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleAPI.swift; sourceTree = "<group>"; };
 		BE1ED7711F263C70000222D6 /* ArticleViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleViewModel.swift; sourceTree = "<group>"; };
+		BE3251F51F27766400B6B4AF /* ArticleDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleDetailViewController.swift; sourceTree = "<group>"; };
+		BE3251F71F2783D600B6B4AF /* ArticleDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleDetailTableViewCell.swift; sourceTree = "<group>"; };
 		BE4907261F1F32EC0031024F /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		BE4907281F1F774B0031024F /* pingjia_btn_comment@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pingjia_btn_comment@2x.png"; sourceTree = "<group>"; };
 		BE4907291F1F774B0031024F /* pingjia_btn_comment@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pingjia_btn_comment@3x.png"; sourceTree = "<group>"; };
@@ -994,6 +998,7 @@
 				BE01909C1EFD4B0300FA040E /* ArticleHomeViewController.swift */,
 				BE7CA9C81F0CEAA5007CB195 /* HotArticleListViewController.swift */,
 				BE57EF841F07A3E50091F312 /* ArticleListViewController.swift */,
+				BE3251F51F27766400B6B4AF /* ArticleDetailViewController.swift */,
 				BE57EDA01F03E7250091F312 /* UserArticleViewController.swift */,
 			);
 			path = Article;
@@ -1456,6 +1461,7 @@
 				BE973D931F1E51A80018DF70 /* CommentTableViewCell.swift */,
 				BE1A0BE81F20E9880005C632 /* CommentReplyTableViewCell.swift */,
 				BE1ED7651F235FF5000222D6 /* BookDetailTableViewCell.swift */,
+				BE3251F71F2783D600B6B4AF /* ArticleDetailTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -2297,6 +2303,7 @@
 				BE57EF8D1F07AB530091F312 /* TeacherListTableViewCell.swift in Sources */,
 				BEB94CED1F147D6800181DC2 /* FileAPI.swift in Sources */,
 				BE5AEFAB1F1D053800475B90 /* InfoDetailTableViewCell.swift in Sources */,
+				BE3251F81F2783D600B6B4AF /* ArticleDetailTableViewCell.swift in Sources */,
 				BE7CA9D21F0DEB32007CB195 /* MineViewController.swift in Sources */,
 				BE01909F1EFD4B1000FA040E /* FriendsHomeViewController.swift in Sources */,
 				BE57EDB31F03F0EA0091F312 /* String+Polesapp.swift in Sources */,
@@ -2337,6 +2344,7 @@
 				BE57EDAC1F03E87E0091F312 /* MyDepositViewController.swift in Sources */,
 				BE7CA9B61F0BE9D3007CB195 /* LoginViewModel.swift in Sources */,
 				BE7CA9DA1F0E3CC6007CB195 /* UserViewModel.swift in Sources */,
+				BE3251F61F27766400B6B4AF /* ArticleDetailViewController.swift in Sources */,
 				BE0190A71EFD4B5E00FA040E /* RootTabBarViewController.swift in Sources */,
 				BE1ED76E1F262E04000222D6 /* Article.swift in Sources */,
 				BE57EDA91F03E8140091F312 /* MessageListViewController.swift in Sources */,

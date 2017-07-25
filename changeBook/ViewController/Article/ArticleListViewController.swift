@@ -36,10 +36,13 @@ class ArticleListViewController: UIViewController, UITableViewDelegate, UITableV
         self.view.addSubview(self.tableView)
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        self.tableView.setPullingFooter()
+        self.tableView.setPullingHeader()
         self.tableView.headerRefreshBlock = {
             [weak self] (Void) in
             self?.getArticleList(page: 1)
         }
+        
         self.tableView.footerRefreshBlock = {
             [weak self] (Void) in
             if self?.pageInfo?.nextPage == self?.pageInfo?.currentPage {
@@ -134,6 +137,17 @@ class ArticleListViewController: UIViewController, UITableViewDelegate, UITableV
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return ArticleListTableViewCell.cellHeight()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let article = self.articleList[indexPath.row]
+        let vc = ArticleDetailViewController()
+        vc.article = article
+        vc.hidesBottomBarWhenPushed = true
+        self.pushViewController(viewContoller: vc, animated: true)
+        
     }
 
     /*

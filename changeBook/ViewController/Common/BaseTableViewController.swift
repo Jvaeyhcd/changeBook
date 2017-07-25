@@ -11,8 +11,8 @@ import UIKit
 class BaseTableViewController: UIViewController {
     
     var tableViewOffsetY = CGFloat(0)
-    lazy var tableView: UITableView = {
-        let tableView = UITableView.init(frame: CGRect.zero, style: .plain)
+    lazy var tableView: UIRefreshTableView = {
+        let tableView = UIRefreshTableView.init(frame: CGRect.zero, style: .plain)
         tableView.separatorStyle = .none
         tableView.backgroundColor = kMainBgColor
         return tableView
