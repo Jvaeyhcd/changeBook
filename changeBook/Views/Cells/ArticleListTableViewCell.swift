@@ -102,7 +102,7 @@ class ArticleListTableViewCell: UITableViewCell {
         self.coverImg.sd_setImage(with: URL.init(string: article.cover), placeholderImage: kNoImgDefaultImage)
         self.titleLbl.text = article.title
         self.authorLbl.text = "作者：" + article.user.nickName
-        self.timeLbl.text = "发表时间" + article.createAt
+        self.timeLbl.text = "发表时间：" + NSDate.stringTimesAgo(fromTimeInterval: article.createAt.doubleValue)
     }
 
     override func awakeFromNib() {

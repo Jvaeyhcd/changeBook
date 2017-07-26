@@ -34,7 +34,7 @@ struct Book {
     var ISBN: String
     var bookFile: String
     var score: String
-    var author: String
+    var bookAuthor: String
     var hasFile: Int
     
     init(json: JSON) {
@@ -51,7 +51,7 @@ struct Book {
         self.ISBN = json["ISBN"].stringValue
         self.bookFile = json["bookFile"].stringValue
         self.score = json["score"].stringValue
-        self.author = json["author"].stringValue
+        self.bookAuthor = json["bookAuthor"].stringValue
         self.hasFile = json["hasFile"].intValue
     }
 }

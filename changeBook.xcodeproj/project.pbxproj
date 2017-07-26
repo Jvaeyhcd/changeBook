@@ -441,6 +441,9 @@
 		BEB94CF91F150CAA00181DC2 /* DocumentAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB94CF81F150CAA00181DC2 /* DocumentAPI.swift */; };
 		BEB94CFB1F15134800181DC2 /* DocumentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB94CFA1F15134800181DC2 /* DocumentViewModel.swift */; };
 		BEBD37691F224CCB0035E49E /* BookAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBD37681F224CCB0035E49E /* BookAPI.swift */; };
+		BED100581F28D4120028AE6A /* ArticleCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED100571F28D4120028AE6A /* ArticleCommentTableViewCell.swift */; };
+		BED1005A1F28DD470028AE6A /* ArticleCommentListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED100591F28DD470028AE6A /* ArticleCommentListViewController.swift */; };
+		BED1005C1F28E2820028AE6A /* ArticleCommentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED1005B1F28E2820028AE6A /* ArticleCommentDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -933,6 +936,9 @@
 		BEB94CF81F150CAA00181DC2 /* DocumentAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentAPI.swift; sourceTree = "<group>"; };
 		BEB94CFA1F15134800181DC2 /* DocumentViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentViewModel.swift; sourceTree = "<group>"; };
 		BEBD37681F224CCB0035E49E /* BookAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookAPI.swift; sourceTree = "<group>"; };
+		BED100571F28D4120028AE6A /* ArticleCommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleCommentTableViewCell.swift; sourceTree = "<group>"; };
+		BED100591F28DD470028AE6A /* ArticleCommentListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleCommentListViewController.swift; sourceTree = "<group>"; };
+		BED1005B1F28E2820028AE6A /* ArticleCommentDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleCommentDetailViewController.swift; sourceTree = "<group>"; };
 		FD24FA76B8D7C13454370158 /* Pods-changeBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-changeBook.release.xcconfig"; path = "Pods/Target Support Files/Pods-changeBook/Pods-changeBook.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -999,6 +1005,8 @@
 				BE7CA9C81F0CEAA5007CB195 /* HotArticleListViewController.swift */,
 				BE57EF841F07A3E50091F312 /* ArticleListViewController.swift */,
 				BE3251F51F27766400B6B4AF /* ArticleDetailViewController.swift */,
+				BED100591F28DD470028AE6A /* ArticleCommentListViewController.swift */,
+				BED1005B1F28E2820028AE6A /* ArticleCommentDetailViewController.swift */,
 				BE57EDA01F03E7250091F312 /* UserArticleViewController.swift */,
 			);
 			path = Article;
@@ -1462,6 +1470,7 @@
 				BE1A0BE81F20E9880005C632 /* CommentReplyTableViewCell.swift */,
 				BE1ED7651F235FF5000222D6 /* BookDetailTableViewCell.swift */,
 				BE3251F71F2783D600B6B4AF /* ArticleDetailTableViewCell.swift */,
+				BED100571F28D4120028AE6A /* ArticleCommentTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1862,7 +1871,7 @@
 				TargetAttributes = {
 					BE57F99F1EF16E3E008BE6AD = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = NLP5PZS8U3;
+						DevelopmentTeam = SRD7U593R7;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
@@ -2296,6 +2305,7 @@
 				BE4907331F1F7A4D0031024F /* DocumentCommentListViewController.swift in Sources */,
 				BE0190971EFD4A6400FA040E /* BaseViewController.swift in Sources */,
 				BE57EDA61F03E7CA0091F312 /* BorrowedBookViewController.swift in Sources */,
+				BED1005A1F28DD470028AE6A /* ArticleCommentListViewController.swift in Sources */,
 				BE8D53EF1EFBF619003850EB /* UIViewController+STPopup.m in Sources */,
 				BEB94CF91F150CAA00181DC2 /* DocumentAPI.swift in Sources */,
 				BEB94CDF1F13BF7300181DC2 /* UserInfoView.swift in Sources */,
@@ -2353,6 +2363,7 @@
 				BE7CAA2D1F0F3F08007CB195 /* MJRefreshAutoStateFooter.m in Sources */,
 				BE57EF7B1F05442F0091F312 /* NormalCollectionViewCell.swift in Sources */,
 				BE7CAA2C1F0F3F08007CB195 /* MJRefreshAutoNormalFooter.m in Sources */,
+				BED100581F28D4120028AE6A /* ArticleCommentTableViewCell.swift in Sources */,
 				BE7CA9DC1F0E452A007CB195 /* ButtonTableViewCell.swift in Sources */,
 				BE57ED9D1F03E6910091F312 /* MenuViewController.swift in Sources */,
 				BE57EFB31F08D31B0091F312 /* UIImage+Polesapp.m in Sources */,
@@ -2365,6 +2376,7 @@
 				BE7CAA271F0F3F08007CB195 /* MJRefreshBackFooter.m in Sources */,
 				BE8D53EA1EFBF619003850EB /* STPopupControllerTransitioningFade.m in Sources */,
 				BE57EF911F07ABE10091F312 /* DataListTableViewCell.swift in Sources */,
+				BED1005C1F28E2820028AE6A /* ArticleCommentDetailViewController.swift in Sources */,
 				BE7CAA311F0F3F08007CB195 /* MJRefreshGifHeader.m in Sources */,
 				BE7CAA3D1F0F8AF9007CB195 /* UIScrollView+EmptyDataSet.m in Sources */,
 				BE49073F1F1FAA3E0031024F /* NSDate+Polesapp.m in Sources */,
@@ -2501,12 +2513,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = NLP5PZS8U3;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = SRD7U593R7;
 				INFOPLIST_FILE = changeBook/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jvaeyhcd.changeBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "OC/changeBook-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -2519,12 +2533,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = NLP5PZS8U3;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = SRD7U593R7;
 				INFOPLIST_FILE = changeBook/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jvaeyhcd.changeBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "OC/changeBook-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};

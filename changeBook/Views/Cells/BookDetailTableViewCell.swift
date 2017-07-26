@@ -210,7 +210,7 @@ class BookDetailTableViewCell: UITableViewCell {
     func setBook(book: Book) {
         
         self.coverImg.sd_setImage(with: URL.init(string: book.bookCover), placeholderImage: kNoImgDefaultImage)
-        self.authorLbl.text = "作者：" + book.author + "著"
+        self.authorLbl.text = "作者：" + book.bookAuthor + "著"
         self.titleLbl.text = book.bookName
         self.priceLbl.text = "原价：" + book.bookPrice
         self.publisherLbl.text = "出版社：" + book.publisher
