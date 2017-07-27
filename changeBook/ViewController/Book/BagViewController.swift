@@ -7,8 +7,24 @@
 //
 
 import UIKit
+import SwiftyJSON
+import HcdActionSheet
 
 class BagViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    private var deleteActionSheet: HcdActionSheet = {
+        let sheet = HcdActionSheet.init(cancelStr: "取消", otherButtonTitles: ["是"], attachTitle: "您确定要从书包中删除这些书籍？")
+        return sheet!
+    }()
+    
+    private var viewModel: BookViewModel = BookViewModel()
+    private var bookList: [Book] = [Book]()
+    // 选中购物车的index
+    private var selectedIndex = [Int]()
+    // 选中要删除的index
+    private var delectedIndex = [Int]()
+    // 是否是在编辑购物车的状态下
+    private var isEdit: Bool = false
     
     lazy var bottomView: UIView = {
         let view = UIView()
@@ -18,7 +34,6 @@ class BagViewController: BaseViewController, UITableViewDelegate, UITableViewDat
     
     lazy var okBtn: UIButton = {
         let btn = UIButton()
-        btn.setTitle("删除", for: .selected)
         btn.setTitle("立即结算", for: .normal)
         btn.backgroundColor = kMainColor
         btn.titleLabel?.textColor = UIColor.white
@@ -48,8 +63,8 @@ class BagViewController: BaseViewController, UITableViewDelegate, UITableViewDat
         return lbl
     }()
     
-    lazy var tableView: UITableView = {
-        let tableView = TPKeyboardAvoidingTableView.init(frame: CGRect.zero, style: .plain)
+    lazy var tableView: UIRefreshTableView = {
+        let tableView = UIRefreshTableView.init(frame: CGRect.zero, style: .plain)
         tableView.register(BagTableViewCell.self, forCellReuseIdentifier: kCellIdBagTableViewCell)
         tableView.separatorStyle = .none
         tableView.backgroundColor = kMainBgColor
@@ -70,6 +85,7 @@ class BagViewController: BaseViewController, UITableViewDelegate, UITableViewDat
         super.viewDidLoad()
 
         initSubviews()
+        getBagList()
     }
     
     private func initSubviews() {
@@ -88,6 +104,7 @@ class BagViewController: BaseViewController, UITableViewDelegate, UITableViewDat
             make.height.equalTo(kTabBarHeight)
         }
         
+        self.okBtn.addTarget(self, action: #selector(okBtnClicked), for: .touchUpInside)
         self.bottomView.addSubview(self.okBtn)
         self.okBtn.snp.makeConstraints { (make) in
             make.top.equalTo(0)
@@ -105,7 +122,7 @@ class BagViewController: BaseViewController, UITableViewDelegate, UITableViewDat
             make.width.equalTo(60)
         }
         
-        self.totalLbl.text = "共3本书 ￥120"
+        self.totalLbl.text = ""
         self.bottomView.addSubview(self.totalLbl)
         self.totalLbl.snp.makeConstraints { (make) in
             make.left.equalTo(self.allBtn.snp.right).offset(8)
@@ -117,11 +134,100 @@ class BagViewController: BaseViewController, UITableViewDelegate, UITableViewDat
         self.view.addSubview(self.tableView)
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        self.tableView.setPullingHeader()
+        self.tableView.headerRefreshBlock = {
+            self.getBagList()
+        }
         self.tableView.snp.makeConstraints { (make) in
             make.top.equalTo(0)
             make.right.equalTo(0)
             make.bottom.equalTo(self.bottomView.snp.top)
             make.left.equalTo(0)
+        }
+        
+        self.deleteActionSheet.selectButtonAtIndex = {
+            [weak self] (index) in
+            if index == 1 {
+                self?.deleteBagsBook()
+            }
+        }
+    }
+    
+    // MARK: - Networking
+    private func getBagList() {
+        self.viewModel.getShopCar(success: { [weak self] (data) in
+            self?.updateDatas(data: data)
+        }, fail: { [weak self] (message) in
+            self?.showHudTipStr(message)
+        }) { 
+            
+        }
+    }
+    
+    private func updateDatas(data: JSON) {
+        if JSON.null == data {
+            return
+        }
+        
+        let books = Book.fromJSONArray(json: data["entities"].arrayObject!)
+        
+        self.bookList.removeAll()
+        
+        if books.count > 0 {
+            for book in books {
+                self.bookList.append(book)
+            }
+        }
+        
+        if nil != self.tableView.mj_header {
+            self.tableView.mj_header.endRefreshing()
+        }
+        
+        self.tableView.reloadData()
+    }
+    
+    private func deleteBagsBook() {
+        
+        var bookIdList = [Int]()
+        for i in self.delectedIndex {
+            bookIdList.append(self.bookList[i].id.intValue)
+        }
+        
+        BLog(log: "\(bookIdList)")
+        self.showHudLoadingTipStr("")
+        self.viewModel.deleteShopCar(shopCarIdList: "\(bookIdList)", success: { [weak self] (data) in
+            self?.showHudTipStr("删除成功")
+            self?.delectedIndex.removeAll()
+            self?.selectedIndex.removeAll()
+            self?.getBagList()
+        }, fail: { [weak self] (message) in
+            self?.showHudTipStr(message)
+        }) { 
+            
+        }
+    }
+    
+    private func changeBookCount(book: Book) {
+        
+        self.view.endEditing(true)
+        
+        self.showHudLoadingTipStr("")
+        self.viewModel.updateShopCar(bookId: book.id, bookCount: book.bookCount.intValue, success: { [weak self] (data) in
+            
+            let book = Book.fromJSON(json: data.object)
+            
+            for i in 0..<(self?.bookList.count)! {
+                let b = self?.bookList[i]
+                if book.bookId == b?.bookId {
+                    self?.bookList[i] = book
+                }
+            }
+            
+            self?.hideHud()
+        }, fail: { [weak self] (message) in
+            self?.showHudTipStr(message)
+        }) { 
+            
         }
     }
     
@@ -130,11 +236,84 @@ class BagViewController: BaseViewController, UITableViewDelegate, UITableViewDat
     }
     
     override func rightNavBarButtonClicked() {
-        self.rightBtn.isSelected = !self.rightBtn.isSelected
+        
+        self.isEdit = !self.isEdit
+        
+        self.rightBtn.isSelected = self.isEdit
+        self.okBtn.isSelected = self.isEdit
+        
+        if true == self.isEdit {
+            BLog(log: "现在是编辑状态")
+            self.totalLbl.isHidden = true
+            self.okBtn.setTitle("删除", for: .normal)
+        } else {
+            BLog(log: "现在是非编辑状态")
+            self.totalLbl.isHidden = false
+            self.totalLbl.text = "共3本书"
+            self.okBtn.setTitle("立即结算", for: .normal)
+        }
+        
+        self.tableView.reloadData()
+        
+        self.allBtn.isSelected = false
+        
+    }
+    
+    private func updateAllSubviews() {
+        self.tableView.reloadData()
+        
+        // 判断是否全都选中了
+        if self.isEdit {
+            if self.delectedIndex.count == self.bookList.count {
+                self.allBtn.isSelected = true
+            } else {
+                self.allBtn.isSelected = false
+            }
+        } else {
+            if self.selectedIndex.count == self.bookList.count {
+                self.allBtn.isSelected = true
+            } else {
+                self.allBtn.isSelected = false
+            }
+        }
     }
     
     func allBtnClicked() {
         self.allBtn.isSelected = !self.allBtn.isSelected
+        
+        if self.allBtn.isSelected {
+            if self.isEdit {
+                self.delectedIndex.removeAll()
+                for i in 0..<self.bookList.count {
+                    self.delectedIndex.append(i)
+                }
+            } else {
+                self.selectedIndex.removeAll()
+                for i in 0..<self.bookList.count {
+                    self.selectedIndex.append(i)
+                }
+            }
+        } else {
+            if self.isEdit {
+                self.delectedIndex.removeAll()
+            } else {
+                self.selectedIndex.removeAll()
+            }
+        }
+        
+        self.updateAllSubviews()
+    }
+    
+    func okBtnClicked() {
+        if self.isEdit {
+            // 删除选中的书籍
+            UIApplication.shared.keyWindow?.addSubview(self.deleteActionSheet)
+            self.deleteActionSheet.show()
+            
+        } else {
+            // 立即结算选中的书籍，跳转到提交订单页面
+            
+        }
     }
 
     // MARK: - UITableViewDelegate, UITableViewDataSource
@@ -143,13 +322,48 @@ class BagViewController: BaseViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return self.bookList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: kCellIdBagTableViewCell, for: indexPath) as! BagTableViewCell
         tableView.addLineforPlainCell(cell: cell, indexPath: indexPath, leftSpace: 0)
+        
+        let book = self.bookList[indexPath.row]
+        cell.setBook(book: book)
+        cell.setSelected(selected: checkIsSelected(index: indexPath.row))
+        cell.bookChangedBlock = {
+            [weak self] (book) in
+            
+            BLog(log: "bookName = " + book.bookName)
+            self?.changeBookCount(book: book)
+        }
+        
         return cell
+    }
+    
+    // 检测Cell是否是被选中的
+    private func checkIsSelected(index: Int) -> Bool {
+        var selected = false
+        
+        if self.isEdit {
+            
+            for j in 0..<self.delectedIndex.count {
+                if index == self.delectedIndex[j] {
+                    selected = true
+                    break
+                }
+            }
+        } else {
+            for i in 0..<self.selectedIndex.count {
+                if index == self.selectedIndex[i] {
+                    selected = true
+                    break
+                }
+            }
+        }
+        
+        return selected
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -158,6 +372,36 @@ class BagViewController: BaseViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        let index = indexPath.row
+        var flag = true
+        
+        if self.isEdit {
+            for j in 0..<self.delectedIndex.count {
+                if index == self.delectedIndex[j] {
+                    flag = false
+                    self.delectedIndex.remove(at: j)
+                    break
+                }
+            }
+            if flag {
+                self.delectedIndex.append(index)
+            }
+            
+        } else {
+            for i in 0..<self.selectedIndex.count {
+                if index == self.selectedIndex[i] {
+                    flag = false
+                    self.selectedIndex.remove(at: i)
+                    break
+                }
+            }
+            if flag {
+                self.selectedIndex.append(index)
+            }
+        }
+        
+        self.updateAllSubviews()
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

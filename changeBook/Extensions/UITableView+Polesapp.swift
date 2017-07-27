@@ -12,7 +12,7 @@ private var TABLEVIEW_HEADER_PROPERTY = 0
 private var TABLEVIEW_FOOTER_PROPERTY = 1
 
 // 封装带有分页的tableView
-class UIRefreshTableView: UITableView, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+class UIRefreshTableView: TPKeyboardAvoidingTableView, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
     
     var headerRefreshBlock: VoidBlock?
     var footerRefreshBlock: VoidBlock?

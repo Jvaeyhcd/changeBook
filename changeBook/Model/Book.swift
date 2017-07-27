@@ -22,6 +22,7 @@ let kBookFilterExtracurricular = 4
 
 struct Book {
     var id: String
+    var bookId: String
     var bookName: String
     var bookPrice: String
     var bookCover: String
@@ -39,6 +40,7 @@ struct Book {
     
     init(json: JSON) {
         self.id = json["id"].stringValue
+        self.bookId = json["bookId"].stringValue
         self.bookName = json["bookName"].stringValue
         self.bookPrice = json["bookPrice"].stringValue
         self.bookCover = json["bookCover"].stringValue

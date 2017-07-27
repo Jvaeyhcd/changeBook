@@ -116,6 +116,7 @@ class BookDetailViewController: BaseViewController, UITableViewDelegate, UITable
         }
         
         self.bottomView.addSubview(self.addBagBtn)
+        self.addBagBtn.addTarget(self, action: #selector(self.addBookToBag), for: .touchUpInside)
         self.addBagBtn.snp.makeConstraints { (make) in
             make.top.equalTo(0)
             make.right.equalTo(self.buyNowBtn.snp.left)
@@ -309,6 +310,17 @@ class BookDetailViewController: BaseViewController, UITableViewDelegate, UITable
         vc.bookId = self.book.id
         self.pushViewController(viewContoller: vc, animated: true)
         
+    }
+    
+    // 将书加入到书包
+    @objc private func addBookToBag() {
+        self.viewModel.addShopCar(bookId: self.book.id, bookCount: 1, success: { [weak self] (data) in
+            self?.showHudTipStr("加入成功")
+        }, fail: { [weak self] (message) in
+            self?.showHudTipStr(message)
+        }) { 
+            
+        }
     }
     
     // MARK: - Networking

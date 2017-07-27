@@ -38,8 +38,13 @@ public enum BookAPI {
     case getBookDetail(bookId: String)
     // 搜索图书
     case searchBook(keyWords: String, page: Int)
-    // 我的借阅
+    // 筛选我的借阅
     case getUserBookOrder(orderStatus: Int)
+    // 获取书包
+    case getShopCar()
+    // 修改书包数量
+    case updateShopCar(bookId: String, bookCount: Int)
+    
 }
 
 extension BookAPI: TargetType {
@@ -69,6 +74,10 @@ extension BookAPI: TargetType {
             return "/book/searchBook"
         case .getUserBookOrder(orderStatus: _):
             return "/book/getUserBookOrder"
+        case .getShopCar():
+            return "/book/getShopCar"
+        case .updateShopCar(bookId: _, bookCount: _):
+            return "/book/updateShopCar"
         }
     }
     
@@ -157,6 +166,18 @@ extension BookAPI: TargetType {
                 "token": token,
                 "userId": userId,
                 "orderStatus": orderStatus
+            ]
+        case .getShopCar():
+            return [
+                "token": token,
+                "userId": userId
+            ]
+        case .updateShopCar(let bookId, let bookCount):
+            return [
+                "token": token,
+                "userId": userId,
+                "shopCarId": bookId,
+                "bookCount": bookCount
             ]
         }
     }

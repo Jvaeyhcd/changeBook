@@ -13,6 +13,10 @@ let kCellIdBagTableViewCell = "BagTableViewCell"
 
 class BagTableViewCell: UITableViewCell {
     
+    
+    var bookChangedBlock: ((Book)->())!
+    private var book: Book!
+    
     private lazy var selectedBtn: UIButton = {
         let btn = UIButton()
         btn.imageView?.contentMode = .scaleAspectFit
@@ -26,6 +30,7 @@ class BagTableViewCell: UITableViewCell {
         let coverImg = UIImageView.init()
         coverImg.backgroundColor = kMainBgColor
         coverImg.contentMode = .scaleAspectFill
+        coverImg.clipsToBounds = true
         return coverImg
     }()
     
@@ -126,7 +131,7 @@ class BagTableViewCell: UITableViewCell {
             make.height.equalTo(scaleFromiPhone6Desgin(x: 80))
         }
         
-        self.titleLbl.text = "Nodejs学习过程"
+        self.titleLbl.text = ""
         self.addSubview(self.titleLbl)
         self.titleLbl.snp.makeConstraints { (make) in
             make.left.equalTo(self.coverImg.snp.right).offset(kBasePadding)
@@ -135,7 +140,7 @@ class BagTableViewCell: UITableViewCell {
             make.right.equalTo(-kBasePadding)
         }
         
-        self.rateStar.value = 4.2
+        self.rateStar.value = 0
         self.addSubview(self.rateStar)
         self.rateStar.snp.makeConstraints { (make) in
             make.left.equalTo(self.coverImg.snp.right).offset(kBasePadding)
@@ -144,7 +149,7 @@ class BagTableViewCell: UITableViewCell {
             make.top.equalTo(self.titleLbl.snp.bottom)
         }
         
-        self.soreLbl.text = "4.2"
+        self.soreLbl.text = "0"
         self.addSubview(self.soreLbl)
         self.soreLbl.snp.makeConstraints { (make) in
             make.left.equalTo(self.rateStar.snp.right).offset(scaleFromiPhone6Desgin(x: 6))
@@ -153,7 +158,7 @@ class BagTableViewCell: UITableViewCell {
             make.width.equalTo(scaleFromiPhone6Desgin(x: 40))
         }
         
-        self.authorLbl.text = "黄成达著"
+        self.authorLbl.text = ""
         self.addSubview(self.authorLbl)
         self.authorLbl.snp.makeConstraints { (make) in
             make.left.equalTo(self.coverImg.snp.right).offset(kBasePadding)
@@ -162,6 +167,13 @@ class BagTableViewCell: UITableViewCell {
             make.right.equalTo(-kBasePadding)
         }
         
+        self.numberButton.resultBlock = {
+            [weak self] (number, increaseStatus) in
+            self?.book.bookCount = String(format: "%d", number)
+            if nil != self?.bookChangedBlock {
+                self?.bookChangedBlock((self?.book)!)
+            }
+        }
         self.addSubview(self.numberButton)
         self.numberButton.snp.makeConstraints { (make) in
             make.height.equalTo(scaleFromiPhone6Desgin(x: 30))
@@ -170,7 +182,7 @@ class BagTableViewCell: UITableViewCell {
             make.width.equalTo(scaleFromiPhone6Desgin(x: 100))
         }
         
-        self.otherLbl.text = "剩余20本"
+        self.otherLbl.text = ""
         self.addSubview(self.otherLbl)
         self.otherLbl.snp.makeConstraints { (make) in
             make.left.equalTo(self.coverImg.snp.right).offset(kBasePadding)
@@ -178,6 +190,21 @@ class BagTableViewCell: UITableViewCell {
             make.top.equalTo(self.authorLbl.snp.bottom)
             make.right.equalTo(self.numberButton.snp.left).offset(-8)
         }
+    }
+    
+    func setBook(book: Book) {
+        
+        self.book = book
+        
+        self.coverImg.sd_setImage(with: URL.init(string: book.bookCover), placeholderImage: kNoImgDefaultImage)
+        self.titleLbl.text = book.bookName
+        self.numberButton.currentNumber = book.bookCount.intValue
+        self.authorLbl.text = book.bookAuthor + "著"
+        self.otherLbl.text = book.commentNum + "条评论"
+    }
+    
+    func setSelected(selected: Bool) {
+        self.selectedBtn.isSelected = selected
     }
     
     static func cellHeight() -> CGFloat {

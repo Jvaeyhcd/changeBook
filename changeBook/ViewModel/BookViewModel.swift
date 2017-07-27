@@ -154,4 +154,24 @@ class BookViewModel: ViewModelProtocol {
         
         
     }
+    
+    // 获取书包
+    func getShopCar(success: @escaping DataBlock,
+                    fail: @escaping MessageBlock,
+                    loginSuccess: @escaping VoidBlock) {
+        BookAPIProvider.request(BookAPI.getShopCar()) { [weak self] (result) in
+            self?.request(cacheName: kNoNeedCache, result: result, success: success, fail: fail, loginSuccess: loginSuccess)
+        }
+    }
+    
+    // 修改书包数量
+    func updateShopCar(bookId: String,
+                       bookCount: Int,
+                       success: @escaping DataBlock,
+                       fail: @escaping MessageBlock,
+                       loginSuccess: @escaping VoidBlock) {
+        BookAPIProvider.request(BookAPI.updateShopCar(bookId: bookId, bookCount: bookCount)) { [weak self] (result) in
+            self?.request(cacheName: kNoNeedCache, result: result, success: success, fail: fail, loginSuccess: loginSuccess)
+        }
+    }
 }
