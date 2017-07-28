@@ -44,7 +44,10 @@ public enum BookAPI {
     case getShopCar()
     // 修改书包数量
     case updateShopCar(bookId: String, bookCount: Int)
-    
+    // 获取运费和可借书时间
+    case getFreight()
+    // 获取自取地址
+    case getBookAddress()
 }
 
 extension BookAPI: TargetType {
@@ -78,6 +81,10 @@ extension BookAPI: TargetType {
             return "/book/getShopCar"
         case .updateShopCar(bookId: _, bookCount: _):
             return "/book/updateShopCar"
+        case .getFreight():
+            return "/book/getFreight"
+        case .getBookAddress():
+            return "/book/getBookAddress"
         }
     }
     
@@ -178,6 +185,16 @@ extension BookAPI: TargetType {
                 "userId": userId,
                 "shopCarId": bookId,
                 "bookCount": bookCount
+            ]
+        case .getFreight():
+            return [
+                "token": token,
+                "userId": userId
+            ]
+        case .getBookAddress():
+            return [
+                "token": token,
+                "userId": userId
             ]
         }
     }

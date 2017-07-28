@@ -7,14 +7,23 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class HotArticleListViewController: BaseTableViewController, UITableViewDelegate, UITableViewDataSource {
 
     var parentVC: UIViewController?
+    private var viewModel: ArticleViewModel = ArticleViewModel()
+    private var articleList = [Article]()
+    private var pageInfo = PageInfo()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        initSubviews()
+        getHotArticle(page: 1)
+    }
+    
+    private func initSubviews() {
         let view = UIView.init(frame: CGRect.init(x: 0,
                                                   y: 0,
                                                   width: kScreenWidth,
@@ -25,10 +34,28 @@ class HotArticleListViewController: BaseTableViewController, UITableViewDelegate
                                                             left: 0,
                                                             bottom: 0,
                                                             right: 0)
-
+        
         self.view.addSubview(self.tableView)
         self.tableView.register(ArticleListTableViewCell.self, forCellReuseIdentifier: kCellIdArticleListTableViewCell)
         
+        self.tableView.setPullingHeader()
+        self.tableView.setPullingFooter()
+        self.tableView.headerRefreshBlock = {
+            [weak self] (Void) in
+            self?.getHotArticle(page: 1)
+        }
+        self.tableView.footerRefreshBlock = {
+            [weak self] (Void) in
+            if self?.pageInfo.nextPage == self?.pageInfo.currentPage {
+                
+            } else {
+                self?.getHotArticle(page: (self?.pageInfo.nextPage)!)
+            }
+        }
+        self.tableView.reloadBlock = {
+            [weak self] (Void) in
+            self?.getHotArticle(page: 1)
+        }
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.snp.makeConstraints { (make) in
@@ -49,12 +76,16 @@ class HotArticleListViewController: BaseTableViewController, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return self.articleList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: kCellIdArticleListTableViewCell, for: indexPath) as! ArticleListTableViewCell
         tableView.addLineforPlainCell(cell: cell, indexPath: indexPath, leftSpace: 0)
+        
+        let article = self.articleList[indexPath.row]
+        cell.setArticle(article: article)
+        
         return cell
     }
     
@@ -67,6 +98,52 @@ class HotArticleListViewController: BaseTableViewController, UITableViewDelegate
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return ArticleListTableViewCell.cellHeight()
+    }
+    
+    // MARK: - Networking
+    private func getHotArticle(page: Int) {
+        self.viewModel.getHotArticle(page: page, cache: { [weak self] (data) in
+            self?.updateArticleList(data: data)
+        }, success: { [weak self] (data) in
+            self?.updateArticleList(data: data)
+        }, fail: { [weak self] (message) in
+            self?.showHudTipStr(message)
+        }) { 
+            
+        }
+    }
+    
+    private func updateArticleList(data: JSON) {
+        if JSON.null == data {
+            return
+        }
+        
+        self.pageInfo = PageInfo.fromJSON(json: data["pageInfo"])
+        let articles = Article.fromJSONArray(json: data["entities"].arrayObject!)
+        
+        if self.pageInfo.currentPage == 1 {
+            self.articleList.removeAll()
+        }
+        
+        if articles.count > 0 {
+            for article in articles {
+                self.articleList.append(article)
+            }
+        }
+        
+        if nil != self.tableView.mj_header {
+            self.tableView.mj_header.endRefreshing()
+        }
+        
+        if nil != self.tableView.mj_footer {
+            if self.pageInfo.currentPage == self.pageInfo.maxPage {
+                self.tableView.mj_footer.state = .noMoreData
+            } else {
+                self.tableView.mj_footer.state = .idle
+            }
+        }
+        
+        self.tableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {

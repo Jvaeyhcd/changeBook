@@ -138,4 +138,20 @@ class ArticleViewModel: ViewModelProtocol {
             self?.request(cacheName: cacheName, result: result, success: success, fail: fail, loginSuccess: loginSuccess)
         }
     }
+    
+    // 获取热门文章
+    func getHotArticle(page: Int,
+                       cache: @escaping DataBlock,
+                       success: @escaping DataBlock,
+                       fail: @escaping MessageBlock,
+                       loginSuccess: @escaping VoidBlock) {
+        var cacheName = kNoNeedCache
+        if 1 == page {
+            cacheName = "getHotArticle:\(page)"
+            self.getCacheData(cacheName: cacheName, cacheData: cache)
+        }
+        ArticleAPIProvider.request(ArticleAPI.getHotArticle(page: page)) { [weak self] (result) in
+            self?.request(cacheName: cacheName, result: result, success: success, fail: fail, loginSuccess: loginSuccess)
+        }
+    }
 }

@@ -13,7 +13,7 @@ import HcdActionSheet
 class BagViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
     
     private var deleteActionSheet: HcdActionSheet = {
-        let sheet = HcdActionSheet.init(cancelStr: "取消", otherButtonTitles: ["是"], attachTitle: "您确定要从书包中删除这些书籍？")
+        let sheet = HcdActionSheet.init(cancelStr: "取消", otherButtonTitles: ["是", "否"], attachTitle: "您确定要从书包中删除这些书籍？")
         return sheet!
     }()
     

@@ -88,6 +88,10 @@ class UIRefreshTableView: TPKeyboardAvoidingTableView, DZNEmptyDataSetSource, DZ
         }
     }
     
+    func verticalOffset(forEmptyDataSet scrollView: UIScrollView!) -> CGFloat {
+        return scrollView.scrollIndicatorInsets.top
+    }
+    
     func image(forEmptyDataSet scrollView: UIScrollView!) -> UIImage! {
         let networkWorked = kUserDefaults.bool(forKey: "networkWorked")
         if networkWorked{

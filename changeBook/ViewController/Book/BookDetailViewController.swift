@@ -134,6 +134,7 @@ class BookDetailViewController: BaseViewController, UITableViewDelegate, UITable
         }
         
         self.bottomView.addSubview(self.bagBtn)
+        self.bagBtn.addTarget(self, action: #selector(self.bagBtnClicked), for: .touchUpInside)
         self.bagBtn.snp.makeConstraints { (make) in
             make.left.equalTo(self.shareBtn.snp.right)
             make.top.equalTo(0)
@@ -321,6 +322,11 @@ class BookDetailViewController: BaseViewController, UITableViewDelegate, UITable
         }) { 
             
         }
+    }
+    
+    @objc private func bagBtnClicked() {
+        let vc = BagViewController()
+        self.pushViewController(viewContoller: vc, animated: true)
     }
     
     // MARK: - Networking

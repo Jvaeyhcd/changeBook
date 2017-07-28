@@ -427,6 +427,7 @@
 		BE9AC41E1F01428400C9288A /* BaseRootTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9AC41D1F01428400C9288A /* BaseRootTabViewController.swift */; };
 		BE9AC4211F01495000C9288A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9AC4201F01495000C9288A /* LoginViewController.swift */; };
 		BE9AC4231F01495F00C9288A /* FindPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9AC4221F01495F00C9288A /* FindPasswordViewController.swift */; };
+		BEA5D9811F2B839400F898C9 /* DeliveryModeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA5D9801F2B839400F898C9 /* DeliveryModeTableViewCell.swift */; };
 		BEB94CDF1F13BF7300181DC2 /* UserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB94CDE1F13BF7300181DC2 /* UserInfoView.swift */; };
 		BEB94CE11F144DE600181DC2 /* SchoolListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB94CE01F144DE600181DC2 /* SchoolListViewController.swift */; };
 		BEB94CE31F14516000181DC2 /* SchoolListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB94CE21F14516000181DC2 /* SchoolListTableViewCell.swift */; };
@@ -444,6 +445,8 @@
 		BED100581F28D4120028AE6A /* ArticleCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED100571F28D4120028AE6A /* ArticleCommentTableViewCell.swift */; };
 		BED1005A1F28DD470028AE6A /* ArticleCommentListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED100591F28DD470028AE6A /* ArticleCommentListViewController.swift */; };
 		BED1005C1F28E2820028AE6A /* ArticleCommentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED1005B1F28E2820028AE6A /* ArticleCommentDetailViewController.swift */; };
+		BEFFB2CD1F2B8DCF008498B8 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BEFFB2CC1F2B8DCF008498B8 /* libz.tbd */; };
+		BEFFB2CF1F2B8DDA008498B8 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BEFFB2CE1F2B8DDA008498B8 /* libresolv.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -920,6 +923,7 @@
 		BE9AC41D1F01428400C9288A /* BaseRootTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRootTabViewController.swift; sourceTree = "<group>"; };
 		BE9AC4201F01495000C9288A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BE9AC4221F01495F00C9288A /* FindPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindPasswordViewController.swift; sourceTree = "<group>"; };
+		BEA5D9801F2B839400F898C9 /* DeliveryModeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeliveryModeTableViewCell.swift; sourceTree = "<group>"; };
 		BEB94CDE1F13BF7300181DC2 /* UserInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoView.swift; sourceTree = "<group>"; };
 		BEB94CE01F144DE600181DC2 /* SchoolListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchoolListViewController.swift; sourceTree = "<group>"; };
 		BEB94CE21F14516000181DC2 /* SchoolListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchoolListTableViewCell.swift; sourceTree = "<group>"; };
@@ -939,6 +943,8 @@
 		BED100571F28D4120028AE6A /* ArticleCommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleCommentTableViewCell.swift; sourceTree = "<group>"; };
 		BED100591F28DD470028AE6A /* ArticleCommentListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleCommentListViewController.swift; sourceTree = "<group>"; };
 		BED1005B1F28E2820028AE6A /* ArticleCommentDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleCommentDetailViewController.swift; sourceTree = "<group>"; };
+		BEFFB2CC1F2B8DCF008498B8 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		BEFFB2CE1F2B8DDA008498B8 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		FD24FA76B8D7C13454370158 /* Pods-changeBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-changeBook.release.xcconfig"; path = "Pods/Target Support Files/Pods-changeBook/Pods-changeBook.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -947,6 +953,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEFFB2CF1F2B8DDA008498B8 /* libresolv.tbd in Frameworks */,
+				BEFFB2CD1F2B8DCF008498B8 /* libz.tbd in Frameworks */,
 				726CE75011D31FD74D914887 /* Pods_changeBook.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1471,6 +1479,7 @@
 				BE1ED7651F235FF5000222D6 /* BookDetailTableViewCell.swift */,
 				BE3251F71F2783D600B6B4AF /* ArticleDetailTableViewCell.swift */,
 				BED100571F28D4120028AE6A /* ArticleCommentTableViewCell.swift */,
+				BEA5D9801F2B839400F898C9 /* DeliveryModeTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1831,6 +1840,8 @@
 		EF0A03ED7C5124EEDA87C895 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BEFFB2CE1F2B8DDA008498B8 /* libresolv.tbd */,
+				BEFFB2CC1F2B8DCF008498B8 /* libz.tbd */,
 				6F7ABDC689AFA44B179B71C5 /* Pods_changeBook.framework */,
 			);
 			name = Frameworks;
@@ -2301,6 +2312,7 @@
 				BEB94CF71F15059F00181DC2 /* Document.swift in Sources */,
 				BE9AC41E1F01428400C9288A /* BaseRootTabViewController.swift in Sources */,
 				BE1ED76A1F247644000222D6 /* BookCommentDetailViewController.swift in Sources */,
+				BEA5D9811F2B839400F898C9 /* DeliveryModeTableViewCell.swift in Sources */,
 				BE57EFAF1F088FE20091F312 /* BookOrderListViewController.swift in Sources */,
 				BE4907331F1F7A4D0031024F /* DocumentCommentListViewController.swift in Sources */,
 				BE0190971EFD4A6400FA040E /* BaseViewController.swift in Sources */,

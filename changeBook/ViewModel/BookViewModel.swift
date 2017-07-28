@@ -174,4 +174,28 @@ class BookViewModel: ViewModelProtocol {
             self?.request(cacheName: kNoNeedCache, result: result, success: success, fail: fail, loginSuccess: loginSuccess)
         }
     }
+    
+    // 获取自取地址
+    func getBookAddress(cache: @escaping DataBlock,
+                        success: @escaping DataBlock,
+                        fail: @escaping MessageBlock,
+                        loginSuccess: @escaping VoidBlock) {
+        let cacheName = "getBookAddress"
+        self.getCacheData(cacheName: cacheName, cacheData: cache)
+        BookAPIProvider.request(BookAPI.getBookAddress()) { [weak self] (result) in
+            self?.request(cacheName: cacheName, result: result, success: success, fail: fail, loginSuccess: loginSuccess)
+        }
+    }
+    
+    // 获取运费和可借书时间
+    func getFreight(cache: @escaping DataBlock,
+                    success: @escaping DataBlock,
+                    fail: @escaping MessageBlock,
+                    loginSuccess: @escaping VoidBlock) {
+        let cacheName = "getFreight"
+        self.getCacheData(cacheName: cacheName, cacheData: cache)
+        BookAPIProvider.request(BookAPI.getFreight()) { [weak self] (result) in
+            self?.request(cacheName: cacheName, result: result, success: success, fail: fail, loginSuccess: loginSuccess)
+        }
+    }
 }
