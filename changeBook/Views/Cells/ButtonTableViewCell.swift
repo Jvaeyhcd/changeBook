@@ -38,7 +38,7 @@ class ButtonTableViewCell: UITableViewCell {
         self.addSubview(btnSure)
         btnSure.snp.makeConstraints{
             make -> Void in
-            make.height.equalTo(scaleFromiPhone6Desgin(x: 60))
+            make.height.equalTo(scaleFromiPhone6Desgin(x: 50))
             make.left.equalTo(kBasePadding)
             make.right.equalTo(-kBasePadding)
             make.centerY.equalTo(self.snp.centerY)
@@ -47,7 +47,7 @@ class ButtonTableViewCell: UITableViewCell {
     }
     
     static func cellHeight() -> CGFloat {
-        return scaleFromiPhone6Desgin(x: 120)
+        return scaleFromiPhone6Desgin(x: 110)
     }
 
     override func awakeFromNib() {

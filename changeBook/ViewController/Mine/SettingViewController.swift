@@ -364,6 +364,7 @@ class SettingViewController: BaseViewController, UITableViewDelegate, UITableVie
             } else if 4 == indexPath.row {
                 // 修改地址
                 let vc = AddressListViewController()
+                vc.selectType = .edit
                 self.pushViewController(viewContoller: vc, animated: true)
                 
             } else if 5 == indexPath.row {

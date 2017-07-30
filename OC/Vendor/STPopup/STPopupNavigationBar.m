@@ -31,6 +31,7 @@
 {
     if (self = [super initWithFrame:frame]) {
         self.draggable = YES;
+        self.backgroundColor = UIColor.whiteColor;
     }
     return self;
 }

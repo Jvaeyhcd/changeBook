@@ -26,11 +26,16 @@ class OrderBookTableViewCell: BookListTableViewCell {
         self.numberLbl.text = "x2"
         self.addSubview(self.numberLbl)
         self.numberLbl.snp.makeConstraints { (make) in
-            make.right.equalTo(kBasePadding)
+            make.right.equalTo(-kBasePadding)
             make.bottom.equalTo(-kBasePadding)
             make.height.equalTo(scaleFromiPhone6Desgin(x: 20))
             make.width.equalTo(scaleFromiPhone6Desgin(x: 60))
         }
+    }
+    
+    override func setBook(book: Book) {
+        super.setBook(book: book)
+        self.numberLbl.text = "x" + book.bookCount
     }
     
     required init?(coder aDecoder: NSCoder) {

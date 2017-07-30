@@ -9,6 +9,12 @@
 import Foundation
 import SwiftyJSON
 
+let kPayWayWechat = "1"
+let kPayWayAli = "2"
+
+let kDeliveryModePeiSong = 0
+let kDeliveryModeZhiQu = 1
+
 struct BookOrder {
     var id: String
     var orderSn: String

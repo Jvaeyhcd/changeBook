@@ -32,11 +32,13 @@ class BookViewModel: ViewModelProtocol {
                            payWay: String,
                            returnTime: String,
                            bookInfoList: String,
-                           addressId: Int,
+                           addressId: String,
+                           deliveryMode: Int,
+                           sendTime: String,
                            success: @escaping DataBlock,
                            fail: @escaping MessageBlock,
                            loginSuccess: @escaping VoidBlock) {
-        BookAPIProvider.request(BookAPI.generateBookOrder(freight: freight, payWay: payWay, returnTime: returnTime, bookInfoList: bookInfoList, addressId: addressId)) { (result) in
+        BookAPIProvider.request(BookAPI.generateBookOrder(freight: freight, payWay: payWay, returnTime: returnTime, bookInfoList: bookInfoList, addressId: addressId, deliveryMode: deliveryMode, sendTime: sendTime)) { (result) in
             self.request(cacheName: kNoNeedCache, result: result, success: success, fail: fail, loginSuccess: loginSuccess)
         }
     }

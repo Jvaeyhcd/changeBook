@@ -23,6 +23,11 @@
 		BE1A3B271F2D7A5800CC98B3 /* OtherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1A3B261F2D7A5800CC98B3 /* OtherAPI.swift */; };
 		BE1A3B291F2D7D7A00CC98B3 /* OtherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1A3B281F2D7D7A00CC98B3 /* OtherViewModel.swift */; };
 		BE1A3B2B1F2D7E5000CC98B3 /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1A3B2A1F2D7E5000CC98B3 /* Banner.swift */; };
+		BE1A3B2D1F2D966400CC98B3 /* ConfirmBookOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1A3B2C1F2D966400CC98B3 /* ConfirmBookOrderViewController.swift */; };
+		BE1A3B2F1F2DB8C500CC98B3 /* ConfirmOrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1A3B2E1F2DB8C500CC98B3 /* ConfirmOrderTableViewCell.swift */; };
+		BE1A3B331F2DBEBA00CC98B3 /* SimpleShowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1A3B321F2DBEBA00CC98B3 /* SimpleShowTableViewCell.swift */; };
+		BE1A3B361F2DF4AF00CC98B3 /* PayWayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1A3B351F2DF4AF00CC98B3 /* PayWayViewController.swift */; };
+		BE1A3B381F2DFBB600CC98B3 /* SelectPayWayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1A3B371F2DFBB600CC98B3 /* SelectPayWayTableViewCell.swift */; };
 		BE1ED75E1F22CE21000222D6 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1ED75D1F22CE21000222D6 /* Book.swift */; };
 		BE1ED7601F22D074000222D6 /* BookOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1ED75F1F22D074000222D6 /* BookOrder.swift */; };
 		BE1ED7621F22E5FF000222D6 /* BookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1ED7611F22E5FF000222D6 /* BookViewModel.swift */; };
@@ -470,6 +475,11 @@
 		BE1A3B261F2D7A5800CC98B3 /* OtherAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherAPI.swift; sourceTree = "<group>"; };
 		BE1A3B281F2D7D7A00CC98B3 /* OtherViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherViewModel.swift; sourceTree = "<group>"; };
 		BE1A3B2A1F2D7E5000CC98B3 /* Banner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
+		BE1A3B2C1F2D966400CC98B3 /* ConfirmBookOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmBookOrderViewController.swift; sourceTree = "<group>"; };
+		BE1A3B2E1F2DB8C500CC98B3 /* ConfirmOrderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmOrderTableViewCell.swift; sourceTree = "<group>"; };
+		BE1A3B321F2DBEBA00CC98B3 /* SimpleShowTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleShowTableViewCell.swift; sourceTree = "<group>"; };
+		BE1A3B351F2DF4AF00CC98B3 /* PayWayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayWayViewController.swift; sourceTree = "<group>"; };
+		BE1A3B371F2DFBB600CC98B3 /* SelectPayWayTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectPayWayTableViewCell.swift; sourceTree = "<group>"; };
 		BE1ED75D1F22CE21000222D6 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		BE1ED75F1F22D074000222D6 /* BookOrder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookOrder.swift; sourceTree = "<group>"; };
 		BE1ED7611F22E5FF000222D6 /* BookViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookViewModel.swift; sourceTree = "<group>"; };
@@ -1099,6 +1109,8 @@
 				BE4907321F1F7A4D0031024F /* DocumentCommentListViewController.swift */,
 				BE7CA9C61F0CEA7E007CB195 /* HotDataListViewController.swift */,
 				BE5AEF931F1905B200475B90 /* BagViewController.swift */,
+				BE1A3B2C1F2D966400CC98B3 /* ConfirmBookOrderViewController.swift */,
+				BE1A3B351F2DF4AF00CC98B3 /* PayWayViewController.swift */,
 			);
 			path = Book;
 			sourceTree = "<group>";
@@ -1486,6 +1498,9 @@
 				BE3251F71F2783D600B6B4AF /* ArticleDetailTableViewCell.swift */,
 				BED100571F28D4120028AE6A /* ArticleCommentTableViewCell.swift */,
 				BEA5D9801F2B839400F898C9 /* DeliveryModeTableViewCell.swift */,
+				BE1A3B2E1F2DB8C500CC98B3 /* ConfirmOrderTableViewCell.swift */,
+				BE1A3B321F2DBEBA00CC98B3 /* SimpleShowTableViewCell.swift */,
+				BE1A3B371F2DFBB600CC98B3 /* SelectPayWayTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -2254,6 +2269,7 @@
 			files = (
 				BEB94CF21F147E4900181DC2 /* UIImage+Polesapp.swift in Sources */,
 				BE1A3B271F2D7A5800CC98B3 /* OtherAPI.swift in Sources */,
+				BE1A3B331F2DBEBA00CC98B3 /* SimpleShowTableViewCell.swift in Sources */,
 				BE7CA9D61F0DF3CA007CB195 /* SettingTableViewCell.swift in Sources */,
 				BE1A3B2B1F2D7E5000CC98B3 /* Banner.swift in Sources */,
 				BE1ED75E1F22CE21000222D6 /* Book.swift in Sources */,
@@ -2275,6 +2291,7 @@
 				BE01908C1EFC089400FA040E /* Config.swift in Sources */,
 				BE7CA9A71F0BD3DA007CB195 /* User.swift in Sources */,
 				BE49073C1F1F96680031024F /* NSString+Polesapp.m in Sources */,
+				BE1A3B2F1F2DB8C500CC98B3 /* ConfirmOrderTableViewCell.swift in Sources */,
 				BEB94CF51F14CB8800181DC2 /* EditIntroduceViewController.swift in Sources */,
 				BE57EF761F05414A0091F312 /* SDCycleScrollView.m in Sources */,
 				BE7CAA2A1F0F3F08007CB195 /* MJRefreshHeader.m in Sources */,
@@ -2329,6 +2346,7 @@
 				BE0190971EFD4A6400FA040E /* BaseViewController.swift in Sources */,
 				BE57EDA61F03E7CA0091F312 /* BorrowedBookViewController.swift in Sources */,
 				BED1005A1F28DD470028AE6A /* ArticleCommentListViewController.swift in Sources */,
+				BE1A3B381F2DFBB600CC98B3 /* SelectPayWayTableViewCell.swift in Sources */,
 				BE8D53EF1EFBF619003850EB /* UIViewController+STPopup.m in Sources */,
 				BEB94CF91F150CAA00181DC2 /* DocumentAPI.swift in Sources */,
 				BEB94CDF1F13BF7300181DC2 /* UserInfoView.swift in Sources */,
@@ -2371,6 +2389,7 @@
 				BE1ED7641F235DC0000222D6 /* BookDetailViewController.swift in Sources */,
 				BE7CA9BE1F0BEA68007CB195 /* Decodable+Rx.swift in Sources */,
 				BE57EF821F0798080091F312 /* SlippedSegmentItem.swift in Sources */,
+				BE1A3B361F2DF4AF00CC98B3 /* PayWayViewController.swift in Sources */,
 				BE5AEFA31F19141400475B90 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				BE7CAA2F1F0F3F08007CB195 /* MJRefreshBackNormalFooter.m in Sources */,
 				BE57F9A41EF16E3E008BE6AD /* AppDelegate.swift in Sources */,
@@ -2417,6 +2436,7 @@
 				BE0190951EFD4A4E00FA040E /* BaseNavigationController.swift in Sources */,
 				BE4907351F1F912F0031024F /* AddCommentBottomView.swift in Sources */,
 				BE7CAA2B1F0F3F08007CB195 /* MJRefreshAutoGifFooter.m in Sources */,
+				BE1A3B2D1F2D966400CC98B3 /* ConfirmBookOrderViewController.swift in Sources */,
 				BE8D53EC1EFBF619003850EB /* STPopupLeftBarItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -312,7 +312,13 @@ class BagViewController: BaseViewController, UITableViewDelegate, UITableViewDat
             
         } else {
             // 立即结算选中的书籍，跳转到提交订单页面
-            
+            let vc = ConfirmBookOrderViewController()
+            var selectedBookList = [Book]()
+            for i in self.selectedIndex {
+                selectedBookList.append(self.bookList[i])
+            }
+            vc.bookList = selectedBookList
+            self.pushViewController(viewContoller: vc, animated: true)
         }
     }
 

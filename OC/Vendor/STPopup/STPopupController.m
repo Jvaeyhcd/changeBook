@@ -608,6 +608,7 @@ static NSMutableSet *_retainedPopupControllers;
 - (void)setupNavigationBar
 {
     STPopupNavigationBar *navigationBar = [STPopupNavigationBar new];
+    navigationBar.tintColor = UIColor.whiteColor;
     navigationBar.touchEventDelegate = self;
     
     _navigationBar = navigationBar;

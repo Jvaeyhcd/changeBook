@@ -79,19 +79,25 @@ class QiniuManager: NSObject, ViewModelProtocol {
                     self.uploadImageToQiniu(index: index, image: img, progressHandler: { (key, percent) in
                         BLog(log: "percent = \(percent)")
                     }, completionHandler: { (info, key, resp) in
-                        self.successCount = self.successCount + 1
-                        if self.successCount == self.images.count {
-                            
-                            var picList = self.uploadedUrl[0]
-                            if self.images.count > 1 {
-                                for i in 1 ..< self.images.count {
-                                    picList = picList + "," + self.uploadedUrl[i]
-                                }
-                            }
-                            
-                            successBlock(picList)
-                        }
                         
+                        if (info?.isOK)! {
+                            BLog(log: "上传成功")
+                            self.successCount = self.successCount + 1
+                            if self.successCount == self.images.count {
+                                
+                                var picList = self.uploadedUrl[0]
+                                if self.images.count > 1 {
+                                    for i in 1 ..< self.images.count {
+                                        picList = picList + "," + self.uploadedUrl[i]
+                                    }
+                                }
+                                
+                                successBlock(picList)
+                            }
+                        } else {
+                            failureBlock("图片上传失败")
+                        }
+                    
                     })
                     index = index + 1
                 }
@@ -106,7 +112,11 @@ class QiniuManager: NSObject, ViewModelProtocol {
     
     func uploadImageToQNFilePath(index: Int, filePath: String, progressHandler: @escaping QNUpProgressHandler, completionHandler: @escaping QNUpCompletionHandler) {
         
-        let upManager = QNUploadManager.init()
+        let config: QNConfiguration = QNConfiguration.build { (builder) in
+            builder?.setZone(QNZone.zone0())
+        }
+        
+        let upManager = QNUploadManager.init(configuration: config)
         let uploadOption = QNUploadOption.init(mime: nil, progressHandler: progressHandler, params: nil, checkCrc: false, cancellationSignal: nil)
         
         //获取当前时间
@@ -126,7 +136,11 @@ class QiniuManager: NSObject, ViewModelProtocol {
     }
     
     func uploadImageToQiniu(index: Int, image: UIImage, progressHandler: @escaping QNUpProgressHandler, completionHandler: @escaping QNUpCompletionHandler) {
-        let upManager = QNUploadManager.init()
+        let config: QNConfiguration = QNConfiguration.build { (builder) in
+            builder?.setZone(QNZone.zone2())
+        }
+        
+        let upManager = QNUploadManager.init(configuration: config)
         let uploadOption = QNUploadOption.init(mime: nil, progressHandler: progressHandler, params: nil, checkCrc: false, cancellationSignal: nil)
         
         //获取当前时间

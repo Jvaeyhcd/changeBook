@@ -11,6 +11,14 @@ import SwiftyJSON
 
 class AddressListViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
     
+    enum AddressSelectType {
+        case edit
+        case chose
+    }
+    
+    var selectType: AddressSelectType = .edit
+    var choseAddressBlock: ((Address)->())!
+    
     private var viewModel: UserViewModel = UserViewModel()
     private var addressList = [Address]()
     
@@ -174,6 +182,14 @@ class AddressListViewController: BaseViewController, UITableViewDelegate, UITabl
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        let address = self.addressList[indexPath.row]
+        if self.selectType == .chose {
+            if nil != self.choseAddressBlock {
+                self.choseAddressBlock(address)
+                self.popViewController(animated: true)
+            }
+        }
     }
     
     func defaultBtnClicked(button: UIButton) {

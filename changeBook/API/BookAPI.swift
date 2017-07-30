@@ -23,7 +23,7 @@ public enum BookAPI {
     // 筛选图书
     case filterBook(type: Int, page: Int)
     // 借阅下单
-    case generateBookOrder(freight: String, payWay: String, returnTime: String, bookInfoList: String, addressId: Int)
+    case generateBookOrder(freight: String, payWay: String, returnTime: String, bookInfoList: String, addressId: String, deliveryMode: Int, sendTime: String)
     // 删除书包接口
     case deleteShopCar(shopCarIdList: String)
     // 添加书包
@@ -59,7 +59,7 @@ extension BookAPI: TargetType {
         switch self {
         case .filterBook(type: _, page: _):
             return "/book/filterBook"
-        case .generateBookOrder(freight: _, payWay: _, returnTime: _, bookInfoList: _, addressId: _):
+        case .generateBookOrder(freight: _, payWay: _, returnTime: _, bookInfoList: _, addressId: _, deliveryMode: _, sendTime: _):
             return "/book/generateBookOrder"
         case .deleteShopCar(shopCarIdList: _):
             return "/book/deleteShopCar"
@@ -107,7 +107,7 @@ extension BookAPI: TargetType {
                 "type": type,
                 "page": page
             ]
-        case .generateBookOrder(let freight, let payWay, let returnTime, let bookInfoList, let addressId):
+        case .generateBookOrder(let freight, let payWay, let returnTime, let bookInfoList, let addressId, let deliveryMode, let sendTime):
             return [
                 "token": token,
                 "userId": userId,
@@ -115,7 +115,9 @@ extension BookAPI: TargetType {
                 "payWay": payWay,
                 "returnTime": returnTime,
                 "bookInfoList": bookInfoList,
-                "addressId": addressId
+                "addressId": addressId,
+                "deliveryMode": deliveryMode,
+                "sendTime": sendTime
             ]
         case .deleteShopCar(let shopCarIdList):
             return [
