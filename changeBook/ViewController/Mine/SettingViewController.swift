@@ -197,6 +197,9 @@ class SettingViewController: BaseViewController, UITableViewDelegate, UITableVie
     
     // 上传头像
     private func uploadPicture() {
+        
+        self.showHudLoadingTipStr("")
+        
         let uploadManager = QiniuManager()
         uploadManager.images = [UIImage.fixOrientation(uploadImg)]
         uploadManager.type = "u"

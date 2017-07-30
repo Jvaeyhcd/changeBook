@@ -20,6 +20,9 @@
 		BE0190A81EFD4B5E00FA040E /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0190A51EFD4B5E00FA040E /* RootViewController.swift */; };
 		BE1A0BE91F20E9880005C632 /* CommentReplyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1A0BE81F20E9880005C632 /* CommentReplyTableViewCell.swift */; };
 		BE1A0BEB1F20F6920005C632 /* InfomationToolBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1A0BEA1F20F6920005C632 /* InfomationToolBarView.swift */; };
+		BE1A3B271F2D7A5800CC98B3 /* OtherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1A3B261F2D7A5800CC98B3 /* OtherAPI.swift */; };
+		BE1A3B291F2D7D7A00CC98B3 /* OtherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1A3B281F2D7D7A00CC98B3 /* OtherViewModel.swift */; };
+		BE1A3B2B1F2D7E5000CC98B3 /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1A3B2A1F2D7E5000CC98B3 /* Banner.swift */; };
 		BE1ED75E1F22CE21000222D6 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1ED75D1F22CE21000222D6 /* Book.swift */; };
 		BE1ED7601F22D074000222D6 /* BookOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1ED75F1F22D074000222D6 /* BookOrder.swift */; };
 		BE1ED7621F22E5FF000222D6 /* BookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1ED7611F22E5FF000222D6 /* BookViewModel.swift */; };
@@ -464,6 +467,9 @@
 		BE0190A51EFD4B5E00FA040E /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		BE1A0BE81F20E9880005C632 /* CommentReplyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentReplyTableViewCell.swift; sourceTree = "<group>"; };
 		BE1A0BEA1F20F6920005C632 /* InfomationToolBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfomationToolBarView.swift; sourceTree = "<group>"; };
+		BE1A3B261F2D7A5800CC98B3 /* OtherAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherAPI.swift; sourceTree = "<group>"; };
+		BE1A3B281F2D7D7A00CC98B3 /* OtherViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherViewModel.swift; sourceTree = "<group>"; };
+		BE1A3B2A1F2D7E5000CC98B3 /* Banner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
 		BE1ED75D1F22CE21000222D6 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		BE1ED75F1F22D074000222D6 /* BookOrder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookOrder.swift; sourceTree = "<group>"; };
 		BE1ED7611F22E5FF000222D6 /* BookViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookViewModel.swift; sourceTree = "<group>"; };
@@ -1574,6 +1580,7 @@
 				BE7CA9BB1F0BEA1D007CB195 /* ActivityIndicator.swift */,
 				BEBD37681F224CCB0035E49E /* BookAPI.swift */,
 				BE1ED76F1F263068000222D6 /* ArticleAPI.swift */,
+				BE1A3B261F2D7A5800CC98B3 /* OtherAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -1595,6 +1602,7 @@
 				BE1ED75D1F22CE21000222D6 /* Book.swift */,
 				BE1ED75F1F22D074000222D6 /* BookOrder.swift */,
 				BE1ED76D1F262E04000222D6 /* Article.swift */,
+				BE1A3B2A1F2D7E5000CC98B3 /* Banner.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1610,6 +1618,7 @@
 				BEB94CFA1F15134800181DC2 /* DocumentViewModel.swift */,
 				BE1ED7611F22E5FF000222D6 /* BookViewModel.swift */,
 				BE1ED7711F263C70000222D6 /* ArticleViewModel.swift */,
+				BE1A3B281F2D7D7A00CC98B3 /* OtherViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -2244,7 +2253,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEB94CF21F147E4900181DC2 /* UIImage+Polesapp.swift in Sources */,
+				BE1A3B271F2D7A5800CC98B3 /* OtherAPI.swift in Sources */,
 				BE7CA9D61F0DF3CA007CB195 /* SettingTableViewCell.swift in Sources */,
+				BE1A3B2B1F2D7E5000CC98B3 /* Banner.swift in Sources */,
 				BE1ED75E1F22CE21000222D6 /* Book.swift in Sources */,
 				BE1ED76C1F2479BC000222D6 /* SearchBookViewController.swift in Sources */,
 				BE7CA9BC1F0BEA1D007CB195 /* ActivityIndicator.swift in Sources */,
@@ -2333,6 +2344,7 @@
 				BEB94CE11F144DE600181DC2 /* SchoolListViewController.swift in Sources */,
 				BE1A0BE91F20E9880005C632 /* CommentReplyTableViewCell.swift in Sources */,
 				BE57ED981F03BD910091F312 /* UIViewController+HcdSideMenu.m in Sources */,
+				BE1A3B291F2D7D7A00CC98B3 /* OtherViewModel.swift in Sources */,
 				BE4907391F1F957A0031024F /* HcdReplyView.m in Sources */,
 				BE7CAA381F0F3F08007CB195 /* UIScrollView+MJRefresh.m in Sources */,
 				BE7CA9CB1F0CEE67007CB195 /* BaseTableViewController.swift in Sources */,

@@ -10,7 +10,7 @@ import UIKit
 
 let kHomeHeadViewHeight = kScreenWidth * (150.0 / 375.0 + 0.25) + scaleFromiPhone6Desgin(x: 30) + kBasePadding
 
-class HomeViewController: BaseViewController, HcdTabBarDelegate {
+class HomeViewController: BaseViewController, HcdTabBarDelegate, SDCycleScrollViewDelegate {
     
     // tableview的偏移量
     fileprivate var tableViewOffsetY = CGFloat(0)
@@ -46,11 +46,15 @@ class HomeViewController: BaseViewController, HcdTabBarDelegate {
         let headView = HomeHeadView.init(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kHomeHeadViewHeight))
         return headView
     }()
+    
+    private var viewModel: OtherViewModel = OtherViewModel()
+    private var bannerList: [Banner] = [Banner]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         initSubviews()
+        getBanner()
     }
     
     private func initSubviews() {
@@ -95,6 +99,7 @@ class HomeViewController: BaseViewController, HcdTabBarDelegate {
         
         setViewControllers(viewControllers: [vc1, vc2])
         
+        self.headView.cycleScrollView.delegate = self
         self.view.addSubview(self.headView)
         self.showBarButtonItem(position: RIGHT, withImage: UIImage(named: "home_btn_shubao")!)
         self.showBarButtonItem(position: LEFT, withImage: UIImage(named: "home_btn_saoyisao")!)
@@ -335,6 +340,41 @@ class HomeViewController: BaseViewController, HcdTabBarDelegate {
         self.pushViewController(viewContoller: vc, animated: true)
     }
     
+    // MARK: - Networking
+    private func getBanner() {
+        self.viewModel.getBanner(cache: { [weak self] (data) in
+            self?.bannerList = Banner.fromJSONArray(json: data.arrayObject!)
+            self?.updateBannerDatas()
+        }, success: { [weak self] (data) in
+            self?.bannerList = Banner.fromJSONArray(json: data.arrayObject!)
+            self?.updateBannerDatas()
+        }, fail: { [weak self] (message) in
+            self?.showHudTipStr(message)
+        }) { 
+            
+        }
+    }
+    
+    private func updateBannerDatas() {
+        
+        var urls = [String]()
+        
+        for banner in self.bannerList {
+            urls.append(banner.cover)
+        }
+        
+        self.headView.cycleScrollView.imageURLStringsGroup = urls
+        
+    }
+    
+    // MARK : - SDCycleScrollViewDelegate
+    func cycleScrollView(_ cycleScrollView: SDCycleScrollView!, didSelectItemAt index: Int) {
+        
+    }
+    
+    func cycleScrollView(_ cycleScrollView: SDCycleScrollView!, didScrollTo index: Int) {
+        
+    }
     
     /*
     // MARK: - Navigation
