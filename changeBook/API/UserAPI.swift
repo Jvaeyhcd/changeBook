@@ -53,6 +53,18 @@ public enum UserAPI {
     case editAddress(addressId: String, userName: String, phone: String, addressDetail: String)
     //删除收货地址
     case deleteAddress(addressId: String)
+    //用户的借阅
+    case userBorrowBook(userId: String, page: Int)
+    //用户的评论
+    case getUserComment(userId: String, page: Int)
+    //隐私设置
+    case privacySettings(viewComment: Int, viewBorrow: Int)
+    //拉黑用户
+    case userBlackHouse(beUserId: String)
+    //举报用户
+    case userReport(beUserId: String)
+    //申请学生认证
+    case addUserCertification(userName: String, studentNo: String, pic: String)
 }
 
 extension UserAPI: TargetType {
@@ -94,6 +106,18 @@ extension UserAPI: TargetType {
             return "/user/editAddress"
         case .deleteAddress(addressId: _):
             return "/user/deleteAddress"
+        case .userBorrowBook(userId: _, page: _):
+            return "/user/userBorrowBook"
+        case .getUserComment(userId: _, page: _):
+            return "/user/getUserComment"
+        case .privacySettings(viewComment: _, viewBorrow: _):
+            return "/user/privacySettings"
+        case .userBlackHouse(beUserId: _):
+            return "/user/userBlackHouse"
+        case .userReport(beUserId: _):
+            return "/user/userReport"
+        case .addUserCertification(userName: _, studentNo: _, pic: _):
+            return "/user/addUserCertification"
         }
     }
     
@@ -206,6 +230,59 @@ extension UserAPI: TargetType {
                 "token": token,
                 "userId": userId,
                 "addressId": addressId
+            ]
+        case .userBorrowBook(let usersId, let page):
+            if usersId == userId {
+                return [
+                    "token": token,
+                    "userId": userId,
+                    "page": page
+                ]
+            } else {
+                return [
+                    "userId": usersId,
+                    "page": page
+                ]
+            }
+        case .getUserComment(let usersId, let page):
+            if usersId == userId {
+                return [
+                    "token": token,
+                    "userId": userId,
+                    "page": page
+                ]
+            } else {
+                return [
+                    "userId": usersId,
+                    "page": page
+                ]
+            }
+        case .privacySettings(let viewComment, let viewBorrow):
+            return [
+                "token": token,
+                "userId": userId,
+                "viewComment": viewComment,
+                "viewBorrow": viewBorrow
+            ]
+        case .userBlackHouse(let beUserId):
+            return [
+                "token": token,
+                "userId": userId,
+                "beUserId": beUserId
+            ]
+        case .userReport(let beUserId):
+            return [
+                "token": token,
+                "userId": userId,
+                "beUserId": beUserId
+            ]
+        case .addUserCertification(let userName, let studentNo, let pic):
+            return [
+                "token": token,
+                "userId": userId,
+                "userName": userName,
+                "studentNo": studentNo,
+                "pic": pic
             ]
         }
     }

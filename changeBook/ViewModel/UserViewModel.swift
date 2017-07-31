@@ -146,4 +146,4 @@ class UserViewModel: ViewModelProtocol {
             self?.request(cacheName: kNoNeedCache, result: result, success: success, fail: fail, loginSuccess: loginSuccess)
         }
     }
-}
+    
