@@ -62,6 +62,8 @@ class MineViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         self.automaticallyAdjustsScrollViewInsets = false
         
+        let tap = UITapGestureRecognizer.init(target: self, action: #selector(userHeadClick))
+        self.userInfoView.addGestureRecognizer(tap)
         self.view.addSubview(self.userInfoView)
         self.userInfoView.snp.makeConstraints { (make) in
             make.left.equalTo(0)
@@ -88,7 +90,10 @@ class MineViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     @objc private func userHeadClick() {
-        
+        let vc = UsersHomeViewController()
+        vc.hidesBottomBarWhenPushed = true
+        vc.user = sharedGlobal.getSavedUser()
+        self.pushViewController(viewContoller: vc, animated: true)
     }
     
     // MARK: - UITableViewDelegate, UITableViewDataSource

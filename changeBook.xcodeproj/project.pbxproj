@@ -28,6 +28,8 @@
 		BE1A3B331F2DBEBA00CC98B3 /* SimpleShowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1A3B321F2DBEBA00CC98B3 /* SimpleShowTableViewCell.swift */; };
 		BE1A3B361F2DF4AF00CC98B3 /* PayWayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1A3B351F2DF4AF00CC98B3 /* PayWayViewController.swift */; };
 		BE1A3B381F2DFBB600CC98B3 /* SelectPayWayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1A3B371F2DFBB600CC98B3 /* SelectPayWayTableViewCell.swift */; };
+		BE1A3B3A1F2F7A6A00CC98B3 /* UsersHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1A3B391F2F7A6A00CC98B3 /* UsersHomeViewController.swift */; };
+		BE1A3B3C1F2F7D7200CC98B3 /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1A3B3B1F2F7D7200CC98B3 /* UserDetailView.swift */; };
 		BE1ED75E1F22CE21000222D6 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1ED75D1F22CE21000222D6 /* Book.swift */; };
 		BE1ED7601F22D074000222D6 /* BookOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1ED75F1F22D074000222D6 /* BookOrder.swift */; };
 		BE1ED7621F22E5FF000222D6 /* BookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1ED7611F22E5FF000222D6 /* BookViewModel.swift */; };
@@ -480,6 +482,8 @@
 		BE1A3B321F2DBEBA00CC98B3 /* SimpleShowTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleShowTableViewCell.swift; sourceTree = "<group>"; };
 		BE1A3B351F2DF4AF00CC98B3 /* PayWayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayWayViewController.swift; sourceTree = "<group>"; };
 		BE1A3B371F2DFBB600CC98B3 /* SelectPayWayTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectPayWayTableViewCell.swift; sourceTree = "<group>"; };
+		BE1A3B391F2F7A6A00CC98B3 /* UsersHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersHomeViewController.swift; sourceTree = "<group>"; };
+		BE1A3B3B1F2F7D7200CC98B3 /* UserDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
 		BE1ED75D1F22CE21000222D6 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		BE1ED75F1F22D074000222D6 /* BookOrder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookOrder.swift; sourceTree = "<group>"; };
 		BE1ED7611F22E5FF000222D6 /* BookViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookViewModel.swift; sourceTree = "<group>"; };
@@ -1821,6 +1825,7 @@
 				BE9AC4201F01495000C9288A /* LoginViewController.swift */,
 				BE9AC4221F01495F00C9288A /* FindPasswordViewController.swift */,
 				BE57EFBA1F0A4D460091F312 /* RegisterViewController.swift */,
+				BE1A3B391F2F7A6A00CC98B3 /* UsersHomeViewController.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -1831,6 +1836,7 @@
 				BEB94CDE1F13BF7300181DC2 /* UserInfoView.swift */,
 				BE4907341F1F912F0031024F /* AddCommentBottomView.swift */,
 				BE1A0BEA1F20F6920005C632 /* InfomationToolBarView.swift */,
+				BE1A3B3B1F2F7D7200CC98B3 /* UserDetailView.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -2320,6 +2326,7 @@
 				BE7CA9A91F0BD40B007CB195 /* Decodable.swift in Sources */,
 				BE0190A11EFD4B1900FA040E /* HomeViewController.swift in Sources */,
 				BE4907311F1F79980031024F /* DocumentCommentDetailViewController.swift in Sources */,
+				BE1A3B3C1F2F7D7200CC98B3 /* UserDetailView.swift in Sources */,
 				BE57EF791F0541CC0091F312 /* HomeHeadView.swift in Sources */,
 				BE1ED7681F245379000222D6 /* BookCommentListViewController.swift in Sources */,
 				BE57EF741F05414A0091F312 /* TAPageControl.m in Sources */,
@@ -2413,6 +2420,7 @@
 				BE57EF8F1F07AB6C0091F312 /* BookListTableViewCell.swift in Sources */,
 				BE7CAA2E1F0F3F08007CB195 /* MJRefreshBackGifFooter.m in Sources */,
 				BE5AEFA91F1B9E3000475B90 /* DocumentTableViewCell.swift in Sources */,
+				BE1A3B3A1F2F7A6A00CC98B3 /* UsersHomeViewController.swift in Sources */,
 				BE57EF711F05414A0091F312 /* TAAbstractDotView.m in Sources */,
 				BE8D53E91EFBF619003850EB /* STPopupController.m in Sources */,
 				BE57EF971F07C8A40091F312 /* BorrowBookViewController.swift in Sources */,

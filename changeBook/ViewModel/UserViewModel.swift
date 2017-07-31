@@ -147,3 +147,41 @@ class UserViewModel: ViewModelProtocol {
         }
     }
     
+    // 用户的借阅
+    func userBorrowBook(userId: String,
+                        page: Int,
+                        cache: @escaping DataBlock,
+                        success: @escaping DataBlock,
+                        fail: @escaping MessageBlock,
+                        loginSuccess: @escaping VoidBlock) {
+        
+        var cacheName = kNoNeedCache
+        if 1 == page {
+            cacheName = "userBorrowBook:" + userId
+            self.getCacheData(cacheName: cacheName, cacheData: cache)
+        }
+        
+        UserAPIProvider.request(UserAPI.userBorrowBook(userId: userId, page: page)) { [weak self] (result) in
+            self?.request(cacheName: cacheName, result: result, success: success, fail: fail, loginSuccess: loginSuccess)
+        }
+        
+    }
+    
+    // 用户的评论
+    func getUserComment(userId: String,
+                        page: Int,
+                        cache: @escaping DataBlock,
+                        success: @escaping DataBlock,
+                        fail: @escaping MessageBlock,
+                        loginSuccess: @escaping VoidBlock) {
+        var cacheName = kNoNeedCache
+        if 1 == page {
+            cacheName = "getUserComment:" + userId
+            self.getCacheData(cacheName: cacheName, cacheData: cache)
+        }
+        UserAPIProvider.request(UserAPI.getUserComment(userId: userId, page: page)) { [weak self] (result) in
+            self?.request(cacheName: cacheName, result: result, success: success, fail: fail, loginSuccess: loginSuccess)
+        }
+    }
+    
+}
