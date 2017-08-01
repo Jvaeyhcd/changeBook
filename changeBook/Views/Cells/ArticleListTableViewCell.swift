@@ -16,6 +16,7 @@ class ArticleListTableViewCell: UITableViewCell {
         let coverImg = UIImageView.init()
         coverImg.backgroundColor = kMainBgColor
         coverImg.contentMode = .scaleAspectFill
+        coverImg.clipsToBounds = true
         return coverImg
     }()
     

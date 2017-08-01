@@ -18,6 +18,8 @@ class UIRefreshTableView: TPKeyboardAvoidingTableView, DZNEmptyDataSetSource, DZ
     var footerRefreshBlock: VoidBlock?
     var reloadBlock: VoidBlock?
     
+    private var verticalOffsetForEmptyDataSet = CGFloat(0)
+    
     override init(frame: CGRect, style: UITableViewStyle) {
         super.init(frame: frame, style: style)
         self.footerRefresh()
@@ -89,7 +91,7 @@ class UIRefreshTableView: TPKeyboardAvoidingTableView, DZNEmptyDataSetSource, DZ
     }
     
     func verticalOffset(forEmptyDataSet scrollView: UIScrollView!) -> CGFloat {
-        return scrollView.scrollIndicatorInsets.top
+        return self.verticalOffsetForEmptyDataSet
     }
     
     func image(forEmptyDataSet scrollView: UIScrollView!) -> UIImage! {
@@ -137,6 +139,11 @@ class UIRefreshTableView: TPKeyboardAvoidingTableView, DZNEmptyDataSetSource, DZ
         if nil != self.reloadBlock {
             self.reloadBlock!()
         }
+    }
+    
+    func setEmptyDataSetVerticalOffset(offset: CGFloat) {
+        self.verticalOffsetForEmptyDataSet = offset
+        self.reloadData()
     }
     
 }

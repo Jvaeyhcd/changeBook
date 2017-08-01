@@ -203,13 +203,34 @@ class ConfirmBookOrderViewController: BaseViewController, UITableViewDelegate, U
             address = self.address.addressId
         }
         
-        self.viewModel.generateBookOrder(freight: self.freight, payWay: self.payWay, returnTime: self.returnTime, bookInfoList: "\(JSON.init(self.bookList))", addressId: address, deliveryMode: self.deliveryMode, sendTime: "2017-08-01", success: { [weak self] (data) in
+        let bookListInfo = self.convertBookListToStr()
+        
+        self.viewModel.generateBookOrder(freight: self.freight, payWay: self.payWay, returnTime: self.returnTime, bookInfoList: bookListInfo, addressId: address, deliveryMode: self.deliveryMode, sendTime: "2017-08-01", success: { [weak self] (data) in
             self?.showHudTipStr("提交成功")
         }, fail: { [weak self] (message) in
             self?.showHudTipStr(message)
         }) { 
             
         }
+    }
+    
+    // 将书的数组转成str字符串
+    private func convertBookListToStr() -> String {
+        
+        var list = [Dictionary<String, Any>]()
+        for book in self.bookList {
+            var bookDic = Dictionary<String, Any>()
+            bookDic["bookId"] = book.bookId
+            bookDic["bookName"] = book.bookName
+            bookDic["bookCover"] = book.bookCover
+            bookDic["bookType"] = book.bookType
+            bookDic["bookCount"] = book.bookCount
+            bookDic["score"] = book.score
+            list.append(bookDic)
+        }
+        
+        return "\(list)"
+        
     }
     
     // MARK: - UITableViewDelegate, UITableViewDataSource

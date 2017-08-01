@@ -145,12 +145,13 @@ class BookViewModel: ViewModelProtocol {
     
     // 我的借阅
     func getUserBookOrder(orderStatus: Int,
+                          page: Int,
                           cache: @escaping DataBlock,
                           success: @escaping DataBlock,
                           fail: @escaping MessageBlock,
                           loginSuccess: @escaping VoidBlock) {
         
-        BookAPIProvider.request(BookAPI.getUserBookOrder(orderStatus: orderStatus)) { [weak self] (result) in
+        BookAPIProvider.request(BookAPI.getUserBookOrder(orderStatus: orderStatus, page: page)) { [weak self] (result) in
             self?.request(cacheName: kNoNeedCache, result: result, success: success, fail: fail, loginSuccess: loginSuccess)
         }
         

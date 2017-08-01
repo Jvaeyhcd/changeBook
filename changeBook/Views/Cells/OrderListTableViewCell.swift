@@ -12,6 +12,8 @@ let kCellIdOrderListTableViewCell = "OrderListTableViewCell"
 
 class OrderListTableViewCell: UITableViewCell, UITableViewDelegate, UITableViewDataSource {
     
+    var order: BookOrder!
+    
     private lazy var tableView: UITableView = {
         let tableView = UITableView.init(frame: CGRect.zero, style: .plain)
         tableView.register(OrderBookTableViewCell.self, forCellReuseIdentifier: kCellIdOrderBookTableViewCell)
@@ -136,12 +138,21 @@ class OrderListTableViewCell: UITableViewCell, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        
+        if nil != self.order {
+            return self.order.orderDetail.count
+        }
+        
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: kCellIdOrderBookTableViewCell, for: indexPath) as! OrderBookTableViewCell
         tableView.addLineforPlainCell(cell: cell, indexPath: indexPath, leftSpace: 0)
+        
+        let book = self.order.orderDetail[indexPath.row]
+        cell.setBook(book: book)
+        
         return cell
     }
     
@@ -153,8 +164,15 @@ class OrderListTableViewCell: UITableViewCell, UITableViewDelegate, UITableViewD
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    static func cellHeight() -> CGFloat {
-        return 2 * OrderBookTableViewCell.cellHeight() + scaleFromiPhone6Desgin(x: 100)
+    static func cellHeightWithBookOrder(order: BookOrder) -> CGFloat {
+        return CGFloat(order.orderDetail.count) * OrderBookTableViewCell.cellHeight() + scaleFromiPhone6Desgin(x: 100)
+    }
+    
+    func setBookOrder(bookOrder: BookOrder) {
+        self.order = bookOrder
+        self.orderNumLbl.text = "订单号：" + bookOrder.orderSn
+        self.orderAllLbl.text = "共" + bookOrder.bookCount + "件商品，合计￥" + bookOrder.overdueFee + "元"
+        self.tableView.reloadData()
     }
     
     required init?(coder aDecoder: NSCoder) {

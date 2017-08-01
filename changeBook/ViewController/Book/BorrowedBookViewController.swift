@@ -11,7 +11,8 @@ import UIKit
 class BorrowedBookViewController: NavTabBarController {
     
     private var viewControllers = [UIViewController]()
-    private var cates = ["全部", "待发货", "待收货", "借阅中", "已逾期", "已归还"];
+    private var cates = ["全部", "待发货", "待收货", "借阅中", "已归还"];
+    private var orderStatus = [0, kOrderStatusDaiFaHuo, kOrderStatusDaiShouHuo, kOrderStatusJieYueZhong, kOrderStatusDone]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,13 +39,13 @@ class BorrowedBookViewController: NavTabBarController {
         self.tabBar.setItemTitleSelectedFont(itemTitleSelectedFont: kBaseFont)
         self.tabBar.setItemTitleSelectedColor(itemTitleSelectedColor: kMainColor!)
         self.tabBar.setItemSelectedBgImageViewColor(itemSelectedBgImageViewColor: kMainColor!)
-        self.tabBar.setItemWidth(itemWidth: kScreenWidth / 6)
+        self.tabBar.setItemWidth(itemWidth: kScreenWidth / 5)
         let padding = scaleFromiPhone6Desgin(x: 4)
         self.tabBar.setItemSelectedBgInsets(itemSelectedBgInsets: UIEdgeInsetsMake(kSegmentBarHeight - 2, padding, 0, padding))
         self.tabBar.setFramePadding(top: 0, left: 0, bottom: 0, right: 0)
         
         setTabBarFrame(tabBarFrame: CGRect.init(x: 0, y: 0, width: kScreenWidth, height: kSegmentBarHeight),
-                       contentViewFrame: CGRect.init(x: 0, y: kSegmentBarHeight, width: kScreenWidth, height: kScreenHeight - kSegmentBarHeight))
+                       contentViewFrame: CGRect.init(x: 0, y: kSegmentBarHeight, width: kScreenWidth, height: kScreenHeight - kSegmentBarHeight - kNavHeight))
         
         updateViewControllers()
     }
@@ -56,13 +57,15 @@ class BorrowedBookViewController: NavTabBarController {
             self.viewControllers.removeAll()
         }
         
-        for cate in self.cates {
-            
+        for i in 0..<self.cates.count {
+            let cate = self.cates[i]
+            let status = self.orderStatus[i]
             let vc = BookOrderListViewController()
             vc.parentVC = self
+            vc.orderStatus = status
             vc.title = cate
             viewControllers.append(vc)
-            
+
         }
         
         self.setViewControllers(viewControllers: self.viewControllers)

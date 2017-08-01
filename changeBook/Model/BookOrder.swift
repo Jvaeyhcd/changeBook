@@ -15,6 +15,11 @@ let kPayWayAli = "2"
 let kDeliveryModePeiSong = 0
 let kDeliveryModeZhiQu = 1
 
+let kOrderStatusDaiFaHuo = 1
+let kOrderStatusDaiShouHuo = 2
+let kOrderStatusJieYueZhong = 3
+let kOrderStatusDone = 4
+
 struct BookOrder {
     var id: String
     var orderSn: String
