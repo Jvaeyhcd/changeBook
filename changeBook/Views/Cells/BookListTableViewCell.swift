@@ -14,7 +14,7 @@ let kCellIdBookListTableViewCell = "BookListTableViewCell"
 class BookListTableViewCell: UITableViewCell {
     
     // 封面图
-    private lazy var coverImg: UIImageView = {
+    lazy var coverImg: UIImageView = {
         let coverImg = UIImageView.init()
         coverImg.backgroundColor = kMainBgColor
         coverImg.contentMode = .scaleAspectFill
@@ -44,7 +44,7 @@ class BookListTableViewCell: UITableViewCell {
     }()
     
     // 书名
-    private lazy var titleLbl: UILabel = {
+    lazy var titleLbl: UILabel = {
         let lbl = UILabel.init()
         lbl.font = UIFont.systemFont(ofSize: 14)
         lbl.textAlignment = .left

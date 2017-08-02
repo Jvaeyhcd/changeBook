@@ -434,6 +434,10 @@
 		BE8D53ED1EFBF619003850EB /* STPopupNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D53E31EFBF619003850EB /* STPopupNavigationBar.m */; };
 		BE8D53EE1EFBF619003850EB /* UIResponder+STPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D53E51EFBF619003850EB /* UIResponder+STPopup.m */; };
 		BE8D53EF1EFBF619003850EB /* UIViewController+STPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D53E71EFBF619003850EB /* UIViewController+STPopup.m */; };
+		BE91CAF51F320E3600AF22CE /* BookOrderDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE91CAF41F320E3600AF22CE /* BookOrderDetailViewController.swift */; };
+		BE91CAF71F320EE400AF22CE /* OrderStatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE91CAF61F320EE400AF22CE /* OrderStatusTableViewCell.swift */; };
+		BE91CAF91F3214D500AF22CE /* OrderAddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE91CAF81F3214D500AF22CE /* OrderAddressTableViewCell.swift */; };
+		BE91CAFB1F321BA000AF22CE /* OrderDetailBookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE91CAFA1F321BA000AF22CE /* OrderDetailBookTableViewCell.swift */; };
 		BE973D941F1E51A80018DF70 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE973D931F1E51A80018DF70 /* CommentTableViewCell.swift */; };
 		BE9AC41E1F01428400C9288A /* BaseRootTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9AC41D1F01428400C9288A /* BaseRootTabViewController.swift */; };
 		BE9AC4211F01495000C9288A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9AC4201F01495000C9288A /* LoginViewController.swift */; };
@@ -941,6 +945,10 @@
 		BE8D53E51EFBF619003850EB /* UIResponder+STPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+STPopup.m"; sourceTree = "<group>"; };
 		BE8D53E61EFBF619003850EB /* UIViewController+STPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+STPopup.h"; sourceTree = "<group>"; };
 		BE8D53E71EFBF619003850EB /* UIViewController+STPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+STPopup.m"; sourceTree = "<group>"; };
+		BE91CAF41F320E3600AF22CE /* BookOrderDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookOrderDetailViewController.swift; sourceTree = "<group>"; };
+		BE91CAF61F320EE400AF22CE /* OrderStatusTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderStatusTableViewCell.swift; sourceTree = "<group>"; };
+		BE91CAF81F3214D500AF22CE /* OrderAddressTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderAddressTableViewCell.swift; sourceTree = "<group>"; };
+		BE91CAFA1F321BA000AF22CE /* OrderDetailBookTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderDetailBookTableViewCell.swift; sourceTree = "<group>"; };
 		BE973D931F1E51A80018DF70 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		BE9AC41D1F01428400C9288A /* BaseRootTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRootTabViewController.swift; sourceTree = "<group>"; };
 		BE9AC4201F01495000C9288A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -1101,6 +1109,7 @@
 			isa = PBXGroup;
 			children = (
 				BE57EDA51F03E7CA0091F312 /* BorrowedBookViewController.swift */,
+				BE91CAF41F320E3600AF22CE /* BookOrderDetailViewController.swift */,
 				BE57EFAE1F088FE20091F312 /* BookOrderListViewController.swift */,
 				BE57EF961F07C8A40091F312 /* BorrowBookViewController.swift */,
 				BE57EF981F07DB4B0091F312 /* BookListViewController.swift */,
@@ -1486,6 +1495,7 @@
 				BE7CA9DB1F0E452A007CB195 /* ButtonTableViewCell.swift */,
 				BE57EF8C1F07AB530091F312 /* TeacherListTableViewCell.swift */,
 				BE57EF8E1F07AB6C0091F312 /* BookListTableViewCell.swift */,
+				BE91CAFA1F321BA000AF22CE /* OrderDetailBookTableViewCell.swift */,
 				BE57EF901F07ABE10091F312 /* DataListTableViewCell.swift */,
 				BE57EFAA1F086C170091F312 /* OrderBookTableViewCell.swift */,
 				BE57EFAC1F086D7E0091F312 /* OrderListTableViewCell.swift */,
@@ -1507,6 +1517,8 @@
 				BE1A3B2E1F2DB8C500CC98B3 /* ConfirmOrderTableViewCell.swift */,
 				BE1A3B321F2DBEBA00CC98B3 /* SimpleShowTableViewCell.swift */,
 				BE1A3B371F2DFBB600CC98B3 /* SelectPayWayTableViewCell.swift */,
+				BE91CAF61F320EE400AF22CE /* OrderStatusTableViewCell.swift */,
+				BE91CAF81F3214D500AF22CE /* OrderAddressTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -2385,12 +2397,14 @@
 				BE57EF991F07DB4B0091F312 /* BookListViewController.swift in Sources */,
 				BE1ED7661F235FF5000222D6 /* BookDetailTableViewCell.swift in Sources */,
 				BEB94CF01F147DF900181DC2 /* QiniuManager.swift in Sources */,
+				BE91CAF51F320E3600AF22CE /* BookOrderDetailViewController.swift in Sources */,
 				BEB94CE51F146B5400181DC2 /* School.swift in Sources */,
 				BE5AEF8E1F17B27C00475B90 /* AddressInfoTableViewCell.swift in Sources */,
 				BE57EF771F05414A0091F312 /* UIView+SDExtension.m in Sources */,
 				BE7CA9B21F0BE819007CB195 /* APIResult.swift in Sources */,
 				BE4B35301F16734D0008548D /* EditAddressViewController.swift in Sources */,
 				BE9AC4211F01495000C9288A /* LoginViewController.swift in Sources */,
+				BE91CAFB1F321BA000AF22CE /* OrderDetailBookTableViewCell.swift in Sources */,
 				BE7CAA4F1F0F96FE007CB195 /* AddressListViewController.swift in Sources */,
 				BE7CAA261F0F3F08007CB195 /* MJRefreshAutoFooter.m in Sources */,
 				BE57EFA71F07E5D30091F312 /* DataViewController.swift in Sources */,
@@ -2438,6 +2452,7 @@
 				BE7CAA371F0F3F08007CB195 /* UIScrollView+MJExtension.m in Sources */,
 				BE9AC4231F01495F00C9288A /* FindPasswordViewController.swift in Sources */,
 				BE8D53EE1EFBF619003850EB /* UIResponder+STPopup.m in Sources */,
+				BE91CAF91F3214D500AF22CE /* OrderAddressTableViewCell.swift in Sources */,
 				BE7CA9B81F0BE9D3007CB195 /* ResetPasswordViewModel.swift in Sources */,
 				BE5AEFA41F19141400475B90 /* TPKeyboardAvoidingTableView.m in Sources */,
 				BE7CAA301F0F3F08007CB195 /* MJRefreshBackStateFooter.m in Sources */,
@@ -2447,6 +2462,7 @@
 				BE01908F1EFC096C00FA040E /* UIColor+Polesapp.swift in Sources */,
 				BE0190951EFD4A4E00FA040E /* BaseNavigationController.swift in Sources */,
 				BE4907351F1F912F0031024F /* AddCommentBottomView.swift in Sources */,
+				BE91CAF71F320EE400AF22CE /* OrderStatusTableViewCell.swift in Sources */,
 				BE7CAA2B1F0F3F08007CB195 /* MJRefreshAutoGifFooter.m in Sources */,
 				BE1A3B2D1F2D966400CC98B3 /* ConfirmBookOrderViewController.swift in Sources */,
 				BE8D53EC1EFBF619003850EB /* STPopupLeftBarItem.m in Sources */,

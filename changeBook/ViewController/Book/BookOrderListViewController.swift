@@ -124,6 +124,13 @@ class BookOrderListViewController: UIViewController, UITableViewDelegate, UITabl
         
         let bookOrder = self.orderList[indexPath.row]
         cell.setBookOrder(bookOrder: bookOrder)
+        cell.seeDetailBlock = {
+            [weak self] (order) in
+            
+            let vc = BookOrderDetailViewController()
+            vc.bookOrder = order
+            self?.pushViewController(viewContoller: vc, animated: true)
+        }
         
         return cell
     }

@@ -203,9 +203,9 @@ class ConfirmBookOrderViewController: BaseViewController, UITableViewDelegate, U
             address = self.address.addressId
         }
         
-        let bookListInfo = self.convertBookListToStr()
+        let bookListInfo = nil == self.convertBookListToStr() ? "" : self.convertBookListToStr()
         
-        self.viewModel.generateBookOrder(freight: self.freight, payWay: self.payWay, returnTime: self.returnTime, bookInfoList: bookListInfo, addressId: address, deliveryMode: self.deliveryMode, sendTime: "2017-08-01", success: { [weak self] (data) in
+        self.viewModel.generateBookOrder(freight: self.freight, payWay: self.payWay, returnTime: self.returnTime, bookInfoList: bookListInfo!, addressId: address, deliveryMode: self.deliveryMode, sendTime: "2017-08-01", success: { [weak self] (data) in
             self?.showHudTipStr("提交成功")
         }, fail: { [weak self] (message) in
             self?.showHudTipStr(message)
@@ -215,7 +215,7 @@ class ConfirmBookOrderViewController: BaseViewController, UITableViewDelegate, U
     }
     
     // 将书的数组转成str字符串
-    private func convertBookListToStr() -> String {
+    private func convertBookListToStr() -> String? {
         
         var list = [Dictionary<String, Any>]()
         for book in self.bookList {
@@ -229,7 +229,9 @@ class ConfirmBookOrderViewController: BaseViewController, UITableViewDelegate, U
             list.append(bookDic)
         }
         
-        return "\(list)"
+        let json = JSON.init(list)
+        
+        return "\(json)"
         
     }
     

@@ -13,6 +13,7 @@ let kCellIdOrderListTableViewCell = "OrderListTableViewCell"
 class OrderListTableViewCell: UITableViewCell, UITableViewDelegate, UITableViewDataSource {
     
     var order: BookOrder!
+    var seeDetailBlock: ((BookOrder)->())!
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView.init(frame: CGRect.zero, style: .plain)
@@ -111,6 +112,7 @@ class OrderListTableViewCell: UITableViewCell, UITableViewDelegate, UITableViewD
         }
         
         self.btn.setTitle("查看详情", for: .normal)
+        self.btn.addTarget(self, action: #selector(seeDetailBtnClicked), for: .touchUpInside)
         self.addSubview(self.btn)
         self.btn.snp.makeConstraints { (make) in
             make.right.equalTo(-kBasePadding)
@@ -130,6 +132,12 @@ class OrderListTableViewCell: UITableViewCell, UITableViewDelegate, UITableViewD
         }
         
         
+    }
+    
+    @objc private func seeDetailBtnClicked() {
+        if nil != self.seeDetailBlock {
+            self.seeDetailBlock(self.order)
+        }
     }
     
     // MARK: - UITableViewDelegate, UITableViewDataSource
