@@ -11,7 +11,7 @@ import UIKit
 class DataViewController: NavTabBarController {
 
     private var viewControllers = [UIViewController]()
-    private var cates = ["推荐", "理工", "社科", "教辅", "课外"];
+    private var cates = ["推荐", "理工", "社科"];
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,8 +44,8 @@ class DataViewController: NavTabBarController {
         self.tabBar.setItemSelectedBgInsets(itemSelectedBgInsets: UIEdgeInsetsMake(kSegmentBarHeight - 2, padding, 0, padding))
         self.tabBar.setFramePadding(top: 0, left: 0, bottom: 0, right: 0)
         
-        setTabBarFrame(tabBarFrame: CGRect.init(x: 0, y: 0, width: kScreenWidth, height: kSegmentBarHeight),
-                       contentViewFrame: CGRect.init(x: 0, y: kSegmentBarHeight, width: kScreenWidth, height: kScreenHeight - kSegmentBarHeight))
+        setTabBarFrame(tabBarFrame: CGRect.init(x: 0, y: 0, width: kScreenWidth * 0.6, height: kSegmentBarHeight),
+                       contentViewFrame: CGRect.init(x: 0, y: kSegmentBarHeight, width: kScreenWidth, height: kScreenHeight - kSegmentBarHeight - kNavHeight))
         
         updateViewControllers()
     }

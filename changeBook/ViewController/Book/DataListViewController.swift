@@ -58,6 +58,15 @@ class DataListViewController: UIViewController, UITableViewDelegate, UITableView
         return DataListTableViewCell.cellHeight()
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        
+//        let vc = DataDetailViewController()
+//        vc.document = document
+//        vc.hidesBottomBarWhenPushed = true
+//        self?.pushViewController(viewContoller: vc, animated: true)
+    }
+    
     /*
      // MARK: - Navigation
      

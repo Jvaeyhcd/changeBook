@@ -80,6 +80,14 @@ class BookOrderDetailViewController: BaseViewController, UITableViewDelegate, UI
                 
                 let book = self.bookOrder.orderDetail[indexPath.row]
                 cell.setBook(book: book)
+                
+                cell.commentBlock = {
+                    [weak self] (book) in
+                    let vc = CommentBookViewController()
+                    vc.book = book
+                    self?.pushViewController(viewContoller: vc, animated: true)
+                }
+                
                 tableView.addLineLeftAndRightSpaceForPlainCell(cell: cell, indexPath: indexPath, leftSpace: kBasePadding, rightSpace: kBasePadding)
                 
                 return cell

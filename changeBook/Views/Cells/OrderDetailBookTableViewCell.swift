@@ -11,6 +11,10 @@ import UIKit
 let kCellIdOrderDetailBookTableViewCell = "OrderDetailBookTableViewCell"
 
 class OrderDetailBookTableViewCell: BookListTableViewCell {
+    
+    var commentBlock: ((Book)->())!
+    
+    private var book: Book!
 
     // 评价按钮
     private lazy var btn: UIButton = {
@@ -44,10 +48,13 @@ class OrderDetailBookTableViewCell: BookListTableViewCell {
     }
     
     @objc private func commentBtnClicked() {
-        
+        if nil != self.commentBlock {
+            self.commentBlock(self.book)
+        }
     }
     
     override func setBook(book: Book) {
+        self.book = book
         super.setBook(book: book)
     }
     
