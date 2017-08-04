@@ -54,7 +54,7 @@ class ArticleCommentListViewController: BaseViewController, UITableViewDelegate,
             replyView.commitReplyBlock = { [weak self]
                 (content, score) in
                 
-                self?.addBookComment(content: content!, score: score!)
+                self?.addArticleComment(content: content!, score: score!)
                 
             }
             replyView.showReply(in:UIApplication.shared.keyWindow)
@@ -142,7 +142,7 @@ class ArticleCommentListViewController: BaseViewController, UITableViewDelegate,
         self.tableView.reloadData()
     }
     
-    private func addBookComment(content: String, score: String) {
+    private func addArticleComment(content: String, score: String) {
         
         self.showHudLoadingTipStr("")
         

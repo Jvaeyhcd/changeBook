@@ -12,11 +12,14 @@ import HCSStarRatingView
 let kCellIdRateStarTableViewCell = "RateStarTableViewCell"
 
 class RateStarTableViewCell: UITableViewCell {
+    
+    var starValueChangedBlock: ((CGFloat)->())!
 
     lazy var rateStarView: HCSStarRatingView = {
         let star = HCSStarRatingView.init()
         star.maximumValue = 5
         star.minimumValue = 0
+        star.value = 5
         star.allowsHalfStars = false
         star.emptyStarImage = UIImage(named: "pingjia_btn_star2")
         star.filledStarImage = UIImage(named: "pingjia_btn_star1")
@@ -44,6 +47,7 @@ class RateStarTableViewCell: UITableViewCell {
         }
         
         self.addSubview(self.rateStarView)
+        self.rateStarView.addTarget(self, action: #selector(rateStarChanged), for: .touchUpInside)
         self.rateStarView.snp.makeConstraints { (make) in
             make.left.equalTo(tipsLbl.snp.right)
             make.height.equalTo(scaleFromiPhone6Desgin(x: 30))
@@ -51,6 +55,12 @@ class RateStarTableViewCell: UITableViewCell {
             make.centerY.equalTo(tipsLbl.snp.centerY)
         }
         
+    }
+    
+    @objc func rateStarChanged() {
+        if nil != self.starValueChangedBlock {
+            self.starValueChangedBlock(self.rateStarView.value)
+        }
     }
     
     static func cellHeight() -> CGFloat {

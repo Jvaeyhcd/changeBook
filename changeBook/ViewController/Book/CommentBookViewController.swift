@@ -12,8 +12,9 @@ class CommentBookViewController: BaseViewController, UITableViewDelegate, UITabl
     
     var book: Book!
     
-    private var star: String = "0"
+    private var star: String = "5"
     private var comment: String = ""
+    private var viewModel: BookViewModel = BookViewModel()
     
     lazy var tableView: UIRefreshTableView = {
         let tableView = UIRefreshTableView.init(frame: CGRect.zero, style: .plain)
@@ -53,7 +54,22 @@ class CommentBookViewController: BaseViewController, UITableViewDelegate, UITabl
     }
     
     override func rightNavBarButtonClicked() {
+        self.commentBook()
+    }
+    
+    private func commentBook() {
         
+        self.view.endEditing(true)
+        
+        self.showHudLoadingTipStr("")
+        
+        self.viewModel.addBookComment(bookId: self.book.id, content: self.comment, commentType: kCommentLv1, score: self.star, bookCommentId: "0", receiverId: "0", success: { [weak self] (data) in
+                self?.showHudTipStr("评价成功")
+            }, fail: { [weak self] (message) in
+                self?.showHudTipStr(message)
+        }) {
+            
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -78,13 +94,23 @@ class CommentBookViewController: BaseViewController, UITableViewDelegate, UITabl
             tableView.addLineforPlainCell(cell: cell, indexPath: indexPath, leftSpace: 0)
             
             cell.setBook(book: self.book)
+            
             return cell
         } else if 1 == indexPath.section {
             let cell = tableView.dequeueReusableCell(withIdentifier: kCellIdRateStarTableViewCell, for: indexPath) as! RateStarTableViewCell
+            cell.rateStarView.value = CGFloat(self.star.floatValue)
+            cell.starValueChangedBlock = {
+                [weak self] (value) in
+                self?.star = String.init(format: "%f", value)
+            }
             return cell
         }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: kCellIdPlaceHolderViewTableViewCell, for: indexPath) as! PlaceHolderViewTableViewCell
+        cell.textChangedBlock = {
+            [weak self] (str) in
+            self?.comment = str
+        }
         return cell
         
     }
