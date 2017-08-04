@@ -48,7 +48,7 @@ let kUserDefaultImage = UIImage(named: "default_pic.jpg")
 //没有图片时的默认图片
 let kNoImgDefaultImage = UIImage.init(color: UIColor.init(hex: 0xf2f2f2))
 
-let kHost = "http://120.77.85.241/app.php/"
+let kHost = "https://api.bookround.com/"
 //服务器基本地址
 let kBaseUrl = kHost + "api/1.0"
 
