@@ -529,6 +529,15 @@
 		BEECE5641F360EE700B5D3C4 /* ImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEECE54A1F360EE700B5D3C4 /* ImagePickerController.swift */; };
 		BEECE5651F360EE700B5D3C4 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEECE54B1F360EE700B5D3C4 /* LocationManager.swift */; };
 		BEECE5661F360EE700B5D3C4 /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEECE54D1F360EE700B5D3C4 /* TopView.swift */; };
+		BEECE56F1F361E0A00B5D3C4 /* LBXPermissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEECE5681F361E0A00B5D3C4 /* LBXPermissions.swift */; };
+		BEECE5701F361E0A00B5D3C4 /* LBXScanLineAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEECE5691F361E0A00B5D3C4 /* LBXScanLineAnimation.swift */; };
+		BEECE5711F361E0A00B5D3C4 /* LBXScanNetAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEECE56A1F361E0A00B5D3C4 /* LBXScanNetAnimation.swift */; };
+		BEECE5721F361E0A00B5D3C4 /* LBXScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEECE56B1F361E0A00B5D3C4 /* LBXScanView.swift */; };
+		BEECE5731F361E0A00B5D3C4 /* LBXScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEECE56C1F361E0A00B5D3C4 /* LBXScanViewController.swift */; };
+		BEECE5741F361E0A00B5D3C4 /* LBXScanViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEECE56D1F361E0A00B5D3C4 /* LBXScanViewStyle.swift */; };
+		BEECE5751F361E0A00B5D3C4 /* LBXScanWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEECE56E1F361E0A00B5D3C4 /* LBXScanWrapper.swift */; };
+		BEECE5771F361E4800B5D3C4 /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEECE5761F361E4800B5D3C4 /* ScanViewController.swift */; };
+		BEECE5791F361E8F00B5D3C4 /* CodeScan.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BEECE5781F361E8F00B5D3C4 /* CodeScan.bundle */; };
 		BEFFB2CD1F2B8DCF008498B8 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BEFFB2CC1F2B8DCF008498B8 /* libz.tbd */; };
 		BEFFB2CF1F2B8DDA008498B8 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BEFFB2CE1F2B8DDA008498B8 /* libresolv.tbd */; };
 /* End PBXBuildFile section */
@@ -1210,6 +1219,15 @@
 		BEECE54A1F360EE700B5D3C4 /* ImagePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerController.swift; sourceTree = "<group>"; };
 		BEECE54B1F360EE700B5D3C4 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		BEECE54D1F360EE700B5D3C4 /* TopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
+		BEECE5681F361E0A00B5D3C4 /* LBXPermissions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LBXPermissions.swift; sourceTree = "<group>"; };
+		BEECE5691F361E0A00B5D3C4 /* LBXScanLineAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LBXScanLineAnimation.swift; sourceTree = "<group>"; };
+		BEECE56A1F361E0A00B5D3C4 /* LBXScanNetAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LBXScanNetAnimation.swift; sourceTree = "<group>"; };
+		BEECE56B1F361E0A00B5D3C4 /* LBXScanView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LBXScanView.swift; sourceTree = "<group>"; };
+		BEECE56C1F361E0A00B5D3C4 /* LBXScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LBXScanViewController.swift; sourceTree = "<group>"; };
+		BEECE56D1F361E0A00B5D3C4 /* LBXScanViewStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LBXScanViewStyle.swift; sourceTree = "<group>"; };
+		BEECE56E1F361E0A00B5D3C4 /* LBXScanWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LBXScanWrapper.swift; sourceTree = "<group>"; };
+		BEECE5761F361E4800B5D3C4 /* ScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
+		BEECE5781F361E8F00B5D3C4 /* CodeScan.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CodeScan.bundle; sourceTree = "<group>"; };
 		BEFFB2CC1F2B8DCF008498B8 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		BEFFB2CE1F2B8DDA008498B8 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		FD24FA76B8D7C13454370158 /* Pods-changeBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-changeBook.release.xcconfig"; path = "Pods/Target Support Files/Pods-changeBook/Pods-changeBook.release.xcconfig"; sourceTree = "<group>"; };
@@ -1311,6 +1329,7 @@
 				BE0190A01EFD4B1900FA040E /* HomeViewController.swift */,
 				BE57EF781F0541CC0091F312 /* HomeHeadView.swift */,
 				BE57EF7A1F05442F0091F312 /* NormalCollectionViewCell.swift */,
+				BEECE5761F361E4800B5D3C4 /* ScanViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1714,6 +1733,7 @@
 		BE57EF7C1F0797F60091F312 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				BEECE5671F361E0A00B5D3C4 /* Scan */,
 				BEECE52D1F360EE700B5D3C4 /* ImagePicker */,
 				BE57EF7D1F0798080091F312 /* NavTabBarController */,
 			);
@@ -2402,6 +2422,21 @@
 			path = TopView;
 			sourceTree = "<group>";
 		};
+		BEECE5671F361E0A00B5D3C4 /* Scan */ = {
+			isa = PBXGroup;
+			children = (
+				BEECE5781F361E8F00B5D3C4 /* CodeScan.bundle */,
+				BEECE5681F361E0A00B5D3C4 /* LBXPermissions.swift */,
+				BEECE5691F361E0A00B5D3C4 /* LBXScanLineAnimation.swift */,
+				BEECE56A1F361E0A00B5D3C4 /* LBXScanNetAnimation.swift */,
+				BEECE56B1F361E0A00B5D3C4 /* LBXScanView.swift */,
+				BEECE56C1F361E0A00B5D3C4 /* LBXScanViewController.swift */,
+				BEECE56D1F361E0A00B5D3C4 /* LBXScanViewStyle.swift */,
+				BEECE56E1F361E0A00B5D3C4 /* LBXScanWrapper.swift */,
+			);
+			path = Scan;
+			sourceTree = "<group>";
+		};
 		E5BBD58AB3CBAA9D464DBAFE /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -2638,6 +2673,7 @@
 				BE57EF381F04B1290091F312 /* home_btn_juanzeng-@3x.png in Resources */,
 				BE7CA9EF1F0F3192007CB195 /* refresh03.png in Resources */,
 				BE57EF081F04B1290091F312 /* xiangqing_icon_daan1@3x.png in Resources */,
+				BEECE5791F361E8F00B5D3C4 /* CodeScan.bundle in Resources */,
 				BE57EEA91F04B1290091F312 /* shubao_icon_none@2x.png in Resources */,
 				BE57EF471F04B1290091F312 /* login_btn@2x.png in Resources */,
 				BE57EEF11F04B1290091F312 /* dingdan_icon_dizhi@2x.png in Resources */,
@@ -2851,6 +2887,7 @@
 				BE57EF731F05414A0091F312 /* TADotView.m in Sources */,
 				BEECE5601F360EE700B5D3C4 /* ImageGalleryView.swift in Sources */,
 				BE1ED7721F263C70000222D6 /* ArticleViewModel.swift in Sources */,
+				BEECE5771F361E4800B5D3C4 /* ScanViewController.swift in Sources */,
 				BE7CA9C71F0CEA7E007CB195 /* HotDataListViewController.swift in Sources */,
 				BE7CA9E01F0F2623007CB195 /* PageInfo.swift in Sources */,
 				BE7CAA321F0F3F08007CB195 /* MJRefreshNormalHeader.m in Sources */,
@@ -2864,6 +2901,7 @@
 				BE7CA9A71F0BD3DA007CB195 /* User.swift in Sources */,
 				BE49073C1F1F96680031024F /* NSString+Polesapp.m in Sources */,
 				BEECE55B1F360EE700B5D3C4 /* CameraView.swift in Sources */,
+				BEECE5751F361E0A00B5D3C4 /* LBXScanWrapper.swift in Sources */,
 				BE1A3B2F1F2DB8C500CC98B3 /* ConfirmOrderTableViewCell.swift in Sources */,
 				BE91CAFF1F3362F100AF22CE /* DOPDropDownMenu.m in Sources */,
 				BEECE5071F35666A00B5D3C4 /* GetMessageFromWXResp+responseWithTextOrMediaMessage.m in Sources */,
@@ -2938,6 +2976,7 @@
 				BE1A3B381F2DFBB600CC98B3 /* SelectPayWayTableViewCell.swift in Sources */,
 				BEECE50B1F35666A00B5D3C4 /* WXApiResponseHandler.m in Sources */,
 				BE8D53EF1EFBF619003850EB /* UIViewController+STPopup.m in Sources */,
+				BEECE5731F361E0A00B5D3C4 /* LBXScanViewController.swift in Sources */,
 				BEB94CF91F150CAA00181DC2 /* DocumentAPI.swift in Sources */,
 				BEB94CDF1F13BF7300181DC2 /* UserInfoView.swift in Sources */,
 				BEECE55C1F360EE700B5D3C4 /* Configuration.swift in Sources */,
@@ -2961,7 +3000,9 @@
 				BE57ED981F03BD910091F312 /* UIViewController+HcdSideMenu.m in Sources */,
 				BEECE55F1F360EE700B5D3C4 /* ImageGalleryLayout.swift in Sources */,
 				BEECE5061F35666A00B5D3C4 /* RSADataVerifier.m in Sources */,
+				BEECE5741F361E0A00B5D3C4 /* LBXScanViewStyle.swift in Sources */,
 				BE1A3B291F2D7D7A00CC98B3 /* OtherViewModel.swift in Sources */,
+				BEECE5701F361E0A00B5D3C4 /* LBXScanLineAnimation.swift in Sources */,
 				BE4907391F1F957A0031024F /* HcdReplyView.m in Sources */,
 				BE7CAA381F0F3F08007CB195 /* UIScrollView+MJRefresh.m in Sources */,
 				BE7CA9CB1F0CEE67007CB195 /* BaseTableViewController.swift in Sources */,
@@ -2969,6 +3010,7 @@
 				BE5AEF941F1905B200475B90 /* BagViewController.swift in Sources */,
 				BE57EFA91F07E5EA0091F312 /* DataListViewController.swift in Sources */,
 				BE30872F1F304D7A001B2BCB /* UsersBrowListViewController.swift in Sources */,
+				BEECE5721F361E0A00B5D3C4 /* LBXScanView.swift in Sources */,
 				BE57EF851F07A3E50091F312 /* ArticleListViewController.swift in Sources */,
 				BE1ED7621F22E5FF000222D6 /* BookViewModel.swift in Sources */,
 				BEECE55E1F360EE700B5D3C4 /* Helper.swift in Sources */,
@@ -2977,6 +3019,7 @@
 				BEB94CF01F147DF900181DC2 /* QiniuManager.swift in Sources */,
 				BE91CAF51F320E3600AF22CE /* BookOrderDetailViewController.swift in Sources */,
 				BEB94CE51F146B5400181DC2 /* School.swift in Sources */,
+				BEECE5711F361E0A00B5D3C4 /* LBXScanNetAnimation.swift in Sources */,
 				BE5AEF8E1F17B27C00475B90 /* AddressInfoTableViewCell.swift in Sources */,
 				BEECE4FF1F35666A00B5D3C4 /* base64.m in Sources */,
 				BE57EF771F05414A0091F312 /* UIView+SDExtension.m in Sources */,
@@ -3024,6 +3067,7 @@
 				BE1A3B3A1F2F7A6A00CC98B3 /* UsersHomeViewController.swift in Sources */,
 				BEECE5641F360EE700B5D3C4 /* ImagePickerController.swift in Sources */,
 				BE57EF711F05414A0091F312 /* TAAbstractDotView.m in Sources */,
+				BEECE56F1F361E0A00B5D3C4 /* LBXPermissions.swift in Sources */,
 				BE8D53E91EFBF619003850EB /* STPopupController.m in Sources */,
 				BEECE5201F35C42D00B5D3C4 /* BindPhoneViewModel.swift in Sources */,
 				BE57EF971F07C8A40091F312 /* BorrowBookViewController.swift in Sources */,

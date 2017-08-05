@@ -331,7 +331,9 @@ class HomeViewController: BaseViewController, HcdTabBarDelegate, SDCycleScrollVi
     }
     
     override func leftNavBarButtonClicked() {
-        
+        let vc = ScanViewController()
+        vc.hidesBottomBarWhenPushed = true
+        self.pushViewController(viewContoller: vc, animated: true)
     }
     
     override func rightNavBarButtonClicked() {

@@ -201,4 +201,15 @@ class BookViewModel: ViewModelProtocol {
             self?.request(cacheName: cacheName, result: result, success: success, fail: fail, loginSuccess: loginSuccess)
         }
     }
+    
+    // 图书扫一扫
+    func scanBook(ISBN: String,
+                  success: @escaping DataBlock,
+                  fail: @escaping MessageBlock,
+                  loginSuccess: @escaping VoidBlock) {
+        
+        BookAPIProvider.request(BookAPI.scanBook(ISBN: ISBN)) { [weak self] (result) in
+            self?.request(cacheName: kNoNeedCache, result: result, success: success, fail: fail, loginSuccess: loginSuccess)
+        }
+    }
 }

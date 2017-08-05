@@ -48,6 +48,8 @@ public enum BookAPI {
     case getFreight()
     // 获取自取地址
     case getBookAddress()
+    // 图书扫一扫
+    case scanBook(ISBN: String)
 }
 
 extension BookAPI: TargetType {
@@ -85,6 +87,8 @@ extension BookAPI: TargetType {
             return "/book/getFreight"
         case .getBookAddress():
             return "/book/getBookAddress"
+        case .scanBook(ISBN: _):
+            return "/book/scanBook"
         }
     }
     
@@ -198,6 +202,12 @@ extension BookAPI: TargetType {
             return [
                 "token": token,
                 "userId": userId
+            ]
+        case .scanBook(let ISBN):
+            return [
+                "token": token,
+                "userId": userId,
+                "ISBN": ISBN
             ]
         }
     }
