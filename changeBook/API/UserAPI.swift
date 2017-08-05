@@ -127,9 +127,9 @@ extension UserAPI: TargetType {
         case .qqLogin(openId: _, nickName: _, headPic: _):
             return "/user/qqLogin"
         case .getCode(userName: _):
-            return "/user/getCode"
+            return "/user/bindPhone/getCode"
         case .bindPhone(userName: _, code: _):
-            return "/user/bindPhone"
+            return "/user/bindPhone/bindPhone"
         }
     }
     

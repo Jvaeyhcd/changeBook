@@ -413,7 +413,8 @@ class SettingViewController: BaseViewController, UITableViewDelegate, UITableVie
             }
         } else if 1 == indexPath.section {
             if 0 == indexPath.row {
-                
+                let vc = RealnameAuthViewController()
+                self.pushViewController(viewContoller: vc, animated: true)
             } else if 1 == indexPath.row {
                 let vc = PrivacySettingsViewController()
                 self.pushViewController(viewContoller: vc, animated: true)

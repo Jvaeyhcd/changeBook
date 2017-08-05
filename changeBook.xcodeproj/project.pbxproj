@@ -498,6 +498,37 @@
 		BEECE51C1F3596DE00B5D3C4 /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEECE51B1F3596DE00B5D3C4 /* SwitchTableViewCell.swift */; };
 		BEECE51E1F35C2E300B5D3C4 /* BindPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEECE51D1F35C2E300B5D3C4 /* BindPhoneViewController.swift */; };
 		BEECE5201F35C42D00B5D3C4 /* BindPhoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEECE51F1F35C42D00B5D3C4 /* BindPhoneViewModel.swift */; };
+		BEECE5221F35CE6C00B5D3C4 /* SimpleInputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEECE5211F35CE6C00B5D3C4 /* SimpleInputTableViewCell.swift */; };
+		BEECE5241F35D32F00B5D3C4 /* RealnameAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEECE5231F35D32F00B5D3C4 /* RealnameAuthViewController.swift */; };
+		BEECE5261F35E3EF00B5D3C4 /* SelectPhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEECE5251F35E3EF00B5D3C4 /* SelectPhotoTableViewCell.swift */; };
+		BEECE5281F35E7C900B5D3C4 /* btn_delete_tweetimage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BEECE5271F35E7C900B5D3C4 /* btn_delete_tweetimage@2x.png */; };
+		BEECE52A1F35E7EB00B5D3C4 /* addPictureBgImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BEECE5291F35E7EB00B5D3C4 /* addPictureBgImage@2x.png */; };
+		BEECE52C1F3600B600B5D3C4 /* TipsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEECE52B1F3600B600B5D3C4 /* TipsTableViewCell.swift */; };
+		BEECE54E1F360EE700B5D3C4 /* AUTO@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BEECE52F1F360EE700B5D3C4 /* AUTO@3x.png */; };
+		BEECE54F1F360EE700B5D3C4 /* cameraIcon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BEECE5301F360EE700B5D3C4 /* cameraIcon@3x.png */; };
+		BEECE5501F360EE700B5D3C4 /* focusIcon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BEECE5311F360EE700B5D3C4 /* focusIcon@3x.png */; };
+		BEECE5511F360EE700B5D3C4 /* OFF@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BEECE5321F360EE700B5D3C4 /* OFF@3x.png */; };
+		BEECE5521F360EE700B5D3C4 /* ON@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BEECE5331F360EE700B5D3C4 /* ON@3x.png */; };
+		BEECE5531F360EE700B5D3C4 /* selectedImageGallery@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BEECE5341F360EE700B5D3C4 /* selectedImageGallery@3x.png */; };
+		BEECE5541F360EE700B5D3C4 /* video@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BEECE5351F360EE700B5D3C4 /* video@3x.png */; };
+		BEECE5551F360EE700B5D3C4 /* AssetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEECE5371F360EE700B5D3C4 /* AssetManager.swift */; };
+		BEECE5561F360EE700B5D3C4 /* BottomContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEECE5391F360EE700B5D3C4 /* BottomContainerView.swift */; };
+		BEECE5571F360EE700B5D3C4 /* ButtonPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEECE53A1F360EE700B5D3C4 /* ButtonPicker.swift */; };
+		BEECE5581F360EE700B5D3C4 /* ImageStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEECE53B1F360EE700B5D3C4 /* ImageStack.swift */; };
+		BEECE5591F360EE700B5D3C4 /* StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEECE53C1F360EE700B5D3C4 /* StackView.swift */; };
+		BEECE55A1F360EE700B5D3C4 /* CameraMan.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEECE53E1F360EE700B5D3C4 /* CameraMan.swift */; };
+		BEECE55B1F360EE700B5D3C4 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEECE53F1F360EE700B5D3C4 /* CameraView.swift */; };
+		BEECE55C1F360EE700B5D3C4 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEECE5401F360EE700B5D3C4 /* Configuration.swift */; };
+		BEECE55D1F360EE700B5D3C4 /* ConstraintsSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEECE5421F360EE700B5D3C4 /* ConstraintsSetup.swift */; };
+		BEECE55E1F360EE700B5D3C4 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEECE5431F360EE700B5D3C4 /* Helper.swift */; };
+		BEECE55F1F360EE700B5D3C4 /* ImageGalleryLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEECE5451F360EE700B5D3C4 /* ImageGalleryLayout.swift */; };
+		BEECE5601F360EE700B5D3C4 /* ImageGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEECE5461F360EE700B5D3C4 /* ImageGalleryView.swift */; };
+		BEECE5611F360EE700B5D3C4 /* ImageGalleryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEECE5471F360EE700B5D3C4 /* ImageGalleryViewCell.swift */; };
+		BEECE5621F360EE700B5D3C4 /* ImageGalleryViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEECE5481F360EE700B5D3C4 /* ImageGalleryViewDataSource.swift */; };
+		BEECE5631F360EE700B5D3C4 /* VideoInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEECE5491F360EE700B5D3C4 /* VideoInfoView.swift */; };
+		BEECE5641F360EE700B5D3C4 /* ImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEECE54A1F360EE700B5D3C4 /* ImagePickerController.swift */; };
+		BEECE5651F360EE700B5D3C4 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEECE54B1F360EE700B5D3C4 /* LocationManager.swift */; };
+		BEECE5661F360EE700B5D3C4 /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEECE54D1F360EE700B5D3C4 /* TopView.swift */; };
 		BEFFB2CD1F2B8DCF008498B8 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BEFFB2CC1F2B8DCF008498B8 /* libz.tbd */; };
 		BEFFB2CF1F2B8DDA008498B8 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BEFFB2CE1F2B8DDA008498B8 /* libresolv.tbd */; };
 /* End PBXBuildFile section */
@@ -1148,6 +1179,37 @@
 		BEECE51B1F3596DE00B5D3C4 /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
 		BEECE51D1F35C2E300B5D3C4 /* BindPhoneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BindPhoneViewController.swift; sourceTree = "<group>"; };
 		BEECE51F1F35C42D00B5D3C4 /* BindPhoneViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BindPhoneViewModel.swift; sourceTree = "<group>"; };
+		BEECE5211F35CE6C00B5D3C4 /* SimpleInputTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleInputTableViewCell.swift; sourceTree = "<group>"; };
+		BEECE5231F35D32F00B5D3C4 /* RealnameAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealnameAuthViewController.swift; sourceTree = "<group>"; };
+		BEECE5251F35E3EF00B5D3C4 /* SelectPhotoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectPhotoTableViewCell.swift; sourceTree = "<group>"; };
+		BEECE5271F35E7C900B5D3C4 /* btn_delete_tweetimage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_delete_tweetimage@2x.png"; sourceTree = "<group>"; };
+		BEECE5291F35E7EB00B5D3C4 /* addPictureBgImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "addPictureBgImage@2x.png"; sourceTree = "<group>"; };
+		BEECE52B1F3600B600B5D3C4 /* TipsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsTableViewCell.swift; sourceTree = "<group>"; };
+		BEECE52F1F360EE700B5D3C4 /* AUTO@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AUTO@3x.png"; sourceTree = "<group>"; };
+		BEECE5301F360EE700B5D3C4 /* cameraIcon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cameraIcon@3x.png"; sourceTree = "<group>"; };
+		BEECE5311F360EE700B5D3C4 /* focusIcon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "focusIcon@3x.png"; sourceTree = "<group>"; };
+		BEECE5321F360EE700B5D3C4 /* OFF@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "OFF@3x.png"; sourceTree = "<group>"; };
+		BEECE5331F360EE700B5D3C4 /* ON@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ON@3x.png"; sourceTree = "<group>"; };
+		BEECE5341F360EE700B5D3C4 /* selectedImageGallery@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "selectedImageGallery@3x.png"; sourceTree = "<group>"; };
+		BEECE5351F360EE700B5D3C4 /* video@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "video@3x.png"; sourceTree = "<group>"; };
+		BEECE5371F360EE700B5D3C4 /* AssetManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetManager.swift; sourceTree = "<group>"; };
+		BEECE5391F360EE700B5D3C4 /* BottomContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomContainerView.swift; sourceTree = "<group>"; };
+		BEECE53A1F360EE700B5D3C4 /* ButtonPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonPicker.swift; sourceTree = "<group>"; };
+		BEECE53B1F360EE700B5D3C4 /* ImageStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageStack.swift; sourceTree = "<group>"; };
+		BEECE53C1F360EE700B5D3C4 /* StackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackView.swift; sourceTree = "<group>"; };
+		BEECE53E1F360EE700B5D3C4 /* CameraMan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraMan.swift; sourceTree = "<group>"; };
+		BEECE53F1F360EE700B5D3C4 /* CameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		BEECE5401F360EE700B5D3C4 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		BEECE5421F360EE700B5D3C4 /* ConstraintsSetup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintsSetup.swift; sourceTree = "<group>"; };
+		BEECE5431F360EE700B5D3C4 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		BEECE5451F360EE700B5D3C4 /* ImageGalleryLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageGalleryLayout.swift; sourceTree = "<group>"; };
+		BEECE5461F360EE700B5D3C4 /* ImageGalleryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageGalleryView.swift; sourceTree = "<group>"; };
+		BEECE5471F360EE700B5D3C4 /* ImageGalleryViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageGalleryViewCell.swift; sourceTree = "<group>"; };
+		BEECE5481F360EE700B5D3C4 /* ImageGalleryViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageGalleryViewDataSource.swift; sourceTree = "<group>"; };
+		BEECE5491F360EE700B5D3C4 /* VideoInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoInfoView.swift; sourceTree = "<group>"; };
+		BEECE54A1F360EE700B5D3C4 /* ImagePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerController.swift; sourceTree = "<group>"; };
+		BEECE54B1F360EE700B5D3C4 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		BEECE54D1F360EE700B5D3C4 /* TopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
 		BEFFB2CC1F2B8DCF008498B8 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		BEFFB2CE1F2B8DDA008498B8 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		FD24FA76B8D7C13454370158 /* Pods-changeBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-changeBook.release.xcconfig"; path = "Pods/Target Support Files/Pods-changeBook/Pods-changeBook.release.xcconfig"; sourceTree = "<group>"; };
@@ -1344,6 +1406,8 @@
 		BE57EDB41F03F1640091F312 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				BEECE5291F35E7EB00B5D3C4 /* addPictureBgImage@2x.png */,
+				BEECE5271F35E7C900B5D3C4 /* btn_delete_tweetimage@2x.png */,
 				BE4907281F1F774B0031024F /* pingjia_btn_comment@2x.png */,
 				BE4907291F1F774B0031024F /* pingjia_btn_comment@3x.png */,
 				BE49072C1F1F77630031024F /* pingjia_btn_like@2x.png */,
@@ -1650,6 +1714,7 @@
 		BE57EF7C1F0797F60091F312 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				BEECE52D1F360EE700B5D3C4 /* ImagePicker */,
 				BE57EF7D1F0798080091F312 /* NavTabBarController */,
 			);
 			path = Vendor;
@@ -1709,6 +1774,9 @@
 				BE91CB061F3373F300AF22CE /* RateStarTableViewCell.swift */,
 				BE91CB081F3377DA00AF22CE /* PlaceHolderViewTableViewCell.swift */,
 				BEECE51B1F3596DE00B5D3C4 /* SwitchTableViewCell.swift */,
+				BEECE5211F35CE6C00B5D3C4 /* SimpleInputTableViewCell.swift */,
+				BEECE5251F35E3EF00B5D3C4 /* SelectPhotoTableViewCell.swift */,
+				BEECE52B1F3600B600B5D3C4 /* TipsTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1868,6 +1936,7 @@
 				BEB94CF41F14CB8700181DC2 /* EditIntroduceViewController.swift */,
 				BEECE4791F35661500B5D3C4 /* PrivacySettingsViewController.swift */,
 				BEECE51D1F35C2E300B5D3C4 /* BindPhoneViewController.swift */,
+				BEECE5231F35D32F00B5D3C4 /* RealnameAuthViewController.swift */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -2245,6 +2314,94 @@
 			path = SDKExport;
 			sourceTree = "<group>";
 		};
+		BEECE52D1F360EE700B5D3C4 /* ImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				BEECE52E1F360EE700B5D3C4 /* Images */,
+				BEECE5361F360EE700B5D3C4 /* Source */,
+			);
+			path = ImagePicker;
+			sourceTree = "<group>";
+		};
+		BEECE52E1F360EE700B5D3C4 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				BEECE52F1F360EE700B5D3C4 /* AUTO@3x.png */,
+				BEECE5301F360EE700B5D3C4 /* cameraIcon@3x.png */,
+				BEECE5311F360EE700B5D3C4 /* focusIcon@3x.png */,
+				BEECE5321F360EE700B5D3C4 /* OFF@3x.png */,
+				BEECE5331F360EE700B5D3C4 /* ON@3x.png */,
+				BEECE5341F360EE700B5D3C4 /* selectedImageGallery@3x.png */,
+				BEECE5351F360EE700B5D3C4 /* video@3x.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		BEECE5361F360EE700B5D3C4 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				BEECE5371F360EE700B5D3C4 /* AssetManager.swift */,
+				BEECE5381F360EE700B5D3C4 /* BottomView */,
+				BEECE53D1F360EE700B5D3C4 /* CameraView */,
+				BEECE5401F360EE700B5D3C4 /* Configuration.swift */,
+				BEECE5411F360EE700B5D3C4 /* Extensions */,
+				BEECE5431F360EE700B5D3C4 /* Helper.swift */,
+				BEECE5441F360EE700B5D3C4 /* ImageGallery */,
+				BEECE54A1F360EE700B5D3C4 /* ImagePickerController.swift */,
+				BEECE54B1F360EE700B5D3C4 /* LocationManager.swift */,
+				BEECE54C1F360EE700B5D3C4 /* TopView */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		BEECE5381F360EE700B5D3C4 /* BottomView */ = {
+			isa = PBXGroup;
+			children = (
+				BEECE5391F360EE700B5D3C4 /* BottomContainerView.swift */,
+				BEECE53A1F360EE700B5D3C4 /* ButtonPicker.swift */,
+				BEECE53B1F360EE700B5D3C4 /* ImageStack.swift */,
+				BEECE53C1F360EE700B5D3C4 /* StackView.swift */,
+			);
+			path = BottomView;
+			sourceTree = "<group>";
+		};
+		BEECE53D1F360EE700B5D3C4 /* CameraView */ = {
+			isa = PBXGroup;
+			children = (
+				BEECE53E1F360EE700B5D3C4 /* CameraMan.swift */,
+				BEECE53F1F360EE700B5D3C4 /* CameraView.swift */,
+			);
+			path = CameraView;
+			sourceTree = "<group>";
+		};
+		BEECE5411F360EE700B5D3C4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BEECE5421F360EE700B5D3C4 /* ConstraintsSetup.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BEECE5441F360EE700B5D3C4 /* ImageGallery */ = {
+			isa = PBXGroup;
+			children = (
+				BEECE5451F360EE700B5D3C4 /* ImageGalleryLayout.swift */,
+				BEECE5461F360EE700B5D3C4 /* ImageGalleryView.swift */,
+				BEECE5471F360EE700B5D3C4 /* ImageGalleryViewCell.swift */,
+				BEECE5481F360EE700B5D3C4 /* ImageGalleryViewDataSource.swift */,
+				BEECE5491F360EE700B5D3C4 /* VideoInfoView.swift */,
+			);
+			path = ImageGallery;
+			sourceTree = "<group>";
+		};
+		BEECE54C1F360EE700B5D3C4 /* TopView */ = {
+			isa = PBXGroup;
+			children = (
+				BEECE54D1F360EE700B5D3C4 /* TopView.swift */,
+			);
+			path = TopView;
+			sourceTree = "<group>";
+		};
 		E5BBD58AB3CBAA9D464DBAFE /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -2358,6 +2515,7 @@
 				BE57EEDE1F04B1290091F312 /* xiangqing_icon_doc@3x.png in Resources */,
 				BE57EF571F04B1290091F312 /* login_icon_4@2x.png in Resources */,
 				BE57EF1D1F04B1290091F312 /* home_icon_ppt@2x.png in Resources */,
+				BEECE5521F360EE700B5D3C4 /* ON@3x.png in Resources */,
 				BE49072A1F1F774B0031024F /* pingjia_btn_comment@2x.png in Resources */,
 				BE57EF261F04B1290091F312 /* tab_laoshi@3x.png in Resources */,
 				BE4B352B1F1651F60008548D /* home_btn_dayin@2x.png in Resources */,
@@ -2415,6 +2573,7 @@
 				BE7CA9F01F0F3192007CB195 /* refresh04.png in Resources */,
 				BE57EE931F04B1290091F312 /* shuyou_rb@2x.png in Resources */,
 				BE57EE9C1F04B1290091F312 /* laoshi_btn_biaoqian@3x.png in Resources */,
+				BEECE5281F35E7C900B5D3C4 /* btn_delete_tweetimage@2x.png in Resources */,
 				BE57EECD1F04B1290091F312 /* wode_btn_jieyue@2x.png in Resources */,
 				BE57EF281F04B1290091F312 /* tab_laoshi_pre@3x.png in Resources */,
 				BE57EEE21F04B1290091F312 /* xiangqing_icon_docx@3x.png in Resources */,
@@ -2430,6 +2589,7 @@
 				BE57EF3F1F04B1290091F312 /* home_icon_chakan@2x.png in Resources */,
 				BE57EF121F04B1290091F312 /* home_btn_gengduo@3x.png in Resources */,
 				BE57EF511F04B1290091F312 /* login_icon_2@2x.png in Resources */,
+				BEECE54F1F360EE700B5D3C4 /* cameraIcon@3x.png in Resources */,
 				BE7CA9F61F0F3192007CB195 /* refresh10.png in Resources */,
 				BE57EF391F04B1290091F312 /* home_btn_shubao@2x.png in Resources */,
 				BE57EFA11F07DF780091F312 /* com_pic_star1@3x.png in Resources */,
@@ -2508,6 +2668,7 @@
 				BE57EF171F04B1290091F312 /* home_icon_pdf@2x.png in Resources */,
 				BE57EEA01F04B1290091F312 /* laoshi_icon_red_1@3x.png in Resources */,
 				BE57EECB1F04B1290091F312 /* wode_btn_bangzhu@2x.png in Resources */,
+				BEECE5531F360EE700B5D3C4 /* selectedImageGallery@3x.png in Resources */,
 				BE57EF0A1F04B1290091F312 /* xiangqing_btn_shubao@3x.png in Resources */,
 				BE57EF021F04B1290091F312 /* pingjia_btn_pinglun@3x.png in Resources */,
 				BE49072B1F1F774B0031024F /* pingjia_btn_comment@3x.png in Resources */,
@@ -2535,6 +2696,8 @@
 				BE7CAA471F0F8EC8007CB195 /* pic_msg_null@3x.png in Resources */,
 				BE57EEA31F04B1290091F312 /* laoshi_icon_red@2x.png in Resources */,
 				BE57EFB91F0A12830091F312 /* top_btn_close_black@3x.png in Resources */,
+				BEECE52A1F35E7EB00B5D3C4 /* addPictureBgImage@2x.png in Resources */,
+				BEECE54E1F360EE700B5D3C4 /* AUTO@3x.png in Resources */,
 				BE57EF541F04B1290091F312 /* login_icon_3_pre@3x.png in Resources */,
 				BE49072E1F1F77630031024F /* pingjia_btn_like@2x.png in Resources */,
 				BE57EF181F04B1290091F312 /* home_icon_pdf@3x.png in Resources */,
@@ -2561,6 +2724,7 @@
 				BE4B351C1F1651F60008548D /* xiangqing_icon_xls@3x.png in Resources */,
 				BE57EECA1F04B1290091F312 /* wode_bg@3x.png in Resources */,
 				BE57EEAF1F04B1290091F312 /* wenzhang_btn_xinjianwenzhang@2x.png in Resources */,
+				BEECE5541F360EE700B5D3C4 /* video@3x.png in Resources */,
 				BE57EDB71F03F1640091F312 /* top_btn_back@2x.png in Resources */,
 				BE57EF071F04B1290091F312 /* xiangqing_icon_daan1@2x.png in Resources */,
 				BE4B35261F1651F60008548D /* saoyisao_btn_shoudong@3x.png in Resources */,
@@ -2569,6 +2733,7 @@
 				BE57EEDF1F04B1290091F312 /* xiangqing_icon_docx@2x.png in Resources */,
 				BE57EF2C1F04B1290091F312 /* tab_shouye@3x.png in Resources */,
 				BE4B35211F1651F60008548D /* yajin_btn_renzheng@2x.png in Resources */,
+				BEECE5511F360EE700B5D3C4 /* OFF@3x.png in Resources */,
 				BE57EF1F1F04B1290091F312 /* home_icon_txt@2x.png in Resources */,
 				BE57EF501F04B1290091F312 /* login_icon_2_pre@3x.png in Resources */,
 				BE57EEAE1F04B1290091F312 /* wenzhang_btn_xiugai@3x.png in Resources */,
@@ -2576,6 +2741,7 @@
 				BE57EECF1F04B1290091F312 /* wode_btn_jifen@3x.png in Resources */,
 				BE57EF3C1F04B1290091F312 /* home_btn_ziliao@3x.png in Resources */,
 				BE57EEF61F04B1290091F312 /* dingdan_icon_shijiani@3x.png in Resources */,
+				BEECE5501F360EE700B5D3C4 /* focusIcon@3x.png in Resources */,
 				BE57EEF01F04B1290091F312 /* dingdan_btn_quxiao@3x.png in Resources */,
 				BE57EF4D1F04B1290091F312 /* login_icon_1@2x.png in Resources */,
 				BE57EDB81F03F1640091F312 /* top_btn_back@3x.png in Resources */,
@@ -2675,6 +2841,7 @@
 				BE1A3B2B1F2D7E5000CC98B3 /* Banner.swift in Sources */,
 				BE1ED75E1F22CE21000222D6 /* Book.swift in Sources */,
 				BE1ED76C1F2479BC000222D6 /* SearchBookViewController.swift in Sources */,
+				BEECE5561F360EE700B5D3C4 /* BottomContainerView.swift in Sources */,
 				BE7CA9BC1F0BEA1D007CB195 /* ActivityIndicator.swift in Sources */,
 				BE1ED7701F263068000222D6 /* ArticleAPI.swift in Sources */,
 				BEBD37691F224CCB0035E49E /* BookAPI.swift in Sources */,
@@ -2682,6 +2849,7 @@
 				BEB94CE71F1477F600181DC2 /* EditNickNameViewController.swift in Sources */,
 				BE91CB051F33709900AF22CE /* CommentBookViewController.swift in Sources */,
 				BE57EF731F05414A0091F312 /* TADotView.m in Sources */,
+				BEECE5601F360EE700B5D3C4 /* ImageGalleryView.swift in Sources */,
 				BE1ED7721F263C70000222D6 /* ArticleViewModel.swift in Sources */,
 				BE7CA9C71F0CEA7E007CB195 /* HotDataListViewController.swift in Sources */,
 				BE7CA9E01F0F2623007CB195 /* PageInfo.swift in Sources */,
@@ -2695,6 +2863,7 @@
 				BE01908C1EFC089400FA040E /* Config.swift in Sources */,
 				BE7CA9A71F0BD3DA007CB195 /* User.swift in Sources */,
 				BE49073C1F1F96680031024F /* NSString+Polesapp.m in Sources */,
+				BEECE55B1F360EE700B5D3C4 /* CameraView.swift in Sources */,
 				BE1A3B2F1F2DB8C500CC98B3 /* ConfirmOrderTableViewCell.swift in Sources */,
 				BE91CAFF1F3362F100AF22CE /* DOPDropDownMenu.m in Sources */,
 				BEECE5071F35666A00B5D3C4 /* GetMessageFromWXResp+responseWithTextOrMediaMessage.m in Sources */,
@@ -2703,7 +2872,9 @@
 				BE7CAA2A1F0F3F08007CB195 /* MJRefreshHeader.m in Sources */,
 				BEB94CE31F14516000181DC2 /* SchoolListTableViewCell.swift in Sources */,
 				BE5AEFA21F19141400475B90 /* TPKeyboardAvoidingCollectionView.m in Sources */,
+				BEECE5581F360EE700B5D3C4 /* ImageStack.swift in Sources */,
 				BE57EF931F07AC4A0091F312 /* MenuTableViewCell.swift in Sources */,
+				BEECE5221F35CE6C00B5D3C4 /* SimpleInputTableViewCell.swift in Sources */,
 				BE7CA9C11F0BEDDE007CB195 /* NSObject+Polesapp.m in Sources */,
 				BE7CAA361F0F3F08007CB195 /* NSBundle+MJRefresh.m in Sources */,
 				BE57EDAF1F03E8CD0091F312 /* MyIntegralViewController.swift in Sources */,
@@ -2730,14 +2901,18 @@
 				BE1A3B3C1F2F7D7200CC98B3 /* UserDetailView.swift in Sources */,
 				BE57EF791F0541CC0091F312 /* HomeHeadView.swift in Sources */,
 				BE1ED7681F245379000222D6 /* BookCommentListViewController.swift in Sources */,
+				BEECE5631F360EE700B5D3C4 /* VideoInfoView.swift in Sources */,
 				BE57EF741F05414A0091F312 /* TAPageControl.m in Sources */,
 				BE7CAA391F0F3F08007CB195 /* UIView+MJExtension.m in Sources */,
 				BE57ED951F03BCF70091F312 /* HcdSideMenu.m in Sources */,
+				BEECE5241F35D32F00B5D3C4 /* RealnameAuthViewController.swift in Sources */,
 				BEB94CEB1F147C5500181DC2 /* UIPlaceHolderTextView.m in Sources */,
 				BE57EFBB1F0A4D460091F312 /* RegisterViewController.swift in Sources */,
+				BEECE5591F360EE700B5D3C4 /* StackView.swift in Sources */,
 				BE4907271F1F32EC0031024F /* Comment.swift in Sources */,
 				BE57EF871F07AA1C0091F312 /* TeacherListViewController.swift in Sources */,
 				BE7CAA281F0F3F08007CB195 /* MJRefreshComponent.m in Sources */,
+				BEECE5611F360EE700B5D3C4 /* ImageGalleryViewCell.swift in Sources */,
 				BE7CA9A61F0BD3DA007CB195 /* Status.swift in Sources */,
 				BE91CB071F3373F300AF22CE /* RateStarTableViewCell.swift in Sources */,
 				BE7CAA291F0F3F08007CB195 /* MJRefreshFooter.m in Sources */,
@@ -2749,6 +2924,7 @@
 				BEECE5081F35666A00B5D3C4 /* SendMessageToWXReq+requestWithTextOrMediaMessage.m in Sources */,
 				BEB94CF71F15059F00181DC2 /* Document.swift in Sources */,
 				BE9AC41E1F01428400C9288A /* BaseRootTabViewController.swift in Sources */,
+				BEECE55D1F360EE700B5D3C4 /* ConstraintsSetup.swift in Sources */,
 				BEECE47A1F35661500B5D3C4 /* PrivacySettingsViewController.swift in Sources */,
 				BE1ED76A1F247644000222D6 /* BookCommentDetailViewController.swift in Sources */,
 				BEECE5041F35666A00B5D3C4 /* openssl_wrapper.m in Sources */,
@@ -2764,22 +2940,26 @@
 				BE8D53EF1EFBF619003850EB /* UIViewController+STPopup.m in Sources */,
 				BEB94CF91F150CAA00181DC2 /* DocumentAPI.swift in Sources */,
 				BEB94CDF1F13BF7300181DC2 /* UserInfoView.swift in Sources */,
+				BEECE55C1F360EE700B5D3C4 /* Configuration.swift in Sources */,
 				BE7CA9B01F0BE7C5007CB195 /* ViewModelProtocol.swift in Sources */,
 				BEECE5031F35666A00B5D3C4 /* NSDataEx.m in Sources */,
 				BEECE5011F35666A00B5D3C4 /* DataVerifier.m in Sources */,
 				BE57EF8D1F07AB530091F312 /* TeacherListTableViewCell.swift in Sources */,
 				BEECE4F91F35666900B5D3C4 /* AlipayRequestConfig.m in Sources */,
 				BEB94CED1F147D6800181DC2 /* FileAPI.swift in Sources */,
+				BEECE55A1F360EE700B5D3C4 /* CameraMan.swift in Sources */,
 				BE5AEFAB1F1D053800475B90 /* InfoDetailTableViewCell.swift in Sources */,
 				BE3251F81F2783D600B6B4AF /* ArticleDetailTableViewCell.swift in Sources */,
 				BE7CA9D21F0DEB32007CB195 /* MineViewController.swift in Sources */,
 				BEECE50E1F35666A00B5D3C4 /* WeiChatPayReq.m in Sources */,
 				BE01909F1EFD4B1000FA040E /* FriendsHomeViewController.swift in Sources */,
+				BEECE5551F360EE700B5D3C4 /* AssetManager.swift in Sources */,
 				BE57EDB31F03F0EA0091F312 /* String+Polesapp.swift in Sources */,
 				BE7CA9C91F0CEAA5007CB195 /* HotArticleListViewController.swift in Sources */,
 				BEB94CE11F144DE600181DC2 /* SchoolListViewController.swift in Sources */,
 				BE1A0BE91F20E9880005C632 /* CommentReplyTableViewCell.swift in Sources */,
 				BE57ED981F03BD910091F312 /* UIViewController+HcdSideMenu.m in Sources */,
+				BEECE55F1F360EE700B5D3C4 /* ImageGalleryLayout.swift in Sources */,
 				BEECE5061F35666A00B5D3C4 /* RSADataVerifier.m in Sources */,
 				BE1A3B291F2D7D7A00CC98B3 /* OtherViewModel.swift in Sources */,
 				BE4907391F1F957A0031024F /* HcdReplyView.m in Sources */,
@@ -2791,6 +2971,7 @@
 				BE30872F1F304D7A001B2BCB /* UsersBrowListViewController.swift in Sources */,
 				BE57EF851F07A3E50091F312 /* ArticleListViewController.swift in Sources */,
 				BE1ED7621F22E5FF000222D6 /* BookViewModel.swift in Sources */,
+				BEECE55E1F360EE700B5D3C4 /* Helper.swift in Sources */,
 				BE57EF991F07DB4B0091F312 /* BookListViewController.swift in Sources */,
 				BE1ED7661F235FF5000222D6 /* BookDetailTableViewCell.swift in Sources */,
 				BEB94CF01F147DF900181DC2 /* QiniuManager.swift in Sources */,
@@ -2805,6 +2986,7 @@
 				BE91CAFB1F321BA000AF22CE /* OrderDetailBookTableViewCell.swift in Sources */,
 				BE7CAA4F1F0F96FE007CB195 /* AddressListViewController.swift in Sources */,
 				BE7CAA261F0F3F08007CB195 /* MJRefreshAutoFooter.m in Sources */,
+				BEECE5651F360EE700B5D3C4 /* LocationManager.swift in Sources */,
 				BE57EFA71F07E5D30091F312 /* DataViewController.swift in Sources */,
 				BE7CA9DE1F0F24F5007CB195 /* IntegralLog.swift in Sources */,
 				BE973D941F1E51A80018DF70 /* CommentTableViewCell.swift in Sources */,
@@ -2840,6 +3022,7 @@
 				BE7CAA2E1F0F3F08007CB195 /* MJRefreshBackGifFooter.m in Sources */,
 				BE5AEFA91F1B9E3000475B90 /* DocumentTableViewCell.swift in Sources */,
 				BE1A3B3A1F2F7A6A00CC98B3 /* UsersHomeViewController.swift in Sources */,
+				BEECE5641F360EE700B5D3C4 /* ImagePickerController.swift in Sources */,
 				BE57EF711F05414A0091F312 /* TAAbstractDotView.m in Sources */,
 				BE8D53E91EFBF619003850EB /* STPopupController.m in Sources */,
 				BEECE5201F35C42D00B5D3C4 /* BindPhoneViewModel.swift in Sources */,
@@ -2848,11 +3031,14 @@
 				BE8D53EA1EFBF619003850EB /* STPopupControllerTransitioningFade.m in Sources */,
 				BE57EF911F07ABE10091F312 /* DataListTableViewCell.swift in Sources */,
 				BEECE5051F35666A00B5D3C4 /* RSADataSigner.m in Sources */,
+				BEECE5621F360EE700B5D3C4 /* ImageGalleryViewDataSource.swift in Sources */,
 				BEECE5091F35666A00B5D3C4 /* WXApiManager.m in Sources */,
 				BED1005C1F28E2820028AE6A /* ArticleCommentDetailViewController.swift in Sources */,
 				BE7CAA311F0F3F08007CB195 /* MJRefreshGifHeader.m in Sources */,
+				BEECE5571F360EE700B5D3C4 /* ButtonPicker.swift in Sources */,
 				BE7CAA3D1F0F8AF9007CB195 /* UIScrollView+EmptyDataSet.m in Sources */,
 				BE49073F1F1FAA3E0031024F /* NSDate+Polesapp.m in Sources */,
+				BEECE5661F360EE700B5D3C4 /* TopView.swift in Sources */,
 				BE7CAA371F0F3F08007CB195 /* UIScrollView+MJExtension.m in Sources */,
 				BE9AC4231F01495F00C9288A /* FindPasswordViewController.swift in Sources */,
 				BE91CB031F33658700AF22CE /* FilterDataViewController.swift in Sources */,
@@ -2861,7 +3047,9 @@
 				BE7CA9B81F0BE9D3007CB195 /* ResetPasswordViewModel.swift in Sources */,
 				BE5AEFA41F19141400475B90 /* TPKeyboardAvoidingTableView.m in Sources */,
 				BE7CAA301F0F3F08007CB195 /* MJRefreshBackStateFooter.m in Sources */,
+				BEECE5261F35E3EF00B5D3C4 /* SelectPhotoTableViewCell.swift in Sources */,
 				BEECE51C1F3596DE00B5D3C4 /* SwitchTableViewCell.swift in Sources */,
+				BEECE52C1F3600B600B5D3C4 /* TipsTableViewCell.swift in Sources */,
 				BE0190A81EFD4B5E00FA040E /* RootViewController.swift in Sources */,
 				BE57EF811F0798080091F312 /* NavTabBarController.swift in Sources */,
 				BE57EF8B1F07AB450091F312 /* ArticleListTableViewCell.swift in Sources */,

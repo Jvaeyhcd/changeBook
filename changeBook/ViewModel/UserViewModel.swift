@@ -207,4 +207,16 @@ class UserViewModel: ViewModelProtocol {
         }
     }
     
+    // 申请学生认证
+    func addUserCertification(userName: String,
+                              studentNo: String,
+                              pic: String,
+                              success: @escaping DataBlock,
+                              fail: @escaping MessageBlock,
+                              loginSuccess: @escaping VoidBlock) {
+        UserAPIProvider.request(UserAPI.addUserCertification(userName: userName, studentNo: studentNo, pic: pic)) { [weak self] (result) in
+            self?.request(cacheName: kNoNeedCache, result: result, success: success, fail: fail, loginSuccess: loginSuccess)
+        }
+    }
+    
 }
