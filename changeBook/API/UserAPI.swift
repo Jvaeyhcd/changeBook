@@ -67,6 +67,10 @@ public enum UserAPI {
     case addUserCertification(userName: String, studentNo: String, pic: String)
     //qq登录
     case qqLogin(openId: String, nickName: String, headPic: String)
+    //绑定手机号获取验证码
+    case getCode(userName: String)
+    //绑定手机号
+    case bindPhone(userName: String, code: String)
 }
 
 extension UserAPI: TargetType {
@@ -122,6 +126,10 @@ extension UserAPI: TargetType {
             return "/user/addUserCertification"
         case .qqLogin(openId: _, nickName: _, headPic: _):
             return "/user/qqLogin"
+        case .getCode(userName: _):
+            return "/user/getCode"
+        case .bindPhone(userName: _, code: _):
+            return "/user/bindPhone"
         }
     }
     
@@ -293,6 +301,19 @@ extension UserAPI: TargetType {
                 "openId": openId,
                 "nickName": nickName,
                 "headPic": headPic
+            ]
+        case .getCode(let userName):
+            return [
+                "token": token,
+                "userId": userId,
+                "userName": userName
+            ]
+        case .bindPhone(let userName, let code):
+            return [
+                "token": token,
+                "userId": userId,
+                "userName": userName,
+                "code": code
             ]
         }
     }

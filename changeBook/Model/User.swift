@@ -19,30 +19,13 @@ struct User {
     var introduce : String = ""
     var money: String = ""
     var lv : String = ""
-    var isAuthentication : String = ""
-    var inviteNum : String = ""
-    var inviteCode : String = ""
-    var inviteReword : String = ""
     var integral : String = ""
-    var needIntegral : String = ""
-    var carPic: String = ""
-    var couponNum : String = ""
     var schoolName: String = ""
     var address: String = ""
     
-    //三方绑定状态
-    var bindWeChat = "0"
-    var bindQQ = "0"
-    var bindWeiBo = "0"
-    
-    //三方绑定的openId
-    var qqOpenId = ""
-    var weChatOpenId = ""
-    var weiBoOpenId = ""
-    
-    //企业相关
-    var businessName : String = ""
-    var balance : String = ""
+    var isCertification: Int
+    var viewBorrow: Int
+    var viewComment: Int
     
     init() {
         userId = ""
@@ -54,28 +37,10 @@ struct User {
         introduce = ""
         money = ""
         lv = ""
-        isAuthentication = ""
-        inviteNum = ""
         integral = "0"
-        needIntegral = "0"
-        
-        inviteCode = ""
-        inviteReword = ""
-        carPic = ""
-        
-        couponNum = "0"
-        
-        bindWeChat = "0"
-        bindQQ = "0"
-        bindWeiBo = "0"
-        
-        qqOpenId = ""
-        weChatOpenId = ""
-        weiBoOpenId = ""
-        
-        businessName = ""
-        balance = ""
-        
+        isCertification = 0
+        viewBorrow = 0
+        viewComment = 0
     }
     
     init(json: JSON) {
@@ -88,29 +53,12 @@ struct User {
         introduce = json["introduce"].stringValue
         money = json["money"].stringValue
         lv = json["lv"].stringValue
-        isAuthentication = json["isAuthentication"].stringValue
-        inviteNum = json["inviteNum"].stringValue
         integral = json["integral"].stringValue
-        needIntegral = json["needIntegral"].stringValue
         address = json["address"].stringValue
         schoolName = json["schoolName"].stringValue
-        
-        inviteCode = json["inviteCode"].stringValue
-        inviteReword = json["inviteReword"].stringValue
-        carPic = json["carPic"].stringValue
-        
-        couponNum = json["couponNum"].stringValue
-        
-        bindWeChat = json["bindStatus"]["bindWeChat"].stringValue
-        bindQQ = json["bindStatus"]["bindQQ"].stringValue
-        bindWeiBo = json["bindStatus"]["bindWeiBo"].stringValue
-        
-        qqOpenId = json["bindStatus"]["qqOpenId"].stringValue
-        weChatOpenId = json["bindStatus"]["weChatOpenId"].stringValue
-        weiBoOpenId = json["bindStatus"]["weiBoOpenId"].stringValue
-        
-        businessName = json["businessAccount"]["businessName"].stringValue
-        balance = json["businessAccount"]["balance"].stringValue
+        isCertification = json["isCertification"].intValue
+        viewBorrow = json["viewBorrow"].intValue
+        viewComment = json["viewComment"].intValue
     }
     
     static func setClientId(clientId: String) {
@@ -180,69 +128,14 @@ extension User: Decodable {
             user.lv = lv
         }
         
-        if let isAuthentication = kUserDefaults.string(forKey: "isAuthentication") {
-            user.isAuthentication = isAuthentication
-        }
-        
-        if let inviteNum = kUserDefaults.string(forKey: "inviteNum") {
-            user.inviteNum = inviteNum
-        }
-        
         if let integral = kUserDefaults.string(forKey: "integral") {
             user.integral = integral
         }
         
-        if let needIntegral = kUserDefaults.string(forKey: "needIntegral") {
-            user.needIntegral = needIntegral
-        }
+        user.isCertification = kUserDefaults.integer(forKey: "isCertification")
+        user.viewBorrow = kUserDefaults.integer(forKey: "viewBorrow")
+        user.viewComment = kUserDefaults.integer(forKey: "viewComment")
         
-        if let inviteCode = kUserDefaults.string(forKey: "inviteCode") {
-            user.inviteCode = inviteCode
-        }
-        
-        if let inviteReword = kUserDefaults.string(forKey: "inviteReword") {
-            user.inviteReword = inviteReword
-        }
-        
-        if let couponNum = kUserDefaults.string(forKey: "couponNum"){
-            user.couponNum = couponNum
-        }
-        
-        if let bindWeChat = kUserDefaults.string(forKey: "bindWeChat"){
-            user.bindWeChat = bindWeChat
-        }
-        
-        if let bindQQ = kUserDefaults.string(forKey: "bindQQ"){
-            user.bindQQ = bindQQ
-        }
-        
-        if let bindWeiBo = kUserDefaults.string(forKey: "bindWeiBo"){
-            user.bindWeiBo = bindWeiBo
-        }
-        
-        if let qqOpenId = kUserDefaults.string(forKey: "qqOpenId"){
-            user.qqOpenId = qqOpenId
-        }
-        
-        if let weChatOpenId = kUserDefaults.string(forKey: "weChatOpenId"){
-            user.weChatOpenId = weChatOpenId
-        }
-        
-        if let weiBoOpenId = kUserDefaults.string(forKey: "weiBoOpenId"){
-            user.weiBoOpenId = weiBoOpenId
-        }
-        
-        if let businessName = kUserDefaults.string(forKey: "businessName"){
-            user.businessName = businessName
-        }
-        
-        if let balance = kUserDefaults.string(forKey: "balance"){
-            user.balance = balance
-        }
-        
-        if let carPic = kUserDefaults.string(forKey: "carPic"){
-            user.carPic = carPic
-        }
         
         return user
     }
@@ -263,31 +156,11 @@ extension User: Decodable {
         kUserDefaults.removeObject(forKey: "lng")
         
         kUserDefaults.removeObject(forKey: "lv")
-        kUserDefaults.removeObject(forKey: "isAuthentication")
+        kUserDefaults.removeObject(forKey: "isCertification")
         kUserDefaults.removeObject(forKey: "inviteNum")
         kUserDefaults.removeObject(forKey: "integral")
-        kUserDefaults.removeObject(forKey: "needIntegral")
-        
-        kUserDefaults.removeObject(forKey: "inviteCode")
-        kUserDefaults.removeObject(forKey: "inviteReword")
-        
-        kUserDefaults.removeObject(forKey: "couponNum")
-        
-        kUserDefaults.removeObject(forKey: "carPic")
-    
-        
-        kUserDefaults.removeObject(forKey: "bindWeChat")
-        kUserDefaults.removeObject(forKey: "bindQQ")
-        kUserDefaults.removeObject(forKey: "bindWeiBo")
-        
-        
-        kUserDefaults.removeObject(forKey: "qqOpenId")
-        kUserDefaults.removeObject(forKey: "weChatOpenId")
-        kUserDefaults.removeObject(forKey: "weiBoOpenId")
-        
-        
-        kUserDefaults.removeObject(forKey: "businessName")
-        kUserDefaults.removeObject(forKey: "balance")
+        kUserDefaults.removeObject(forKey: "viewComment")
+        kUserDefaults.removeObject(forKey: "viewBorrow")
         
         kUserDefaults.synchronize()
     }
@@ -304,31 +177,10 @@ extension User: Decodable {
         kUserDefaults.set(user.introduce, forKey: "introduce")
         kUserDefaults.set(user.money, forKey: "money")
         kUserDefaults.set(user.lv, forKey: "lv")
-        kUserDefaults.set(user.isAuthentication, forKey: "isAuthentication")
-        kUserDefaults.set(user.inviteNum, forKey: "inviteNum")
         kUserDefaults.set(user.integral, forKey: "integral")
-        kUserDefaults.set(user.needIntegral, forKey: "needIntegral")
-        
-        kUserDefaults.set(user.inviteCode, forKey: "inviteCode")
-        kUserDefaults.set(user.inviteReword, forKey: "inviteReword")
-        
-        kUserDefaults.set(user.couponNum, forKey: "couponNum")
-        
-        kUserDefaults.set(user.carPic, forKey: "carPic")
-    
-        
-        kUserDefaults.set(user.bindWeChat, forKey: "bindWeChat")
-        kUserDefaults.set(user.bindQQ, forKey: "bindQQ")
-        kUserDefaults.set(user.bindWeiBo, forKey: "bindWeiBo")
-    
-        
-        kUserDefaults.set(user.qqOpenId, forKey: "qqOpenId")
-        kUserDefaults.set(user.weChatOpenId, forKey: "weChatOpenId")
-        kUserDefaults.set(user.weiBoOpenId, forKey: "weiBoOpenId")
-        
-        
-        kUserDefaults.set(user.businessName, forKey: "businessName")
-        kUserDefaults.set(user.balance, forKey: "balance")
+        kUserDefaults.set(user.isCertification, forKey: "isCertification")
+        kUserDefaults.set(user.viewComment, forKey: "viewComment")
+        kUserDefaults.set(user.viewBorrow, forKey: "viewBorrow")
         
         kUserDefaults.synchronize()
     }

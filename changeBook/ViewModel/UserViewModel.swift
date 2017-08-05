@@ -196,4 +196,15 @@ class UserViewModel: ViewModelProtocol {
         }
     }
     
+    // 隐私设置
+    func privacySettings(viewComment: Int,
+                         viewBorrow: Int,
+                         success: @escaping DataBlock,
+                         fail: @escaping MessageBlock,
+                         loginSuccess: @escaping VoidBlock) {
+        UserAPIProvider.request(UserAPI.privacySettings(viewComment: viewComment, viewBorrow: viewBorrow)) { [weak self] (result) in
+            self?.request(cacheName: kNoNeedCache, result: result, success: success, fail: fail, loginSuccess: loginSuccess)
+        }
+    }
+    
 }

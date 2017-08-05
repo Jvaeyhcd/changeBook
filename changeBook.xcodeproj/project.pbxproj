@@ -495,6 +495,9 @@
 		BEECE5161F356D8600B5D3C4 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BEECE5151F356D8600B5D3C4 /* libc++.tbd */; };
 		BEECE5181F356D9A00B5D3C4 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEECE5171F356D9A00B5D3C4 /* ImageIO.framework */; };
 		BEECE51A1F356E2A00B5D3C4 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEECE5191F356E2A00B5D3C4 /* CoreMotion.framework */; };
+		BEECE51C1F3596DE00B5D3C4 /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEECE51B1F3596DE00B5D3C4 /* SwitchTableViewCell.swift */; };
+		BEECE51E1F35C2E300B5D3C4 /* BindPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEECE51D1F35C2E300B5D3C4 /* BindPhoneViewController.swift */; };
+		BEECE5201F35C42D00B5D3C4 /* BindPhoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEECE51F1F35C42D00B5D3C4 /* BindPhoneViewModel.swift */; };
 		BEFFB2CD1F2B8DCF008498B8 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BEFFB2CC1F2B8DCF008498B8 /* libz.tbd */; };
 		BEFFB2CF1F2B8DDA008498B8 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BEFFB2CE1F2B8DDA008498B8 /* libresolv.tbd */; };
 /* End PBXBuildFile section */
@@ -1142,6 +1145,9 @@
 		BEECE5151F356D8600B5D3C4 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		BEECE5171F356D9A00B5D3C4 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		BEECE5191F356E2A00B5D3C4 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		BEECE51B1F3596DE00B5D3C4 /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
+		BEECE51D1F35C2E300B5D3C4 /* BindPhoneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BindPhoneViewController.swift; sourceTree = "<group>"; };
+		BEECE51F1F35C42D00B5D3C4 /* BindPhoneViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BindPhoneViewModel.swift; sourceTree = "<group>"; };
 		BEFFB2CC1F2B8DCF008498B8 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		BEFFB2CE1F2B8DDA008498B8 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		FD24FA76B8D7C13454370158 /* Pods-changeBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-changeBook.release.xcconfig"; path = "Pods/Target Support Files/Pods-changeBook/Pods-changeBook.release.xcconfig"; sourceTree = "<group>"; };
@@ -1702,6 +1708,7 @@
 				BE91CAF81F3214D500AF22CE /* OrderAddressTableViewCell.swift */,
 				BE91CB061F3373F300AF22CE /* RateStarTableViewCell.swift */,
 				BE91CB081F3377DA00AF22CE /* PlaceHolderViewTableViewCell.swift */,
+				BEECE51B1F3596DE00B5D3C4 /* SwitchTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1829,6 +1836,7 @@
 				BE7CA9AF1F0BE7C5007CB195 /* ViewModelProtocol.swift */,
 				BE7CA9B31F0BE9D3007CB195 /* LoginViewModel.swift */,
 				BE7CA9B41F0BE9D3007CB195 /* RegisterViewModel.swift */,
+				BEECE51F1F35C42D00B5D3C4 /* BindPhoneViewModel.swift */,
 				BE7CA9B51F0BE9D3007CB195 /* ResetPasswordViewModel.swift */,
 				BE7CA9D91F0E3CC6007CB195 /* UserViewModel.swift */,
 				BEB94CFA1F15134800181DC2 /* DocumentViewModel.swift */,
@@ -1859,6 +1867,7 @@
 				BEB94CE61F1477F600181DC2 /* EditNickNameViewController.swift */,
 				BEB94CF41F14CB8700181DC2 /* EditIntroduceViewController.swift */,
 				BEECE4791F35661500B5D3C4 /* PrivacySettingsViewController.swift */,
+				BEECE51D1F35C2E300B5D3C4 /* BindPhoneViewController.swift */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -2799,6 +2808,7 @@
 				BE57EFA71F07E5D30091F312 /* DataViewController.swift in Sources */,
 				BE7CA9DE1F0F24F5007CB195 /* IntegralLog.swift in Sources */,
 				BE973D941F1E51A80018DF70 /* CommentTableViewCell.swift in Sources */,
+				BEECE51E1F35C2E300B5D3C4 /* BindPhoneViewController.swift in Sources */,
 				BE7CA9C51F0BEE38007CB195 /* MBProgressHUD.m in Sources */,
 				BE1ED7641F235DC0000222D6 /* BookDetailViewController.swift in Sources */,
 				BE91CB091F3377DA00AF22CE /* PlaceHolderViewTableViewCell.swift in Sources */,
@@ -2832,6 +2842,7 @@
 				BE1A3B3A1F2F7A6A00CC98B3 /* UsersHomeViewController.swift in Sources */,
 				BE57EF711F05414A0091F312 /* TAAbstractDotView.m in Sources */,
 				BE8D53E91EFBF619003850EB /* STPopupController.m in Sources */,
+				BEECE5201F35C42D00B5D3C4 /* BindPhoneViewModel.swift in Sources */,
 				BE57EF971F07C8A40091F312 /* BorrowBookViewController.swift in Sources */,
 				BE7CAA271F0F3F08007CB195 /* MJRefreshBackFooter.m in Sources */,
 				BE8D53EA1EFBF619003850EB /* STPopupControllerTransitioningFade.m in Sources */,
@@ -2850,6 +2861,7 @@
 				BE7CA9B81F0BE9D3007CB195 /* ResetPasswordViewModel.swift in Sources */,
 				BE5AEFA41F19141400475B90 /* TPKeyboardAvoidingTableView.m in Sources */,
 				BE7CAA301F0F3F08007CB195 /* MJRefreshBackStateFooter.m in Sources */,
+				BEECE51C1F3596DE00B5D3C4 /* SwitchTableViewCell.swift in Sources */,
 				BE0190A81EFD4B5E00FA040E /* RootViewController.swift in Sources */,
 				BE57EF811F0798080091F312 /* NavTabBarController.swift in Sources */,
 				BE57EF8B1F07AB450091F312 /* ArticleListTableViewCell.swift in Sources */,

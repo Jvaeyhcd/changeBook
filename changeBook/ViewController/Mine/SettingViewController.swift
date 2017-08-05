@@ -222,7 +222,7 @@ class SettingViewController: BaseViewController, UITableViewDelegate, UITableVie
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var row = 0;
         if section == 0 {
-            row = 6
+            row = 7
         } else if section == 1 {
             row = 2
         } else if section == 2 {
@@ -273,6 +273,16 @@ class SettingViewController: BaseViewController, UITableViewDelegate, UITableVie
                 cell.descLbl.isHidden = false
                 cell.portraitImageView.isHidden = true
                 cell.descLbl.text = self.savedUser.introduce
+            } else if indexPath.row == 6 {
+                cell.titleLbl.text = "绑定手机"
+                cell.descLbl.isHidden = false
+                cell.portraitImageView.isHidden = true
+                if self.savedUser.userName.isPhoneNumber() {
+                    cell.descLbl.text = self.savedUser.userName
+                } else {
+                    cell.descLbl.text = "未绑定"
+                }
+                
             }
             cell.accessoryType = .disclosureIndicator
             tableView.addLineforPlainCell(cell: cell, indexPath: indexPath, leftSpace: kBasePadding)
@@ -296,6 +306,15 @@ class SettingViewController: BaseViewController, UITableViewDelegate, UITableVie
             if indexPath.row == 0 {
                 cell.titleLbl.text = "学生实名认证"
                 cell.descLbl.isHidden = false
+                if 0 == self.savedUser.isCertification {
+                    cell.descLbl.text = "未认证"
+                } else if 1 == self.savedUser.isCertification {
+                    cell.descLbl.text = "认证中"
+                } else if 2 == self.savedUser.isCertification {
+                    cell.descLbl.text = "已认证"
+                } else if 3 == self.savedUser.isCertification {
+                    cell.descLbl.text = "未认证"
+                }
                 cell.portraitImageView.isHidden = true
             } else if indexPath.row == 1 {
                 cell.titleLbl.text = "隐私设置"
@@ -375,6 +394,14 @@ class SettingViewController: BaseViewController, UITableViewDelegate, UITableVie
                     self?.tableView.reloadData()
                 }
                 self.pushViewController(viewContoller: vc, animated: true)
+            } else if 6 == indexPath.row {
+                if self.savedUser.userName.isPhoneNumber() {
+                    // 已经绑定了手机号
+                } else {
+                    let vc = BindPhoneViewController()
+                    self.pushViewController(viewContoller: vc, animated: true)
+                }
+                
             }
         } else if 2 == indexPath.section {
             if 0 == indexPath.row {
