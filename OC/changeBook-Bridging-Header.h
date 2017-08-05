@@ -24,3 +24,6 @@
 #import "UIImage+Polesapp.h"
 #import "NSObject+Polesapp.h"
 #import "NSDate+Polesapp.h"
+
+// MARK: - 三方相关
+#import <UMSocialCore/UMSocialCore.h>

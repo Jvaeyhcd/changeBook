@@ -388,7 +388,8 @@ class SettingViewController: BaseViewController, UITableViewDelegate, UITableVie
             if 0 == indexPath.row {
                 
             } else if 1 == indexPath.row {
-                
+                let vc = PrivacySettingsViewController()
+                self.pushViewController(viewContoller: vc, animated: true)
             }
         }
     }

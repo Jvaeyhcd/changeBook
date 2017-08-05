@@ -8,6 +8,25 @@
 
 import Foundation
 
+let isDebug = true
+
+let kHost = "https://api.bookround.com/"
+//服务器基本地址
+let kBaseUrl = kHost + "api/1.0"
+
+// MARK: - 三方相关配置常量
+
+let kWXAppId = "wx9303c94950e63444"
+let kWXAppSecret = "7e566c4b731a6143bfb36f2aa530dcea"
+
+
+let kQQAppId = "1106256443"
+let kQQAppKey = "1tSFOiVOBL4EMLT9"
+
+//友盟
+let kUMAppKey = "598529201061d23498000133"
+
+// MAKR: - 基本宽高常量
 let kScreenBounds = UIScreen.main.bounds
 let kScreenWidth = kScreenBounds.width
 let kScreenHeight = kScreenBounds.height
@@ -17,6 +36,7 @@ let kStatusBarHeight = CGFloat(20)
 let kSegmentBarHeight = CGFloat(44)
 let kBasePadding = scaleFromiPhone6Desgin(x: 15)
 
+// MARK: - 颜色
 // 分割线背景颜色
 let kSplitLineBgColor = UIColor(hex: 0xEEEEEE)
 //vc背景
@@ -48,10 +68,6 @@ let kUserDefaultImage = UIImage(named: "default_pic.jpg")
 //没有图片时的默认图片
 let kNoImgDefaultImage = UIImage.init(color: UIColor.init(hex: 0xf2f2f2))
 
-let kHost = "https://api.bookround.com/"
-//服务器基本地址
-let kBaseUrl = kHost + "api/1.0"
-
 let TIMEOUTTIME = 10
 let TIMEOUTCODE = -1001
 
@@ -72,8 +88,6 @@ var showedLogin = false
 func scaleFromiPhone6Desgin(x : CGFloat)->CGFloat{
     return (x * (kScreenWidth / 375))
 }
-
-let isDebug = true
 
 func BLog(log:String) {
     if isDebug == true {

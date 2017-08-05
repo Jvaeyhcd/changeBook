@@ -99,6 +99,7 @@ class LoginViewController: UIViewController {
     }()
     
     private lazy var viewModel = LoginViewModel(provider: UserAPIProvider)
+    private lazy var userViewModel = UserViewModel()
     private let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
@@ -218,19 +219,19 @@ class LoginViewController: UIViewController {
             make.height.equalTo(scaleFromiPhone6Desgin(x: 28))
         }
         
-        self.thirdWXLoginBtn.addTarget(self, action: #selector(btnClicked(btn:)), for: .touchUpInside)
-        self.view.addSubview(self.thirdWXLoginBtn)
-        self.thirdWXLoginBtn.snp.makeConstraints{
-            make -> Void in
-            make.centerX.equalTo(kScreenWidth / 2 + scaleFromiPhone6Desgin(x: 24) + kBasePadding)
-            make.height.width.equalTo(scaleFromiPhone6Desgin(x: 48))
-            make.top.equalTo(thirdLoginlb.snp.bottom).offset(scaleFromiPhone6Desgin(x: 36))
-        }
+//        self.thirdWXLoginBtn.addTarget(self, action: #selector(btnClicked(btn:)), for: .touchUpInside)
+//        self.view.addSubview(self.thirdWXLoginBtn)
+//        self.thirdWXLoginBtn.snp.makeConstraints{
+//            make -> Void in
+//            make.centerX.equalTo(kScreenWidth / 2 + scaleFromiPhone6Desgin(x: 24) + kBasePadding)
+//            make.height.width.equalTo(scaleFromiPhone6Desgin(x: 48))
+//            make.top.equalTo(thirdLoginlb.snp.bottom).offset(scaleFromiPhone6Desgin(x: 36))
+//        }
         
         self.thirdQQLoginBtn.addTarget(self, action: #selector(btnClicked(btn:)), for: .touchUpInside)
         self.view.addSubview(self.thirdQQLoginBtn)
         self.thirdQQLoginBtn.snp.makeConstraints { (make) in
-            make.centerX.equalTo(kScreenWidth / 2 - scaleFromiPhone6Desgin(x: 24) - kBasePadding)
+            make.centerX.equalTo(kScreenWidth / 2)
             make.height.width.equalTo(scaleFromiPhone6Desgin(x: 48))
             make.top.equalTo(thirdLoginlb.snp.bottom).offset(scaleFromiPhone6Desgin(x: 36))
         }
@@ -311,9 +312,70 @@ class LoginViewController: UIViewController {
         case 200:
             break
         case 201:
+            self.getAuthWithUserInfoFromQQ()
             break
         default:
             break
+        }
+    }
+    
+    // 调起QQ登录
+    private func getAuthWithUserInfoFromQQ() {
+        UMSocialManager.default().getUserInfo(with: UMSocialPlatformType.QQ, currentViewController: self) { [weak self] (result, error) in
+            if (nil != error) {
+                
+            } else {
+                let resp: UMSocialUserInfoResponse = result as! UMSocialUserInfoResponse
+                
+                // 授权信息
+                BLog(log: "QQ uid: " + resp.uid)
+                BLog(log: "QQ openid: " + resp.openid)
+                BLog(log: "QQ unionid: \(resp.unionId)")
+                BLog(log: "QQ accessToken: \(resp.accessToken)")
+                BLog(log: "QQ expiration: \(resp.expiration)")
+                
+                // 用户信息
+                BLog(log: "QQ name: " + resp.name)
+                BLog(log: "QQ iconurl: " + resp.iconurl)
+                BLog(log: "QQ gender: " + resp.gender)
+                
+                // 第三方平台SDK源数据
+                BLog(log: "QQ originalResponse: \(resp.originalResponse)")
+                
+                self?.loginWithQQAccount(openid: resp.openid, nickName: resp.name + "", headPic: resp.iconurl)
+            }
+        }
+    }
+    
+    private func loginWithQQAccount(openid: String, nickName: String, headPic: String) {
+        
+        self.showHudLoadingTipStr("")
+        
+        self.userViewModel.qqLogin(openId: openid, nickName: nickName, headPic: headPic, success: { [weak self] (data) in
+            
+            let loginUser = User.fromJSON(json: data["user"])
+            
+            sharedGlobal.saveToken(token: data["token"].stringValue)
+            sharedGlobal.saveUser(user: loginUser)
+            
+            showedLogin = false
+            
+            //标记不是三方登录
+            kUserDefaults.set(false, forKey: "thirdLoginSuccess")
+            kUserDefaults.set(0, forKey: "ThirdLoginType")
+            
+            kUserDefaults.set(true, forKey: "canAutoLogin")
+            kUserDefaults.synchronize()
+            
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "refreshUserInfo"), object: nil)
+            
+            self?.hideHud()
+            self?.dismiss(animated: true, completion: nil)
+            
+        }, fail: { [weak self] (message) in
+            self?.showHudTipStr(message)
+        }) { 
+            
         }
     }
     

@@ -184,4 +184,16 @@ class UserViewModel: ViewModelProtocol {
         }
     }
     
+    // QQ登录
+    func qqLogin(openId: String,
+                 nickName: String,
+                 headPic: String,
+                 success: @escaping DataBlock,
+                 fail: @escaping MessageBlock,
+                 loginSuccess: @escaping VoidBlock) {
+        UserAPIProvider.request(UserAPI.qqLogin(openId: openId, nickName: nickName, headPic: headPic)) { [weak self] (result) in
+            self?.request(cacheName: kNoNeedCache, result: result, success: success, fail: fail, loginSuccess: loginSuccess)
+        }
+    }
+    
 }
