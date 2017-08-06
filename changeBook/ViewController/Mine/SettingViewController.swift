@@ -88,7 +88,7 @@ class SettingViewController: BaseViewController, UITableViewDelegate, UITableVie
     
     // 获取用户信息
     private func getUserInfo() {
-        self.viewModel.getUserInfo(success: { [weak self] (data) in
+        self.viewModel.getUserInfo(userId: "", success: { [weak self] (data) in
             self?.savedUser = User.fromJSON(json: data["user"].object)
             sharedGlobal.saveUser(user: (self?.savedUser)!)
             

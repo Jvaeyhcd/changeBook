@@ -23,11 +23,12 @@ class UserViewModel: ViewModelProtocol {
     }
     
     // 获取个人信息
-    func getUserInfo(success: @escaping DataBlock,
+    func getUserInfo(userId: String,
+                     success: @escaping DataBlock,
                      fail: @escaping MessageBlock,
                      loginSuccess: @escaping VoidBlock) {
         
-        UserAPIProvider.request(UserAPI.getUserInfo()) { (result) in
+        UserAPIProvider.request(UserAPI.getUserInfo(userId: userId)) { (result) in
             self.request(cacheName: kNoNeedCache, result: result, success: success, fail: fail, loginSuccess: loginSuccess)
         }
     }

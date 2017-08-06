@@ -258,6 +258,12 @@ class DataDetailViewController: BaseViewController, UITableViewDelegate, UITable
             let cell = tableView.dequeueReusableCell(withIdentifier: kCellIdCommentTableViewCell, for: indexPath) as! CommentTableViewCell
             let comment = self.commentList[indexPath.row]
             cell.setComment(comment: comment)
+            cell.userBlock = {
+                [weak self] (user) in
+                let vc = OthersHomeViewController()
+                vc.user = user
+                self?.pushViewController(viewContoller: vc, animated: true)
+            }
             tableView.addLineforPlainCell(cell: cell, indexPath: indexPath, leftSpace: 0)
             return cell
             

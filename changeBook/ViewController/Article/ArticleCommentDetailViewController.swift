@@ -207,6 +207,12 @@ class ArticleCommentDetailViewController: BaseViewController, UITableViewDelegat
             let cell = tableView.dequeueReusableCell(withIdentifier: kCellIdCommentTableViewCell, for: indexPath) as! CommentTableViewCell
             tableView.addLineforPlainCell(cell: cell, indexPath: indexPath, leftSpace: 0)
             cell.setComment(comment: self.comment)
+            cell.userBlock = {
+                [weak self] (user) in
+                let vc = OthersHomeViewController()
+                vc.user = user
+                self?.pushViewController(viewContoller: vc, animated: true)
+            }
             return cell
         }
         

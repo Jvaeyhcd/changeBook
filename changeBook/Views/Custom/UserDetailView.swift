@@ -71,7 +71,7 @@ class UserDetailView: UIView {
     }
     
     func setUser(user: User) {
-        self.userNameLbl.text = user.userName
+        self.userNameLbl.text = user.nickName
         self.descLbl.text = user.introduce
         self.userHeadImageView.sd_setImage(with: URL.init(string: user.headPic), placeholderImage: kNoImgDefaultImage)
     }

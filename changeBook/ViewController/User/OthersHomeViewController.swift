@@ -10,6 +10,7 @@ import UIKit
 
 class OthersHomeViewController: BaseViewController, HcdTabBarDelegate {
     
+    private var usersViewModel = UserViewModel()
     // tableview的偏移量
     fileprivate var tableViewOffsetY = CGFloat(0)
     private var selectedControllerIndex = -1
@@ -109,6 +110,20 @@ class OthersHomeViewController: BaseViewController, HcdTabBarDelegate {
         self.userDetailView.frame = CGRect(x: 0, y: 0, width: kScreenWidth, height: self.userDetailViewHeight)
         self.view.addSubview(self.userDetailView)
         
+    }
+    
+    // MARK: - Networking
+    private func getUsersInfo() {
+        self.usersViewModel.getUserInfo(userId: self.user.userId, success: { [weak self] (data) in
+            
+            self?.user = User.fromJSON(json: data.object)
+            self?.userDetailView.setUser(user: (self?.user)!)
+            
+        }, fail: { [weak self] (message) in
+            self?.showHudTipStr(message)
+        }) { 
+            
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

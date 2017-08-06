@@ -167,6 +167,12 @@ class BookCommentListViewController: BaseViewController, UITableViewDelegate, UI
         tableView.addLineforPlainCell(cell: cell, indexPath: indexPath, leftSpace: 0)
         let comment = self.commentList[indexPath.row]
         cell.setComment(comment: comment)
+        cell.userBlock = {
+            [weak self] (user) in
+            let vc = OthersHomeViewController()
+            vc.user = user
+            self?.pushViewController(viewContoller: vc, animated: true)
+        }
         return cell
     }
     

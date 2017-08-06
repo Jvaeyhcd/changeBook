@@ -30,7 +30,7 @@ public enum UserAPI {
     //登录
     case login(userName:String,password:String)
     //获取个人信息
-    case getUserInfo()
+    case getUserInfo(userId: String)
     //修改个人信息
     case changeUserInfo(headPic:String,nickName:String,sex:String,introduce:String)
     //忘记密码获取验证码
@@ -88,7 +88,7 @@ extension UserAPI: TargetType {
             return "/user/register/getCode"
         case .login(userName: _, password: _):
             return "/user/login"
-        case .getUserInfo():
+        case .getUserInfo(userId: _):
             return "/user/getUserInfo"
         case .changeUserInfo(headPic: _, nickName: _, sex: _, introduce: _):
             return "/user/editUserInfo"
@@ -170,8 +170,20 @@ extension UserAPI: TargetType {
                 "password":password,
                 "cid": User.getClientId()
             ]
-        case .getUserInfo():
-            return ["token":token,"userId":userId]
+        case .getUserInfo(let usersId):
+            
+            if usersId == "" {
+                return [
+                    "token": token,
+                    "userId": userId
+                ]
+            } else {
+                return [
+                    "token": token,
+                    "userId": usersId
+                ]
+            }
+            
         case .changeUserInfo(let headPic, let nickName, let sex, let introduce):
             return [
                 "token":token,
