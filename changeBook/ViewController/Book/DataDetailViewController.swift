@@ -102,6 +102,7 @@ class DataDetailViewController: BaseViewController, UITableViewDelegate, UITable
             make.left.equalTo(0)
         }
         
+        self.openBtn.addTarget(self, action: #selector(openBtnClicked), for: .touchUpInside)
         self.bottomView.addSubview(self.openBtn)
         self.openBtn.snp.makeConstraints { (make) in
             make.top.equalTo(0)
@@ -137,6 +138,13 @@ class DataDetailViewController: BaseViewController, UITableViewDelegate, UITable
             make.right.equalTo(vLine.snp.left).offset(-8)
         }
         
+    }
+    
+    @objc private func openBtnClicked() {
+        let vc = DataContentViewController()
+        vc.urlStr = self.document.file
+        vc.document = self.document
+        self.pushViewController(viewContoller: vc, animated: true)
     }
     
     // 获取资料评论
