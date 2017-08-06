@@ -154,4 +154,14 @@ class ArticleViewModel: ViewModelProtocol {
             self?.request(cacheName: cacheName, result: result, success: success, fail: fail, loginSuccess: loginSuccess)
         }
     }
+    
+    // 文章点赞
+    func likeArticle(articleId: String,
+                     success: @escaping DataBlock,
+                     fail: @escaping MessageBlock,
+                     loginSuccess: @escaping VoidBlock) {
+        ArticleAPIProvider.request(ArticleAPI.likeArticle(articleId: articleId)) { [weak self] (result) in
+            self?.request(cacheName: kNoNeedCache, result: result, success: success, fail: fail, loginSuccess: loginSuccess)
+        }
+    }
 }

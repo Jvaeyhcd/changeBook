@@ -12,8 +12,8 @@ let kCellIdArticleCommentTableViewCell = "ArticleCommentTableViewCell"
 
 class ArticleCommentTableViewCell: UITableViewCell {
 
-    private lazy var userHead: UIImageView = {
-        let imgView = UIImageView()
+    private lazy var userHead: UITapImageView = {
+        let imgView = UITapImageView()
         imgView.contentMode = .scaleToFill
         imgView.backgroundColor = kMainBgColor
         imgView.clipsToBounds = true

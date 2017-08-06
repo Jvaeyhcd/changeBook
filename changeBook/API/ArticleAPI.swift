@@ -50,6 +50,9 @@ public enum ArticleAPI {
     
     // 获取热门文章
     case getHotArticle(page: Int)
+    
+    // 文章点赞
+    case likeArticle(articleId: String)
 }
 
 extension ArticleAPI: TargetType {
@@ -79,6 +82,8 @@ extension ArticleAPI: TargetType {
             return "/article/getCommentDetail"
         case .getHotArticle(page: _):
             return "/article/getHotArticle"
+        case .likeArticle(articleId: _):
+            return "/article/likeArticle"
         }
     }
     
@@ -163,6 +168,12 @@ extension ArticleAPI: TargetType {
                 "token": token,
                 "userId": userId,
                 "page": page
+            ]
+        case .likeArticle(let articleId):
+            return [
+                "token": token,
+                "userId": userId,
+                "articleId": articleId
             ]
         }
     }

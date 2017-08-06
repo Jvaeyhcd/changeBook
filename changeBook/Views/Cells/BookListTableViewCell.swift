@@ -22,6 +22,15 @@ class BookListTableViewCell: UITableViewCell {
         return coverImg
     }()
     
+    // 标签
+    private lazy var tagImgView: UIImageView = {
+        let imgView = UIImageView.init()
+        imgView.backgroundColor = kMainBgColor
+        imgView.clipsToBounds = true
+        imgView.contentMode = .scaleAspectFill
+        return imgView
+    }()
+    
     // 评分
     private var rateStar: HCSStarRatingView = {
         let star = HCSStarRatingView.init()
@@ -93,6 +102,15 @@ class BookListTableViewCell: UITableViewCell {
             make.height.equalTo(scaleFromiPhone6Desgin(x: 80))
         }
         
+        self.tagImgView.image = UIImage(named: "home_icon_daan")
+        self.coverImg.addSubview(self.tagImgView)
+        self.tagImgView.snp.makeConstraints { (make) in
+            make.right.equalTo(0)
+            make.top.equalTo(0)
+            make.height.equalTo(scaleFromiPhone6Desgin(x: 15))
+            make.width.equalTo(scaleFromiPhone6Desgin(x: 30))
+        }
+        
         self.titleLbl.text = ""
         self.addSubview(self.titleLbl)
         self.titleLbl.snp.makeConstraints { (make) in
@@ -146,6 +164,11 @@ class BookListTableViewCell: UITableViewCell {
         self.rateStar.value = CGFloat(book.score.floatValue)
         self.authorLbl.text = book.publisher + " 著"
         self.otherLbl.text = "剩余" + book.bookCount + "本 " + book.commentNum + "条评论"
+        if INT_TRUE == book.hasFile {
+            self.tagImgView.image = UIImage(named: "home_icon_daan")
+        } else {
+            self.tagImgView.image = UIImage(named: "home_icon_daan_1")
+        }
     }
     
     static func cellHeight() -> CGFloat {

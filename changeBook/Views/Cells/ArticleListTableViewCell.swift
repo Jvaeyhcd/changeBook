@@ -44,6 +44,42 @@ class ArticleListTableViewCell: UITableViewCell {
         return lbl
     }()
     
+    private lazy var seeBtn: UIButton = {
+        let btn = UIButton()
+        btn.titleLabel?.font = UIFont.systemFont(ofSize: 13)
+        btn.imageView!.contentMode = .scaleAspectFit
+        btn.setTitleColor(UIColor(hex: 0x888888), for: .normal)
+        btn.setImage(UIImage(named: "home_icon_chakan"), for: .normal)
+        btn.imageEdgeInsets = UIEdgeInsetsMake(0, -2, 0, 2)
+        btn.titleEdgeInsets = UIEdgeInsetsMake(0, 2, 0, -2)
+        btn.sizeToFit()
+        return btn
+    }()
+    
+    private lazy var commentBtn: UIButton = {
+        let btn = UIButton()
+        btn.titleLabel?.font = UIFont.systemFont(ofSize: 13)
+        btn.setTitleColor(UIColor(hex: 0x888888), for: .normal)
+        btn.imageView?.contentMode = .scaleAspectFit
+        btn.imageEdgeInsets = UIEdgeInsetsMake(0, -2, 0, 2)
+        btn.titleEdgeInsets = UIEdgeInsetsMake(0, 2, 0, -2)
+        btn.setImage(UIImage(named: "home_icon_zan"), for: .normal)
+        btn.sizeToFit()
+        return btn
+    }()
+    
+    private lazy var zanBtn: UIButton = {
+        let btn = UIButton()
+        btn.titleLabel?.font = UIFont.systemFont(ofSize: 13)
+        btn.setTitleColor(UIColor(hex: 0x888888), for: .normal)
+        btn.imageView?.contentMode = .scaleAspectFit
+        btn.imageEdgeInsets = UIEdgeInsetsMake(0, -2, 0, 2)
+        btn.titleEdgeInsets = UIEdgeInsetsMake(0, 2, 0, -2)
+        btn.setImage(UIImage(named: "home_icon_pinglun"), for: .normal)
+        btn.sizeToFit()
+        return btn
+    }()
+    
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -93,6 +129,29 @@ class ArticleListTableViewCell: UITableViewCell {
             make.top.equalTo(self.authorLbl.snp.bottom)
             make.right.equalTo(-kBasePadding)
         }
+        
+        self.addSubview(self.seeBtn)
+        self.seeBtn.snp.makeConstraints{
+            make -> Void in
+            make.bottom.equalTo(-kBasePadding)
+            make.left.equalTo(self.coverImg.snp.right).offset(kBasePadding)
+            make.height.equalTo(scaleFromiPhone6Desgin(x: 20))
+        }
+        
+        self.addSubview(self.zanBtn)
+        self.zanBtn.snp.makeConstraints{
+            make -> Void in
+            make.bottom.equalTo(-kBasePadding)
+            make.left.equalTo(self.seeBtn.snp.right).offset(kBasePadding)
+            make.height.equalTo(scaleFromiPhone6Desgin(x: 20))
+        }
+        
+        self.addSubview(self.commentBtn)
+        self.commentBtn.snp.makeConstraints { (make) in
+            make.bottom.equalTo(-kBasePadding)
+            make.left.equalTo(self.zanBtn.snp.right).offset(kBasePadding)
+            make.height.equalTo(scaleFromiPhone6Desgin(x: 20))
+        }
     }
     
     static func cellHeight() -> CGFloat {
@@ -104,6 +163,9 @@ class ArticleListTableViewCell: UITableViewCell {
         self.titleLbl.text = article.title
         self.authorLbl.text = "作者：" + article.user.nickName
         self.timeLbl.text = "发表时间：" + NSDate.stringTimesAgo(fromTimeInterval: article.createAt.doubleValue)
+        self.seeBtn.setTitle(article.readNum, for: .normal)
+        self.commentBtn.setTitle(article.commentNum, for: .normal)
+        self.zanBtn.setTitle(article.likeNum, for: .normal)
     }
 
     override func awakeFromNib() {

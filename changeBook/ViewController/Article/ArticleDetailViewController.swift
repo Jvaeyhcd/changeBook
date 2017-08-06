@@ -8,24 +8,37 @@
 
 import UIKit
 import SwiftyJSON
+import HcdActionSheet
 
 class ArticleDetailViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
     
     var article: Article!
+    var rewordList = [RewardLog]()
+    var rewordNumber = 0
     private var viewModel: ArticleViewModel = ArticleViewModel()
     private var commentList = [Comment]()
     private var pageInfo = PageInfo()
+    private let integralList = ["1", "2", "5"]
     
-    private lazy var bottomView: UIView = {
-        let view = UIView()
-        view.backgroundColor = UIColor.white
+    fileprivate var webviewHight: CGFloat = CGFloat(0)
+    
+    private lazy var toobarView: ArticleToolBarView = {
+        let view = ArticleToolBarView.init(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kTabBarHeight))
         return view
+    }()
+    
+    private var rewordActionSheet: HcdActionSheet = {
+        let sheet = HcdActionSheet.init(cancelStr: "取消", otherButtonTitles: ["1积分", "2积分", "5积分"], attachTitle: "请选择您要打赏的积分")
+        return sheet!
     }()
     
     private lazy var tableView: UIRefreshTableView = {
         let tableView = UIRefreshTableView.init(frame: CGRect.zero, style: .plain)
         tableView.register(ArticleDetailTableViewCell.self, forCellReuseIdentifier: kCellIdArticleDetailTableViewCell)
         tableView.register(ArticleCommentTableViewCell.self, forCellReuseIdentifier: kCellIdArticleCommentTableViewCell)
+        tableView.register(ArticleRewardTableViewCell.self, forCellReuseIdentifier: kCellIdArticleRewardTableViewCell)
+        tableView.register(WKWebViewCell.self, forCellReuseIdentifier: kCellIdWKWebViewCell)
+        tableView.register(ArticleNumInfoTableViewCell.self, forCellReuseIdentifier: kCellIdArticleNumInfoTableViewCell)
         tableView.separatorStyle = .none
         tableView.backgroundColor = kMainBgColor
         return tableView
@@ -34,22 +47,51 @@ class ArticleDetailViewController: BaseViewController, UITableViewDelegate, UITa
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        initSubviews()
+        self.initSubviews()
         self.getArticleComments(page: 1)
+        self.getArticleRewordLog()
+        self.getArticleDetail()
     }
     
     private func initSubviews() {
         self.title = "文章详情"
         self.showBackButton()
         
-        self.view.addSubview(self.bottomView)
-        self.bottomView.snp.makeConstraints { (make) in
+        self.toobarView.goToCommentsBlock = {
+            [weak self] (Void) in
+            let vc = ArticleCommentListViewController()
+            vc.articleId = (self?.article.id)!
+            self?.pushViewController(viewContoller: vc, animated: true)
+        }
+        
+        self.toobarView.addCommentBlock = {
+            [weak self] (Void) in
+            self?.showArticleCommentView()
+        }
+        
+        self.toobarView.likeBlock = {
+            [weak self] (Void) in
+            self?.likeArticle()
+        }
+        
+        self.toobarView.addRewordBlock = {
+            [weak self] (Void) in
+            self?.showRewordView()
+        }
+        
+        self.view.addSubview(self.toobarView)
+        self.toobarView.snp.makeConstraints { (make) in
+            make.left.equalTo(0)
             make.right.equalTo(0)
             make.bottom.equalTo(0)
-            make.left.equalTo(0)
             make.height.equalTo(kTabBarHeight)
         }
         
+        self.tableView.setPullingHeader()
+        self.tableView.headerRefreshBlock = {
+            [weak self] (Void) in
+            self?.getArticleComments(page: 1)
+        }
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.view.addSubview(self.tableView)
@@ -57,7 +99,16 @@ class ArticleDetailViewController: BaseViewController, UITableViewDelegate, UITa
             make.top.equalTo(0)
             make.left.equalTo(0)
             make.right.equalTo(0)
-            make.bottom.equalTo(self.bottomView.snp.top)
+            make.bottom.equalTo(self.toobarView.snp.top)
+        }
+        
+        self.rewordActionSheet.selectButtonAtIndex = {
+            
+            [weak self] (index) in
+            
+            let integral = self?.integralList[index - 1]
+            self?.articleReward(integral: integral!)
+            
         }
         
     }
@@ -100,6 +151,108 @@ class ArticleDetailViewController: BaseViewController, UITableViewDelegate, UITa
         self.tableView.reloadData()
     }
     
+    private func getArticleRewordLog() {
+        self.viewModel.getArticleReward(articleId: self.article.id, page: 1, cache: { [weak self] (data) in
+            self?.rewordList = RewardLog.fromJSONArray(json: data["entities"].arrayObject!)
+            let pageInfo = PageInfo.fromJSON(json: data["pageInfo"].object)
+            self?.rewordNumber = pageInfo.allNum
+            self?.tableView.reloadData()
+        }, success: { [weak self] (data) in
+            self?.rewordList = RewardLog.fromJSONArray(json: data["entities"].arrayObject!)
+            let pageInfo = PageInfo.fromJSON(json: data["pageInfo"].object)
+            self?.rewordNumber = pageInfo.allNum
+            self?.tableView.reloadData()
+        }, fail: { [weak self] (message) in
+            self?.showHudTipStr(message)
+        }) { 
+            
+        }
+    }
+    
+    private func likeArticle() {
+        
+        self.showHudLoadingTipStr("")
+        
+        self.viewModel.likeArticle(articleId: self.article.id, success: { [weak self] (data) in
+            self?.showHudTipStr("")
+            
+            self?.article.isLike = INT_TRUE
+            self?.toobarView.setLike(isLike: (self?.article.isLike)!)
+            
+        }, fail: { [weak self] (message) in
+            self?.showHudTipStr(message)
+        }) { 
+            
+        }
+    }
+    
+    private func showArticleCommentView() {
+        if sharedGlobal.getToken().tokenExists {
+            let replyView = HcdReplyView.init(frame: CGRect.init(x: 0, y: 0, width: kScreenWidth, height: kScreenHeight))
+            replyView.placeHolder = "我来说几句..."
+            replyView.commitReplyBlock = { [weak self]
+                (content, score) in
+                
+                self?.addArticleComment(comment: content!)
+                
+            }
+            replyView.showReply(in: UIApplication.shared.keyWindow)
+        } else {
+            self.showLoginViewController()
+        }
+    }
+    
+    private func addArticleComment(comment: String) {
+        
+        self.showHudLoadingTipStr("")
+        
+        self.viewModel.addArticleComment(articleId: self.article.id, content: comment, commentType: kCommentLv1, score: "0", articleCommentId: "0", receiverId: "0", success: { [weak self] (data) in
+            self?.showHudTipStr("评论成功")
+            }, fail: { [weak self] (message) in
+                self?.showHudTipStr(message)
+        }) {
+            
+        }
+    }
+    
+    private func getArticleDetail() {
+        self.viewModel.getArticleDetail(articleId: self.article.id, cache: { [weak self] (data) in
+            
+            self?.article = Article.fromJSON(json: data.object)
+            self?.toobarView.setLike(isLike: (self?.article.isLike)!)
+            
+        }, success: { [weak self] (data) in
+            
+            self?.article = Article.fromJSON(json: data.object)
+            self?.toobarView.setLike(isLike: (self?.article.isLike)!)
+            
+        }, fail: { [weak self] (message) in
+            self?.showHudTipStr(message)
+        }) { 
+            
+        }
+    }
+    
+    private func showRewordView() {
+        if sharedGlobal.getToken().tokenExists {
+            UIApplication.shared.keyWindow?.addSubview(self.rewordActionSheet)
+            self.rewordActionSheet.show()
+        }
+    }
+    
+    private func articleReward(integral: String) {
+        
+        self.showHudLoadingTipStr("")
+        
+        self.viewModel.articleReward(integral: integral, articleId: self.article.id, success: { [weak self] (data) in
+            self?.showHudTipStr("感谢您的支持")
+        }, fail: { [weak self] (message) in
+            self?.showHudTipStr(message)
+        }) { 
+            
+        }
+    }
+    
     // MARK: - UITableViewDelegate, UITableViewDataSource
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
@@ -108,7 +261,7 @@ class ArticleDetailViewController: BaseViewController, UITableViewDelegate, UITa
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var row = 0
         if 0 == section {
-            row = 1
+            row = 4
         } else if 1 == section {
             row = self.commentList.count
         }
@@ -117,9 +270,42 @@ class ArticleDetailViewController: BaseViewController, UITableViewDelegate, UITa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if 0 == indexPath.section {
-            let cell = tableView.dequeueReusableCell(withIdentifier: kCellIdArticleDetailTableViewCell, for: indexPath) as! ArticleDetailTableViewCell
-            cell.setArticle(article: self.article)
-            return cell
+            if 0 == indexPath.row {
+                let cell = tableView.dequeueReusableCell(withIdentifier: kCellIdArticleDetailTableViewCell, for: indexPath) as! ArticleDetailTableViewCell
+                cell.setArticle(article: self.article)
+                return cell
+            } else if 1 == indexPath.row{
+                let cell = tableView.dequeueReusableCell(withIdentifier: kCellIdWKWebViewCell, for: indexPath) as! WKWebViewCell
+                cell.content = self.article.content
+                cell.cellHeightChanged = {
+                    [weak self] height in
+                    if height != self?.webviewHight {
+                        self?.webviewHight = height
+                        self?.tableView.reloadData()
+                    }
+                }
+                return cell
+            } else if 2 == indexPath.row {
+                let cell = tableView.dequeueReusableCell(withIdentifier: kCellIdArticleNumInfoTableViewCell, for: indexPath) as! ArticleNumInfoTableViewCell
+                cell.setArticle(article: self.article)
+                return cell
+            } else {
+                let cell = tableView.dequeueReusableCell(withIdentifier: kCellIdArticleRewardTableViewCell, for: indexPath) as! ArticleRewardTableViewCell
+                cell.setRewordLog(logs: self.rewordList)
+                cell.setRewordNumber(num: self.rewordNumber)
+                cell.seeAllBlock = {
+                    [weak self] (Void) in
+                    let vc = ArticleRewordListViewController()
+                    vc.article = self?.article
+                    self?.pushViewController(viewContoller: vc, animated: true)
+                }
+                cell.addRewordBlock = {
+                    [weak self] (Void) in
+                    self?.showRewordView()
+                }
+                return cell
+            }
+            
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: kCellIdArticleCommentTableViewCell, for: indexPath) as! ArticleCommentTableViewCell
             let comment = self.commentList[indexPath.row]
@@ -135,7 +321,16 @@ class ArticleDetailViewController: BaseViewController, UITableViewDelegate, UITa
         var height = CGFloat(0)
         
         if 0 == indexPath.section {
-            height = ArticleDetailTableViewCell.cellHeightWithArticle(article: self.article)
+            if 0 == indexPath.row {
+                height = ArticleDetailTableViewCell.cellHeightWithArticle(article: self.article)
+            } else if 1 == indexPath.row {
+                height = self.webviewHight + kBasePadding
+            } else if 2 == indexPath.row {
+                height = ArticleNumInfoTableViewCell.cellHeight()
+            } else {
+                height = ArticleRewardTableViewCell.cellHeight()
+            }
+            
         } else {
             let comment = self.commentList[indexPath.row]
             height = ArticleCommentTableViewCell.cellHeightWithComment(comment: comment)

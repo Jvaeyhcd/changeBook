@@ -71,3 +71,27 @@ extension ArticleCategory: Decodable {
         return cate
     }
 }
+
+// 文章打赏记录
+struct RewardLog {
+    var id: String
+    var user: User
+    var createAt: String
+    
+    init(json: JSON) {
+        self.id = json["id"].stringValue
+        self.user = User.fromJSON(json: json["user"].object)
+        self.createAt = json["createAt"].stringValue
+    }
+}
+
+extension RewardLog: Decodable {
+    static func fromJSON(json: Any) -> RewardLog {
+        var data = JSON.init(json)
+        if json is JSON {
+            data = json as! JSON
+        }
+        let log = RewardLog.init(json: data)
+        return log
+    }
+}

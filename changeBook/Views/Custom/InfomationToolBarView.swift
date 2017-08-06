@@ -77,7 +77,7 @@ class InfomationToolBarView: UIView {
         self.commentBtn.snp.makeConstraints { (make) in
             make.right.equalTo(-scaleFromiPhone6Desgin(x: 12))
             make.centerY.equalTo(self.snp.centerY)
-            make.width.equalTo(scaleFromiPhone6Desgin(x: 80))
+            make.width.equalTo(scaleFromiPhone6Desgin(x: 60))
             make.height.equalTo(40)
         }
         
@@ -86,7 +86,7 @@ class InfomationToolBarView: UIView {
         self.praiseBtn.snp.makeConstraints { (make) in
             make.right.equalTo(self.commentBtn.snp.left).offset(-kBasePadding)
             make.centerY.equalTo(self.snp.centerY)
-            make.width.equalTo(scaleFromiPhone6Desgin(x: 80))
+            make.width.equalTo(scaleFromiPhone6Desgin(x: 60))
             make.height.equalTo(40)
         }
         

@@ -92,7 +92,10 @@ class HotArticleListViewController: BaseTableViewController, UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        
+        let article = self.articleList[indexPath.row]
+        let vc = ArticleDetailViewController()
+        vc.article = article
+        self.pushViewController(viewContoller: vc, animated: true)
         
     }
     

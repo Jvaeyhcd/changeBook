@@ -98,7 +98,7 @@ class DataDetailViewController: BaseViewController, UITableViewDelegate, UITable
         self.tableView.snp.makeConstraints { (make) in
             make.top.equalTo(0)
             make.right.equalTo(0)
-            make.bottom.equalTo(self.bottomView.snp.top)
+            make.bottom.equalTo(self.bottomView.snp.top).offset(-1)
             make.left.equalTo(0)
         }
         

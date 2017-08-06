@@ -19,6 +19,10 @@
 #import "TPKeyboardAvoidingCollectionView.h"
 #import "HcdReplyView.h"
 #import "DOPDropDownMenu.h"
+#import "WebContentManager.h"
+#import "MJPhotoBrowser.h"
+#import "MJPhoto.h"
+#import "UITapImageView.h"
 
 // MARK: - Category
 #import "UIImage+Polesapp.h"

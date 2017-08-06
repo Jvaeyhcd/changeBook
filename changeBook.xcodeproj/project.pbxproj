@@ -18,6 +18,32 @@
 		BE0190A31EFD4B2500FA040E /* TeacherHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0190A21EFD4B2500FA040E /* TeacherHomeViewController.swift */; };
 		BE0190A71EFD4B5E00FA040E /* RootTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0190A41EFD4B5E00FA040E /* RootTabBarViewController.swift */; };
 		BE0190A81EFD4B5E00FA040E /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0190A51EFD4B5E00FA040E /* RootViewController.swift */; };
+		BE179F681F3691A300034747 /* ProgressWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE179F671F3691A300034747 /* ProgressWebViewController.swift */; };
+		BE179FB31F369CB900034747 /* WKWebViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE179FB21F369CB900034747 /* WKWebViewCell.swift */; };
+		BE179FB71F369DF800034747 /* WebContentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BE179FB61F369DF800034747 /* WebContentManager.m */; };
+		BE179FB91F369E3200034747 /* html.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BE179FB81F369E3200034747 /* html.bundle */; };
+		BE179FCE1F369ED600034747 /* MBProgressHUD+Add.m in Sources */ = {isa = PBXBuildFile; fileRef = BE179FBC1F369ED600034747 /* MBProgressHUD+Add.m */; };
+		BE179FCF1F369ED600034747 /* MJPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = BE179FBE1F369ED600034747 /* MJPhoto.m */; };
+		BE179FD01F369ED600034747 /* MJPhotoBrowser.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BE179FBF1F369ED600034747 /* MJPhotoBrowser.bundle */; };
+		BE179FD11F369ED600034747 /* MJPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = BE179FC11F369ED600034747 /* MJPhotoBrowser.m */; };
+		BE179FD21F369ED600034747 /* MJPhotoLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE179FC31F369ED600034747 /* MJPhotoLoadingView.m */; };
+		BE179FD31F369ED600034747 /* MJPhotoProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE179FC51F369ED600034747 /* MJPhotoProgressView.m */; };
+		BE179FD41F369ED600034747 /* MJPhotoToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = BE179FC71F369ED600034747 /* MJPhotoToolbar.m */; };
+		BE179FD51F369ED600034747 /* MJPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE179FC91F369ED600034747 /* MJPhotoView.m */; };
+		BE179FD61F369ED600034747 /* SDWebImageManager+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = BE179FCB1F369ED600034747 /* SDWebImageManager+MJ.m */; };
+		BE179FD71F369ED600034747 /* UIImageView+MJWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = BE179FCD1F369ED600034747 /* UIImageView+MJWebCache.m */; };
+		BE179FDD1F36A14900034747 /* YLGIFImage.m in Sources */ = {isa = PBXBuildFile; fileRef = BE179FDA1F36A14900034747 /* YLGIFImage.m */; };
+		BE179FDE1F36A14900034747 /* YLImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE179FDC1F36A14900034747 /* YLImageView.m */; };
+		BE179FE11F36A16B00034747 /* UIView+Polesapp.m in Sources */ = {isa = PBXBuildFile; fileRef = BE179FE01F36A16B00034747 /* UIView+Polesapp.m */; };
+		BE179FE31F36A31400034747 /* ArticleRewardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE179FE21F36A31400034747 /* ArticleRewardTableViewCell.swift */; };
+		BE179FE51F36B4AC00034747 /* ArticleNumInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE179FE41F36B4AC00034747 /* ArticleNumInfoTableViewCell.swift */; };
+		BE179FE81F36B7F300034747 /* wenzhang_btn_zan@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE179FE61F36B7F300034747 /* wenzhang_btn_zan@2x.png */; };
+		BE179FE91F36B7F300034747 /* wenzhang_btn_zan@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE179FE71F36B7F300034747 /* wenzhang_btn_zan@3x.png */; };
+		BE179FEB1F36BB6300034747 /* ArticleRewordListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE179FEA1F36BB6300034747 /* ArticleRewordListViewController.swift */; };
+		BE179FED1F36BBA900034747 /* ArticleRewordListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE179FEC1F36BBA900034747 /* ArticleRewordListTableViewCell.swift */; };
+		BE179FF11F36BC9500034747 /* UITapImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE179FF01F36BC9500034747 /* UITapImageView.m */; };
+		BE179FF31F36CAC900034747 /* ArticleToolBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE179FF21F36CAC900034747 /* ArticleToolBarView.swift */; };
+		BE179FF51F36F01E00034747 /* OthersHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE179FF41F36F01E00034747 /* OthersHomeViewController.swift */; };
 		BE1A0BE91F20E9880005C632 /* CommentReplyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1A0BE81F20E9880005C632 /* CommentReplyTableViewCell.swift */; };
 		BE1A0BEB1F20F6920005C632 /* InfomationToolBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1A0BEA1F20F6920005C632 /* InfomationToolBarView.swift */; };
 		BE1A3B271F2D7A5800CC98B3 /* OtherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1A3B261F2D7A5800CC98B3 /* OtherAPI.swift */; };
@@ -555,6 +581,46 @@
 		BE0190A21EFD4B2500FA040E /* TeacherHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherHomeViewController.swift; sourceTree = "<group>"; };
 		BE0190A41EFD4B5E00FA040E /* RootTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTabBarViewController.swift; sourceTree = "<group>"; };
 		BE0190A51EFD4B5E00FA040E /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		BE179F671F3691A300034747 /* ProgressWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressWebViewController.swift; sourceTree = "<group>"; };
+		BE179FB21F369CB900034747 /* WKWebViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKWebViewCell.swift; sourceTree = "<group>"; };
+		BE179FB51F369DF800034747 /* WebContentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebContentManager.h; sourceTree = "<group>"; };
+		BE179FB61F369DF800034747 /* WebContentManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebContentManager.m; sourceTree = "<group>"; };
+		BE179FB81F369E3200034747 /* html.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = html.bundle; sourceTree = "<group>"; };
+		BE179FBB1F369ED600034747 /* MBProgressHUD+Add.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+Add.h"; sourceTree = "<group>"; };
+		BE179FBC1F369ED600034747 /* MBProgressHUD+Add.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+Add.m"; sourceTree = "<group>"; };
+		BE179FBD1F369ED600034747 /* MJPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPhoto.h; sourceTree = "<group>"; };
+		BE179FBE1F369ED600034747 /* MJPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPhoto.m; sourceTree = "<group>"; };
+		BE179FBF1F369ED600034747 /* MJPhotoBrowser.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJPhotoBrowser.bundle; sourceTree = "<group>"; };
+		BE179FC01F369ED600034747 /* MJPhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPhotoBrowser.h; sourceTree = "<group>"; };
+		BE179FC11F369ED600034747 /* MJPhotoBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPhotoBrowser.m; sourceTree = "<group>"; };
+		BE179FC21F369ED600034747 /* MJPhotoLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPhotoLoadingView.h; sourceTree = "<group>"; };
+		BE179FC31F369ED600034747 /* MJPhotoLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPhotoLoadingView.m; sourceTree = "<group>"; };
+		BE179FC41F369ED600034747 /* MJPhotoProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPhotoProgressView.h; sourceTree = "<group>"; };
+		BE179FC51F369ED600034747 /* MJPhotoProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPhotoProgressView.m; sourceTree = "<group>"; };
+		BE179FC61F369ED600034747 /* MJPhotoToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPhotoToolbar.h; sourceTree = "<group>"; };
+		BE179FC71F369ED600034747 /* MJPhotoToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPhotoToolbar.m; sourceTree = "<group>"; };
+		BE179FC81F369ED600034747 /* MJPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPhotoView.h; sourceTree = "<group>"; };
+		BE179FC91F369ED600034747 /* MJPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPhotoView.m; sourceTree = "<group>"; };
+		BE179FCA1F369ED600034747 /* SDWebImageManager+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SDWebImageManager+MJ.h"; sourceTree = "<group>"; };
+		BE179FCB1F369ED600034747 /* SDWebImageManager+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SDWebImageManager+MJ.m"; sourceTree = "<group>"; };
+		BE179FCC1F369ED600034747 /* UIImageView+MJWebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+MJWebCache.h"; sourceTree = "<group>"; };
+		BE179FCD1F369ED600034747 /* UIImageView+MJWebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+MJWebCache.m"; sourceTree = "<group>"; };
+		BE179FD91F36A14900034747 /* YLGIFImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLGIFImage.h; sourceTree = "<group>"; };
+		BE179FDA1F36A14900034747 /* YLGIFImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLGIFImage.m; sourceTree = "<group>"; };
+		BE179FDB1F36A14900034747 /* YLImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLImageView.h; sourceTree = "<group>"; };
+		BE179FDC1F36A14900034747 /* YLImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLImageView.m; sourceTree = "<group>"; };
+		BE179FDF1F36A16B00034747 /* UIView+Polesapp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Polesapp.h"; sourceTree = "<group>"; };
+		BE179FE01F36A16B00034747 /* UIView+Polesapp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Polesapp.m"; sourceTree = "<group>"; };
+		BE179FE21F36A31400034747 /* ArticleRewardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleRewardTableViewCell.swift; sourceTree = "<group>"; };
+		BE179FE41F36B4AC00034747 /* ArticleNumInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleNumInfoTableViewCell.swift; sourceTree = "<group>"; };
+		BE179FE61F36B7F300034747 /* wenzhang_btn_zan@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wenzhang_btn_zan@2x.png"; sourceTree = "<group>"; };
+		BE179FE71F36B7F300034747 /* wenzhang_btn_zan@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wenzhang_btn_zan@3x.png"; sourceTree = "<group>"; };
+		BE179FEA1F36BB6300034747 /* ArticleRewordListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleRewordListViewController.swift; sourceTree = "<group>"; };
+		BE179FEC1F36BBA900034747 /* ArticleRewordListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleRewordListTableViewCell.swift; sourceTree = "<group>"; };
+		BE179FEF1F36BC9500034747 /* UITapImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITapImageView.h; sourceTree = "<group>"; };
+		BE179FF01F36BC9500034747 /* UITapImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITapImageView.m; sourceTree = "<group>"; };
+		BE179FF21F36CAC900034747 /* ArticleToolBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleToolBarView.swift; sourceTree = "<group>"; };
+		BE179FF41F36F01E00034747 /* OthersHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OthersHomeViewController.swift; sourceTree = "<group>"; };
 		BE1A0BE81F20E9880005C632 /* CommentReplyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentReplyTableViewCell.swift; sourceTree = "<group>"; };
 		BE1A0BEA1F20F6920005C632 /* InfomationToolBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfomationToolBarView.swift; sourceTree = "<group>"; };
 		BE1A3B261F2D7A5800CC98B3 /* OtherAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherAPI.swift; sourceTree = "<group>"; };
@@ -1293,6 +1359,7 @@
 		BE0190931EFD4A2800FA040E /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				BE179F671F3691A300034747 /* ProgressWebViewController.swift */,
 				BE0190941EFD4A4E00FA040E /* BaseNavigationController.swift */,
 				BE0190961EFD4A6400FA040E /* BaseViewController.swift */,
 				BE9AC41D1F01428400C9288A /* BaseRootTabViewController.swift */,
@@ -1308,6 +1375,7 @@
 				BE7CA9C81F0CEAA5007CB195 /* HotArticleListViewController.swift */,
 				BE57EF841F07A3E50091F312 /* ArticleListViewController.swift */,
 				BE3251F51F27766400B6B4AF /* ArticleDetailViewController.swift */,
+				BE179FEA1F36BB6300034747 /* ArticleRewordListViewController.swift */,
 				BED100591F28DD470028AE6A /* ArticleCommentListViewController.swift */,
 				BED1005B1F28E2820028AE6A /* ArticleCommentDetailViewController.swift */,
 				BE57EDA01F03E7250091F312 /* UserArticleViewController.swift */,
@@ -1349,6 +1417,61 @@
 				BE57ED9C1F03E6910091F312 /* MenuViewController.swift */,
 			);
 			path = Menu;
+			sourceTree = "<group>";
+		};
+		BE179FB41F369DF800034747 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				BE179FB51F369DF800034747 /* WebContentManager.h */,
+				BE179FB61F369DF800034747 /* WebContentManager.m */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		BE179FBA1F369ED600034747 /* MJPhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				BE179FBB1F369ED600034747 /* MBProgressHUD+Add.h */,
+				BE179FBC1F369ED600034747 /* MBProgressHUD+Add.m */,
+				BE179FBD1F369ED600034747 /* MJPhoto.h */,
+				BE179FBE1F369ED600034747 /* MJPhoto.m */,
+				BE179FBF1F369ED600034747 /* MJPhotoBrowser.bundle */,
+				BE179FC01F369ED600034747 /* MJPhotoBrowser.h */,
+				BE179FC11F369ED600034747 /* MJPhotoBrowser.m */,
+				BE179FC21F369ED600034747 /* MJPhotoLoadingView.h */,
+				BE179FC31F369ED600034747 /* MJPhotoLoadingView.m */,
+				BE179FC41F369ED600034747 /* MJPhotoProgressView.h */,
+				BE179FC51F369ED600034747 /* MJPhotoProgressView.m */,
+				BE179FC61F369ED600034747 /* MJPhotoToolbar.h */,
+				BE179FC71F369ED600034747 /* MJPhotoToolbar.m */,
+				BE179FC81F369ED600034747 /* MJPhotoView.h */,
+				BE179FC91F369ED600034747 /* MJPhotoView.m */,
+				BE179FCA1F369ED600034747 /* SDWebImageManager+MJ.h */,
+				BE179FCB1F369ED600034747 /* SDWebImageManager+MJ.m */,
+				BE179FCC1F369ED600034747 /* UIImageView+MJWebCache.h */,
+				BE179FCD1F369ED600034747 /* UIImageView+MJWebCache.m */,
+			);
+			path = MJPhotoBrowser;
+			sourceTree = "<group>";
+		};
+		BE179FD81F36A14900034747 /* YLGIFImage */ = {
+			isa = PBXGroup;
+			children = (
+				BE179FD91F36A14900034747 /* YLGIFImage.h */,
+				BE179FDA1F36A14900034747 /* YLGIFImage.m */,
+				BE179FDB1F36A14900034747 /* YLImageView.h */,
+				BE179FDC1F36A14900034747 /* YLImageView.m */,
+			);
+			path = YLGIFImage;
+			sourceTree = "<group>";
+		};
+		BE179FEE1F36BC9500034747 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				BE179FEF1F36BC9500034747 /* UITapImageView.h */,
+				BE179FF01F36BC9500034747 /* UITapImageView.m */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 		BE4907361F1F957A0031024F /* HcdReplyView */ = {
@@ -1425,9 +1548,12 @@
 		BE57EDB41F03F1640091F312 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				BE179FB81F369E3200034747 /* html.bundle */,
 				BEECE5291F35E7EB00B5D3C4 /* addPictureBgImage@2x.png */,
 				BEECE5271F35E7C900B5D3C4 /* btn_delete_tweetimage@2x.png */,
 				BE4907281F1F774B0031024F /* pingjia_btn_comment@2x.png */,
+				BE179FE61F36B7F300034747 /* wenzhang_btn_zan@2x.png */,
+				BE179FE71F36B7F300034747 /* wenzhang_btn_zan@3x.png */,
 				BE4907291F1F774B0031024F /* pingjia_btn_comment@3x.png */,
 				BE49072C1F1F77630031024F /* pingjia_btn_like@2x.png */,
 				BE49072D1F1F77630031024F /* pingjia_btn_like@3x.png */,
@@ -1762,8 +1888,14 @@
 		BE57EF891F07AB2D0091F312 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				BE179FB21F369CB900034747 /* WKWebViewCell.swift */,
 				BE57EF921F07AC4A0091F312 /* MenuTableViewCell.swift */,
 				BE57EF8A1F07AB450091F312 /* ArticleListTableViewCell.swift */,
+				BE3251F71F2783D600B6B4AF /* ArticleDetailTableViewCell.swift */,
+				BED100571F28D4120028AE6A /* ArticleCommentTableViewCell.swift */,
+				BE179FE21F36A31400034747 /* ArticleRewardTableViewCell.swift */,
+				BE179FE41F36B4AC00034747 /* ArticleNumInfoTableViewCell.swift */,
+				BE179FEC1F36BBA900034747 /* ArticleRewordListTableViewCell.swift */,
 				BE7CA9DB1F0E452A007CB195 /* ButtonTableViewCell.swift */,
 				BE57EF8C1F07AB530091F312 /* TeacherListTableViewCell.swift */,
 				BE57EF8E1F07AB6C0091F312 /* BookListTableViewCell.swift */,
@@ -1783,8 +1915,6 @@
 				BE973D931F1E51A80018DF70 /* CommentTableViewCell.swift */,
 				BE1A0BE81F20E9880005C632 /* CommentReplyTableViewCell.swift */,
 				BE1ED7651F235FF5000222D6 /* BookDetailTableViewCell.swift */,
-				BE3251F71F2783D600B6B4AF /* ArticleDetailTableViewCell.swift */,
-				BED100571F28D4120028AE6A /* ArticleCommentTableViewCell.swift */,
 				BEA5D9801F2B839400F898C9 /* DeliveryModeTableViewCell.swift */,
 				BE1A3B2E1F2DB8C500CC98B3 /* ConfirmOrderTableViewCell.swift */,
 				BE1A3B321F2DBEBA00CC98B3 /* SimpleShowTableViewCell.swift */,
@@ -1812,6 +1942,8 @@
 				BE7CA9C01F0BEDDE007CB195 /* NSObject+Polesapp.m */,
 				BE57EFB11F08D31B0091F312 /* UIImage+Polesapp.h */,
 				BE57EFB21F08D31B0091F312 /* UIImage+Polesapp.m */,
+				BE179FDF1F36A16B00034747 /* UIView+Polesapp.h */,
+				BE179FE01F36A16B00034747 /* UIView+Polesapp.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -2068,6 +2200,8 @@
 		BE8D53D11EFBF5AD003850EB /* OC */ = {
 			isa = PBXGroup;
 			children = (
+				BE179FEE1F36BC9500034747 /* Other */,
+				BE179FB41F369DF800034747 /* Manager */,
 				BE57EFB01F08D31B0091F312 /* Category */,
 				BE8D53D61EFBF5F6003850EB /* Vendor */,
 				BE8D53D21EFBF5C6003850EB /* changeBook-Bridging-Header.h */,
@@ -2078,6 +2212,8 @@
 		BE8D53D61EFBF5F6003850EB /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				BE179FD81F36A14900034747 /* YLGIFImage */,
+				BE179FBA1F369ED600034747 /* MJPhotoBrowser */,
 				BEECE47B1F35666900B5D3C4 /* AliPaySDK */,
 				BEECE4E31F35666900B5D3C4 /* wechat */,
 				BE91CAFC1F3362F100AF22CE /* DOPDropDownMenu - Enhanced */,
@@ -2136,6 +2272,7 @@
 				BE57EFBA1F0A4D460091F312 /* RegisterViewController.swift */,
 				BE1A3B391F2F7A6A00CC98B3 /* UsersHomeViewController.swift */,
 				BE30872E1F304D7A001B2BCB /* UsersBrowListViewController.swift */,
+				BE179FF41F36F01E00034747 /* OthersHomeViewController.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -2146,6 +2283,7 @@
 				BEB94CDE1F13BF7300181DC2 /* UserInfoView.swift */,
 				BE4907341F1F912F0031024F /* AddCommentBottomView.swift */,
 				BE1A0BEA1F20F6920005C632 /* InfomationToolBarView.swift */,
+				BE179FF21F36CAC900034747 /* ArticleToolBarView.swift */,
 				BE1A3B3B1F2F7D7200CC98B3 /* UserDetailView.swift */,
 			);
 			path = Custom;
@@ -2592,6 +2730,7 @@
 				BE57EF2F1F04B1290091F312 /* tab_shuyou@2x.png in Resources */,
 				BE57EF1E1F04B1290091F312 /* home_icon_ppt@3x.png in Resources */,
 				BE57EEE91F04B1290091F312 /* zhifu_icon_zfb@2x.png in Resources */,
+				BE179FD01F369ED600034747 /* MJPhotoBrowser.bundle in Resources */,
 				BE7CAA4A1F0F8EC8007CB195 /* pic_null@2x.png in Resources */,
 				BE57EEA71F04B1290091F312 /* laoshi_icon_blue@3x.png in Resources */,
 				BE57EEF31F04B1290091F312 /* dingdan_icon_peisong@2x.png in Resources */,
@@ -2612,6 +2751,7 @@
 				BE57EECD1F04B1290091F312 /* wode_btn_jieyue@2x.png in Resources */,
 				BE57EF281F04B1290091F312 /* tab_laoshi_pre@3x.png in Resources */,
 				BE57EEE21F04B1290091F312 /* xiangqing_icon_docx@3x.png in Resources */,
+				BE179FB91F369E3200034747 /* html.bundle in Resources */,
 				BE57EE8E1F04B1290091F312 /* wenzhang_icon_dashang@3x.png in Resources */,
 				BE8D53E81EFBF619003850EB /* Info.plist in Resources */,
 				BE57EEC41F04B1290091F312 /* xiaoxi_btn_yuyin@3x.png in Resources */,
@@ -2627,6 +2767,7 @@
 				BEECE54F1F360EE700B5D3C4 /* cameraIcon@3x.png in Resources */,
 				BE7CA9F61F0F3192007CB195 /* refresh10.png in Resources */,
 				BE57EF391F04B1290091F312 /* home_btn_shubao@2x.png in Resources */,
+				BE179FE81F36B7F300034747 /* wenzhang_btn_zan@2x.png in Resources */,
 				BE57EFA11F07DF780091F312 /* com_pic_star1@3x.png in Resources */,
 				BE5AEF8C1F17B17000475B90 /* dizhi_btn_xiugai@3x.png in Resources */,
 				BE57EEA81F04B1290091F312 /* laoshi_icon_red@3x.png in Resources */,
@@ -2731,6 +2872,7 @@
 				BE57EEB01F04B1290091F312 /* wenzhang_btn_xinjianwenzhang@3x.png in Resources */,
 				BE7CAA471F0F8EC8007CB195 /* pic_msg_null@3x.png in Resources */,
 				BE57EEA31F04B1290091F312 /* laoshi_icon_red@2x.png in Resources */,
+				BE179FE91F36B7F300034747 /* wenzhang_btn_zan@3x.png in Resources */,
 				BE57EFB91F0A12830091F312 /* top_btn_close_black@3x.png in Resources */,
 				BEECE52A1F35E7EB00B5D3C4 /* addPictureBgImage@2x.png in Resources */,
 				BEECE54E1F360EE700B5D3C4 /* AUTO@3x.png in Resources */,
@@ -2876,6 +3018,7 @@
 				BE7CA9D61F0DF3CA007CB195 /* SettingTableViewCell.swift in Sources */,
 				BE1A3B2B1F2D7E5000CC98B3 /* Banner.swift in Sources */,
 				BE1ED75E1F22CE21000222D6 /* Book.swift in Sources */,
+				BE179FE11F36A16B00034747 /* UIView+Polesapp.m in Sources */,
 				BE1ED76C1F2479BC000222D6 /* SearchBookViewController.swift in Sources */,
 				BEECE5561F360EE700B5D3C4 /* BottomContainerView.swift in Sources */,
 				BE7CA9BC1F0BEA1D007CB195 /* ActivityIndicator.swift in Sources */,
@@ -2890,21 +3033,25 @@
 				BEECE5771F361E4800B5D3C4 /* ScanViewController.swift in Sources */,
 				BE7CA9C71F0CEA7E007CB195 /* HotDataListViewController.swift in Sources */,
 				BE7CA9E01F0F2623007CB195 /* PageInfo.swift in Sources */,
+				BE179FDD1F36A14900034747 /* YLGIFImage.m in Sources */,
 				BE7CAA321F0F3F08007CB195 /* MJRefreshNormalHeader.m in Sources */,
 				BEECE4FE1F35666A00B5D3C4 /* Order.m in Sources */,
 				BE5AEF901F17BBEB00475B90 /* Address.swift in Sources */,
 				BEECE5021F35666A00B5D3C4 /* MD5DataSigner.m in Sources */,
+				BE179FB71F369DF800034747 /* WebContentManager.m in Sources */,
 				BE0190A31EFD4B2500FA040E /* TeacherHomeViewController.swift in Sources */,
 				BE7CAA331F0F3F08007CB195 /* MJRefreshStateHeader.m in Sources */,
 				BE7CA9B71F0BE9D3007CB195 /* RegisterViewModel.swift in Sources */,
 				BE01908C1EFC089400FA040E /* Config.swift in Sources */,
 				BE7CA9A71F0BD3DA007CB195 /* User.swift in Sources */,
 				BE49073C1F1F96680031024F /* NSString+Polesapp.m in Sources */,
+				BE179FD31F369ED600034747 /* MJPhotoProgressView.m in Sources */,
 				BEECE55B1F360EE700B5D3C4 /* CameraView.swift in Sources */,
 				BEECE5751F361E0A00B5D3C4 /* LBXScanWrapper.swift in Sources */,
 				BE1A3B2F1F2DB8C500CC98B3 /* ConfirmOrderTableViewCell.swift in Sources */,
 				BE91CAFF1F3362F100AF22CE /* DOPDropDownMenu.m in Sources */,
 				BEECE5071F35666A00B5D3C4 /* GetMessageFromWXResp+responseWithTextOrMediaMessage.m in Sources */,
+				BE179FD61F369ED600034747 /* SDWebImageManager+MJ.m in Sources */,
 				BEB94CF51F14CB8800181DC2 /* EditIntroduceViewController.swift in Sources */,
 				BE57EF761F05414A0091F312 /* SDCycleScrollView.m in Sources */,
 				BE7CAA2A1F0F3F08007CB195 /* MJRefreshHeader.m in Sources */,
@@ -2926,6 +3073,7 @@
 				BE7CAA511F0F9F49007CB195 /* SettingViewController.swift in Sources */,
 				BE01909D1EFD4B0300FA040E /* ArticleHomeViewController.swift in Sources */,
 				BE7CA9D41F0DEC83007CB195 /* MineUserInfoTableViewCell.swift in Sources */,
+				BE179FCE1F369ED600034747 /* MBProgressHUD+Add.m in Sources */,
 				BE5AEF921F19020900475B90 /* BagTableViewCell.swift in Sources */,
 				BE1A0BEB1F20F6920005C632 /* InfomationToolBarView.swift in Sources */,
 				BE57EF751F05414A0091F312 /* SDCollectionViewCell.m in Sources */,
@@ -2939,6 +3087,7 @@
 				BE1A3B3C1F2F7D7200CC98B3 /* UserDetailView.swift in Sources */,
 				BE57EF791F0541CC0091F312 /* HomeHeadView.swift in Sources */,
 				BE1ED7681F245379000222D6 /* BookCommentListViewController.swift in Sources */,
+				BE179FB31F369CB900034747 /* WKWebViewCell.swift in Sources */,
 				BEECE5631F360EE700B5D3C4 /* VideoInfoView.swift in Sources */,
 				BE57EF741F05414A0091F312 /* TAPageControl.m in Sources */,
 				BE7CAA391F0F3F08007CB195 /* UIView+MJExtension.m in Sources */,
@@ -2948,6 +3097,7 @@
 				BE57EFBB1F0A4D460091F312 /* RegisterViewController.swift in Sources */,
 				BEECE5591F360EE700B5D3C4 /* StackView.swift in Sources */,
 				BE4907271F1F32EC0031024F /* Comment.swift in Sources */,
+				BE179FE51F36B4AC00034747 /* ArticleNumInfoTableViewCell.swift in Sources */,
 				BE57EF871F07AA1C0091F312 /* TeacherListViewController.swift in Sources */,
 				BE7CAA281F0F3F08007CB195 /* MJRefreshComponent.m in Sources */,
 				BEECE5611F360EE700B5D3C4 /* ImageGalleryViewCell.swift in Sources */,
@@ -2958,6 +3108,7 @@
 				BE5AEF981F190B7700475B90 /* PPNumberButton.m in Sources */,
 				BE4B352E1F16608B0008548D /* AddressListTableViewCell.swift in Sources */,
 				BE7CAA351F0F3F08007CB195 /* MJRefreshConst.m in Sources */,
+				BE179FD51F369ED600034747 /* MJPhotoView.m in Sources */,
 				BE7CA9AD1F0BE6B5007CB195 /* Global.swift in Sources */,
 				BEECE5081F35666A00B5D3C4 /* SendMessageToWXReq+requestWithTextOrMediaMessage.m in Sources */,
 				BEB94CF71F15059F00181DC2 /* Document.swift in Sources */,
@@ -2978,17 +3129,21 @@
 				BE8D53EF1EFBF619003850EB /* UIViewController+STPopup.m in Sources */,
 				BEECE5731F361E0A00B5D3C4 /* LBXScanViewController.swift in Sources */,
 				BEB94CF91F150CAA00181DC2 /* DocumentAPI.swift in Sources */,
+				BE179FE31F36A31400034747 /* ArticleRewardTableViewCell.swift in Sources */,
 				BEB94CDF1F13BF7300181DC2 /* UserInfoView.swift in Sources */,
 				BEECE55C1F360EE700B5D3C4 /* Configuration.swift in Sources */,
 				BE7CA9B01F0BE7C5007CB195 /* ViewModelProtocol.swift in Sources */,
 				BEECE5031F35666A00B5D3C4 /* NSDataEx.m in Sources */,
 				BEECE5011F35666A00B5D3C4 /* DataVerifier.m in Sources */,
+				BE179FD71F369ED600034747 /* UIImageView+MJWebCache.m in Sources */,
 				BE57EF8D1F07AB530091F312 /* TeacherListTableViewCell.swift in Sources */,
 				BEECE4F91F35666900B5D3C4 /* AlipayRequestConfig.m in Sources */,
 				BEB94CED1F147D6800181DC2 /* FileAPI.swift in Sources */,
 				BEECE55A1F360EE700B5D3C4 /* CameraMan.swift in Sources */,
 				BE5AEFAB1F1D053800475B90 /* InfoDetailTableViewCell.swift in Sources */,
 				BE3251F81F2783D600B6B4AF /* ArticleDetailTableViewCell.swift in Sources */,
+				BE179FEB1F36BB6300034747 /* ArticleRewordListViewController.swift in Sources */,
+				BE179FD21F369ED600034747 /* MJPhotoLoadingView.m in Sources */,
 				BE7CA9D21F0DEB32007CB195 /* MineViewController.swift in Sources */,
 				BEECE50E1F35666A00B5D3C4 /* WeiChatPayReq.m in Sources */,
 				BE01909F1EFD4B1000FA040E /* FriendsHomeViewController.swift in Sources */,
@@ -2998,6 +3153,7 @@
 				BEB94CE11F144DE600181DC2 /* SchoolListViewController.swift in Sources */,
 				BE1A0BE91F20E9880005C632 /* CommentReplyTableViewCell.swift in Sources */,
 				BE57ED981F03BD910091F312 /* UIViewController+HcdSideMenu.m in Sources */,
+				BE179FF51F36F01E00034747 /* OthersHomeViewController.swift in Sources */,
 				BEECE55F1F360EE700B5D3C4 /* ImageGalleryLayout.swift in Sources */,
 				BEECE5061F35666A00B5D3C4 /* RSADataVerifier.m in Sources */,
 				BEECE5741F361E0A00B5D3C4 /* LBXScanViewStyle.swift in Sources */,
@@ -3018,6 +3174,7 @@
 				BE1ED7661F235FF5000222D6 /* BookDetailTableViewCell.swift in Sources */,
 				BEB94CF01F147DF900181DC2 /* QiniuManager.swift in Sources */,
 				BE91CAF51F320E3600AF22CE /* BookOrderDetailViewController.swift in Sources */,
+				BE179FD41F369ED600034747 /* MJPhotoToolbar.m in Sources */,
 				BEB94CE51F146B5400181DC2 /* School.swift in Sources */,
 				BEECE5711F361E0A00B5D3C4 /* LBXScanNetAnimation.swift in Sources */,
 				BE5AEF8E1F17B27C00475B90 /* AddressInfoTableViewCell.swift in Sources */,
@@ -3027,6 +3184,7 @@
 				BE4B35301F16734D0008548D /* EditAddressViewController.swift in Sources */,
 				BE9AC4211F01495000C9288A /* LoginViewController.swift in Sources */,
 				BE91CAFB1F321BA000AF22CE /* OrderDetailBookTableViewCell.swift in Sources */,
+				BE179FD11F369ED600034747 /* MJPhotoBrowser.m in Sources */,
 				BE7CAA4F1F0F96FE007CB195 /* AddressListViewController.swift in Sources */,
 				BE7CAA261F0F3F08007CB195 /* MJRefreshAutoFooter.m in Sources */,
 				BEECE5651F360EE700B5D3C4 /* LocationManager.swift in Sources */,
@@ -3047,18 +3205,22 @@
 				BE57EDAC1F03E87E0091F312 /* MyDepositViewController.swift in Sources */,
 				BE7CA9B61F0BE9D3007CB195 /* LoginViewModel.swift in Sources */,
 				BE7CA9DA1F0E3CC6007CB195 /* UserViewModel.swift in Sources */,
+				BE179FCF1F369ED600034747 /* MJPhoto.m in Sources */,
 				BE3251F61F27766400B6B4AF /* ArticleDetailViewController.swift in Sources */,
 				BE0190A71EFD4B5E00FA040E /* RootTabBarViewController.swift in Sources */,
 				BE1ED76E1F262E04000222D6 /* Article.swift in Sources */,
+				BE179FED1F36BBA900034747 /* ArticleRewordListTableViewCell.swift in Sources */,
 				BEECE5001F35666A00B5D3C4 /* DataSigner.m in Sources */,
 				BE57EDA91F03E8140091F312 /* MessageListViewController.swift in Sources */,
 				BE57EFAB1F086C170091F312 /* OrderBookTableViewCell.swift in Sources */,
 				BE8D53EB1EFBF619003850EB /* STPopupControllerTransitioningSlideVertical.m in Sources */,
 				BE7CAA2D1F0F3F08007CB195 /* MJRefreshAutoStateFooter.m in Sources */,
 				BE57EF7B1F05442F0091F312 /* NormalCollectionViewCell.swift in Sources */,
+				BE179FF31F36CAC900034747 /* ArticleToolBarView.swift in Sources */,
 				BE7CAA2C1F0F3F08007CB195 /* MJRefreshAutoNormalFooter.m in Sources */,
 				BED100581F28D4120028AE6A /* ArticleCommentTableViewCell.swift in Sources */,
 				BE7CA9DC1F0E452A007CB195 /* ButtonTableViewCell.swift in Sources */,
+				BE179FF11F36BC9500034747 /* UITapImageView.m in Sources */,
 				BE57ED9D1F03E6910091F312 /* MenuViewController.swift in Sources */,
 				BE57EFB31F08D31B0091F312 /* UIImage+Polesapp.m in Sources */,
 				BE57EF8F1F07AB6C0091F312 /* BookListTableViewCell.swift in Sources */,
@@ -3085,6 +3247,7 @@
 				BEECE5661F360EE700B5D3C4 /* TopView.swift in Sources */,
 				BE7CAA371F0F3F08007CB195 /* UIScrollView+MJExtension.m in Sources */,
 				BE9AC4231F01495F00C9288A /* FindPasswordViewController.swift in Sources */,
+				BE179FDE1F36A14900034747 /* YLImageView.m in Sources */,
 				BE91CB031F33658700AF22CE /* FilterDataViewController.swift in Sources */,
 				BE8D53EE1EFBF619003850EB /* UIResponder+STPopup.m in Sources */,
 				BE91CAF91F3214D500AF22CE /* OrderAddressTableViewCell.swift in Sources */,
@@ -3103,6 +3266,7 @@
 				BE91CAF71F320EE400AF22CE /* OrderStatusTableViewCell.swift in Sources */,
 				BE7CAA2B1F0F3F08007CB195 /* MJRefreshAutoGifFooter.m in Sources */,
 				BE1A3B2D1F2D966400CC98B3 /* ConfirmBookOrderViewController.swift in Sources */,
+				BE179F681F3691A300034747 /* ProgressWebViewController.swift in Sources */,
 				BE8D53EC1EFBF619003850EB /* STPopupLeftBarItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
