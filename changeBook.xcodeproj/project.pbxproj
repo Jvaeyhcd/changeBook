@@ -566,6 +566,9 @@
 		BEECE5751F361E0A00B5D3C4 /* LBXScanWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEECE56E1F361E0A00B5D3C4 /* LBXScanWrapper.swift */; };
 		BEECE5771F361E4800B5D3C4 /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEECE5761F361E4800B5D3C4 /* ScanViewController.swift */; };
 		BEECE5791F361E8F00B5D3C4 /* CodeScan.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BEECE5781F361E8F00B5D3C4 /* CodeScan.bundle */; };
+		BEF0BA811F38A4E5003A2FC9 /* UsersCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF0BA801F38A4E5003A2FC9 /* UsersCommentTableViewCell.swift */; };
+		BEF0BA871F38A918003A2FC9 /* TTTAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF0BA841F38A918003A2FC9 /* TTTAttributedLabel.m */; };
+		BEF0BA881F38A918003A2FC9 /* UITTTAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF0BA861F38A918003A2FC9 /* UITTTAttributedLabel.m */; };
 		BEFFB2CD1F2B8DCF008498B8 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BEFFB2CC1F2B8DCF008498B8 /* libz.tbd */; };
 		BEFFB2CF1F2B8DDA008498B8 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BEFFB2CE1F2B8DDA008498B8 /* libresolv.tbd */; };
 /* End PBXBuildFile section */
@@ -1298,6 +1301,11 @@
 		BEECE56E1F361E0A00B5D3C4 /* LBXScanWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LBXScanWrapper.swift; sourceTree = "<group>"; };
 		BEECE5761F361E4800B5D3C4 /* ScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
 		BEECE5781F361E8F00B5D3C4 /* CodeScan.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CodeScan.bundle; sourceTree = "<group>"; };
+		BEF0BA801F38A4E5003A2FC9 /* UsersCommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersCommentTableViewCell.swift; sourceTree = "<group>"; };
+		BEF0BA831F38A918003A2FC9 /* TTTAttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTAttributedLabel.h; sourceTree = "<group>"; };
+		BEF0BA841F38A918003A2FC9 /* TTTAttributedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTAttributedLabel.m; sourceTree = "<group>"; };
+		BEF0BA851F38A918003A2FC9 /* UITTTAttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITTTAttributedLabel.h; sourceTree = "<group>"; };
+		BEF0BA861F38A918003A2FC9 /* UITTTAttributedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITTTAttributedLabel.m; sourceTree = "<group>"; };
 		BEFFB2CC1F2B8DCF008498B8 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		BEFFB2CE1F2B8DDA008498B8 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		FD24FA76B8D7C13454370158 /* Pods-changeBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-changeBook.release.xcconfig"; path = "Pods/Target Support Files/Pods-changeBook/Pods-changeBook.release.xcconfig"; sourceTree = "<group>"; };
@@ -1933,6 +1941,7 @@
 				BEECE5211F35CE6C00B5D3C4 /* SimpleInputTableViewCell.swift */,
 				BEECE5251F35E3EF00B5D3C4 /* SelectPhotoTableViewCell.swift */,
 				BEECE52B1F3600B600B5D3C4 /* TipsTableViewCell.swift */,
+				BEF0BA801F38A4E5003A2FC9 /* UsersCommentTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -2218,6 +2227,7 @@
 		BE8D53D61EFBF5F6003850EB /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				BEF0BA821F38A918003A2FC9 /* TTTAttributedLabel */,
 				BE179FD81F36A14900034747 /* YLGIFImage */,
 				BE179FBA1F369ED600034747 /* MJPhotoBrowser */,
 				BEECE47B1F35666900B5D3C4 /* AliPaySDK */,
@@ -2579,6 +2589,17 @@
 				BEECE56E1F361E0A00B5D3C4 /* LBXScanWrapper.swift */,
 			);
 			path = Scan;
+			sourceTree = "<group>";
+		};
+		BEF0BA821F38A918003A2FC9 /* TTTAttributedLabel */ = {
+			isa = PBXGroup;
+			children = (
+				BEF0BA831F38A918003A2FC9 /* TTTAttributedLabel.h */,
+				BEF0BA841F38A918003A2FC9 /* TTTAttributedLabel.m */,
+				BEF0BA851F38A918003A2FC9 /* UITTTAttributedLabel.h */,
+				BEF0BA861F38A918003A2FC9 /* UITTTAttributedLabel.m */,
+			);
+			path = TTTAttributedLabel;
 			sourceTree = "<group>";
 		};
 		E5BBD58AB3CBAA9D464DBAFE /* Pods */ = {
@@ -3162,6 +3183,7 @@
 				BE179FF51F36F01E00034747 /* OthersHomeViewController.swift in Sources */,
 				BEECE55F1F360EE700B5D3C4 /* ImageGalleryLayout.swift in Sources */,
 				BEECE5061F35666A00B5D3C4 /* RSADataVerifier.m in Sources */,
+				BEF0BA811F38A4E5003A2FC9 /* UsersCommentTableViewCell.swift in Sources */,
 				BEECE5741F361E0A00B5D3C4 /* LBXScanViewStyle.swift in Sources */,
 				BE1A3B291F2D7D7A00CC98B3 /* OtherViewModel.swift in Sources */,
 				BEECE5701F361E0A00B5D3C4 /* LBXScanLineAnimation.swift in Sources */,
@@ -3221,6 +3243,7 @@
 				BE57EDA91F03E8140091F312 /* MessageListViewController.swift in Sources */,
 				BE57EFAB1F086C170091F312 /* OrderBookTableViewCell.swift in Sources */,
 				BE8D53EB1EFBF619003850EB /* STPopupControllerTransitioningSlideVertical.m in Sources */,
+				BEF0BA881F38A918003A2FC9 /* UITTTAttributedLabel.m in Sources */,
 				BE7CAA2D1F0F3F08007CB195 /* MJRefreshAutoStateFooter.m in Sources */,
 				BE57EF7B1F05442F0091F312 /* NormalCollectionViewCell.swift in Sources */,
 				BE179FF31F36CAC900034747 /* ArticleToolBarView.swift in Sources */,
@@ -3276,6 +3299,7 @@
 				BE1A3B2D1F2D966400CC98B3 /* ConfirmBookOrderViewController.swift in Sources */,
 				BE179F681F3691A300034747 /* ProgressWebViewController.swift in Sources */,
 				BE8D53EC1EFBF619003850EB /* STPopupLeftBarItem.m in Sources */,
+				BEF0BA871F38A918003A2FC9 /* TTTAttributedLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

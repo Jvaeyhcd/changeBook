@@ -23,6 +23,7 @@
 #import "MJPhotoBrowser.h"
 #import "MJPhoto.h"
 #import "UITapImageView.h"
+#import "UITTTAttributedLabel.h"
 
 // MARK: - Category
 #import "UIImage+Polesapp.h"

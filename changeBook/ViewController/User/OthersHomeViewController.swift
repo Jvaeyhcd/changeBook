@@ -38,6 +38,24 @@ class OthersHomeViewController: BaseViewController, HcdTabBarDelegate {
         return scrollView
     }()
     
+    private var sendMsgBtn: UIButton = {
+        let btn = UIButton()
+        btn.titleLabel?.font = UIFont.systemFont(ofSize: 18)
+        btn.setTitleColor(UIColor.white, for: .normal)
+        btn.setTitle("发消息", for: .normal)
+        btn.backgroundColor = kMainColor
+        return btn
+    }()
+    
+    private var addFriendBtn: UIButton = {
+        let btn = UIButton()
+        btn.titleLabel?.font = UIFont.systemFont(ofSize: 18)
+        btn.setTitleColor(kMainColor, for: .normal)
+        btn.setTitle("加书友", for: .normal)
+        btn.backgroundColor = UIColor.white
+        return btn
+    }()
+    
     private var contentViewFrame: CGRect?
     private var contentSwitchAnimated = true
     
@@ -110,6 +128,21 @@ class OthersHomeViewController: BaseViewController, HcdTabBarDelegate {
         self.userDetailView.frame = CGRect(x: 0, y: 0, width: kScreenWidth, height: self.userDetailViewHeight)
         self.view.addSubview(self.userDetailView)
         
+        self.view.addSubview(self.sendMsgBtn)
+        self.sendMsgBtn.snp.makeConstraints { (make) in
+            make.bottom.equalTo(0)
+            make.right.equalTo(0)
+            make.height.equalTo(kTabBarHeight)
+            make.left.equalTo(kScreenWidth / 2)
+        }
+        
+        self.view.addSubview(self.addFriendBtn)
+        self.addFriendBtn.snp.makeConstraints { (make) in
+            make.left.equalTo(0)
+            make.bottom.equalTo(0)
+            make.right.equalTo(self.sendMsgBtn.snp.left)
+            make.height.equalTo(kTabBarHeight)
+        }
     }
     
     // MARK: - Networking

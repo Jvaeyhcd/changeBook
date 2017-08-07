@@ -19,7 +19,7 @@ class CommentTableViewCell: UITableViewCell {
     
     private lazy var userHead: UITapImageView = {
         let imgView = UITapImageView()
-        imgView.contentMode = .scaleToFill
+        imgView.contentMode = .scaleAspectFill
         imgView.backgroundColor = kMainBgColor
         imgView.clipsToBounds = true
         imgView.layer.cornerRadius = scaleFromiPhone6Desgin(x: 10)
