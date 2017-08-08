@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import HcdActionSheet
 
 class OthersHomeViewController: BaseViewController, HcdTabBarDelegate {
     
@@ -23,6 +24,11 @@ class OthersHomeViewController: BaseViewController, HcdTabBarDelegate {
         tabBar.showSelectedBgView(show: false)
         return tabBar
         
+    }()
+    
+    private var actionSheet: HcdActionSheet = {
+        let sheet = HcdActionSheet.init(cancelStr: "取消", otherButtonTitles: ["举报用户", "加入黑名单"], attachTitle: "请选择")
+        return sheet!
     }()
     
     lazy var controllersScrollView: UIScrollView = {
@@ -85,6 +91,7 @@ class OthersHomeViewController: BaseViewController, HcdTabBarDelegate {
         self.userDetailViewHeight = userDescLblHeight + scaleFromiPhone6Desgin(x: 100) + 2 * kBasePadding
         
         self.showBackButton()
+        self.showBarButtonItem(position: RIGHT, withImage: UIImage(named: "shuyou_btn_jubao")!)
         
         self.automaticallyAdjustsScrollViewInsets = false
         
@@ -103,7 +110,7 @@ class OthersHomeViewController: BaseViewController, HcdTabBarDelegate {
         vc1.parentVC = self
         vc1.title = "借阅"
         
-        let vc2 = UsersBrowListViewController()
+        let vc2 = UsersCommentListViewController()
         vc2.user = self.user
         vc2.tableHeaderView.frame = CGRect(x: 0, y: 0, width: kScreenWidth, height: userDetailViewHeight)
         vc2.tableView.setEmptyDataSetVerticalOffset(offset: userDetailViewHeight / 2)
@@ -143,6 +150,23 @@ class OthersHomeViewController: BaseViewController, HcdTabBarDelegate {
             make.right.equalTo(self.sendMsgBtn.snp.left)
             make.height.equalTo(kTabBarHeight)
         }
+        
+        self.actionSheet.selectButtonAtIndex = {
+            
+            [weak self] (index) in
+            
+            switch index {
+            case 1:
+                self?.userReport()
+            case 2:
+                self?.userBlackHouse()
+            default:
+                break
+            }
+            
+            BLog(log: "\(index)")
+            
+        }
     }
     
     // MARK: - Networking
@@ -159,12 +183,39 @@ class OthersHomeViewController: BaseViewController, HcdTabBarDelegate {
         }
     }
     
+    private func userBlackHouse() {
+        self.showHudLoadingTipStr("")
+        self.usersViewModel.userBlackHouse(beUserId: self.user.userId, success: { [weak self] (data) in
+            self?.showHudTipStr("拉黑成功")
+        }, fail: { [weak self] (message) in
+            self?.showHudTipStr(message)
+        }) { 
+            
+        }
+    }
+    
+    private func userReport() {
+        self.showHudLoadingTipStr("")
+        self.usersViewModel.userReport(beUserId: self.user.userId, reason: "", success: { [weak self] (data) in
+            self?.showHudTipStr("举报成功")
+        }, fail: { [weak self] (message) in
+            self?.showHudTipStr(message)
+        }) { 
+            
+        }
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = false
     }
     
     override func leftNavBarButtonClicked() {
         self.popViewController(animated: true)
+    }
+    
+    override func rightNavBarButtonClicked() {
+        UIApplication.shared.keyWindow?.addSubview(self.actionSheet)
+        self.actionSheet.show()
     }
     
     private func updateContentViewsFrame() {

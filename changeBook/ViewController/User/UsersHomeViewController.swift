@@ -84,14 +84,14 @@ class UsersHomeViewController: BaseViewController, HcdTabBarDelegate {
         vc1.parentVC = self
         vc1.title = "借阅"
         
-        let vc2 = UsersBrowListViewController()
+        let vc2 = UsersCommentListViewController()
         vc2.user = self.user
         vc2.tableHeaderView.frame = CGRect(x: 0, y: 0, width: kScreenWidth, height: userDetailViewHeight)
         vc2.tableView.setEmptyDataSetVerticalOffset(offset: userDetailViewHeight / 2)
         vc2.parentVC = self
         vc2.title = "评论"
         
-        setTabBarFrame(tabBarFrame: CGRect(x: 0, y: userDetailViewHeight, width: kScreenWidth, height: kSegmentBarHeight), contentViewFrame: CGRect(x: 0, y: kSegmentBarHeight, width: kScreenWidth, height: kScreenHeight - kSegmentBarHeight - kTabBarHeight - kNavHeight))
+        setTabBarFrame(tabBarFrame: CGRect(x: 0, y: userDetailViewHeight, width: kScreenWidth, height: kSegmentBarHeight), contentViewFrame: CGRect(x: 0, y: kSegmentBarHeight, width: kScreenWidth, height: kScreenHeight - kSegmentBarHeight - kNavHeight))
         self.tabBar.setItemWidth(itemWidth: kScreenWidth / 2)
         self.tabBar.setFramePadding(top: 0, left: 0, bottom: 0, right: 0)
         self.tabBar.setItemHorizontalPadding(itemHorizontalPadding: 50)

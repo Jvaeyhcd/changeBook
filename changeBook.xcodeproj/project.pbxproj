@@ -569,6 +569,7 @@
 		BEF0BA811F38A4E5003A2FC9 /* UsersCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF0BA801F38A4E5003A2FC9 /* UsersCommentTableViewCell.swift */; };
 		BEF0BA871F38A918003A2FC9 /* TTTAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF0BA841F38A918003A2FC9 /* TTTAttributedLabel.m */; };
 		BEF0BA881F38A918003A2FC9 /* UITTTAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF0BA861F38A918003A2FC9 /* UITTTAttributedLabel.m */; };
+		BEFD82321F39FD140019853D /* UsersCommentListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFD82311F39FD140019853D /* UsersCommentListViewController.swift */; };
 		BEFFB2CD1F2B8DCF008498B8 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BEFFB2CC1F2B8DCF008498B8 /* libz.tbd */; };
 		BEFFB2CF1F2B8DDA008498B8 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BEFFB2CE1F2B8DDA008498B8 /* libresolv.tbd */; };
 /* End PBXBuildFile section */
@@ -1306,6 +1307,7 @@
 		BEF0BA841F38A918003A2FC9 /* TTTAttributedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTAttributedLabel.m; sourceTree = "<group>"; };
 		BEF0BA851F38A918003A2FC9 /* UITTTAttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITTTAttributedLabel.h; sourceTree = "<group>"; };
 		BEF0BA861F38A918003A2FC9 /* UITTTAttributedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITTTAttributedLabel.m; sourceTree = "<group>"; };
+		BEFD82311F39FD140019853D /* UsersCommentListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersCommentListViewController.swift; sourceTree = "<group>"; };
 		BEFFB2CC1F2B8DCF008498B8 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		BEFFB2CE1F2B8DDA008498B8 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		FD24FA76B8D7C13454370158 /* Pods-changeBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-changeBook.release.xcconfig"; path = "Pods/Target Support Files/Pods-changeBook/Pods-changeBook.release.xcconfig"; sourceTree = "<group>"; };
@@ -2288,6 +2290,7 @@
 				BE57EFBA1F0A4D460091F312 /* RegisterViewController.swift */,
 				BE1A3B391F2F7A6A00CC98B3 /* UsersHomeViewController.swift */,
 				BE30872E1F304D7A001B2BCB /* UsersBrowListViewController.swift */,
+				BEFD82311F39FD140019853D /* UsersCommentListViewController.swift */,
 				BE179FF41F36F01E00034747 /* OthersHomeViewController.swift */,
 			);
 			path = User;
@@ -3126,6 +3129,7 @@
 				BE4907271F1F32EC0031024F /* Comment.swift in Sources */,
 				BE179FE51F36B4AC00034747 /* ArticleNumInfoTableViewCell.swift in Sources */,
 				BE57EF871F07AA1C0091F312 /* TeacherListViewController.swift in Sources */,
+				BEFD82321F39FD140019853D /* UsersCommentListViewController.swift in Sources */,
 				BE7CAA281F0F3F08007CB195 /* MJRefreshComponent.m in Sources */,
 				BEECE5611F360EE700B5D3C4 /* ImageGalleryViewCell.swift in Sources */,
 				BE7CA9A61F0BD3DA007CB195 /* Status.swift in Sources */,

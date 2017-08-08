@@ -15,6 +15,10 @@ let kCommentLv2 = "2"
 let kLikeDataCommentType = 1
 let kLikeBookCommentType = 2
 
+let kCommentTypeDocument = "1"
+let kCommentTypeBook = "2"
+let kCommentTypeArticle = "3"
+
 struct Comment {
     var id: String
     var commentContent: String
@@ -26,6 +30,11 @@ struct Comment {
     var createAt: String
     var isLike: Int
     
+    var senderId: String
+    var title: String
+    var commentType: String
+    var user: User
+    
     init(json: JSON) {
         self.id = json["id"].stringValue
         self.commentContent = json["commentContent"].stringValue
@@ -36,6 +45,11 @@ struct Comment {
         self.commentNum = json["commentNum"].stringValue
         self.createAt = json["createAt"].stringValue
         self.isLike = json["isLike"].intValue
+        
+        self.senderId = json["senderId"].stringValue
+        self.title = json["title"].stringValue
+        self.commentType = json["commentType"].stringValue
+        self.user = User.fromJSON(json: json["user"].object)
     }
 }
 

@@ -220,4 +220,25 @@ class UserViewModel: ViewModelProtocol {
         }
     }
     
+    // 举报用户
+    func userReport(beUserId: String,
+                    reason: String,
+                    success: @escaping DataBlock,
+                    fail: @escaping MessageBlock,
+                    loginSuccess: @escaping VoidBlock) {
+        UserAPIProvider.request(UserAPI.userReport(beUserId: beUserId)) { [weak self] (result) in
+            self?.request(cacheName: kNoNeedCache, result: result, success: success, fail: fail, loginSuccess: loginSuccess)
+        }
+    }
+    
+    // 拉黑用户
+    func userBlackHouse(beUserId: String,
+                        success: @escaping DataBlock,
+                        fail: @escaping MessageBlock,
+                        loginSuccess: @escaping VoidBlock) {
+        UserAPIProvider.request(UserAPI.userBlackHouse(beUserId: beUserId)) { [weak self] (result) in
+            self?.request(cacheName: kNoNeedCache, result: result, success: success, fail: fail, loginSuccess: loginSuccess)
+        }
+    }
+    
 }
