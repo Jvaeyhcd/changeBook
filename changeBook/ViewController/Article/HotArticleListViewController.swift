@@ -95,6 +95,7 @@ class HotArticleListViewController: BaseTableViewController, UITableViewDelegate
         let article = self.articleList[indexPath.row]
         let vc = ArticleDetailViewController()
         vc.article = article
+        vc.hidesBottomBarWhenPushed = true
         self.pushViewController(viewContoller: vc, animated: true)
         
     }
