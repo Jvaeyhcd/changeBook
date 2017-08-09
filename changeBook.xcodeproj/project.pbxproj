@@ -521,7 +521,6 @@
 		BEECE5121F356D7500B5D3C4 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEECE5111F356D7500B5D3C4 /* CoreTelephony.framework */; };
 		BEECE5141F356D7D00B5D3C4 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BEECE5131F356D7D00B5D3C4 /* libsqlite3.tbd */; };
 		BEECE5161F356D8600B5D3C4 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BEECE5151F356D8600B5D3C4 /* libc++.tbd */; };
-		BEECE5181F356D9A00B5D3C4 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEECE5171F356D9A00B5D3C4 /* ImageIO.framework */; };
 		BEECE51A1F356E2A00B5D3C4 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEECE5191F356E2A00B5D3C4 /* CoreMotion.framework */; };
 		BEECE51C1F3596DE00B5D3C4 /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEECE51B1F3596DE00B5D3C4 /* SwitchTableViewCell.swift */; };
 		BEECE51E1F35C2E300B5D3C4 /* BindPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEECE51D1F35C2E300B5D3C4 /* BindPhoneViewController.swift */; };
@@ -569,6 +568,13 @@
 		BEF0BA811F38A4E5003A2FC9 /* UsersCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF0BA801F38A4E5003A2FC9 /* UsersCommentTableViewCell.swift */; };
 		BEF0BA871F38A918003A2FC9 /* TTTAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF0BA841F38A918003A2FC9 /* TTTAttributedLabel.m */; };
 		BEF0BA881F38A918003A2FC9 /* UITTTAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF0BA861F38A918003A2FC9 /* UITTTAttributedLabel.m */; };
+		BEFCA4DC1F3B38A800FA845F /* DepositDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFCA4DB1F3B38A800FA845F /* DepositDetailViewController.swift */; };
+		BEFCA4DE1F3B3AC300FA845F /* AccountLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFCA4DD1F3B3AC300FA845F /* AccountLog.swift */; };
+		BEFCA4E21F3B3C8F00FA845F /* AccountLogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFCA4E11F3B3C8F00FA845F /* AccountLogTableViewCell.swift */; };
+		BEFCA8261F3B574500FA845F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEFCA8251F3B574500FA845F /* AVFoundation.framework */; };
+		BEFCA8291F3B59A400FA845F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEFCA8271F3B580A00FA845F /* UIKit.framework */; };
+		BEFCA82A1F3B59C600FA845F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEFCA6831F3B53C000FA845F /* Foundation.framework */; };
+		BEFCA82B1F3B59D900FA845F /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEECE5171F356D9A00B5D3C4 /* ImageIO.framework */; };
 		BEFD82321F39FD140019853D /* UsersCommentListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFD82311F39FD140019853D /* UsersCommentListViewController.swift */; };
 		BEFFB2CD1F2B8DCF008498B8 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BEFFB2CC1F2B8DCF008498B8 /* libz.tbd */; };
 		BEFFB2CF1F2B8DDA008498B8 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BEFFB2CE1F2B8DDA008498B8 /* libresolv.tbd */; };
@@ -1307,6 +1313,12 @@
 		BEF0BA841F38A918003A2FC9 /* TTTAttributedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTAttributedLabel.m; sourceTree = "<group>"; };
 		BEF0BA851F38A918003A2FC9 /* UITTTAttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITTTAttributedLabel.h; sourceTree = "<group>"; };
 		BEF0BA861F38A918003A2FC9 /* UITTTAttributedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITTTAttributedLabel.m; sourceTree = "<group>"; };
+		BEFCA4DB1F3B38A800FA845F /* DepositDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepositDetailViewController.swift; sourceTree = "<group>"; };
+		BEFCA4DD1F3B3AC300FA845F /* AccountLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountLog.swift; sourceTree = "<group>"; };
+		BEFCA4E11F3B3C8F00FA845F /* AccountLogTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountLogTableViewCell.swift; sourceTree = "<group>"; };
+		BEFCA6831F3B53C000FA845F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		BEFCA8251F3B574500FA845F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		BEFCA8271F3B580A00FA845F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BEFD82311F39FD140019853D /* UsersCommentListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersCommentListViewController.swift; sourceTree = "<group>"; };
 		BEFFB2CC1F2B8DCF008498B8 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		BEFFB2CE1F2B8DDA008498B8 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
@@ -1318,8 +1330,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEFCA82B1F3B59D900FA845F /* ImageIO.framework in Frameworks */,
+				BEFCA82A1F3B59C600FA845F /* Foundation.framework in Frameworks */,
+				BEFCA8291F3B59A400FA845F /* UIKit.framework in Frameworks */,
+				BEFCA8261F3B574500FA845F /* AVFoundation.framework in Frameworks */,
 				BEECE51A1F356E2A00B5D3C4 /* CoreMotion.framework in Frameworks */,
-				BEECE5181F356D9A00B5D3C4 /* ImageIO.framework in Frameworks */,
 				BEFFB2CD1F2B8DCF008498B8 /* libz.tbd in Frameworks */,
 				BEECE5161F356D8600B5D3C4 /* libc++.tbd in Frameworks */,
 				BEECE5141F356D7D00B5D3C4 /* libsqlite3.tbd in Frameworks */,
@@ -1549,6 +1564,7 @@
 			isa = PBXGroup;
 			children = (
 				BE57EDAB1F03E87E0091F312 /* MyDepositViewController.swift */,
+				BEFCA4DB1F3B38A800FA845F /* DepositDetailViewController.swift */,
 			);
 			path = Deposit;
 			sourceTree = "<group>";
@@ -1944,6 +1960,7 @@
 				BEECE5251F35E3EF00B5D3C4 /* SelectPhotoTableViewCell.swift */,
 				BEECE52B1F3600B600B5D3C4 /* TipsTableViewCell.swift */,
 				BEF0BA801F38A4E5003A2FC9 /* UsersCommentTableViewCell.swift */,
+				BEFCA4E11F3B3C8F00FA845F /* AccountLogTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -2063,6 +2080,7 @@
 				BE1ED75F1F22D074000222D6 /* BookOrder.swift */,
 				BE1ED76D1F262E04000222D6 /* Article.swift */,
 				BE1A3B2A1F2D7E5000CC98B3 /* Banner.swift */,
+				BEFCA4DD1F3B3AC300FA845F /* AccountLog.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2617,6 +2635,9 @@
 		EF0A03ED7C5124EEDA87C895 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BEFCA8271F3B580A00FA845F /* UIKit.framework */,
+				BEFCA8251F3B574500FA845F /* AVFoundation.framework */,
+				BEFCA6831F3B53C000FA845F /* Foundation.framework */,
 				BEECE5191F356E2A00B5D3C4 /* CoreMotion.framework */,
 				BEECE5171F356D9A00B5D3C4 /* ImageIO.framework */,
 				BEECE5151F356D8600B5D3C4 /* libc++.tbd */,
@@ -3163,6 +3184,7 @@
 				BE179FE31F36A31400034747 /* ArticleRewardTableViewCell.swift in Sources */,
 				BEB94CDF1F13BF7300181DC2 /* UserInfoView.swift in Sources */,
 				BEECE55C1F360EE700B5D3C4 /* Configuration.swift in Sources */,
+				BEFCA4DC1F3B38A800FA845F /* DepositDetailViewController.swift in Sources */,
 				BE7CA9B01F0BE7C5007CB195 /* ViewModelProtocol.swift in Sources */,
 				BEECE5031F35666A00B5D3C4 /* NSDataEx.m in Sources */,
 				BEECE5011F35666A00B5D3C4 /* DataVerifier.m in Sources */,
@@ -3195,6 +3217,7 @@
 				BE7CAA381F0F3F08007CB195 /* UIScrollView+MJRefresh.m in Sources */,
 				BE7CA9CB1F0CEE67007CB195 /* BaseTableViewController.swift in Sources */,
 				BE7CA9AB1F0BD79D007CB195 /* UserAPI.swift in Sources */,
+				BEFCA4DE1F3B3AC300FA845F /* AccountLog.swift in Sources */,
 				BE5AEF941F1905B200475B90 /* BagViewController.swift in Sources */,
 				BE57EFA91F07E5EA0091F312 /* DataListViewController.swift in Sources */,
 				BE30872F1F304D7A001B2BCB /* UsersBrowListViewController.swift in Sources */,
@@ -3253,6 +3276,7 @@
 				BE179FF31F36CAC900034747 /* ArticleToolBarView.swift in Sources */,
 				BE7CAA2C1F0F3F08007CB195 /* MJRefreshAutoNormalFooter.m in Sources */,
 				BE179FF71F36FFB900034747 /* DataContentViewController.swift in Sources */,
+				BEFCA4E21F3B3C8F00FA845F /* AccountLogTableViewCell.swift in Sources */,
 				BED100581F28D4120028AE6A /* ArticleCommentTableViewCell.swift in Sources */,
 				BE7CA9DC1F0E452A007CB195 /* ButtonTableViewCell.swift in Sources */,
 				BE179FF11F36BC9500034747 /* UITapImageView.m in Sources */,
@@ -3425,6 +3449,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = SRD7U593R7;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/OC/Vendor/AliPaySDK",
@@ -3442,6 +3467,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/OC/Vendor/AliPaySDK",
 					"$(PROJECT_DIR)/OC/Vendor/wechat/SDKExport",
+					"$(PROJECT_DIR)/OC/Vendor/EaseUI/EMUIKit/3rdparty/DeviceHelper/VoiceConvert/opencore-amrnb",
+					"$(PROJECT_DIR)/OC/Vendor/EaseUI/EMUIKit/3rdparty/DeviceHelper/VoiceConvert/opencore-amrwb",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jvaeyhcd.changeBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -3460,6 +3487,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = SRD7U593R7;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/OC/Vendor/AliPaySDK",
@@ -3477,6 +3505,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/OC/Vendor/AliPaySDK",
 					"$(PROJECT_DIR)/OC/Vendor/wechat/SDKExport",
+					"$(PROJECT_DIR)/OC/Vendor/EaseUI/EMUIKit/3rdparty/DeviceHelper/VoiceConvert/opencore-amrnb",
+					"$(PROJECT_DIR)/OC/Vendor/EaseUI/EMUIKit/3rdparty/DeviceHelper/VoiceConvert/opencore-amrwb",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jvaeyhcd.changeBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";

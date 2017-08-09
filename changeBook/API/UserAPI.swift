@@ -71,6 +71,8 @@ public enum UserAPI {
     case getCode(userName: String)
     //绑定手机号
     case bindPhone(userName: String, code: String)
+    //押金明细
+    case userAccountLog()
 }
 
 extension UserAPI: TargetType {
@@ -130,6 +132,8 @@ extension UserAPI: TargetType {
             return "/user/bindPhone/getCode"
         case .bindPhone(userName: _, code: _):
             return "/user/bindPhone/bindPhone"
+        case .userAccountLog():
+            return "/user/userAccountLog"
         }
     }
     
@@ -326,6 +330,11 @@ extension UserAPI: TargetType {
                 "userId": userId,
                 "userName": userName,
                 "code": code
+            ]
+        case .userAccountLog():
+            return [
+                "token": token,
+                "userId": userId
             ]
         }
     }

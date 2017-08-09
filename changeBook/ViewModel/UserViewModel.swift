@@ -241,4 +241,13 @@ class UserViewModel: ViewModelProtocol {
         }
     }
     
+    // 押金明细
+    func userAccountLog(success: @escaping DataBlock,
+                        fail: @escaping MessageBlock,
+                        loginSuccess: @escaping VoidBlock) {
+        UserAPIProvider.request(UserAPI.userAccountLog()) { [weak self] (result) in
+            self?.request(cacheName: kNoNeedCache, result: result, success: success, fail: fail, loginSuccess: loginSuccess)
+        }
+    }
+    
 }

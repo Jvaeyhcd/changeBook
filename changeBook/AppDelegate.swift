@@ -25,6 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         configUSharePlatforms()
         confitUShareSettings()
         
+        configEMChat()
+        
         return true
     }
     
@@ -74,12 +76,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        EMClient.shared().applicationDidEnterBackground(application)
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
-        // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+        EMClient.shared().applicationWillEnterForeground(application)
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
@@ -121,6 +122,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         
+    }
+    
+    // 配置环信
+    private func configEMChat() {
+        let options = EMOptions.init(appkey: kEMAppkey)
+        options?.apnsCertName = kEMAPNSCertName
+        let error = EMClient.shared().initializeSDK(with: options)
+        if nil == error {
+            BLog(log: "初始化成功")
+        }
     }
 
 

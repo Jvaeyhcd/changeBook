@@ -8,6 +8,7 @@
 
 #import "MJRefreshNormalHeader.h"
 #import "NSBundle+MJRefresh.h"
+#import "MJRefreshComponent.h"
 
 @interface MJRefreshNormalHeader()
 {

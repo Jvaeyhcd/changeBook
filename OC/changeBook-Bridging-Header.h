@@ -32,3 +32,4 @@
 
 // MARK: - 三方相关
 #import <UMSocialCore/UMSocialCore.h>
+#import <HyphenateLite/HyphenateLite.h>

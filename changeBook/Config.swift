@@ -23,6 +23,9 @@ let kWXAppSecret = "7e566c4b731a6143bfb36f2aa530dcea"
 let kQQAppId = "1106256443"
 let kQQAppKey = "1tSFOiVOBL4EMLT9"
 
+let kEMAppkey = "1136170629178788#bookcycling"
+let kEMAPNSCertName = "bookcycling_dev"
+
 //友盟
 let kUMAppKey = "598529201061d23498000133"
 

@@ -34,6 +34,9 @@ target 'changeBook' do
     
     # 集成QQ/QZone/TIM(完整版7.6M)
     pod 'UMengUShare/Social/QQ'
+    
+    # 集成环信聊天
+    pod 'HyphenateLite', '~> 3.3.3.1'
 end
 
 post_install do |installer|

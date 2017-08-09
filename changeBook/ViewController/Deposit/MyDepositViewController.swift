@@ -13,8 +13,13 @@ class MyDepositViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        initSubviews()
+    }
+    
+    private func initSubviews() {
         self.title = "我的押金"
         self.showBackButton()
+        self.showBarButtonItem(position: RIGHT, withStr: "押金明细")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -31,7 +36,8 @@ class MyDepositViewController: BaseViewController {
     }
     
     override func rightNavBarButtonClicked() {
-        
+        let vc = DepositDetailViewController()
+        self.pushViewController(viewContoller: vc, animated: true)
     }
     
 
