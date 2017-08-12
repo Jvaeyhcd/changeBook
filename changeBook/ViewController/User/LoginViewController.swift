@@ -269,7 +269,7 @@ class LoginViewController: UIViewController {
                 
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "refreshUserInfo"), object: nil)
                 
-                self?.loginInEMChat()
+                self?.loginInEMChat(userName: (self?.userNameTextField.text!)!)
                 
                 
             }
@@ -279,18 +279,20 @@ class LoginViewController: UIViewController {
     }
     
     // 登录环信
-    func loginInEMChat() {
-        EMClient.shared().login(withUsername: self.userNameTextField.text, password: "123") { [weak self] (aUsername, aError) in
+    func loginInEMChat(userName: String) {
+        EMClient.shared().login(withUsername: userName, password: "123") { [weak self] (aUsername, aError) in
             if (nil != aError) {
                 BLog(log: "登录失败")
-                EMClient.shared().register(withUsername: self?.userNameTextField.text, password: "123", completion: { [weak self] (userName, error) in
+                EMClient.shared().register(withUsername: userName, password: "123", completion: { [weak self] (userName, error) in
                     if (nil == error) {
                         BLog(log: "注册成功")
-                        self?.loginInEMChat()
+                        self?.loginInEMChat(userName: userName!)
                     }
                 })
             } else {
                 EMClient.shared().options.isAutoLogin = true
+                
+                self?.hideHud()
                 self?.dismiss(animated: true, completion: nil)
                 BLog(log: "登录成功")
             }
@@ -390,8 +392,7 @@ class LoginViewController: UIViewController {
             
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "refreshUserInfo"), object: nil)
             
-            self?.hideHud()
-            self?.dismiss(animated: true, completion: nil)
+            self?.loginInEMChat(userName: openid)
             
         }, fail: { [weak self] (message) in
             self?.showHudTipStr(message)

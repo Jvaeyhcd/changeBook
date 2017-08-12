@@ -106,8 +106,10 @@ class ArticleDetailViewController: BaseViewController, UITableViewDelegate, UITa
             
             [weak self] (index) in
             
-            let integral = self?.integralList[index - 1]
-            self?.articleReward(integral: integral!)
+            if index > 0 {
+                let integral = self?.integralList[index - 1]
+                self?.articleReward(integral: integral!)
+            }
             
         }
         

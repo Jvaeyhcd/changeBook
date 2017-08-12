@@ -26,7 +26,6 @@ class ChatViewController: EaseMessageViewController, EaseMessageViewControllerDe
     }
     
     deinit {
-        EMClient.shared().chatManager.deleteConversation(self.conversation.conversationId, isDeleteMessages: true, completion: nil)
         EMClient.shared().removeDelegate(self)
     }
     
@@ -35,6 +34,7 @@ class ChatViewController: EaseMessageViewController, EaseMessageViewControllerDe
     }
 
     // MARK: - EaseMessageViewControllerDelegate
+    
     func messageViewController(_ tableView: UITableView!, cellFor messageModel: IMessageModel!) -> UITableViewCell! {
         
         return nil
@@ -63,11 +63,29 @@ class ChatViewController: EaseMessageViewController, EaseMessageViewControllerDe
         // 点击消息头像
     }
     
+    
     // MARK: - EaseMessageViewControllerDataSource
     func messageViewController(_ viewController: EaseMessageViewController!, modelFor message: EMMessage!) -> IMessageModel! {
         
         let model = EaseMessageModel.init(message: message)
+        let (headPic, nickName) = getUserInfoByConversation(message: message)
+        model?.nickname = nickName
+        model?.avatarURLPath = headPic
         return model
+    }
+    
+    private func getUserInfoByConversation(message: EMMessage) -> (headPic: String, nickName: String) {
+        
+        var headPic = ""
+        var nickName = ""
+        
+        let lastExt = message.ext
+        if nil != lastExt && nil != lastExt?[USER_HEAD_IMG] && nil != lastExt?[USER_NAME] {
+            headPic = (lastExt?[USER_HEAD_IMG] as? String)!
+            nickName = (lastExt?[USER_NAME] as? String)!
+        }
+        
+        return (headPic, nickName)
     }
     
     func emotionFormessageViewController(_ viewController: EaseMessageViewController!) -> [Any]! {

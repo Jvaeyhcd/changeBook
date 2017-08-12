@@ -21,3 +21,14 @@ class APIResult: Object {
         return "name"
     }
 }
+
+// 保存用户的信息
+class UserDB: Object {
+    dynamic var userName = ""
+    dynamic var userStr = ""
+    
+    // 主键
+    override static func primaryKey() -> String{
+        return "userName"
+    }
+}

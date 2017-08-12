@@ -77,7 +77,7 @@ class PrivacySettingsViewController: BaseViewController, UITableViewDelegate, UI
             }
             cell.setOn(on: self.viewBorrow)
         } else if 1 == indexPath.section {
-            cell.textLabel?.text = "不然其他人看我的评论"
+            cell.textLabel?.text = "不让其他人看我的评论"
             cell.switchBtnBlock = {
                 [weak self] (on) in
                 self?.viewComment = on ? 1 : 0

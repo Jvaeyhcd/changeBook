@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FriendsHomeViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, EMChatManagerDelegate {
+class FriendsHomeViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, EMChatManagerDelegate, CacheProtocol {
 
     var conversations =  [EMConversation]()
     var currentUsername = EMClient.shared().currentUsername
@@ -29,7 +29,7 @@ class FriendsHomeViewController: BaseViewController, UITableViewDelegate, UITabl
     private func initSubviews() {
         
         self.title = "书友"
-        self.tableView.setPullingHeader()
+        
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.view.addSubview(self.tableView)
@@ -81,6 +81,23 @@ class FriendsHomeViewController: BaseViewController, UITableViewDelegate, UITabl
         
         var headPic = ""
         var nickName = ""
+        
+        BLog(log: "\(conversation.ext)")
+        BLog(log: "\(conversation.latestMessage.to)")
+        BLog(log: "\(conversation.latestMessage.from)")
+        
+        var user: User?
+        if conversation.latestMessage.to != sharedGlobal.getSavedUser().userName {
+            user = getCacheUser(userName: conversation.latestMessage.to)
+        } else if conversation.latestMessage.from != sharedGlobal.getSavedUser().userName {
+            user = getCacheUser(userName: conversation.latestMessage.from)
+        } else if conversation.latestMessage.from == sharedGlobal.getSavedUser().userName && conversation.latestMessage.to == sharedGlobal.getSavedUser().userName {
+            user = getCacheUser(userName: conversation.latestMessage.from)
+        }
+        
+        if nil != user {
+            return ((user?.headPic)!, (user?.nickName)!)
+        }
         
         if nil != conversation.ext && nil != conversation.ext[USER_HEAD_IMG] && nil != conversation.ext[USER_NAME]{
             headPic = conversation.ext[USER_HEAD_IMG] as! String

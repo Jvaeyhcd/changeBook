@@ -8,6 +8,7 @@
 
 import UIKit
 import HcdActionSheet
+import SwiftyJSON
 
 class OthersHomeViewController: BaseViewController, HcdTabBarDelegate {
     
@@ -185,11 +186,33 @@ class OthersHomeViewController: BaseViewController, HcdTabBarDelegate {
             self?.user = User.fromJSON(json: data.object)
             self?.userDetailView.setUser(user: (self?.user)!)
             
+            let userDB = UserDB()
+            userDB.userName = (self?.user.userName)!
+            userDB.userStr = (self?.convertUserStr(user: (self?.user)!))!
+            
+            try! sharedGlobal.getRealm().write {
+                sharedGlobal.getRealm().add(userDB, update: true)
+            }
+            
         }, fail: { [weak self] (message) in
             self?.showHudTipStr(message)
         }) { 
             
         }
+    }
+    
+    // 将书的数组转成str字符串
+    private func convertUserStr(user: User) -> String? {
+        
+        var userDic = Dictionary<String, Any>()
+        userDic["userName"] = user.userName
+        userDic["nickName"] = user.nickName
+        userDic["headPic"] = user.headPic
+        
+        let json = JSON.init(userDic)
+        
+        return "\(json)"
+        
     }
     
     private func userBlackHouse() {

@@ -125,3 +125,24 @@ extension ViewModelProtocol {
     }
     
 }
+
+protocol CacheProtocol {
+    func getCacheUser(userName: String) -> User?
+}
+
+extension CacheProtocol {
+    func getCacheUser(userName: String) -> User? {
+        let results: Results<UserDB>?
+        results = sharedGlobal.getRealm().objects(UserDB.self).filter("userName = '" + userName + "'")
+        if nil != results && (results?.count)! > 0 {
+            for result in results! {
+                let json = JSON.init(data: result.userStr.data(using: .utf8)!)
+                
+                if JSON.null != json {
+                    return User.fromJSON(json: json.object)
+                }
+            }
+        }
+        return nil
+    }
+}
