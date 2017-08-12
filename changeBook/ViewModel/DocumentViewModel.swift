@@ -152,4 +152,5 @@ class DocumentViewModel: ViewModelProtocol {
             self?.request(cacheName: cacheName, result: result, success: success, fail: fail, loginSuccess: loginSuccess)
         }
     }
+    
 }

@@ -18,7 +18,7 @@ class ArticleDetailViewController: BaseViewController, UITableViewDelegate, UITa
     private var viewModel: ArticleViewModel = ArticleViewModel()
     private var commentList = [Comment]()
     private var pageInfo = PageInfo()
-    private let integralList = ["1", "2", "5"]
+    private let integralList = ["2", "5", "10", "20", "50"]
     
     fileprivate var webviewHight: CGFloat = CGFloat(0)
     
@@ -28,7 +28,7 @@ class ArticleDetailViewController: BaseViewController, UITableViewDelegate, UITa
     }()
     
     private var rewordActionSheet: HcdActionSheet = {
-        let sheet = HcdActionSheet.init(cancelStr: "取消", otherButtonTitles: ["1积分", "2积分", "5积分"], attachTitle: "请选择您要打赏的积分")
+        let sheet = HcdActionSheet.init(cancelStr: "取消", otherButtonTitles: ["2积分", "5积分", "10积分", "20积分", "50积分"], attachTitle: "请选择您要打赏的积分")
         return sheet!
     }()
     
@@ -176,7 +176,7 @@ class ArticleDetailViewController: BaseViewController, UITableViewDelegate, UITa
         self.showHudLoadingTipStr("")
         
         self.viewModel.likeArticle(articleId: self.article.id, success: { [weak self] (data) in
-            self?.showHudTipStr("")
+            self?.showHudTipStr("点赞成功")
             
             self?.article.isLike = INT_TRUE
             self?.toobarView.setLike(isLike: (self?.article.isLike)!)

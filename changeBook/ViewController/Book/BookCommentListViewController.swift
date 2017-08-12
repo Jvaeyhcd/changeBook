@@ -146,6 +146,7 @@ class BookCommentListViewController: BaseViewController, UITableViewDelegate, UI
         
         self.viewModel.addBookComment(bookId: self.bookId, content: content, commentType: kCommentLv1, score: score, bookCommentId: "0", receiverId: "0", success: { [weak self] (data) in
             self?.showHudTipStr("评价成功")
+            self?.getBookComments(page: 1)
         }, fail: { [weak self] (message) in
             self?.showHudTipStr(message)
         }) { 

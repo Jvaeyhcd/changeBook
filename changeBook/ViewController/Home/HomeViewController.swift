@@ -372,6 +372,18 @@ class HomeViewController: BaseViewController, HcdTabBarDelegate, SDCycleScrollVi
     // MARK : - SDCycleScrollViewDelegate
     func cycleScrollView(_ cycleScrollView: SDCycleScrollView!, didSelectItemAt index: Int) {
         
+        let banner = self.bannerList[index] 
+        
+        let vc = ProgressWebViewController()
+        
+        if kBannerTypeHtml == banner.bannerType {
+            vc.htmlStr = banner.content
+        } else if kBannerTypeUrl == banner.bannerType {
+            vc.urlStr = banner.content
+        }
+        vc.hidesBottomBarWhenPushed = true
+        self.pushViewController(viewContoller: vc, animated: true)
+        
     }
     
     func cycleScrollView(_ cycleScrollView: SDCycleScrollView!, didScrollTo index: Int) {

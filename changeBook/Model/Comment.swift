@@ -14,6 +14,7 @@ let kCommentLv2 = "2"
 
 let kLikeDataCommentType = 1
 let kLikeBookCommentType = 2
+let kLikeArticleCommentType = 3
 
 let kCommentTypeDocument = "1"
 let kCommentTypeBook = "2"

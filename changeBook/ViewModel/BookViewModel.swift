@@ -212,4 +212,14 @@ class BookViewModel: ViewModelProtocol {
             self?.request(cacheName: kNoNeedCache, result: result, success: success, fail: fail, loginSuccess: loginSuccess)
         }
     }
+    
+    // 图书评论点赞
+    func likeBookComment(commentId: String,
+                            success: @escaping DataBlock,
+                            fail: @escaping MessageBlock,
+                            loginSuccess: @escaping VoidBlock) {
+        DocumentProvider.request(DocumentAPI.likeComment(commentId: commentId, likeType: kLikeBookCommentType)) { [weak self] (result) in
+            self?.request(cacheName: kNoNeedCache, result: result, success: success, fail: fail, loginSuccess: loginSuccess)
+        }
+    }
 }

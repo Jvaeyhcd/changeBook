@@ -205,6 +205,10 @@ class BookDetailViewController: BaseViewController, UITableViewDelegate, UITable
             if 0 == indexPath.row {
                 let cell = tableView.dequeueReusableCell(withIdentifier: kCellIdBookDetailTableViewCell, for: indexPath) as! BookDetailTableViewCell
                 cell.setBook(book: self.book)
+                cell.seeAnswerBlock = {
+                    [weak self] (Void) in
+                    
+                }
                 return cell
             }
             
@@ -243,6 +247,15 @@ class BookDetailViewController: BaseViewController, UITableViewDelegate, UITable
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        if 1 == indexPath.section {
+            let comment = self.commentList[indexPath.row]
+            let vc = BookCommentDetailViewController()
+            vc.bookId = self.book.id
+            vc.comment = comment
+            self.pushViewController(viewContoller: vc, animated: true)
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

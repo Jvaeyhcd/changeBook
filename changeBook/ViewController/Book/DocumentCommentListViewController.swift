@@ -148,6 +148,9 @@ class DocumentCommentListViewController: BaseViewController, UITableViewDelegate
         
         self.viewModel.addDocumentComment(documentId: self.documentId, content: content, commentType: kCommentLv1, score: score, documentCommentId: "0", receiverId: "0", success: { [weak self] (data) in
             self?.showHudTipStr("评论成功")
+            
+            self?.getDocumentComments(page: 1)
+            
         }, fail: { [weak self] (message) in
             self?.showHudTipStr(message)
         }) { 

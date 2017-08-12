@@ -12,6 +12,8 @@ import HCSStarRatingView
 let kCellIdBookDetailTableViewCell = "BookDetailTableViewCell"
 
 class BookDetailTableViewCell: UITableViewCell {
+    
+    var seeAnswerBlock: (()->())!
 
     // 封面图
     private lazy var coverImg: UIImageView = {
@@ -95,6 +97,20 @@ class BookDetailTableViewCell: UITableViewCell {
         lbl.textAlignment = .left
         lbl.textColor = UIColor(hex: 0x888888)
         return lbl
+    }()
+    
+    private lazy var arrowImg: UIImageView = {
+        let imgView = UIImageView()
+        imgView.contentMode = UIViewContentMode.scaleAspectFit
+        return imgView
+    }()
+    
+    private lazy var seeAnswerBtn: UIButton = {
+        let btn = UIButton.init()
+        btn.titleLabel?.font = UIFont.systemFont(ofSize: 12)
+        btn.titleLabel?.textAlignment = .right
+        btn.setTitleColor(UIColor(hex: 0xF85B5A), for: .normal)
+        return btn
     }()
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
@@ -195,6 +211,25 @@ class BookDetailTableViewCell: UITableViewCell {
             make.right.equalTo(-kBasePadding)
         }
         
+        self.arrowImg.image = UIImage(named: "xiangqing_btn_xiti")
+        self.addSubview(self.arrowImg)
+        self.arrowImg.snp.makeConstraints { (make) in
+            make.right.equalTo(-kBasePadding)
+            make.width.equalTo(scaleFromiPhone6Desgin(x: 9))
+            make.height.equalTo(scaleFromiPhone6Desgin(x: 16))
+            make.centerY.equalTo(self.ISBNLbl.snp.centerY)
+        }
+        
+        self.seeAnswerBtn.addTarget(self, action: #selector(seeAnswerBtnClicked), for: .touchUpInside)
+        self.seeAnswerBtn.setTitle("习题答案", for: .normal)
+        self.addSubview(self.seeAnswerBtn)
+        self.seeAnswerBtn.snp.makeConstraints { (make) in
+            make.right.equalTo(self.arrowImg.snp.left)
+            make.centerY.equalTo(self.arrowImg.snp.centerY)
+            make.height.equalTo(scaleFromiPhone6Desgin(x: 30))
+            make.width.equalTo(65)
+        }
+        
         let bottomView = UIView()
         bottomView.backgroundColor = kMainBgColor
         self.addSubview(bottomView)
@@ -205,6 +240,12 @@ class BookDetailTableViewCell: UITableViewCell {
             make.height.equalTo(kBasePadding)
         }
         
+    }
+    
+    @objc private func seeAnswerBtnClicked() {
+        if nil != self.seeAnswerBlock {
+            self.seeAnswerBlock()
+        }
     }
     
     func setBook(book: Book) {

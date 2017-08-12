@@ -126,6 +126,21 @@ class BookCommentDetailViewController: BaseViewController, UITableViewDelegate, 
             return
         }
         
+        self.viewModel.likeBookComment(commentId: self.comment.id, success: { [weak self] (data) in
+            self?.showHudTipStr("点赞成功")
+            
+            var likeNum = self?.comment.likeNum.intValue
+            likeNum = likeNum! + 1
+            self?.comment.likeNum = String.init(format: "%d", likeNum!)
+            
+            self?.comment.isLike = INT_TRUE
+            self?.toolBarBottomView.setLiked(isLike: (self?.comment.isLike)!)
+            self?.toolBarBottomView.setPraiseNumber(number: (self?.comment.likeNum)!)
+        }, fail: { [weak self] (message) in
+            self?.showHudTipStr(message)
+        }) { 
+            
+        }
         
     }
     
@@ -146,7 +161,15 @@ class BookCommentDetailViewController: BaseViewController, UITableViewDelegate, 
     // 评论文章的评论
     private func replayComment(content: String) {
         
+        self.showHudLoadingTipStr("")
         
+        self.viewModel.addBookComment(bookId: self.bookId, content: content, commentType: kCommentLv2, score: "0", bookCommentId: self.comment.id, receiverId: self.comment.sender.userId, success: { [weak self] (data) in
+            self?.showHudTipStr("评论成功")
+        }, fail: { [weak self] (message) in
+            self?.showHudTipStr(message)
+        }) { 
+            
+        }
     }
     
     // 回复别人的评论

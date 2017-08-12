@@ -34,7 +34,7 @@ class ArticleCommentListViewController: BaseViewController, UITableViewDelegate,
         super.viewDidLoad()
         
         initSubviews()
-        getBookComments(page: 1)
+        getArticleComments(page: 1)
     }
     
     override func didReceiveMemoryWarning() {
@@ -72,20 +72,20 @@ class ArticleCommentListViewController: BaseViewController, UITableViewDelegate,
         self.tableView.setPullingHeader()
         self.view.addSubview(self.tableView)
         self.tableView.headerRefreshBlock = {
-            self.getBookComments(page: 1)
+            self.getArticleComments(page: 1)
         }
         self.tableView.footerRefreshBlock = {
             
             if self.pageInfo.nextPage == self.pageInfo.currentPage {
                 
             } else {
-                self.getBookComments(page: self.pageInfo.nextPage)
+                self.getArticleComments(page: self.pageInfo.nextPage)
             }
             
         }
         self.tableView.reloadBlock = {
             [weak self] (Void) in
-            self?.getBookComments(page: 1)
+            self?.getArticleComments(page: 1)
         }
         self.tableView.snp.makeConstraints { (make) in
             make.left.equalTo(0)
@@ -97,7 +97,7 @@ class ArticleCommentListViewController: BaseViewController, UITableViewDelegate,
     }
     
     // 获取资料评论
-    private func getBookComments(page: Int) {
+    private func getArticleComments(page: Int) {
 
         self.viewModel.getArticleComment(articleId: self.articleId, page: page, cache: { [weak self] (data) in
             self?.updateCommentData(data: data)
@@ -148,6 +148,7 @@ class ArticleCommentListViewController: BaseViewController, UITableViewDelegate,
         
         self.viewModel.addArticleComment(articleId: self.articleId, content: content, commentType: kCommentLv1, score: score, articleCommentId: "0", receiverId: "0", success: { [weak self] (data) in
             self?.showHudTipStr("评价成功")
+            self?.getArticleComments(page: 1)
         }, fail: { [weak self] (message) in
             self?.showHudTipStr(message)
         }) { 

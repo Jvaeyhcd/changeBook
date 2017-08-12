@@ -9,6 +9,9 @@
 import Foundation
 import SwiftyJSON
 
+let kBannerTypeHtml = 0
+let kBannerTypeUrl = 1
+
 struct Banner {
     var id: String
     var title: String

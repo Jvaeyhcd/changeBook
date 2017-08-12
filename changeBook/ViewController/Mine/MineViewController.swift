@@ -148,6 +148,13 @@ class MineViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.deselectRow(at: indexPath, animated: true)
         
         if 0 == indexPath.section {
+            
+            // 与个人相关的，都需要登录后才能查看
+            if false == sharedGlobal.getToken().tokenExists {
+                self.showLoginViewController()
+                return
+            }
+            
             if indexPath.row == 0 {
                 let vc = MessageListViewController()
                 vc.hidesBottomBarWhenPushed = true

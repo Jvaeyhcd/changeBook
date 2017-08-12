@@ -281,6 +281,8 @@ class RegisterViewController: UIViewController {
                     EMClient.shared().register(withUsername: self?.userNameTextField.text, password: "123", completion: { [weak self] (userName, error) in
                         if (nil == error) {
                             BLog(log: "注册成功")
+                            self?.showHudTipStr("注册成功")
+                            self?.popViewController(animated: true)
                         }
                     })
                     break

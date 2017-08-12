@@ -29,12 +29,18 @@ class ProgressWebViewController: UIViewController, UIWebViewDelegate, NJKWebView
     private var closeItem: UIBarButtonItem!
     
     var urlStr: String = ""
+    var htmlStr: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         initUI()
-        loadUrl()
+        if htmlStr != "" {
+            loadHtmlStr()
+        } else if urlStr != "" {
+            loadUrl()
+        }
+        
     }
 
     private func initUI() {
@@ -104,7 +110,6 @@ class ProgressWebViewController: UIViewController, UIWebViewDelegate, NJKWebView
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.tabBarController?.tabBar.isHidden = true
         self.navigationController?.navigationBar.isHidden = false
         self.navigationController?.navigationBar.addSubview(self.progressView)
     }
@@ -128,6 +133,10 @@ class ProgressWebViewController: UIViewController, UIWebViewDelegate, NJKWebView
         
         let req = URLRequest.init(url: URL.init(string: self.urlStr)!)
         self.webView.loadRequest(req)
+    }
+    
+    private func loadHtmlStr() {
+        self.webView.loadHTMLString(self.htmlStr, baseURL: nil)
     }
     
     // MARK: - NJKWebViewProgressDelegate
