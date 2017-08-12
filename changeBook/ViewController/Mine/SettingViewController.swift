@@ -106,17 +106,32 @@ class SettingViewController: BaseViewController, UITableViewDelegate, UITableVie
     private func userLogout() {
         self.showHudLoadingTipStr("")
         self.viewModel.logoutAccount(success: { [weak self] (data) in
-            self?.hideHud()
-            sharedGlobal.clearUser()
             
-            // 发送退出登录成功的通知，然后在其他地方做相关的处理
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "logoutSuccess"), object: nil)
+            // 退出环信聊天服务器
+            EMClient.shared().logout(true) { [weak self] (aError) in
+                self?.hideHud()
+                if (nil == aError) {
+                    sharedGlobal.clearUser()
+                    
+                    // 发送退出登录成功的通知，然后在其他地方做相关的处理
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "logoutSuccess"), object: nil)
+                    
+                    // 返回到navagationController的根目录
+                    self?.navigationController?.popToRootViewController(animated: true)
+                } else {
+                    self?.showHudTipStr("退出失败")
+                }
+            }
             
-            // 返回到navagationController的根目录
-            self?.navigationController?.popToRootViewController(animated: true)
+            
         }) { [weak self] (message) in
             self?.showHudTipStr(message)
         }
+    }
+    
+    // 退出环信聊天服务器
+    private func logoutEMClient() {
+        
     }
     
     private func initSubviews() {

@@ -15,7 +15,13 @@
 - (void)showHudTipStr:(NSString *)tipStr;
 - (void)showHudLoadingTipStr:(NSString *)tipStr;
 - (void)hideHud;
-- (void)hideHudInView: (UIView *)view;
+- (void)hideHudInView:(UIView *)view;
+- (void)showHudInView:(UIView *)view hint:(NSString *)hint;
+
+- (void)showHint:(NSString *)hint;
+
+// 从默认(showHint:)显示的位置再往上(下)yOffset
+- (void)showHint:(NSString *)hint yOffset:(float)yOffset;
 
 #pragma mark File M
 //获取fileName的完整地址

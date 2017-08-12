@@ -32,4 +32,5 @@
 
 // MARK: - 三方相关
 #import <UMSocialCore/UMSocialCore.h>
-#import <HyphenateLite/HyphenateLite.h>
+#import "EMSDK.h"
+#import "EaseUI.h"

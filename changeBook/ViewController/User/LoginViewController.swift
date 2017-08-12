@@ -269,11 +269,32 @@ class LoginViewController: UIViewController {
                 
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "refreshUserInfo"), object: nil)
                 
-                self?.dismiss(animated: true, completion: nil)
+                self?.loginInEMChat()
+                
+                
             }
             
         }).addDisposableTo(disposeBag)
         
+    }
+    
+    // 登录环信
+    func loginInEMChat() {
+        EMClient.shared().login(withUsername: self.userNameTextField.text, password: "123") { [weak self] (aUsername, aError) in
+            if (nil != aError) {
+                BLog(log: "登录失败")
+                EMClient.shared().register(withUsername: self?.userNameTextField.text, password: "123", completion: { [weak self] (userName, error) in
+                    if (nil == error) {
+                        BLog(log: "注册成功")
+                        self?.loginInEMChat()
+                    }
+                })
+            } else {
+                EMClient.shared().options.isAutoLogin = true
+                self?.dismiss(animated: true, completion: nil)
+                BLog(log: "登录成功")
+            }
+        }
     }
     
     func textfieldDidChange(textField: UITextField) {
@@ -360,8 +381,8 @@ class LoginViewController: UIViewController {
             
             showedLogin = false
             
-            //标记不是三方登录
-            kUserDefaults.set(false, forKey: "thirdLoginSuccess")
+            //标记是三方登录
+            kUserDefaults.set(true, forKey: "thirdLoginSuccess")
             kUserDefaults.set(0, forKey: "ThirdLoginType")
             
             kUserDefaults.set(true, forKey: "canAutoLogin")

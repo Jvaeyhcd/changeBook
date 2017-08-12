@@ -29,6 +29,9 @@ let kEMAPNSCertName = "bookcycling_dev"
 //友盟
 let kUMAppKey = "598529201061d23498000133"
 
+let USER_NAME = "userName"
+let USER_HEAD_IMG = "userHeadImg"
+
 // MAKR: - 基本宽高常量
 let kScreenBounds = UIScreen.main.bounds
 let kScreenWidth = kScreenBounds.width

@@ -135,6 +135,7 @@ class OthersHomeViewController: BaseViewController, HcdTabBarDelegate {
         self.userDetailView.frame = CGRect(x: 0, y: 0, width: kScreenWidth, height: self.userDetailViewHeight)
         self.view.addSubview(self.userDetailView)
         
+        self.sendMsgBtn.addTarget(self, action: #selector(sendMsgBtnClicked), for: .touchUpInside)
         self.view.addSubview(self.sendMsgBtn)
         self.sendMsgBtn.snp.makeConstraints { (make) in
             make.bottom.equalTo(0)
@@ -167,6 +168,14 @@ class OthersHomeViewController: BaseViewController, HcdTabBarDelegate {
             BLog(log: "\(index)")
             
         }
+    }
+    
+    @objc private func sendMsgBtnClicked() {
+        let vc = ChatViewController.init(conversationChatter: self.user.userName, conversationType: EMConversationTypeChat)
+        vc?.nickName = self.user.nickName
+        vc?.headPic = self.user.headPic
+        vc?.userName = self.user.userName
+        self.pushViewController(viewContoller: vc!, animated: true)
     }
     
     // MARK: - Networking

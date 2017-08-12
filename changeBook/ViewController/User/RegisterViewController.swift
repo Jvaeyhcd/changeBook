@@ -277,7 +277,12 @@ class RegisterViewController: UIViewController {
                 case .Failed(let message):
                     self?.showHudTipStr(message, in: self?.view)
                 case .Scuccess:
-                    // 注册成功自动登录
+                    // 注册成功后注册环信
+                    EMClient.shared().register(withUsername: self?.userNameTextField.text, password: "123", completion: { [weak self] (userName, error) in
+                        if (nil == error) {
+                            BLog(log: "注册成功")
+                        }
+                    })
                     break
                 }
             })

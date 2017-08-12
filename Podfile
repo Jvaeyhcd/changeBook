@@ -36,7 +36,7 @@ target 'changeBook' do
     pod 'UMengUShare/Social/QQ'
     
     # 集成环信聊天
-    pod 'HyphenateLite', '~> 3.3.3.1'
+    pod 'HyphenateLite_CN', '~> 3.2.2.2'
 end
 
 post_install do |installer|
