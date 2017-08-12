@@ -132,7 +132,7 @@ class ArticleCommentDetailViewController: BaseViewController, UITableViewDelegat
     // 获取评论详情
     private func getCommentDetail(page: Int) {
 
-        self.viewModel.getArticleCommentDetail(articleCommentId: self.articleId, page: page, cache: { [weak self] (data) in
+        self.viewModel.getArticleCommentDetail(articleCommentId: self.comment.id, page: page, cache: { [weak self] (data) in
             self?.updateDatas(data: data)
         }, success: { [weak self] (data) in
             self?.updateDatas(data: data)
@@ -220,6 +220,12 @@ class ArticleCommentDetailViewController: BaseViewController, UITableViewDelegat
         tableView.addLineforPlainCell(cell: cell, indexPath: indexPath, leftSpace: 0)
         let reply = self.replyList[indexPath.row]
         cell.setReplyComment(comment: reply)
+        cell.userBlock = {
+            [weak self] (user) in
+            let vc = OthersHomeViewController()
+            vc.user = user
+            self?.pushViewController(viewContoller: vc, animated: true)
+        }
         
         return cell
     }

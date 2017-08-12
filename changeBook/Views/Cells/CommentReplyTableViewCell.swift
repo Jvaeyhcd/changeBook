@@ -12,8 +12,12 @@ let kCellIdCommentReplyTableViewCell = "CommentReplyTableViewCell"
 
 class CommentReplyTableViewCell: UITableViewCell {
     
-    private lazy var userHead: UIImageView = {
-        let imgView = UIImageView()
+    var userBlock: ((User)->())!
+    
+    private var comment: Comment!
+    
+    private lazy var userHead: UITapImageView = {
+        let imgView = UITapImageView()
         imgView.contentMode = .scaleToFill
         imgView.backgroundColor = kMainBgColor
         imgView.clipsToBounds = true
@@ -60,6 +64,11 @@ class CommentReplyTableViewCell: UITableViewCell {
         self.selectedBackgroundView?.backgroundColor = kSelectedCellBgColor
         
         self.addSubview(self.userHead)
+        self.userHead.addTap { [weak self] (imgView) in
+            if nil != self?.userBlock && nil != self?.comment {
+                self?.userBlock((self?.comment.sender)!)
+            }
+        }
         self.userHead.snp.makeConstraints { (make) in
             make.left.equalTo(kBasePadding)
             make.top.equalTo(kBasePadding)
@@ -107,6 +116,7 @@ class CommentReplyTableViewCell: UITableViewCell {
     }
 
     func setReplyComment(comment: Comment) {
+        self.comment = comment
         self.userHead.sd_setImage(with: URL.init(string: comment.sender.headPic), placeholderImage: kUserDefaultImage)
         self.userNameLbl.text = comment.sender.nickName
         self.commentLbl.text = comment.commentContent

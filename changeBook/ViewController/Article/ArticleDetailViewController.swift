@@ -239,6 +239,8 @@ class ArticleDetailViewController: BaseViewController, UITableViewDelegate, UITa
         if sharedGlobal.getToken().tokenExists {
             UIApplication.shared.keyWindow?.addSubview(self.rewordActionSheet)
             self.rewordActionSheet.show()
+        } else {
+            self.showLoginViewController()
         }
     }
     
@@ -312,6 +314,12 @@ class ArticleDetailViewController: BaseViewController, UITableViewDelegate, UITa
             let cell = tableView.dequeueReusableCell(withIdentifier: kCellIdArticleCommentTableViewCell, for: indexPath) as! ArticleCommentTableViewCell
             let comment = self.commentList[indexPath.row]
             cell.setComment(comment: comment)
+            cell.userBlock = {
+                [weak self] (user) in
+                let vc = OthersHomeViewController()
+                vc.user = user
+                self?.pushViewController(viewContoller: vc, animated: true)
+            }
             tableView.addLineforPlainCell(cell: cell, indexPath: indexPath, leftSpace: 0)
             return cell
         }

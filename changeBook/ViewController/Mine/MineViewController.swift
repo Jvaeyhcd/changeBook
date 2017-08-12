@@ -90,10 +90,15 @@ class MineViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     @objc private func userHeadClick() {
-        let vc = UsersHomeViewController()
-        vc.hidesBottomBarWhenPushed = true
-        vc.user = sharedGlobal.getSavedUser()
-        self.pushViewController(viewContoller: vc, animated: true)
+        
+        if sharedGlobal.getToken().tokenExists {
+            let vc = UsersHomeViewController()
+            vc.hidesBottomBarWhenPushed = true
+            vc.user = sharedGlobal.getSavedUser()
+            self.pushViewController(viewContoller: vc, animated: true)
+        } else {
+            self.showLoginViewController()
+        }
     }
     
     // MARK: - UITableViewDelegate, UITableViewDataSource

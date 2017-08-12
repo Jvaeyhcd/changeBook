@@ -11,6 +11,9 @@ import UIKit
 let kCellIdArticleCommentTableViewCell = "ArticleCommentTableViewCell"
 
 class ArticleCommentTableViewCell: UITableViewCell {
+    
+    var userBlock: ((User)->())!
+    private var comment: Comment!
 
     private lazy var userHead: UITapImageView = {
         let imgView = UITapImageView()
@@ -85,6 +88,9 @@ class ArticleCommentTableViewCell: UITableViewCell {
     }
     
     func setComment(comment: Comment) {
+        
+        self.comment = comment
+        
         self.userHead.sd_setImage(with: URL.init(string: comment.sender.headPic), placeholderImage: kUserDefaultImage)
         self.userNameLbl.text = comment.sender.nickName
         self.commentLbl.text = comment.commentContent
@@ -136,6 +142,11 @@ class ArticleCommentTableViewCell: UITableViewCell {
         self.selectedBackgroundView?.backgroundColor = kSelectedCellBgColor
         
         self.addSubview(self.userHead)
+        self.userHead.addTap { [weak self] (imgView) in
+            if nil != self?.userBlock && nil != self?.comment {
+                self?.userBlock((self?.comment.sender)!)
+            }
+        }
         self.userHead.snp.makeConstraints { (make) in
             make.left.equalTo(kBasePadding)
             make.top.equalTo(kBasePadding)

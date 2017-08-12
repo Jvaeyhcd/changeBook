@@ -49,8 +49,15 @@ class UserInfoView: UIView {
     }
     
     func setUserInfo(user: User) {
-        self.userHeadImageView.sd_setImage(with: URL.init(string: user.headPic), placeholderImage: kUserDefaultImage)
-        self.userNameLbl.text = user.nickName
+        
+        if false == sharedGlobal.getToken().tokenExists {
+            self.userHeadImageView.image = kUserDefaultImage
+            self.userNameLbl.text = "点击头像登录"
+        } else {
+            self.userHeadImageView.sd_setImage(with: URL.init(string: user.headPic), placeholderImage: kUserDefaultImage)
+            self.userNameLbl.text = user.nickName
+        }
+        
     }
     
     private func initSubviews() {
