@@ -47,6 +47,7 @@ class FilterDataViewController: BaseViewController, DOPDropDownMenuDataSource, D
     private func initSubviews() {
         self.title = "资料"
         self.showBackButton()
+        self.showBarButtonItem(position: RIGHT, withImage: UIImage(named: "jieshu_btn_sousuo")!)
         
         self.menu.delegate = self
         self.menu.dataSource = self
@@ -54,6 +55,14 @@ class FilterDataViewController: BaseViewController, DOPDropDownMenuDataSource, D
         self.tableView.headerRefreshBlock = {
             [weak self] (Void) in
             self?.filterDocument(page: 1)
+        }
+        self.tableView.footerRefreshBlock = {
+            [weak self] (Void) in
+            if self?.pageInfo.currentPage == self?.pageInfo.maxPage {
+                
+            } else {
+                self?.filterDocument(page: (self?.pageInfo.nextPage)!)
+            }
         }
         self.tableView.setPullingFooter()
         self.tableView.setPullingHeader()
@@ -70,6 +79,11 @@ class FilterDataViewController: BaseViewController, DOPDropDownMenuDataSource, D
     
     override func leftNavBarButtonClicked() {
         self.popViewController(animated: true)
+    }
+    
+    override func rightNavBarButtonClicked() {
+        let vc = SearchDocumentViewController()
+        self.pushViewController(viewContoller: vc, animated: true)
     }
 
     override func didReceiveMemoryWarning() {

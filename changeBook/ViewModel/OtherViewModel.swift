@@ -23,4 +23,23 @@ class OtherViewModel: ViewModelProtocol {
             self?.request(cacheName: cacheName, result: result, success: success, fail: fail, loginSuccess: loginSuccess)
         }
     }
+    
+    // 获取热门搜索
+    func getHotSearch(success: @escaping DataBlock,
+                      fail: @escaping MessageBlock,
+                      loginSuccess: @escaping VoidBlock) {
+        OtherProvider.request(OtherAPI.getHotSearch()) { [weak self] (result) in
+            self?.request(cacheName: kNoNeedCache, result: result, success: success, fail: fail, loginSuccess: loginSuccess)
+        }
+    }
+    
+    // 首页内容搜索
+    func searchContent(keyWords: String,
+                       success: @escaping DataBlock,
+                       fail: @escaping MessageBlock,
+                       loginSuccess: @escaping VoidBlock) {
+        OtherProvider.request(OtherAPI.searchContent(keyWords: keyWords)) { [weak self] (result) in
+            self?.request(cacheName: kNoNeedCache, result: result, success: success, fail: fail, loginSuccess: loginSuccess)
+        }
+    }
 }

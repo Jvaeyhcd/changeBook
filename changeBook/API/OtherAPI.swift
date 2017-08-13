@@ -27,7 +27,7 @@ public enum OtherAPI {
     // 获取热门搜索
     case getHotSearch()
     // 首页内容搜索
-    case searchContent()
+    case searchContent(keyWords: String)
 }
 
 extension OtherAPI: TargetType {
@@ -44,7 +44,7 @@ extension OtherAPI: TargetType {
             return "/bookcycling/addDonation"
         case .getHotSearch():
             return "/bookcycling/getHotSearch"
-        case .searchContent():
+        case .searchContent(keyWords: _):
             return "/bookcycling/searchContent"
         }
     }
@@ -75,10 +75,11 @@ extension OtherAPI: TargetType {
                 "token": token,
                 "userId": userId
             ]
-        case .searchContent():
+        case .searchContent(let keyWords):
             return [
                 "token": token,
-                "userId": userId
+                "userId": userId,
+                "keyWords": keyWords
             ]
         }
     }

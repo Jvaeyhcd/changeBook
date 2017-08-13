@@ -75,6 +75,18 @@
 		BE2047B61F3CADDC00A726F2 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE2047B51F3CADDC00A726F2 /* JavaScriptCore.framework */; };
 		BE2047B81F3CAE0200A726F2 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE2047B71F3CAE0200A726F2 /* CoreMedia.framework */; };
 		BE2047BA1F3CAE4900A726F2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE2047B91F3CAE4900A726F2 /* QuartzCore.framework */; };
+		BE269CE41F3FD55800E7A624 /* SearchDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE269CE31F3FD55800E7A624 /* SearchDocumentViewController.swift */; };
+		BE269CE61F3FD56E00E7A624 /* SerachArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE269CE51F3FD56E00E7A624 /* SerachArticleViewController.swift */; };
+		BE269CF61F3FF06400E7A624 /* NSBundle+PYSearchExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = BE269CE91F3FF06400E7A624 /* NSBundle+PYSearchExtension.m */; };
+		BE269CF71F3FF06400E7A624 /* PYSearch.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BE269CEA1F3FF06400E7A624 /* PYSearch.bundle */; };
+		BE269CF81F3FF06400E7A624 /* PYSearchConst.m in Sources */ = {isa = PBXBuildFile; fileRef = BE269CED1F3FF06400E7A624 /* PYSearchConst.m */; };
+		BE269CF91F3FF06400E7A624 /* PYSearchSuggestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE269CEF1F3FF06400E7A624 /* PYSearchSuggestionViewController.m */; };
+		BE269CFA1F3FF06400E7A624 /* PYSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE269CF11F3FF06400E7A624 /* PYSearchViewController.m */; };
+		BE269CFB1F3FF06400E7A624 /* UIColor+PYSearchExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = BE269CF31F3FF06400E7A624 /* UIColor+PYSearchExtension.m */; };
+		BE269CFC1F3FF06400E7A624 /* UIView+PYSearchExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = BE269CF51F3FF06400E7A624 /* UIView+PYSearchExtension.m */; };
+		BE269CFF1F40327900E7A624 /* home_btn_shubao1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE269CFD1F40327900E7A624 /* home_btn_shubao1@2x.png */; };
+		BE269D001F40327900E7A624 /* home_btn_shubao1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE269CFE1F40327900E7A624 /* home_btn_shubao1@3x.png */; };
+		BE269D021F40334100E7A624 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE269D011F40334100E7A624 /* SearchViewController.swift */; };
 		BE30872F1F304D7A001B2BCB /* UsersBrowListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE30872E1F304D7A001B2BCB /* UsersBrowListViewController.swift */; };
 		BE3251F61F27766400B6B4AF /* ArticleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3251F51F27766400B6B4AF /* ArticleDetailViewController.swift */; };
 		BE3251F81F2783D600B6B4AF /* ArticleDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3251F71F2783D600B6B4AF /* ArticleDetailTableViewCell.swift */; };
@@ -363,8 +375,6 @@
 		BE57EFA31F07DF780091F312 /* com_pic_star2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE57EF9D1F07DF780091F312 /* com_pic_star2@3x.png */; };
 		BE57EFA41F07DF780091F312 /* com_pic_star3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE57EF9E1F07DF780091F312 /* com_pic_star3@2x.png */; };
 		BE57EFA51F07DF780091F312 /* com_pic_star3@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE57EF9F1F07DF780091F312 /* com_pic_star3@3x.png */; };
-		BE57EFA71F07E5D30091F312 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE57EFA61F07E5D30091F312 /* DataViewController.swift */; };
-		BE57EFA91F07E5EA0091F312 /* DataListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE57EFA81F07E5EA0091F312 /* DataListViewController.swift */; };
 		BE57EFAB1F086C170091F312 /* OrderBookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE57EFAA1F086C170091F312 /* OrderBookTableViewCell.swift */; };
 		BE57EFAD1F086D7E0091F312 /* OrderListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE57EFAC1F086D7E0091F312 /* OrderListTableViewCell.swift */; };
 		BE57EFAF1F088FE20091F312 /* BookOrderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE57EFAE1F088FE20091F312 /* BookOrderListViewController.swift */; };
@@ -769,6 +779,25 @@
 		BE2047B51F3CADDC00A726F2 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		BE2047B71F3CAE0200A726F2 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		BE2047B91F3CAE4900A726F2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		BE269CE31F3FD55800E7A624 /* SearchDocumentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchDocumentViewController.swift; sourceTree = "<group>"; };
+		BE269CE51F3FD56E00E7A624 /* SerachArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SerachArticleViewController.swift; sourceTree = "<group>"; };
+		BE269CE81F3FF06400E7A624 /* NSBundle+PYSearchExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+PYSearchExtension.h"; sourceTree = "<group>"; };
+		BE269CE91F3FF06400E7A624 /* NSBundle+PYSearchExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+PYSearchExtension.m"; sourceTree = "<group>"; };
+		BE269CEA1F3FF06400E7A624 /* PYSearch.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PYSearch.bundle; sourceTree = "<group>"; };
+		BE269CEB1F3FF06400E7A624 /* PYSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYSearch.h; sourceTree = "<group>"; };
+		BE269CEC1F3FF06400E7A624 /* PYSearchConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYSearchConst.h; sourceTree = "<group>"; };
+		BE269CED1F3FF06400E7A624 /* PYSearchConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYSearchConst.m; sourceTree = "<group>"; };
+		BE269CEE1F3FF06400E7A624 /* PYSearchSuggestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYSearchSuggestionViewController.h; sourceTree = "<group>"; };
+		BE269CEF1F3FF06400E7A624 /* PYSearchSuggestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYSearchSuggestionViewController.m; sourceTree = "<group>"; };
+		BE269CF01F3FF06400E7A624 /* PYSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYSearchViewController.h; sourceTree = "<group>"; };
+		BE269CF11F3FF06400E7A624 /* PYSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYSearchViewController.m; sourceTree = "<group>"; };
+		BE269CF21F3FF06400E7A624 /* UIColor+PYSearchExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+PYSearchExtension.h"; sourceTree = "<group>"; };
+		BE269CF31F3FF06400E7A624 /* UIColor+PYSearchExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+PYSearchExtension.m"; sourceTree = "<group>"; };
+		BE269CF41F3FF06400E7A624 /* UIView+PYSearchExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+PYSearchExtension.h"; sourceTree = "<group>"; };
+		BE269CF51F3FF06400E7A624 /* UIView+PYSearchExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+PYSearchExtension.m"; sourceTree = "<group>"; };
+		BE269CFD1F40327900E7A624 /* home_btn_shubao1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_btn_shubao1@2x.png"; sourceTree = "<group>"; };
+		BE269CFE1F40327900E7A624 /* home_btn_shubao1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_btn_shubao1@3x.png"; sourceTree = "<group>"; };
+		BE269D011F40334100E7A624 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		BE30872E1F304D7A001B2BCB /* UsersBrowListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersBrowListViewController.swift; sourceTree = "<group>"; };
 		BE3251F51F27766400B6B4AF /* ArticleDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleDetailViewController.swift; sourceTree = "<group>"; };
 		BE3251F71F2783D600B6B4AF /* ArticleDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -1069,8 +1098,6 @@
 		BE57EF9D1F07DF780091F312 /* com_pic_star2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "com_pic_star2@3x.png"; sourceTree = "<group>"; };
 		BE57EF9E1F07DF780091F312 /* com_pic_star3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "com_pic_star3@2x.png"; sourceTree = "<group>"; };
 		BE57EF9F1F07DF780091F312 /* com_pic_star3@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "com_pic_star3@3x.png"; sourceTree = "<group>"; };
-		BE57EFA61F07E5D30091F312 /* DataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
-		BE57EFA81F07E5EA0091F312 /* DataListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataListViewController.swift; sourceTree = "<group>"; };
 		BE57EFAA1F086C170091F312 /* OrderBookTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderBookTableViewCell.swift; sourceTree = "<group>"; };
 		BE57EFAC1F086D7E0091F312 /* OrderListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderListTableViewCell.swift; sourceTree = "<group>"; };
 		BE57EFAE1F088FE20091F312 /* BookOrderListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookOrderListViewController.swift; sourceTree = "<group>"; };
@@ -1739,6 +1766,7 @@
 				BED100591F28DD470028AE6A /* ArticleCommentListViewController.swift */,
 				BED1005B1F28E2820028AE6A /* ArticleCommentDetailViewController.swift */,
 				BE57EDA01F03E7250091F312 /* UserArticleViewController.swift */,
+				BE269CE51F3FD56E00E7A624 /* SerachArticleViewController.swift */,
 			);
 			path = Article;
 			sourceTree = "<group>";
@@ -1756,6 +1784,7 @@
 			isa = PBXGroup;
 			children = (
 				BE0190A01EFD4B1900FA040E /* HomeViewController.swift */,
+				BE269D011F40334100E7A624 /* SearchViewController.swift */,
 				BE57EF781F0541CC0091F312 /* HomeHeadView.swift */,
 				BE57EF7A1F05442F0091F312 /* NormalCollectionViewCell.swift */,
 				BEECE5761F361E4800B5D3C4 /* ScanViewController.swift */,
@@ -1835,6 +1864,27 @@
 			path = Other;
 			sourceTree = "<group>";
 		};
+		BE269CE71F3FF06400E7A624 /* PYSearch */ = {
+			isa = PBXGroup;
+			children = (
+				BE269CE81F3FF06400E7A624 /* NSBundle+PYSearchExtension.h */,
+				BE269CE91F3FF06400E7A624 /* NSBundle+PYSearchExtension.m */,
+				BE269CEA1F3FF06400E7A624 /* PYSearch.bundle */,
+				BE269CEB1F3FF06400E7A624 /* PYSearch.h */,
+				BE269CEC1F3FF06400E7A624 /* PYSearchConst.h */,
+				BE269CED1F3FF06400E7A624 /* PYSearchConst.m */,
+				BE269CEE1F3FF06400E7A624 /* PYSearchSuggestionViewController.h */,
+				BE269CEF1F3FF06400E7A624 /* PYSearchSuggestionViewController.m */,
+				BE269CF01F3FF06400E7A624 /* PYSearchViewController.h */,
+				BE269CF11F3FF06400E7A624 /* PYSearchViewController.m */,
+				BE269CF21F3FF06400E7A624 /* UIColor+PYSearchExtension.h */,
+				BE269CF31F3FF06400E7A624 /* UIColor+PYSearchExtension.m */,
+				BE269CF41F3FF06400E7A624 /* UIView+PYSearchExtension.h */,
+				BE269CF51F3FF06400E7A624 /* UIView+PYSearchExtension.m */,
+			);
+			path = PYSearch;
+			sourceTree = "<group>";
+		};
 		BE4907361F1F957A0031024F /* HcdReplyView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1868,9 +1918,8 @@
 				BE1ED7691F247644000222D6 /* BookCommentDetailViewController.swift */,
 				BE91CB041F33709900AF22CE /* CommentBookViewController.swift */,
 				BE1ED76B1F2479BC000222D6 /* SearchBookViewController.swift */,
-				BE57EFA61F07E5D30091F312 /* DataViewController.swift */,
 				BE91CB021F33658700AF22CE /* FilterDataViewController.swift */,
-				BE57EFA81F07E5EA0091F312 /* DataListViewController.swift */,
+				BE269CE31F3FD55800E7A624 /* SearchDocumentViewController.swift */,
 				BE5AEFA61F1B836A00475B90 /* DataDetailViewController.swift */,
 				BE179FF61F36FFB900034747 /* DataContentViewController.swift */,
 				BE179FF81F37052800034747 /* CommentDataViewController.swift */,
@@ -1912,6 +1961,8 @@
 		BE57EDB41F03F1640091F312 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				BE269CFD1F40327900E7A624 /* home_btn_shubao1@2x.png */,
+				BE269CFE1F40327900E7A624 /* home_btn_shubao1@3x.png */,
 				BE179FB81F369E3200034747 /* html.bundle */,
 				BEECE5291F35E7EB00B5D3C4 /* addPictureBgImage@2x.png */,
 				BEECE5271F35E7C900B5D3C4 /* btn_delete_tweetimage@2x.png */,
@@ -2580,6 +2631,7 @@
 		BE8D53D61EFBF5F6003850EB /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				BE269CE71F3FF06400E7A624 /* PYSearch */,
 				BECA152C1F3E7B3700569ABD /* EaseUI */,
 				BEF0BA821F38A918003A2FC9 /* TTTAttributedLabel */,
 				BE179FD81F36A14900034747 /* YLGIFImage */,
@@ -3712,9 +3764,11 @@
 				BEECE5531F360EE700B5D3C4 /* selectedImageGallery@3x.png in Resources */,
 				BE57EF0A1F04B1290091F312 /* xiangqing_btn_shubao@3x.png in Resources */,
 				BE57EF021F04B1290091F312 /* pingjia_btn_pinglun@3x.png in Resources */,
+				BE269CF71F3FF06400E7A624 /* PYSearch.bundle in Resources */,
 				BE49072B1F1F774B0031024F /* pingjia_btn_comment@3x.png in Resources */,
 				BE7CA9F11F0F3192007CB195 /* refresh05.png in Resources */,
 				BE57EE911F04B1290091F312 /* shuyou_rb_pre@2x.png in Resources */,
+				BE269CFF1F40327900E7A624 /* home_btn_shubao1@2x.png in Resources */,
 				BE57EEB31F04B1290091F312 /* yajin_bg@2x.png in Resources */,
 				BE57EEE41F04B1290091F312 /* xiangqing_icon_ppt@3x.png in Resources */,
 				BE57EF5C1F04B1290091F312 /* login_icon_wx@3x.png in Resources */,
@@ -3767,6 +3821,7 @@
 				BE4B351C1F1651F60008548D /* xiangqing_icon_xls@3x.png in Resources */,
 				BE57EECA1F04B1290091F312 /* wode_bg@3x.png in Resources */,
 				BE57EEAF1F04B1290091F312 /* wenzhang_btn_xinjianwenzhang@2x.png in Resources */,
+				BE269D001F40327900E7A624 /* home_btn_shubao1@3x.png in Resources */,
 				BEECE5541F360EE700B5D3C4 /* video@3x.png in Resources */,
 				BE57EDB71F03F1640091F312 /* top_btn_back@2x.png in Resources */,
 				BE57EF071F04B1290091F312 /* xiangqing_icon_daan1@2x.png in Resources */,
@@ -3899,6 +3954,7 @@
 				BEBD37691F224CCB0035E49E /* BookAPI.swift in Sources */,
 				BECA167A1F3E7B3800569ABD /* EaseBubbleView+Image.m in Sources */,
 				BE8D53ED1EFBF619003850EB /* STPopupNavigationBar.m in Sources */,
+				BE269CFC1F3FF06400E7A624 /* UIView+PYSearchExtension.m in Sources */,
 				BEB94CE71F1477F600181DC2 /* EditNickNameViewController.swift in Sources */,
 				BE91CB051F33709900AF22CE /* CommentBookViewController.swift in Sources */,
 				BECA16841F3E7B3800569ABD /* EaseFaceView.m in Sources */,
@@ -3966,6 +4022,7 @@
 				BE5AEF921F19020900475B90 /* BagTableViewCell.swift in Sources */,
 				BECA16411F3E7B3800569ABD /* EMSDWebImageDownloader.m in Sources */,
 				BE1A0BEB1F20F6920005C632 /* InfomationToolBarView.swift in Sources */,
+				BE269CF81F3FF06400E7A624 /* PYSearchConst.m in Sources */,
 				BE57EF751F05414A0091F312 /* SDCollectionViewCell.m in Sources */,
 				BE57EFAD1F086D7E0091F312 /* OrderListTableViewCell.swift in Sources */,
 				BECA16601F3E7B3800569ABD /* NSDate+Category.m in Sources */,
@@ -4004,6 +4061,7 @@
 				BEECE5611F360EE700B5D3C4 /* ImageGalleryViewCell.swift in Sources */,
 				BE7CA9A61F0BD3DA007CB195 /* Status.swift in Sources */,
 				BE91CB071F3373F300AF22CE /* RateStarTableViewCell.swift in Sources */,
+				BE269CF91F3FF06400E7A624 /* PYSearchSuggestionViewController.m in Sources */,
 				BE7CAA291F0F3F08007CB195 /* MJRefreshFooter.m in Sources */,
 				BE5AEFA51F19141400475B90 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				BECA166B1F3E7B3800569ABD /* EaseEmotionManager.m in Sources */,
@@ -4023,6 +4081,7 @@
 				BE1ED76A1F247644000222D6 /* BookCommentDetailViewController.swift in Sources */,
 				BECA164A1F3E7B3800569ABD /* UIImage+EMWebP.m in Sources */,
 				BEECE5041F35666A00B5D3C4 /* openssl_wrapper.m in Sources */,
+				BE269CFA1F3FF06400E7A624 /* PYSearchViewController.m in Sources */,
 				BEA5D9811F2B839400F898C9 /* DeliveryModeTableViewCell.swift in Sources */,
 				BE57EFAF1F088FE20091F312 /* BookOrderListViewController.swift in Sources */,
 				BECA166C1F3E7B3800569ABD /* FixFopen.c in Sources */,
@@ -4041,6 +4100,7 @@
 				BEECE55C1F360EE700B5D3C4 /* Configuration.swift in Sources */,
 				BEFCA4DC1F3B38A800FA845F /* DepositDetailViewController.swift in Sources */,
 				BE7CA9B01F0BE7C5007CB195 /* ViewModelProtocol.swift in Sources */,
+				BE269CF61F3FF06400E7A624 /* NSBundle+PYSearchExtension.m in Sources */,
 				BECA16271F3E7B3700569ABD /* EMAudioPlayerUtil.m in Sources */,
 				BECA16301F3E7B3700569ABD /* EMVoiceConverter.mm in Sources */,
 				BEECE5031F35666A00B5D3C4 /* NSDataEx.m in Sources */,
@@ -4086,7 +4146,6 @@
 				BEFCA4DE1F3B3AC300FA845F /* AccountLog.swift in Sources */,
 				BE5AEF941F1905B200475B90 /* BagViewController.swift in Sources */,
 				BECA162E1F3E7B3700569ABD /* amrFileCodec.mm in Sources */,
-				BE57EFA91F07E5EA0091F312 /* DataListViewController.swift in Sources */,
 				BE30872F1F304D7A001B2BCB /* UsersBrowListViewController.swift in Sources */,
 				BEECE5721F361E0A00B5D3C4 /* LBXScanView.swift in Sources */,
 				BECA16731F3E7B3800569ABD /* EaseUserCell.m in Sources */,
@@ -4118,15 +4177,16 @@
 				BECA16651F3E7B3800569ABD /* EaseChineseToPinyin.m in Sources */,
 				BE7CAA4F1F0F96FE007CB195 /* AddressListViewController.swift in Sources */,
 				BECA165C1F3E7B3800569ABD /* EaseSDKHelper.m in Sources */,
+				BE269D021F40334100E7A624 /* SearchViewController.swift in Sources */,
 				BECA167C1F3E7B3800569ABD /* EaseBubbleView+Text.m in Sources */,
 				BECA16351F3E7B3700569ABD /* MWCaptionView.m in Sources */,
 				BE7CAA261F0F3F08007CB195 /* MJRefreshAutoFooter.m in Sources */,
 				BECA165D1F3E7B3800569ABD /* EaseConversationModel.m in Sources */,
 				BEECE5651F360EE700B5D3C4 /* LocationManager.swift in Sources */,
 				BE179FF91F37052800034747 /* CommentDataViewController.swift in Sources */,
-				BE57EFA71F07E5D30091F312 /* DataViewController.swift in Sources */,
 				BE7CA9DE1F0F24F5007CB195 /* IntegralLog.swift in Sources */,
 				BE973D941F1E51A80018DF70 /* CommentTableViewCell.swift in Sources */,
+				BE269CE61F3FD56E00E7A624 /* SerachArticleViewController.swift in Sources */,
 				BEECE51E1F35C2E300B5D3C4 /* BindPhoneViewController.swift in Sources */,
 				BE7CA9C51F0BEE38007CB195 /* MBProgressHUD.m in Sources */,
 				BECA164E1F3E7B3800569ABD /* NSIndexPath+PSTCollectionViewAdditions.m in Sources */,
@@ -4193,6 +4253,7 @@
 				BECA16451F3E7B3800569ABD /* MKAnnotationView+EMWebCache.m in Sources */,
 				BE8D53EA1EFBF619003850EB /* STPopupControllerTransitioningFade.m in Sources */,
 				BE57EF911F07ABE10091F312 /* DataListTableViewCell.swift in Sources */,
+				BE269CFB1F3FF06400E7A624 /* UIColor+PYSearchExtension.m in Sources */,
 				BEECE5051F35666A00B5D3C4 /* RSADataSigner.m in Sources */,
 				BEECE5621F360EE700B5D3C4 /* ImageGalleryViewDataSource.swift in Sources */,
 				BEECE5091F35666A00B5D3C4 /* WXApiManager.m in Sources */,
@@ -4235,6 +4296,7 @@
 				BE8D53EC1EFBF619003850EB /* STPopupLeftBarItem.m in Sources */,
 				BEF0BA871F38A918003A2FC9 /* TTTAttributedLabel.m in Sources */,
 				BECA16701F3E7B3800569ABD /* EaseRefreshTableViewController.m in Sources */,
+				BE269CE41F3FD55800E7A624 /* SearchDocumentViewController.swift in Sources */,
 				BECA163F1F3E7B3800569ABD /* EMSDWebImageCompat.m in Sources */,
 				BECA166E1F3E7B3800569ABD /* EaseLocationViewController.m in Sources */,
 				BECA162B1F3E7B3700569ABD /* EMCDDeviceManager+ProximitySensor.m in Sources */,

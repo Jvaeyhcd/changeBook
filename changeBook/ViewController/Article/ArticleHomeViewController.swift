@@ -303,7 +303,12 @@ class ArticleHomeViewController: BaseViewController, HcdTabBarDelegate {
         return true
     }
 
-
+    override func rightNavBarButtonClicked() {
+        let vc = SerachArticleViewController()
+        vc.hidesBottomBarWhenPushed = true
+        self.pushViewController(viewContoller: vc, animated: true)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -24,6 +24,7 @@
 #import "MJPhoto.h"
 #import "UITapImageView.h"
 #import "UITTTAttributedLabel.h"
+#import "PYSearch.h"
 
 // MARK: - Category
 #import "UIImage+Polesapp.h"

@@ -1,26 +1,25 @@
 //
-//  SearchBookViewController.swift
+//  SerachArticleViewController.swift
 //  changeBook
 //
-//  Created by Jvaeyhcd on 23/07/2017.
+//  Created by Jvaeyhcd on 13/08/2017.
 //  Copyright © 2017 Jvaeyhcd. All rights reserved.
 //
 
 import UIKit
 import SwiftyJSON
 
-class SearchBookViewController: BaseViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource {
+class SerachArticleViewController: BaseViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource {
     
     var keyWords: String = ""
-    
     private var searchBar: UISearchBar!
-    private var viewModel = BookViewModel()
-    private var bookList = [Book]()
+    private var viewModel: ArticleViewModel = ArticleViewModel()
+    private var articleList = [Article]()
     private var pageInfo: PageInfo?
     
     lazy var tableView: UIRefreshTableView = {
         let tableView = UIRefreshTableView.init(frame: CGRect.zero, style: .plain)
-        tableView.register(BookListTableViewCell.self, forCellReuseIdentifier: kCellIdBookListTableViewCell)
+        tableView.register(ArticleListTableViewCell.self, forCellReuseIdentifier: kCellIdArticleListTableViewCell)
         tableView.separatorStyle = .none
         tableView.backgroundColor = kMainBgColor
         return tableView
@@ -33,7 +32,7 @@ class SearchBookViewController: BaseViewController, UISearchBarDelegate, UITable
         initSearchView()
         if "" != self.keyWords {
             self.searchBar.text = self.keyWords
-            self.searchBook(page: 1)
+            self.searchArticle(page: 1)
         }
     }
     
@@ -46,7 +45,6 @@ class SearchBookViewController: BaseViewController, UISearchBarDelegate, UITable
     }
     
     private func initSubviews() {
-        
         self.showBackButton()
         self.showBarButtonItem(position: RIGHT, withStr: "搜索")
         
@@ -57,19 +55,20 @@ class SearchBookViewController: BaseViewController, UISearchBarDelegate, UITable
         self.tableView.setPullingHeader()
         self.tableView.headerRefreshBlock = {
             [weak self] (Void) in
-            self?.searchBook(page: 1)
+            self?.searchArticle(page: 1)
         }
+        
         self.tableView.footerRefreshBlock = {
             [weak self] (Void) in
             if self?.pageInfo?.nextPage == self?.pageInfo?.currentPage {
                 
             } else {
-                self?.searchBook(page: (self?.pageInfo?.nextPage)!)
+                self?.searchArticle(page:  (self?.pageInfo?.nextPage)!)
             }
         }
         self.tableView.reloadBlock = {
             [weak self] (Void) in
-            self?.searchBook(page: 1)
+            self?.searchArticle(page:  (self?.pageInfo?.nextPage)!)
         }
         self.tableView.snp.makeConstraints { (make) in
             make.top.equalTo(0)
@@ -77,7 +76,6 @@ class SearchBookViewController: BaseViewController, UISearchBarDelegate, UITable
             make.bottom.equalTo(0)
             make.left.equalTo(0)
         }
-        
     }
     
     private func initSearchView() {
@@ -109,53 +107,28 @@ class SearchBookViewController: BaseViewController, UISearchBarDelegate, UITable
         self.searchBar.delegate = self
         
         search.barStyle = .default
-        search.placeholder = "搜索资料"
+        search.placeholder = "搜索文章"
         search.backgroundImage = Bundle.py_imageNamed("bgImage")
         
     }
-    
-    // MARK: - UITableViewDelegate, UITableViewDataSource
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+
+    override func leftNavBarButtonClicked() {
+        self.popViewController(animated: true)
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.bookList.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: kCellIdBookListTableViewCell, for: indexPath) as! BookListTableViewCell
-        tableView.addLineforPlainCell(cell: cell, indexPath: indexPath, leftSpace: 0)
-        let book = self.bookList[indexPath.row]
-        cell.setBook(book: book)
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return BookListTableViewCell.cellHeight()
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+    override func rightNavBarButtonClicked() {
+        if "" == self.keyWords {
+            self.showHudTipStr("请输入搜索内容")
+            return
+        }
         
-        let book = self.bookList[indexPath.row]
-        
-        // 跳转到书籍详情页面
-        let vc = BookDetailViewController()
-        vc.book = book
-        self.pushViewController(viewContoller: vc, animated: true)
-        
+        self.tableView.resignFirstResponder()
+        self.searchArticle(page: 1)
     }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        self.searchBar.resignFirstResponder()
-    }
-    
-    // MARK: - Networking
-    
-    func searchBook(page: Int) {
-        self.viewModel.searchBook(keyWords: self.keyWords, page: page, success: { [weak self] (data) in
-            self?.updateDatas(data: data)
+    func searchArticle(page: Int) {
+        self.viewModel.searchArticle(keyWords: self.keyWords, page: page, success: { [weak self] (data) in
+            self?.updateArticleList(data: data)
         }, fail: { [weak self] (message) in
             self?.showHudTipStr(message)
         }) { 
@@ -163,21 +136,21 @@ class SearchBookViewController: BaseViewController, UISearchBarDelegate, UITable
         }
     }
     
-    private func updateDatas(data: JSON) {
+    private func updateArticleList(data: JSON) {
         if JSON.null == data {
             return
         }
         
         self.pageInfo = PageInfo.fromJSON(json: data["pageInfo"])
-        let books = Book.fromJSONArray(json: data["entities"].arrayObject!)
+        let articles = Article.fromJSONArray(json: data["entities"].arrayObject!)
         
         if self.pageInfo?.currentPage == 1 {
-            self.bookList.removeAll()
+            self.articleList.removeAll()
         }
         
-        if books.count > 0 {
-            for book in books {
-                self.bookList.append(book)
+        if articles.count > 0 {
+            for article in articles {
+                self.articleList.append(article)
             }
         }
         
@@ -196,31 +169,53 @@ class SearchBookViewController: BaseViewController, UISearchBarDelegate, UITable
         self.tableView.reloadData()
     }
     
-    override func leftNavBarButtonClicked() {
-        self.popViewController(animated: true)
+    // MARK: - UITableViewDelegate, UITableViewDataSource
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
     
-    override func rightNavBarButtonClicked() {
-        if "" == self.keyWords {
-            self.showHudTipStr("请输入搜索内容")
-            return
-        }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.articleList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: kCellIdArticleListTableViewCell, for: indexPath) as! ArticleListTableViewCell
+        tableView.addLineforPlainCell(cell: cell, indexPath: indexPath, leftSpace: 0)
+        let article = self.articleList[indexPath.row]
+        cell.setArticle(article: article)
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return ArticleListTableViewCell.cellHeight()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         
+        let article = self.articleList[indexPath.row]
+        let vc = ArticleDetailViewController()
+        vc.article = article
+        vc.hidesBottomBarWhenPushed = true
+        self.pushViewController(viewContoller: vc, animated: true)
+        
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         self.searchBar.resignFirstResponder()
-        self.searchBook(page: 1)
     }
     
     // MARK: - UISearchBarDelegate
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         self.searchBar.resignFirstResponder()
         self.keyWords = searchBar.text!
-        self.searchBook(page: 1)
+        self.searchArticle(page: 1)
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         self.keyWords = searchText
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

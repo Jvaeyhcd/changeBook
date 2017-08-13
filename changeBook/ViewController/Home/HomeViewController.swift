@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 let kHomeHeadViewHeight = kScreenWidth * (150.0 / 375.0 + 0.25) + scaleFromiPhone6Desgin(x: 30) + kBasePadding
 
-class HomeViewController: BaseViewController, HcdTabBarDelegate, SDCycleScrollViewDelegate {
+class HomeViewController: BaseViewController, HcdTabBarDelegate, SDCycleScrollViewDelegate, UISearchBarDelegate, PYSearchViewControllerDelegate {
     
+    // 热门搜索数组
+    fileprivate var hotSearchs = [String]()
     // tableview的偏移量
     fileprivate var tableViewOffsetY = CGFloat(0)
     private var selectedControllerIndex = -1
@@ -49,17 +52,54 @@ class HomeViewController: BaseViewController, HcdTabBarDelegate, SDCycleScrollVi
     
     private var viewModel: OtherViewModel = OtherViewModel()
     private var bannerList: [Banner] = [Banner]()
+    
+    private var searchBar: UISearchBar!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         initSubviews()
+        initSearchView()
         getBanner()
+        getHotSearch()
+    }
+    
+    private func initSearchView() {
+        let titleView = UIView()
+        titleView.py_x = CGFloat(PYSEARCH_MARGIN) * 0.5
+        titleView.py_y = 7
+        titleView.py_width = self.view.py_width - 64 - titleView.py_x * 2
+        titleView.py_height = 30
+        
+        let search = UISearchBar.init(frame: titleView.bounds)
+        titleView.addSubview(search)
+        
+        titleView.autoresizingMask = UIViewAutoresizing.flexibleWidth
+        self.navigationItem.titleView = titleView
+        
+        // close autoresizing
+        search.translatesAutoresizingMaskIntoConstraints = false
+        let widthCons: NSLayoutConstraint = NSLayoutConstraint.init(item: search, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: titleView, attribute: NSLayoutAttribute.width, multiplier: 1.0, constant: 0)
+        let heightCons: NSLayoutConstraint = NSLayoutConstraint.init(item: search, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: titleView, attribute: NSLayoutAttribute.height, multiplier: 1.0, constant: 0)
+        let xCons: NSLayoutConstraint = NSLayoutConstraint.init(item: search, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: titleView, attribute: NSLayoutAttribute.top, multiplier: 1.0, constant: 0)
+        let yCons: NSLayoutConstraint = NSLayoutConstraint.init(item: search, attribute: NSLayoutAttribute.left, relatedBy: NSLayoutRelation.equal, toItem: titleView, attribute: NSLayoutAttribute.left, multiplier: 1.0, constant: 0)
+        
+        titleView.addConstraint(widthCons)
+        titleView.addConstraint(heightCons)
+        titleView.addConstraint(xCons)
+        titleView.addConstraint(yCons)
+        
+        self.searchBar = search
+        self.searchBar.delegate = self
+        
+        search.barStyle = .default
+        search.placeholder = "请输入关键字搜索"
+        search.backgroundImage = Bundle.py_imageNamed("bgImage")
+        
     }
     
     private func initSubviews() {
         
-        self.title = "首页"
         self.automaticallyAdjustsScrollViewInsets = false
         
         self.tabBar.delegate = self
@@ -101,7 +141,7 @@ class HomeViewController: BaseViewController, HcdTabBarDelegate, SDCycleScrollVi
         
         self.headView.cycleScrollView.delegate = self
         self.view.addSubview(self.headView)
-        self.showBarButtonItem(position: RIGHT, withImage: UIImage(named: "home_btn_shubao")!)
+        self.showBarButtonItem(position: RIGHT, withImage: UIImage(named: "home_btn_shubao1")!)
         self.showBarButtonItem(position: LEFT, withImage: UIImage(named: "home_btn_saoyisao")!)
         
         self.headView.selectCollectionIndex = {
@@ -369,7 +409,32 @@ class HomeViewController: BaseViewController, HcdTabBarDelegate, SDCycleScrollVi
         
     }
     
-    // MARK : - SDCycleScrollViewDelegate
+    private func getHotSearch() {
+        self.viewModel.getHotSearch(success: { [weak self] (data) in
+            self?.updateHotSearchData(data: data)
+        }, fail: { [weak self] (message) in
+            self?.showHudTipStr(message)
+        }) { 
+            
+        }
+    }
+    
+    fileprivate func updateHotSearchData(data: JSON) {
+        
+        self.hotSearchs = [String]()
+        let arrayObject = data.arrayObject
+        
+        if arrayObject == nil {
+            return
+        }
+        
+        arrayObject?.forEach({ (obj) in
+            let str: String = obj as! String
+            self.hotSearchs.append(str)
+        })
+    }
+    
+    // MARK: - SDCycleScrollViewDelegate
     func cycleScrollView(_ cycleScrollView: SDCycleScrollView!, didSelectItemAt index: Int) {
         
         let banner = self.bannerList[index] 
@@ -387,6 +452,30 @@ class HomeViewController: BaseViewController, HcdTabBarDelegate, SDCycleScrollVi
     }
     
     func cycleScrollView(_ cycleScrollView: SDCycleScrollView!, didScrollTo index: Int) {
+        
+    }
+    
+    // MARK: - UISearchBarDelegate
+    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+        // 跳转到搜索界面
+        let vc = PYSearchViewController.init(hotSearches: self.hotSearchs, searchBarPlaceholder: "请输入搜索内容") { (searchViewController, searchBar, searchText) in
+            
+            let vc = SearchViewController()
+            vc.keyWords = searchText!
+            searchViewController?.pushViewController(viewContoller: vc, animated: true)
+            
+        }
+        vc?.hotSearchStyle = .default
+        vc?.searchHistoryStyle = .default
+        vc?.delegate = self
+        
+        let nav = BaseNavigationController.init(rootViewController: vc!)
+        self.present(nav, animated: false, completion: nil)
+        return false
+    }
+    
+    //MARK: - PYSearchViewControllerDelegate
+    func searchViewController(_ searchViewController: PYSearchViewController!, searchTextDidChange searchBar: UISearchBar!, searchText: String!) {
         
     }
     
