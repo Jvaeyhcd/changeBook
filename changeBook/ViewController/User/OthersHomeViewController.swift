@@ -79,6 +79,7 @@ class OthersHomeViewController: BaseViewController, HcdTabBarDelegate {
         super.viewDidLoad()
         
         initSubviews()
+        getUsersInfo()
     }
     
     private func initSubviews() {
@@ -172,6 +173,12 @@ class OthersHomeViewController: BaseViewController, HcdTabBarDelegate {
     }
     
     @objc private func sendMsgBtnClicked() {
+        
+        if sharedGlobal.getSavedUser().userName == self.user.userName {
+            self.showHudTipStr("不能自己和自己聊天")
+            return
+        }
+        
         let vc = ChatViewController.init(conversationChatter: self.user.userName, conversationType: EMConversationTypeChat)
         vc?.nickName = self.user.nickName
         vc?.headPic = self.user.headPic
@@ -183,7 +190,7 @@ class OthersHomeViewController: BaseViewController, HcdTabBarDelegate {
     private func getUsersInfo() {
         self.usersViewModel.getUserInfo(userId: self.user.userId, success: { [weak self] (data) in
             
-            self?.user = User.fromJSON(json: data.object)
+            self?.user = User.fromJSON(json: data["user"].object)
             self?.userDetailView.setUser(user: (self?.user)!)
             
             let userDB = UserDB()

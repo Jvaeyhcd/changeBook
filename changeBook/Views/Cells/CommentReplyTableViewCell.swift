@@ -10,7 +10,7 @@ import UIKit
 
 let kCellIdCommentReplyTableViewCell = "CommentReplyTableViewCell"
 
-class CommentReplyTableViewCell: UITableViewCell {
+class CommentReplyTableViewCell: UITableViewCell, TTTAttributedLabelDelegate {
     
     var userBlock: ((User)->())!
     
@@ -33,8 +33,8 @@ class CommentReplyTableViewCell: UITableViewCell {
         return lbl
     }()
     
-    private var commentLbl: UILabel = {
-        let lbl = UILabel()
+    private var commentLbl: UITTTAttributedLabel = {
+        let lbl = UITTTAttributedLabel.init(frame: .zero)
         lbl.font = UIFont.systemFont(ofSize: 14)
         lbl.textColor = UIColor(hex: 0x555555)
         lbl.textAlignment = .left
@@ -92,6 +92,9 @@ class CommentReplyTableViewCell: UITableViewCell {
             make.height.equalTo(scaleFromiPhone6Desgin(x: 20))
         }
         
+        self.commentLbl.linkAttributes = [NSForegroundColorAttributeName: kMainColor!,NSFontAttributeName:UIFont.systemFont(ofSize: 14)]
+        self.commentLbl.activeLinkAttributes = [NSForegroundColorAttributeName: kBlueColor,NSFontAttributeName:UIFont.systemFont(ofSize: 14)]
+        self.commentLbl.delegate = self
         self.addSubview(self.commentLbl)
         self.commentLbl.snp.makeConstraints { (make) in
             make.left.equalTo(self.userNameLbl.snp.left)
@@ -101,11 +104,16 @@ class CommentReplyTableViewCell: UITableViewCell {
         }
     }
     
-    static func cellHeightWithComment(comment: Comment)->CGFloat {
+    static func cellHeightWithComment(comment: Comment, user: User)->CGFloat {
         
         var height = scaleFromiPhone6Desgin(x: 30) + kBasePadding * 2
         
-        var detailHeight = comment.commentContent.heightWithConstrainedWidth(width: kScreenWidth - 2 * kBasePadding - scaleFromiPhone6Desgin(x: 30), font: UIFont.systemFont(ofSize: 14))
+        var content = comment.commentContent
+        if comment.receiver.userId != user.userId {
+            content = "回复 " + comment.receiver.nickName + ": " + comment.commentContent
+        }
+        
+        var detailHeight = content.heightWithConstrainedWidth(width: kScreenWidth - 2 * kBasePadding - scaleFromiPhone6Desgin(x: 30), font: UIFont.systemFont(ofSize: 14))
         if detailHeight < 20 {
             detailHeight = 20
         }
@@ -115,12 +123,27 @@ class CommentReplyTableViewCell: UITableViewCell {
         return height
     }
 
-    func setReplyComment(comment: Comment) {
+    func setReplyComment(comment: Comment, user: User) {
         self.comment = comment
+        
+        var content = comment.commentContent
+        if comment.receiver.userId != user.userId {
+            content = "回复 " + comment.receiver.nickName + ": " + comment.commentContent
+            self.commentLbl.text = content
+            self.commentLbl.addLink(to: URL.init(string: ""), with: NSMakeRange("回复 ".characters.count, comment.receiver.nickName.characters.count))
+        } else {
+            self.commentLbl.text = content
+        }
+    
         self.userHead.sd_setImage(with: URL.init(string: comment.sender.headPic), placeholderImage: kUserDefaultImage)
         self.userNameLbl.text = comment.sender.nickName
-        self.commentLbl.text = comment.commentContent
+        
         self.timeLbl.text = NSDate.stringTimesAgo(fromTimeInterval: comment.createAt.doubleValue)
+    }
+    
+    // MARK: - TTTAttributedLabelDelegate
+    func attributedLabel(_ label: TTTAttributedLabel!, didSelectLinkWith url: URL!) {
+        
     }
     
     required init?(coder aDecoder: NSCoder) {

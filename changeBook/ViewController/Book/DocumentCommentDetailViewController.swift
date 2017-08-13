@@ -163,6 +163,7 @@ class DocumentCommentDetailViewController: BaseViewController, UITableViewDelega
         
         self.viewModel.addDocumentComment(documentId: self.documentId, content: content, commentType: kCommentLv2, score: "5", documentCommentId: self.comment.id, receiverId: self.comment.sender.userId, success: { [weak self] (data) in
             self?.showHudTipStr("评论成功")
+            self?.getCommentDetail(page: 1)
         }, fail: { [weak self] (message) in
             self?.showHudTipStr(message)
         }) { 
@@ -174,8 +175,9 @@ class DocumentCommentDetailViewController: BaseViewController, UITableViewDelega
     private func replayReplayComment(content: String, user: User) {
         self.showHudLoadingTipStr("")
         
-        self.viewModel.addDocumentComment(documentId: self.documentId, content: content, commentType: kCommentLv2, score: "", documentCommentId: self.comment.id, receiverId: user.userId, success: { [weak self] (data) in
+        self.viewModel.addDocumentComment(documentId: self.documentId, content: content, commentType: kCommentLv2, score: "0", documentCommentId: self.comment.id, receiverId: user.userId, success: { [weak self] (data) in
             self?.showHudTipStr("评论成功")
+            self?.getCommentDetail(page: 1)
             }, fail: { [weak self] (message) in
                 self?.showHudTipStr(message)
         }) {
@@ -248,7 +250,7 @@ class DocumentCommentDetailViewController: BaseViewController, UITableViewDelega
         let cell = tableView.dequeueReusableCell(withIdentifier: kCellIdCommentReplyTableViewCell, for: indexPath) as! CommentReplyTableViewCell
         tableView.addLineforPlainCell(cell: cell, indexPath: indexPath, leftSpace: 0)
         let reply = self.replyList[indexPath.row]
-        cell.setReplyComment(comment: reply)
+        cell.setReplyComment(comment: reply, user: self.comment.sender)
         cell.userBlock = {
             [weak self] (user) in
             let vc = OthersHomeViewController()
@@ -265,12 +267,32 @@ class DocumentCommentDetailViewController: BaseViewController, UITableViewDelega
         }
         
         let reply = self.replyList[indexPath.row]
-        return CommentReplyTableViewCell.cellHeightWithComment(comment: reply)
+        return CommentReplyTableViewCell.cellHeightWithComment(comment: reply, user: self.comment.sender)
         
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        if 1 == indexPath.section {
+            let reply = self.replyList[indexPath.row]
+            // 如果不是自己就弹出回复窗口
+            if reply.sender.userName != sharedGlobal.getSavedUser().userName {
+                if sharedGlobal.getToken().tokenExists {
+                    let replyView = HcdReplyView.init(frame: CGRect.init(x: 0, y: 0, width: kScreenWidth, height: kScreenHeight))
+                    replyView.placeHolder = "回复 " + reply.sender.nickName as NSString
+                    replyView.commitReplyBlock = { [weak self]
+                        (content, score) in
+                        
+                        self?.replayReplayComment(content: content!, user: reply.sender)
+                    }
+                    replyView.showReply(in: UIApplication.shared.keyWindow)
+                } else {
+                    self.showLoginViewController()
+                }
+            }
+        }
+        
     }
     
     /*

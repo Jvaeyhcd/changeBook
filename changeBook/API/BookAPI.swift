@@ -33,7 +33,7 @@ public enum BookAPI {
     // 获取图书评论
     case getBookComment(bookId: String, page: Int)
     // 添加评论图书
-    case addBookComment(bookId: String, content: String, commentType: String, score: String, bookCommentId: String, receiverId: String)
+    case addBookComment(bookId: String, content: String, commentType: String, score: String, bookCommentId: String, receiverId: String, orderDetailId: String)
     // 获取图书详情
     case getBookDetail(bookId: String)
     // 搜索图书
@@ -71,7 +71,7 @@ extension BookAPI: TargetType {
             return "/book/getCommentDetail"
         case .getBookComment(bookId: _, page: _):
             return "/book/getBookComment"
-        case .addBookComment(bookId: _, content: _, commentType: _, score: _, bookCommentId: _, receiverId: _):
+        case .addBookComment(bookId: _, content: _, commentType: _, score: _, bookCommentId: _, receiverId: _, orderDetailId: _):
             return "/book/addBookComment"
         case .getBookDetail(bookId: _):
             return "/book/getBookDetail"
@@ -150,7 +150,7 @@ extension BookAPI: TargetType {
                 "bookId": bookId,
                 "page": page
             ]
-        case .addBookComment(let bookId, let content, let commentType, let score, let bookCommentId, let receiverId):
+        case .addBookComment(let bookId, let content, let commentType, let score, let bookCommentId, let receiverId, let orderDetailId):
             return [
                 "token": token,
                 "userId": userId,
@@ -159,7 +159,8 @@ extension BookAPI: TargetType {
                 "commentType": commentType,
                 "score": score,
                 "bookCommentId": bookCommentId,
-                "receiverId": receiverId
+                "receiverId": receiverId,
+                "orderDetailId": orderDetailId
             ]
         case .getBookDetail(let bookId):
             return [

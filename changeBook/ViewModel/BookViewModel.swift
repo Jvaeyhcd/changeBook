@@ -108,10 +108,11 @@ class BookViewModel: ViewModelProtocol {
                         score: String,
                         bookCommentId: String,
                         receiverId: String,
+                        orderDetailId: String,
                         success: @escaping DataBlock,
                         fail: @escaping MessageBlock,
                         loginSuccess: @escaping VoidBlock) {
-        BookAPIProvider.request(BookAPI.addBookComment(bookId: bookId, content: content, commentType:commentType, score: score, bookCommentId: bookCommentId, receiverId: receiverId)) { [weak self] (result) in
+        BookAPIProvider.request(BookAPI.addBookComment(bookId: bookId, content: content, commentType:commentType, score: score, bookCommentId: bookCommentId, receiverId: receiverId, orderDetailId: orderDetailId)) { [weak self] (result) in
             self?.request(cacheName: kNoNeedCache, result: result, success: success, fail: fail, loginSuccess: loginSuccess)
         }
     }

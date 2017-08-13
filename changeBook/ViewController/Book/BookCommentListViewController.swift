@@ -15,6 +15,7 @@ class BookCommentListViewController: BaseViewController, UITableViewDelegate, UI
     private var viewModel: BookViewModel = BookViewModel()
     private var commentList = [Comment]()
     private var pageInfo = PageInfo()
+    private var showCommentView = false
     
     private lazy var tableView: UIRefreshTableView = {
         let tableView = UIRefreshTableView.init(frame: CGRect.zero, style: .plain)
@@ -46,24 +47,27 @@ class BookCommentListViewController: BaseViewController, UITableViewDelegate, UI
         self.title = "全部评价"
         self.showBackButton()
         
-        self.view.addSubview(self.addCommentView)
-        self.addCommentView.addCommentBlock = {
-            let replyView = HcdReplyView.init(frame: CGRect.init(x: 0, y: 0, width: kScreenWidth, height: kScreenHeight), showRateStar: true)
-            replyView?.placeHolder = "我来评两句~"
-            replyView?.commitReplyBlock = { [weak self]
-                (content, score) in
-                
-                self?.addBookComment(content: content!, score: score!)
-                
+        if true == self.showCommentView {
+            self.view.addSubview(self.addCommentView)
+            self.addCommentView.addCommentBlock = {
+                let replyView = HcdReplyView.init(frame: CGRect.init(x: 0, y: 0, width: kScreenWidth, height: kScreenHeight), showRateStar: true)
+                replyView?.placeHolder = "我来评两句~"
+                replyView?.commitReplyBlock = { [weak self]
+                    (content, score) in
+                    
+                    self?.addBookComment(content: content!, score: score!)
+                    
+                }
+                replyView?.showReply(in:UIApplication.shared.keyWindow)
             }
-            replyView?.showReply(in:UIApplication.shared.keyWindow)
+            self.addCommentView.snp.makeConstraints { (make) in
+                make.left.equalTo(0)
+                make.right.equalTo(0)
+                make.bottom.equalTo(0)
+                make.height.equalTo(kTabBarHeight)
+            }
         }
-        self.addCommentView.snp.makeConstraints { (make) in
-            make.left.equalTo(0)
-            make.right.equalTo(0)
-            make.bottom.equalTo(0)
-            make.height.equalTo(kTabBarHeight)
-        }
+        
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -86,11 +90,21 @@ class BookCommentListViewController: BaseViewController, UITableViewDelegate, UI
             [weak self] (Void) in
             self?.getBookComments(page: 1)
         }
-        self.tableView.snp.makeConstraints { (make) in
-            make.left.equalTo(0)
-            make.top.equalTo(0)
-            make.right.equalTo(0)
-            make.bottom.equalTo(self.addCommentView.snp.top)
+        
+        if true == self.showCommentView {
+            self.tableView.snp.makeConstraints { (make) in
+                make.left.equalTo(0)
+                make.top.equalTo(0)
+                make.right.equalTo(0)
+                make.bottom.equalTo(self.addCommentView.snp.top)
+            }
+        } else {
+            self.tableView.snp.makeConstraints { (make) in
+                make.left.equalTo(0)
+                make.top.equalTo(0)
+                make.right.equalTo(0)
+                make.bottom.equalTo(0)
+            }
         }
         
     }
@@ -144,7 +158,7 @@ class BookCommentListViewController: BaseViewController, UITableViewDelegate, UI
         
         self.showHudLoadingTipStr("")
         
-        self.viewModel.addBookComment(bookId: self.bookId, content: content, commentType: kCommentLv1, score: score, bookCommentId: "0", receiverId: "0", success: { [weak self] (data) in
+        self.viewModel.addBookComment(bookId: self.bookId, content: content, commentType: kCommentLv1, score: score, bookCommentId: "0", receiverId: "0", orderDetailId: "0", success: { [weak self] (data) in
             self?.showHudTipStr("评价成功")
             self?.getBookComments(page: 1)
         }, fail: { [weak self] (message) in

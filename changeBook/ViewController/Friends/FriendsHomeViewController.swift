@@ -82,9 +82,9 @@ class FriendsHomeViewController: BaseViewController, UITableViewDelegate, UITabl
         var headPic = ""
         var nickName = ""
         
-        BLog(log: "\(conversation.ext)")
-        BLog(log: "\(conversation.latestMessage.to)")
-        BLog(log: "\(conversation.latestMessage.from)")
+        if nil == conversation.latestMessage {
+            return (headPic, nickName)
+        }
         
         var user: User?
         if conversation.latestMessage.to != sharedGlobal.getSavedUser().userName {
@@ -105,7 +105,7 @@ class FriendsHomeViewController: BaseViewController, UITableViewDelegate, UITabl
         }
         
         if "" == headPic && "" == nickName {
-            let lastMessage = conversation.lastReceivedMessage()
+            let lastMessage = conversation.latestMessage
             let lastExt = lastMessage?.ext
             if nil != lastExt && nil != lastExt?[USER_HEAD_IMG] && nil != lastExt?[USER_NAME] {
                 headPic = (lastExt?[USER_HEAD_IMG] as? String)!
@@ -157,12 +157,25 @@ class FriendsHomeViewController: BaseViewController, UITableViewDelegate, UITabl
         let conversation = self.conversations[indexPath.row]
         let (headPic, nickName) = getUserInfoByConversation(conversation: conversation)
         
-        let vc = ChatViewController.init(conversationChatter: conversation.lastReceivedMessage().from, conversationType: EMConversationTypeChat)
-        vc?.nickName = nickName
-        vc?.headPic = headPic
-        vc?.userName = conversation.lastReceivedMessage().from
-        vc?.hidesBottomBarWhenPushed = true
-        self.pushViewController(viewContoller: vc!, animated: true)
+        var user: User!
+        if conversation.latestMessage.to != sharedGlobal.getSavedUser().userName {
+            user = getCacheUser(userName: conversation.latestMessage.to)
+        } else if conversation.latestMessage.from != sharedGlobal.getSavedUser().userName {
+            user = getCacheUser(userName: conversation.latestMessage.from)
+        } else if conversation.latestMessage.from == sharedGlobal.getSavedUser().userName && conversation.latestMessage.to == sharedGlobal.getSavedUser().userName {
+            self.showHudTipStr("不能自己和自己聊天")
+            user = nil
+        }
+        
+        if nil != user {
+            let vc = ChatViewController.init(conversationChatter: conversation.latestMessage.from, conversationType: EMConversationTypeChat)
+            vc?.nickName = user.nickName
+            vc?.headPic = user.headPic
+            vc?.userName = user.userName
+            vc?.hidesBottomBarWhenPushed = true
+            self.pushViewController(viewContoller: vc!, animated: true)
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
