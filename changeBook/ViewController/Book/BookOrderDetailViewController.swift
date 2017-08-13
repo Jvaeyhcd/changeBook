@@ -85,7 +85,6 @@ class BookOrderDetailViewController: BaseViewController, UITableViewDelegate, UI
                     [weak self] (book) in
                     let vc = CommentBookViewController()
                     vc.book = book
-                    vc.orderDetailId = (self?.bookOrder.id)!
                     self?.pushViewController(viewContoller: vc, animated: true)
                 }
                 

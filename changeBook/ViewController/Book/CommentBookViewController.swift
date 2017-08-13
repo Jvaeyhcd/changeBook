@@ -11,7 +11,6 @@ import UIKit
 class CommentBookViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
     
     var book: Book!
-    var orderDetailId: String = "0"
     
     private var star: String = "5"
     private var comment: String = ""
@@ -64,7 +63,7 @@ class CommentBookViewController: BaseViewController, UITableViewDelegate, UITabl
         
         self.showHudLoadingTipStr("")
         
-        self.viewModel.addBookComment(bookId: self.book.bookId, content: self.comment, commentType: kCommentLv1, score: self.star, bookCommentId: "0", receiverId: "0", orderDetailId: self.orderDetailId, success: { [weak self] (data) in
+        self.viewModel.addBookComment(bookId: self.book.bookId, content: self.comment, commentType: kCommentLv1, score: self.star, bookCommentId: "0", receiverId: "0", orderDetailId: self.book.id, success: { [weak self] (data) in
                 self?.showHudTipStr("评价成功")
                 self?.popViewController(animated: true)
             }, fail: { [weak self] (message) in
