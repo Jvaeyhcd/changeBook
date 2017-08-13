@@ -37,6 +37,7 @@ struct Book {
     var score: String
     var bookAuthor: String
     var hasFile: Int
+    var isComment: Bool
     
     init(json: JSON) {
         self.id = json["id"].stringValue
@@ -55,6 +56,7 @@ struct Book {
         self.score = json["score"].stringValue
         self.bookAuthor = json["bookAuthor"].stringValue
         self.hasFile = json["hasFile"].intValue
+        self.isComment = json["isComment"].boolValue
     }
 }
 

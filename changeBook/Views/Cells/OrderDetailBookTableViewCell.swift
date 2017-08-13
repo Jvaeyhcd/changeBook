@@ -56,6 +56,15 @@ class OrderDetailBookTableViewCell: BookListTableViewCell {
     override func setBook(book: Book) {
         self.book = book
         super.setBook(book: book)
+        if book.isComment == false {
+            self.btn.backgroundColor = kMainColor
+            self.btn.isEnabled = true
+            self.btn.setTitle("评价得积分", for: .normal)
+        } else {
+            self.btn.backgroundColor = UIColor(hex: 0xBDBDBD)
+            self.btn.isEnabled = false
+            self.btn.setTitle("已评价", for: .normal)
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
