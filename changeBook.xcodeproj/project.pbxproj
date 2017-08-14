@@ -3553,7 +3553,7 @@
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = SRD7U593R7;
 						LastSwiftMigration = 0830;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -4419,7 +4419,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = SRD7U593R7;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -4442,9 +4442,10 @@
 					"$(PROJECT_DIR)/OC/Vendor/EaseUI/EMUIKit/3rdparty/DeviceHelper/VoiceConvert/opencore-amrnb",
 					"$(PROJECT_DIR)/OC/Vendor/EaseUI/EMUIKit/3rdparty/DeviceHelper/VoiceConvert/opencore-amrwb",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jvaeyhcd.changeBook;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jvaeyhcd.bookChange;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "70a61442-6663-40af-9760-14ce80c3e0f7";
+				PROVISIONING_PROFILE_SPECIFIER = pp_bookcycling_hoc;
 				SWIFT_OBJC_BRIDGING_HEADER = "OC/changeBook-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -4457,7 +4458,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = SRD7U593R7;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -4480,9 +4481,10 @@
 					"$(PROJECT_DIR)/OC/Vendor/EaseUI/EMUIKit/3rdparty/DeviceHelper/VoiceConvert/opencore-amrnb",
 					"$(PROJECT_DIR)/OC/Vendor/EaseUI/EMUIKit/3rdparty/DeviceHelper/VoiceConvert/opencore-amrwb",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jvaeyhcd.changeBook;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jvaeyhcd.bookChange;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "70a61442-6663-40af-9760-14ce80c3e0f7";
+				PROVISIONING_PROFILE_SPECIFIER = pp_bookcycling_hoc;
 				SWIFT_OBJC_BRIDGING_HEADER = "OC/changeBook-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};

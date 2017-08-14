@@ -34,7 +34,7 @@ class HotArticleListViewController: BaseTableViewController, UITableViewDelegate
                                                             left: 0,
                                                             bottom: 0,
                                                             right: 0)
-        
+        tableView.setEmptyDataSetVerticalOffset(offset: kHomeHeadViewHeight / 2)
         self.view.addSubview(self.tableView)
         self.tableView.register(ArticleListTableViewCell.self, forCellReuseIdentifier: kCellIdArticleListTableViewCell)
         

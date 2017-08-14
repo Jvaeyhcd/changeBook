@@ -33,6 +33,7 @@ class HotDataListViewController: BaseTableViewController, UITableViewDelegate, U
                                                                    bottom: 0,
                                                                    right: 0)
         
+        self.tableView.setEmptyDataSetVerticalOffset(offset: kHomeHeadViewHeight / 2)
         self.tableView.register(DataListTableViewCell.self, forCellReuseIdentifier: kCellIdDataListTableViewCell)
         self.view.addSubview(self.tableView)
         self.tableView.delegate = self

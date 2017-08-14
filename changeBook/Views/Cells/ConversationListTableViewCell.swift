@@ -45,6 +45,16 @@ class ConversationListTableViewCell: UITableViewCell {
         return lbl
     }()
     
+    private lazy var badgeLabel: UILabel = {
+        let lbl = UILabel()
+        lbl.font = UIFont.systemFont(ofSize: 12)
+        lbl.textColor  = UIColor.white
+        lbl.backgroundColor = kMainColor
+        lbl.layer.cornerRadius = 8
+        lbl.textAlignment = .center
+        return lbl
+    }()
+    
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -80,12 +90,28 @@ class ConversationListTableViewCell: UITableViewCell {
             make.top.equalTo(kBasePadding)
         }
         
+        self.addSubview(self.badgeLabel)
+        
         self.addSubview(self.contentLbl)
         self.contentLbl.snp.makeConstraints { (make) in
             make.left.equalTo(self.headImg.snp.right).offset(scaleFromiPhone6Desgin(x: 10))
             make.top.equalTo(self.titleLbl.snp.bottom)
             make.height.equalTo(scaleFromiPhone6Desgin(x: 20))
-            make.right.equalTo(-kBasePadding)
+            make.right.equalTo(-kBasePadding-40)
+        }
+    }
+    
+    func setBadge(badge: Int) {
+        var width = CGFloat(16)
+        if "\(badge)".widthWithConstrainedWidth(width: CGFloat(40), font: UIFont.systemFont(ofSize: 12)) > width {
+            width = "\(badge)".widthWithConstrainedWidth(width: CGFloat(40), font: UIFont.systemFont(ofSize: 12))
+        }
+        self.badgeLabel.text = "\(badge)"
+        self.badgeLabel.frame = CGRect(x: kScreenWidth - kBasePadding - width, y: self.contentLbl.frame.minY, width: width, height: CGFloat(16))
+        if badge == 0 {
+            self.badgeLabel.isHidden = true
+        } else {
+            self.badgeLabel.isHidden = false
         }
     }
     

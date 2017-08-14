@@ -24,6 +24,7 @@ class FriendsHomeViewController: BaseViewController, UITableViewDelegate, UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
         initSubviews()
+        reloadData()
     }
     
     private func initSubviews() {
@@ -43,11 +44,21 @@ class FriendsHomeViewController: BaseViewController, UITableViewDelegate, UITabl
     
     override func viewWillAppear(_ animated: Bool) {
         EMClient.shared().chatManager.add(self, delegateQueue: nil)
-        self.conversations = EMClient.shared().chatManager.getAllConversations() as! [EMConversation]
     }
     
     private func reloadData() {
-        self.conversations = EMClient.shared().chatManager.getAllConversations() as! [EMConversation]
+        
+        if self.conversations.count > 0 {
+            self.conversations.removeAll()
+        }
+        
+        let conversations =  EMClient.shared().chatManager.getAllConversations() as! [EMConversation]
+        for conversation in conversations {
+            if conversation.latestMessage != nil {
+                self.conversations.append(conversation)
+            }
+        }
+        
         self.tableView.reloadData()
     }
     
@@ -73,6 +84,7 @@ class FriendsHomeViewController: BaseViewController, UITableViewDelegate, UITabl
         let (headPic, nickName) = getUserInfoByConversation(conversation: conversation)
         cell.titleLbl.text = nickName
         cell.headImg.sd_setImage(with: URL.init(string: headPic), placeholderImage: kNoImgDefaultImage)
+        cell.setBadge(badge: Int(conversation.unreadMessagesCount))
         
         return cell
     }

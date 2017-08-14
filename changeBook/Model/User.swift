@@ -26,6 +26,10 @@ struct User {
     var isCertification: Int
     var viewBorrow: Int
     var viewComment: Int
+    var isDeposit: Int
+    var depositMoney: String = ""
+    var bookCount: Int
+    var openId: String = ""
     
     init() {
         userId = ""
@@ -41,6 +45,10 @@ struct User {
         isCertification = 0
         viewBorrow = 0
         viewComment = 0
+        isDeposit = INT_FALSE
+        depositMoney = ""
+        bookCount = 0
+        openId = ""
     }
     
     init(json: JSON) {
@@ -59,6 +67,10 @@ struct User {
         isCertification = json["isCertification"].intValue
         viewBorrow = json["viewBorrow"].intValue
         viewComment = json["viewComment"].intValue
+        isDeposit = json["isDeposit"].intValue
+        depositMoney = json["depositMoney"].stringValue
+        bookCount = json["bookCount"].intValue
+        openId = json["openId"].stringValue
     }
     
     static func setClientId(clientId: String) {
@@ -135,7 +147,16 @@ extension User: Decodable {
         user.isCertification = kUserDefaults.integer(forKey: "isCertification")
         user.viewBorrow = kUserDefaults.integer(forKey: "viewBorrow")
         user.viewComment = kUserDefaults.integer(forKey: "viewComment")
+        user.isDeposit = kUserDefaults.integer(forKey: "isDeposit")
+        user.bookCount = kUserDefaults.integer(forKey: "bookCount")
         
+        if let depositMoney = kUserDefaults.string(forKey: "depositMoney") {
+            user.depositMoney = depositMoney
+        }
+        
+        if let openId = kUserDefaults.string(forKey: "openId") {
+            user.openId = openId
+        }
         
         return user
     }
@@ -162,11 +183,15 @@ extension User: Decodable {
         kUserDefaults.removeObject(forKey: "viewComment")
         kUserDefaults.removeObject(forKey: "viewBorrow")
         
+        kUserDefaults.removeObject(forKey: "isDeposit")
+        kUserDefaults.removeObject(forKey: "depositMoney")
+        kUserDefaults.removeObject(forKey: "bookCount")
+        kUserDefaults.removeObject(forKey: "openId")
+        
         kUserDefaults.synchronize()
     }
     
     static func saveLoginUser(user: User) {
-        
         
         kUserDefaults.set(user.userId, forKey: "userId")
         kUserDefaults.set(user.userName, forKey: "userName")
@@ -181,6 +206,11 @@ extension User: Decodable {
         kUserDefaults.set(user.isCertification, forKey: "isCertification")
         kUserDefaults.set(user.viewComment, forKey: "viewComment")
         kUserDefaults.set(user.viewBorrow, forKey: "viewBorrow")
+        
+        kUserDefaults.set(user.isDeposit, forKey: "isDeposit")
+        kUserDefaults.set(user.depositMoney, forKey: "depositMoney")
+        kUserDefaults.set(user.bookCount, forKey: "bookCount")
+        kUserDefaults.set(user.openId, forKey: "openId")
         
         kUserDefaults.synchronize()
     }

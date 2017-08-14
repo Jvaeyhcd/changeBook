@@ -143,9 +143,10 @@ class OthersHomeViewController: BaseViewController, HcdTabBarDelegate {
             make.bottom.equalTo(0)
             make.right.equalTo(0)
             make.height.equalTo(kTabBarHeight)
-            make.left.equalTo(kScreenWidth / 2)
+            make.left.equalTo(0)
         }
         
+        self.addFriendBtn.isHidden = true
         self.view.addSubview(self.addFriendBtn)
         self.addFriendBtn.snp.makeConstraints { (make) in
             make.left.equalTo(0)
@@ -173,6 +174,11 @@ class OthersHomeViewController: BaseViewController, HcdTabBarDelegate {
     }
     
     @objc private func sendMsgBtnClicked() {
+        
+        if false == sharedGlobal.getToken().tokenExists {
+            self.showLoginViewController()
+            return
+        }
         
         if sharedGlobal.getSavedUser().userName == self.user.userName {
             self.showHudTipStr("不能自己和自己聊天")
