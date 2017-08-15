@@ -158,6 +158,9 @@ class HomeViewController: BaseViewController, HcdTabBarDelegate, SDCycleScrollVi
                 self?.pushViewController(viewContoller: vc, animated: true)
                 break
             case 2:
+                let vc = DonateViewController()
+                vc.hidesBottomBarWhenPushed = true
+                self?.pushViewController(viewContoller: vc, animated: true)
                 
                 break
             case 3:

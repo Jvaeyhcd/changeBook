@@ -87,6 +87,7 @@
 		BE269CFF1F40327900E7A624 /* home_btn_shubao1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE269CFD1F40327900E7A624 /* home_btn_shubao1@2x.png */; };
 		BE269D001F40327900E7A624 /* home_btn_shubao1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE269CFE1F40327900E7A624 /* home_btn_shubao1@3x.png */; };
 		BE269D021F40334100E7A624 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE269D011F40334100E7A624 /* SearchViewController.swift */; };
+		BE269D041F43351400E7A624 /* DonateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE269D031F43351400E7A624 /* DonateViewController.swift */; };
 		BE30872F1F304D7A001B2BCB /* UsersBrowListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE30872E1F304D7A001B2BCB /* UsersBrowListViewController.swift */; };
 		BE3251F61F27766400B6B4AF /* ArticleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3251F51F27766400B6B4AF /* ArticleDetailViewController.swift */; };
 		BE3251F81F2783D600B6B4AF /* ArticleDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3251F71F2783D600B6B4AF /* ArticleDetailTableViewCell.swift */; };
@@ -798,6 +799,7 @@
 		BE269CFD1F40327900E7A624 /* home_btn_shubao1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_btn_shubao1@2x.png"; sourceTree = "<group>"; };
 		BE269CFE1F40327900E7A624 /* home_btn_shubao1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_btn_shubao1@3x.png"; sourceTree = "<group>"; };
 		BE269D011F40334100E7A624 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		BE269D031F43351400E7A624 /* DonateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonateViewController.swift; sourceTree = "<group>"; };
 		BE30872E1F304D7A001B2BCB /* UsersBrowListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersBrowListViewController.swift; sourceTree = "<group>"; };
 		BE3251F51F27766400B6B4AF /* ArticleDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleDetailViewController.swift; sourceTree = "<group>"; };
 		BE3251F71F2783D600B6B4AF /* ArticleDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -1788,6 +1790,7 @@
 				BE57EF781F0541CC0091F312 /* HomeHeadView.swift */,
 				BE57EF7A1F05442F0091F312 /* NormalCollectionViewCell.swift */,
 				BEECE5761F361E4800B5D3C4 /* ScanViewController.swift */,
+				BE269D031F43351400E7A624 /* DonateViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -4028,6 +4031,7 @@
 				BECA16601F3E7B3800569ABD /* NSDate+Category.m in Sources */,
 				BECA16661F3E7B3800569ABD /* EaseConvertToCommonEmoticonsHelper.m in Sources */,
 				BECA164B1F3E7B3800569ABD /* UIImageView+EMHighlightedWebCache.m in Sources */,
+				BE269D041F43351400E7A624 /* DonateViewController.swift in Sources */,
 				BE1ED7601F22D074000222D6 /* BookOrder.swift in Sources */,
 				BE57EF721F05414A0091F312 /* TAAnimatedDotView.m in Sources */,
 				BEECE50C1F35666A00B5D3C4 /* WXMediaMessage+messageConstruct.m in Sources */,
