@@ -159,7 +159,7 @@ class ArticleCommentTableViewCell: UITableViewCell {
             make.right.equalTo(-kBasePadding)
             make.height.equalTo(scaleFromiPhone6Desgin(x: 20))
             make.width.equalTo(scaleFromiPhone6Desgin(x: 100))
-            make.top.bottom.equalTo(self.userHead.snp.top)
+            make.top.equalTo(self.userHead.snp.top)
         }
         
         self.addSubview(self.userNameLbl)

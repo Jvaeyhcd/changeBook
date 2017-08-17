@@ -38,7 +38,7 @@ public enum UserAPI {
     //忘记密码修改密码
     case changePassword(userName:String,newPassword:String,identifyCode:String)
     //获取积分记录
-    case getUserIntegralLog()
+    case getUserIntegralLog(page: Int)
     //获取学校列表
     case getSchoolList()
     //绑定学校
@@ -98,7 +98,7 @@ extension UserAPI: TargetType {
             return "/user/updatePassword/getCode"
         case .changePassword(userName: _, newPassword: _, identifyCode: _):
             return "/user/updatePassword/updatePassword"
-        case .getUserIntegralLog():
+        case .getUserIntegralLog(page: _):
             return "/user/getUserIntegral"
         case .getSchoolList():
             return "/user/getSchoolList"
@@ -208,10 +208,11 @@ extension UserAPI: TargetType {
                 "password": newPassword,
                 "code": identifyCode
             ]
-        case .getUserIntegralLog():
+        case .getUserIntegralLog(let page):
             return [
-                "token":token,
-                "userId":userId
+                "token": token,
+                "userId": userId,
+                "page": page
             ]
         case .getSchoolList():
             return [

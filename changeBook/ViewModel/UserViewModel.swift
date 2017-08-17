@@ -60,7 +60,7 @@ class UserViewModel: ViewModelProtocol {
         } else {
             cacheName = kNoNeedCache
         }
-        UserAPIProvider.request(UserAPI.getUserIntegralLog()) { (result) in
+        UserAPIProvider.request(UserAPI.getUserIntegralLog(page: page)) { (result) in
             self.request(cacheName: cacheName, result: result, success: success, fail: fail, loginSuccess: loginSuccess)
         }
     }

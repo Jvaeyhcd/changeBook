@@ -64,7 +64,11 @@ class MyIntegralViewController: BaseViewController, UITableViewDelegate, UITable
         }
         self.tableView.footerRefreshBlock = {
             [weak self] (Void) in
-            self?.getUserIntegralLog(page: (self?.pageInfo.currentPage)! + 1)
+            if self?.pageInfo.nextPage == self?.pageInfo.currentPage {
+                
+            } else {
+                self?.getUserIntegralLog(page:  (self?.pageInfo.nextPage)!)
+            }
         }
         self.tableView.reloadBlock = {
             [weak self] (Void) in
@@ -92,19 +96,36 @@ class MyIntegralViewController: BaseViewController, UITableViewDelegate, UITable
     
     private func updateData(data: JSON) {
         
+        if JSON.null == data {
+            return
+        }
+        
         self.pageInfo = PageInfo.fromJSON(json: data["pageInfo"])
         let logs = IntegralLog.fromJSONArray(json: data["entities"].arrayObject!)
         
-        if self.logList.count > 0 {
+        if self.pageInfo.currentPage == 1 {
+            self.logList.removeAll()
+        }
+        
+        if logs.count > 0 {
             for log in logs {
                 self.logList.append(log)
             }
-        } else {
-            self.logList = logs
         }
         
-        self.tableView.mj_header.endRefreshing()
-        self.tableView.mj_footer.endRefreshing()
+        if nil != self.tableView.mj_header {
+            self.tableView.mj_header.endRefreshing()
+        }
+        
+        if nil != self.tableView.mj_footer {
+            if self.pageInfo.currentPage == self.pageInfo.maxPage {
+                self.tableView.mj_footer.state = .noMoreData
+            } else {
+                self.tableView.mj_footer.state = .idle
+            }
+        }
+        
+        self.tableView.reloadData()
         
     }
     
@@ -120,6 +141,8 @@ class MyIntegralViewController: BaseViewController, UITableViewDelegate, UITable
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: kCellIdIntegralLogTableViewCell, for: indexPath) as! IntegralLogTableViewCell
         tableView.addLineforPlainCell(cell: cell, indexPath: indexPath, leftSpace: 0)
+        let log = self.logList[indexPath.row]
+        cell.setIntegralLog(integralLog: log)
         return cell
     }
     

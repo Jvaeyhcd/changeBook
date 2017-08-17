@@ -21,7 +21,7 @@ class ArticleCommentDetailViewController: BaseViewController, UITableViewDelegat
         let tableView = UIRefreshTableView.init(frame: CGRect.zero, style: .plain)
         tableView.backgroundColor = UIColor.white
         tableView.separatorStyle = .none
-        tableView.register(CommentTableViewCell.self, forCellReuseIdentifier: kCellIdCommentTableViewCell)
+        tableView.register(ArticleCommentTableViewCell.self, forCellReuseIdentifier: kCellIdArticleCommentTableViewCell)
         tableView.register(CommentReplyTableViewCell.self, forCellReuseIdentifier: kCellIdCommentReplyTableViewCell)
         return tableView
     }()
@@ -239,7 +239,7 @@ class ArticleCommentDetailViewController: BaseViewController, UITableViewDelegat
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if 0 == indexPath.section {
-            let cell = tableView.dequeueReusableCell(withIdentifier: kCellIdCommentTableViewCell, for: indexPath) as! CommentTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: kCellIdArticleCommentTableViewCell, for: indexPath) as! ArticleCommentTableViewCell
             tableView.addLineforPlainCell(cell: cell, indexPath: indexPath, leftSpace: 0)
             cell.setComment(comment: self.comment)
             cell.userBlock = {
@@ -267,7 +267,7 @@ class ArticleCommentDetailViewController: BaseViewController, UITableViewDelegat
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if 0 == indexPath.section {
-            return CommentTableViewCell.cellHeightWithComment(comment: self.comment)
+            return ArticleCommentTableViewCell.cellHeightWithComment(comment: self.comment)
         }
         
         let reply = self.replyList[indexPath.row]

@@ -46,7 +46,7 @@ class IntegralLogTableViewCell: UITableViewCell {
         
         self.selectionStyle = .none
         
-        self.integralLbl.text = "+1"
+        self.integralLbl.text = ""
         self.addSubview(self.integralLbl)
         self.integralLbl.snp.makeConstraints { (make) in
             make.height.equalTo(scaleFromiPhone6Desgin(x: 30))
@@ -55,7 +55,7 @@ class IntegralLogTableViewCell: UITableViewCell {
             make.right.equalTo(-kBasePadding)
         }
         
-        self.titleLbl.text = "发布文章"
+        self.titleLbl.text = ""
         self.addSubview(self.titleLbl)
         self.titleLbl.snp.makeConstraints { (make) in
             make.left.equalTo(kBasePadding)
@@ -64,7 +64,7 @@ class IntegralLogTableViewCell: UITableViewCell {
             make.right.equalTo(self.integralLbl.snp.left)
         }
         
-        self.dateLbl.text = "2017-1-1 12:12:23"
+        self.dateLbl.text = ""
         self.addSubview(self.dateLbl)
         self.dateLbl.snp.makeConstraints { (make) in
             make.left.equalTo(kBasePadding)
@@ -72,6 +72,12 @@ class IntegralLogTableViewCell: UITableViewCell {
             make.height.equalTo(scaleFromiPhone6Desgin(x: 20))
             make.right.equalTo(self.integralLbl.snp.left)
         }
+    }
+    
+    func setIntegralLog(integralLog: IntegralLog) {
+        self.titleLbl.text = integralLog.integralStr
+        self.dateLbl.text = integralLog.createAt
+        self.integralLbl.text = integralLog.integral
     }
     
     static func cellHeight() -> CGFloat {

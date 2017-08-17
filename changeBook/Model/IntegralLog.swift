@@ -14,12 +14,14 @@ struct IntegralLog {
     var integralType: String = ""
     var integral: String = ""
     var createAt: String = ""
+    var integralStr: String = ""
     
     init(json: JSON) {
         userId = json["userId"].stringValue
         integralType = json["integralType"].stringValue
         integral = json["integral"].stringValue
         createAt = json["createAt"].stringValue
+        integralStr = json["integralStr"].stringValue
     }
 }
 
