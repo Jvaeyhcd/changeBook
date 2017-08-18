@@ -23,6 +23,7 @@
 #import "MJPhotoBrowser.h"
 #import "MJPhoto.h"
 #import "UITapImageView.h"
+#import "PersistentBackgroundLabel.h"
 #import "UITTTAttributedLabel.h"
 #import "PYSearch.h"
 

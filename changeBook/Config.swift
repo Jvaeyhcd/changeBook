@@ -72,7 +72,7 @@ let kSmallTextFont = UIFont.systemFont(ofSize: 12)
 //默认头像
 let kUserDefaultImage = UIImage(named: "default_pic.jpg")
 //没有图片时的默认图片
-let kNoImgDefaultImage = UIImage.init(color: UIColor.init(hex: 0xf2f2f2))
+let kNoImgDefaultImage = UIImage(named: "default_img")//UIImage.init(color: UIColor.init(hex: 0xf2f2f2))
 
 let TIMEOUTTIME = 10
 let TIMEOUTCODE = -1001

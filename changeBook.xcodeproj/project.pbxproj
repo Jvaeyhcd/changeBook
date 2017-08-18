@@ -88,6 +88,9 @@
 		BE269D001F40327900E7A624 /* home_btn_shubao1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE269CFE1F40327900E7A624 /* home_btn_shubao1@3x.png */; };
 		BE269D021F40334100E7A624 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE269D011F40334100E7A624 /* SearchViewController.swift */; };
 		BE269D041F43351400E7A624 /* DonateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE269D031F43351400E7A624 /* DonateViewController.swift */; };
+		BE269D061F45DD6800E7A624 /* FilterDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE269D051F45DD6800E7A624 /* FilterDocumentViewController.swift */; };
+		BE269D091F471FE200E7A624 /* PersistentBackgroundLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BE269D081F471FE200E7A624 /* PersistentBackgroundLabel.m */; };
+		BE269D0B1F4736B000E7A624 /* default_img.png in Resources */ = {isa = PBXBuildFile; fileRef = BE269D0A1F4736B000E7A624 /* default_img.png */; };
 		BE30872F1F304D7A001B2BCB /* UsersBrowListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE30872E1F304D7A001B2BCB /* UsersBrowListViewController.swift */; };
 		BE3251F61F27766400B6B4AF /* ArticleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3251F51F27766400B6B4AF /* ArticleDetailViewController.swift */; };
 		BE3251F81F2783D600B6B4AF /* ArticleDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3251F71F2783D600B6B4AF /* ArticleDetailTableViewCell.swift */; };
@@ -800,6 +803,10 @@
 		BE269CFE1F40327900E7A624 /* home_btn_shubao1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_btn_shubao1@3x.png"; sourceTree = "<group>"; };
 		BE269D011F40334100E7A624 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		BE269D031F43351400E7A624 /* DonateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonateViewController.swift; sourceTree = "<group>"; };
+		BE269D051F45DD6800E7A624 /* FilterDocumentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterDocumentViewController.swift; sourceTree = "<group>"; };
+		BE269D071F471FE200E7A624 /* PersistentBackgroundLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersistentBackgroundLabel.h; sourceTree = "<group>"; };
+		BE269D081F471FE200E7A624 /* PersistentBackgroundLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersistentBackgroundLabel.m; sourceTree = "<group>"; };
+		BE269D0A1F4736B000E7A624 /* default_img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_img.png; sourceTree = "<group>"; };
 		BE30872E1F304D7A001B2BCB /* UsersBrowListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersBrowListViewController.swift; sourceTree = "<group>"; };
 		BE3251F51F27766400B6B4AF /* ArticleDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleDetailViewController.swift; sourceTree = "<group>"; };
 		BE3251F71F2783D600B6B4AF /* ArticleDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -1861,6 +1868,8 @@
 		BE179FEE1F36BC9500034747 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				BE269D071F471FE200E7A624 /* PersistentBackgroundLabel.h */,
+				BE269D081F471FE200E7A624 /* PersistentBackgroundLabel.m */,
 				BE179FEF1F36BC9500034747 /* UITapImageView.h */,
 				BE179FF01F36BC9500034747 /* UITapImageView.m */,
 			);
@@ -1922,6 +1931,7 @@
 				BE91CB041F33709900AF22CE /* CommentBookViewController.swift */,
 				BE1ED76B1F2479BC000222D6 /* SearchBookViewController.swift */,
 				BE91CB021F33658700AF22CE /* FilterDataViewController.swift */,
+				BE269D051F45DD6800E7A624 /* FilterDocumentViewController.swift */,
 				BE269CE31F3FD55800E7A624 /* SearchDocumentViewController.swift */,
 				BE5AEFA61F1B836A00475B90 /* DataDetailViewController.swift */,
 				BE179FF61F36FFB900034747 /* DataContentViewController.swift */,
@@ -1964,6 +1974,7 @@
 		BE57EDB41F03F1640091F312 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				BE269D0A1F4736B000E7A624 /* default_img.png */,
 				BE269CFD1F40327900E7A624 /* home_btn_shubao1@2x.png */,
 				BE269CFE1F40327900E7A624 /* home_btn_shubao1@3x.png */,
 				BE179FB81F369E3200034747 /* html.bundle */,
@@ -3556,7 +3567,7 @@
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = SRD7U593R7;
 						LastSwiftMigration = 0830;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -3778,6 +3789,7 @@
 				BE57EEDA1F04B1290091F312 /* wode_btn_shezhi@3x.png in Resources */,
 				BE57EE9B1F04B1290091F312 /* laoshi_btn_biaoqian@2x.png in Resources */,
 				BE57EE991F04B1290091F312 /* laoshi_rb_pre@2x.png in Resources */,
+				BE269D0B1F4736B000E7A624 /* default_img.png in Resources */,
 				BE57EF001F04B1290091F312 /* fenxiang_btn_qqkj@3x.png in Resources */,
 				BE57EF271F04B1290091F312 /* tab_laoshi_pre@2x.png in Resources */,
 				BE57EF4E1F04B1290091F312 /* login_icon_1@3x.png in Resources */,
@@ -3959,6 +3971,7 @@
 				BE8D53ED1EFBF619003850EB /* STPopupNavigationBar.m in Sources */,
 				BE269CFC1F3FF06400E7A624 /* UIView+PYSearchExtension.m in Sources */,
 				BEB94CE71F1477F600181DC2 /* EditNickNameViewController.swift in Sources */,
+				BE269D091F471FE200E7A624 /* PersistentBackgroundLabel.m in Sources */,
 				BE91CB051F33709900AF22CE /* CommentBookViewController.swift in Sources */,
 				BECA16841F3E7B3800569ABD /* EaseFaceView.m in Sources */,
 				BE57EF731F05414A0091F312 /* TADotView.m in Sources */,
@@ -4198,6 +4211,7 @@
 				BE91CB091F3377DA00AF22CE /* PlaceHolderViewTableViewCell.swift in Sources */,
 				BECA16491F3E7B3800569ABD /* UIImage+EMMultiFormat.m in Sources */,
 				BE7CA9BE1F0BEA68007CB195 /* Decodable+Rx.swift in Sources */,
+				BE269D061F45DD6800E7A624 /* FilterDocumentViewController.swift in Sources */,
 				BE57EF821F0798080091F312 /* SlippedSegmentItem.swift in Sources */,
 				BECA16501F3E7B3800569ABD /* PSTCollectionViewCell.m in Sources */,
 				BE1A3B361F2DF4AF00CC98B3 /* PayWayViewController.swift in Sources */,
@@ -4423,8 +4437,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = SRD7U593R7;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -4448,8 +4462,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jvaeyhcd.bookChange;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "70a61442-6663-40af-9760-14ce80c3e0f7";
-				PROVISIONING_PROFILE_SPECIFIER = pp_bookcycling_hoc;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "OC/changeBook-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -4462,8 +4476,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = SRD7U593R7;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -4487,8 +4501,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jvaeyhcd.bookChange;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "70a61442-6663-40af-9760-14ce80c3e0f7";
-				PROVISIONING_PROFILE_SPECIFIER = pp_bookcycling_hoc;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "OC/changeBook-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};

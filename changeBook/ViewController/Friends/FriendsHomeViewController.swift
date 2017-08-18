@@ -40,9 +40,11 @@ class FriendsHomeViewController: BaseViewController, UITableViewDelegate, UITabl
             make.right.equalTo(0)
             make.bottom.equalTo(-kTabBarHeight)
         }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         EMClient.shared().chatManager.add(self, delegateQueue: nil)
     }
     
@@ -59,6 +61,7 @@ class FriendsHomeViewController: BaseViewController, UITableViewDelegate, UITabl
             }
         }
         
+        self.updateConversations()
         self.tableView.reloadData()
     }
     
@@ -207,10 +210,28 @@ class FriendsHomeViewController: BaseViewController, UITableViewDelegate, UITabl
     }
 
     func messageStatusDidChange(_ aMessage: EMMessage!, error aError: EMError!) {
-        self.tableView.reloadData()
+        self.reloadData()
     }
     
     func messagesDidReceive(_ aMessages: [Any]!) {
+        self.reloadData()
+    }
+    
+    // MARK: - private
+    private func updateConversations() {
+        let conversations = EMClient.shared().chatManager.getAllConversations()
+        var unreadCount: Int32 = 0
+        for conversation in conversations! {
+            let con = conversation as! EMConversation
+            unreadCount = unreadCount + con.unreadMessagesCount
+        }
+        if unreadCount > 99 {
+            self.navigationController?.tabBarItem.badgeValue = "99+"
+        } else if unreadCount > 0 {
+            self.navigationController?.tabBarItem.badgeValue = "\(unreadCount)"
+        } else {
+            self.navigationController?.tabBarItem.badgeValue = ""
+        }
         self.tableView.reloadData()
     }
     

@@ -45,12 +45,14 @@ class ConversationListTableViewCell: UITableViewCell {
         return lbl
     }()
     
-    private lazy var badgeLabel: UILabel = {
-        let lbl = UILabel()
+    private lazy var badgeLabel: PersistentBackgroundLabel = {
+        let lbl = PersistentBackgroundLabel()
+        lbl.setPersistentBackgroundColor(kMainColor)
         lbl.font = UIFont.systemFont(ofSize: 12)
         lbl.textColor  = UIColor.white
         lbl.backgroundColor = kMainColor
         lbl.layer.cornerRadius = 8
+        lbl.clipsToBounds = true
         lbl.textAlignment = .center
         return lbl
     }()
@@ -79,7 +81,7 @@ class ConversationListTableViewCell: UITableViewCell {
             make.top.equalTo(kBasePadding)
             make.right.equalTo(-kBasePadding)
             make.height.equalTo(scaleFromiPhone6Desgin(x: 20))
-            make.width.equalTo(scaleFromiPhone6Desgin(x: 100))
+            make.width.equalTo(scaleFromiPhone6Desgin(x: 150))
         }
         
         self.addSubview(self.titleLbl)
@@ -107,7 +109,7 @@ class ConversationListTableViewCell: UITableViewCell {
             width = "\(badge)".widthWithConstrainedWidth(width: CGFloat(40), font: UIFont.systemFont(ofSize: 12))
         }
         self.badgeLabel.text = "\(badge)"
-        self.badgeLabel.frame = CGRect(x: kScreenWidth - kBasePadding - width, y: self.contentLbl.frame.minY, width: width, height: CGFloat(16))
+        self.badgeLabel.frame = CGRect(x: kScreenWidth - kBasePadding - width, y: kBasePadding + scaleFromiPhone6Desgin(x: 20), width: width, height: CGFloat(16))
         if badge == 0 {
             self.badgeLabel.isHidden = true
         } else {

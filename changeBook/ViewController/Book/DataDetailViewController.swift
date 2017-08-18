@@ -141,6 +141,14 @@ class DataDetailViewController: BaseViewController, UITableViewDelegate, UITable
     }
     
     @objc private func openBtnClicked() {
+        
+        // 判断积分是否足够
+        if (sharedGlobal.getSavedUser().integral.floatValue < 0 ||
+            sharedGlobal.getSavedUser().integral.floatValue < self.document.needIntegral.floatValue) {
+            self.showHudTipStr("积分不够，先去赚取积分吧")
+            return
+        }
+        
         let vc = DataContentViewController()
         vc.urlStr = self.document.file
         vc.document = self.document
