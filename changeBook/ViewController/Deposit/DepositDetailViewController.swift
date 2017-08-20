@@ -64,6 +64,9 @@ class DepositDetailViewController: BaseViewController, UITableViewDelegate, UITa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: kCellIdAccountLogTableViewCell, for: indexPath) as! AccountLogTableViewCell
+        let accountLog = self.accountLogs[indexPath.row]
+        cell.setAccountLog(accountLog: accountLog)
+        
         return cell
     }
     

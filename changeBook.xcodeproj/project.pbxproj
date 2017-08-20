@@ -92,6 +92,16 @@
 		BE269D091F471FE200E7A624 /* PersistentBackgroundLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BE269D081F471FE200E7A624 /* PersistentBackgroundLabel.m */; };
 		BE269D0B1F4736B000E7A624 /* default_img.png in Resources */ = {isa = PBXBuildFile; fileRef = BE269D0A1F4736B000E7A624 /* default_img.png */; };
 		BE269D0F1F4956D200E7A624 /* SingleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE269D0E1F4956D200E7A624 /* SingleTableViewCell.swift */; };
+		BE269D111F49752800E7A624 /* InputISBNViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE269D101F49752800E7A624 /* InputISBNViewController.swift */; };
+		BE269D131F49887B00E7A624 /* CommitISBNViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE269D121F49887B00E7A624 /* CommitISBNViewController.swift */; };
+		BE269D151F49933200E7A624 /* AuthStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE269D141F49933200E7A624 /* AuthStatusViewController.swift */; };
+		BE269D181F4993A500E7A624 /* pic_wait@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE269D161F4993A500E7A624 /* pic_wait@2x.png */; };
+		BE269D191F4993A500E7A624 /* pic_wait@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE269D171F4993A500E7A624 /* pic_wait@3x.png */; };
+		BE269D1C1F4993BF00E7A624 /* pic_failed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE269D1A1F4993BF00E7A624 /* pic_failed@2x.png */; };
+		BE269D1D1F4993BF00E7A624 /* pic_failed@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE269D1B1F4993BF00E7A624 /* pic_failed@3x.png */; };
+		BE269D1F1F49960600E7A624 /* SignleImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE269D1E1F49960600E7A624 /* SignleImageTableViewCell.swift */; };
+		BE269D211F49970C00E7A624 /* vertify_img.png in Resources */ = {isa = PBXBuildFile; fileRef = BE269D201F49970C00E7A624 /* vertify_img.png */; };
+		BE269D231F49A1A200E7A624 /* DepositTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE269D221F49A1A200E7A624 /* DepositTableViewCell.swift */; };
 		BE30872F1F304D7A001B2BCB /* UsersBrowListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE30872E1F304D7A001B2BCB /* UsersBrowListViewController.swift */; };
 		BE3251F61F27766400B6B4AF /* ArticleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3251F51F27766400B6B4AF /* ArticleDetailViewController.swift */; };
 		BE3251F81F2783D600B6B4AF /* ArticleDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3251F71F2783D600B6B4AF /* ArticleDetailTableViewCell.swift */; };
@@ -809,6 +819,16 @@
 		BE269D081F471FE200E7A624 /* PersistentBackgroundLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersistentBackgroundLabel.m; sourceTree = "<group>"; };
 		BE269D0A1F4736B000E7A624 /* default_img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_img.png; sourceTree = "<group>"; };
 		BE269D0E1F4956D200E7A624 /* SingleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleTableViewCell.swift; sourceTree = "<group>"; };
+		BE269D101F49752800E7A624 /* InputISBNViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputISBNViewController.swift; sourceTree = "<group>"; };
+		BE269D121F49887B00E7A624 /* CommitISBNViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommitISBNViewController.swift; sourceTree = "<group>"; };
+		BE269D141F49933200E7A624 /* AuthStatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthStatusViewController.swift; sourceTree = "<group>"; };
+		BE269D161F4993A500E7A624 /* pic_wait@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pic_wait@2x.png"; sourceTree = "<group>"; };
+		BE269D171F4993A500E7A624 /* pic_wait@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pic_wait@3x.png"; sourceTree = "<group>"; };
+		BE269D1A1F4993BF00E7A624 /* pic_failed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pic_failed@2x.png"; sourceTree = "<group>"; };
+		BE269D1B1F4993BF00E7A624 /* pic_failed@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pic_failed@3x.png"; sourceTree = "<group>"; };
+		BE269D1E1F49960600E7A624 /* SignleImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignleImageTableViewCell.swift; sourceTree = "<group>"; };
+		BE269D201F49970C00E7A624 /* vertify_img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vertify_img.png; sourceTree = "<group>"; };
+		BE269D221F49A1A200E7A624 /* DepositTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepositTableViewCell.swift; sourceTree = "<group>"; };
 		BE30872E1F304D7A001B2BCB /* UsersBrowListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersBrowListViewController.swift; sourceTree = "<group>"; };
 		BE3251F51F27766400B6B4AF /* ArticleDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleDetailViewController.swift; sourceTree = "<group>"; };
 		BE3251F71F2783D600B6B4AF /* ArticleDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -1799,6 +1819,8 @@
 				BE57EF781F0541CC0091F312 /* HomeHeadView.swift */,
 				BE57EF7A1F05442F0091F312 /* NormalCollectionViewCell.swift */,
 				BEECE5761F361E4800B5D3C4 /* ScanViewController.swift */,
+				BE269D101F49752800E7A624 /* InputISBNViewController.swift */,
+				BE269D121F49887B00E7A624 /* CommitISBNViewController.swift */,
 				BE269D031F43351400E7A624 /* DonateViewController.swift */,
 			);
 			path = Home;
@@ -1976,11 +1998,16 @@
 		BE57EDB41F03F1640091F312 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				BE269D201F49970C00E7A624 /* vertify_img.png */,
 				BE269D0A1F4736B000E7A624 /* default_img.png */,
 				BE269CFD1F40327900E7A624 /* home_btn_shubao1@2x.png */,
 				BE269CFE1F40327900E7A624 /* home_btn_shubao1@3x.png */,
 				BE179FB81F369E3200034747 /* html.bundle */,
 				BEECE5291F35E7EB00B5D3C4 /* addPictureBgImage@2x.png */,
+				BE269D161F4993A500E7A624 /* pic_wait@2x.png */,
+				BE269D171F4993A500E7A624 /* pic_wait@3x.png */,
+				BE269D1A1F4993BF00E7A624 /* pic_failed@2x.png */,
+				BE269D1B1F4993BF00E7A624 /* pic_failed@3x.png */,
 				BEECE5271F35E7C900B5D3C4 /* btn_delete_tweetimage@2x.png */,
 				BE4907281F1F774B0031024F /* pingjia_btn_comment@2x.png */,
 				BE179FE61F36B7F300034747 /* wenzhang_btn_zan@2x.png */,
@@ -2362,6 +2389,8 @@
 				BEFCA4E11F3B3C8F00FA845F /* AccountLogTableViewCell.swift */,
 				BECA168A1F3E839700569ABD /* ConversationListTableViewCell.swift */,
 				BE269D0E1F4956D200E7A624 /* SingleTableViewCell.swift */,
+				BE269D1E1F49960600E7A624 /* SignleImageTableViewCell.swift */,
+				BE269D221F49A1A200E7A624 /* DepositTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -2525,6 +2554,7 @@
 				BEECE4791F35661500B5D3C4 /* PrivacySettingsViewController.swift */,
 				BEECE51D1F35C2E300B5D3C4 /* BindPhoneViewController.swift */,
 				BEECE5231F35D32F00B5D3C4 /* RealnameAuthViewController.swift */,
+				BE269D141F49933200E7A624 /* AuthStatusViewController.swift */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -3602,6 +3632,7 @@
 				BE57EF141F04B1290091F312 /* home_icon_daan_1@3x.png in Resources */,
 				BE7CAA4B1F0F8EC8007CB195 /* pic_null@3x.png in Resources */,
 				BE57EEAD1F04B1290091F312 /* wenzhang_btn_xiugai@2x.png in Resources */,
+				BE269D1C1F4993BF00E7A624 /* pic_failed@2x.png in Resources */,
 				BE57EF231F04B1290091F312 /* home_icon_star@2x.png in Resources */,
 				BE57EE971F04B1290091F312 /* laoshi_rb@2x.png in Resources */,
 				BE57EF241F04B1290091F312 /* home_icon_star@3x.png in Resources */,
@@ -3695,6 +3726,7 @@
 				BE7CA9F21F0F3192007CB195 /* refresh06.png in Resources */,
 				BE57EEAA1F04B1290091F312 /* shubao_icon_none@3x.png in Resources */,
 				BE57EF3F1F04B1290091F312 /* home_icon_chakan@2x.png in Resources */,
+				BE269D1D1F4993BF00E7A624 /* pic_failed@3x.png in Resources */,
 				BE57EF121F04B1290091F312 /* home_btn_gengduo@3x.png in Resources */,
 				BE57EF511F04B1290091F312 /* login_icon_2@2x.png in Resources */,
 				BEECE54F1F360EE700B5D3C4 /* cameraIcon@3x.png in Resources */,
@@ -3775,6 +3807,7 @@
 				BE57EF2E1F04B1290091F312 /* tab_shuyou_pre@3x.png in Resources */,
 				BE57EEFB1F04B1290091F312 /* fenxiang_btn_qqhy@2x.png in Resources */,
 				BE57EF491F04B1290091F312 /* nav_btn_back@2x.png in Resources */,
+				BE269D181F4993A500E7A624 /* pic_wait@2x.png in Resources */,
 				BE57EF171F04B1290091F312 /* home_icon_pdf@2x.png in Resources */,
 				BE57EEA01F04B1290091F312 /* laoshi_icon_red_1@3x.png in Resources */,
 				BE57EECB1F04B1290091F312 /* wode_btn_bangzhu@2x.png in Resources */,
@@ -3845,6 +3878,7 @@
 				BE57EF071F04B1290091F312 /* xiangqing_icon_daan1@2x.png in Resources */,
 				BE4B35261F1651F60008548D /* saoyisao_btn_shoudong@3x.png in Resources */,
 				BE57EF191F04B1290091F312 /* home_icon_doc@2x.png in Resources */,
+				BE269D191F4993A500E7A624 /* pic_wait@3x.png in Resources */,
 				BE57EF3E1F04B1290091F312 /* home_btn_shangchuan@3x.png in Resources */,
 				BE57EEDF1F04B1290091F312 /* xiangqing_icon_docx@2x.png in Resources */,
 				BE57EF2C1F04B1290091F312 /* tab_shouye@3x.png in Resources */,
@@ -3872,6 +3906,7 @@
 				BE4B35271F1651F60008548D /* juanzeng_btn_ershoushu@2x.png in Resources */,
 				BE57EF1B1F04B1290091F312 /* home_icon_docx@2x.png in Resources */,
 				BE57EE901F04B1290091F312 /* wenzhang_btn_dashang@3x.png in Resources */,
+				BE269D211F49970C00E7A624 /* vertify_img.png in Resources */,
 				BE57EEA11F04B1290091F312 /* laoshi_icon_yellow_1@2x.png in Resources */,
 				BE57EEF51F04B1290091F312 /* dingdan_icon_shijiani@2x.png in Resources */,
 				BE57EF481F04B1290091F312 /* login_btn@3x.png in Resources */,
@@ -4001,6 +4036,7 @@
 				BECA16861F3E7B3800569ABD /* EaseChatBarMoreView.m in Sources */,
 				BE49073C1F1F96680031024F /* NSString+Polesapp.m in Sources */,
 				BECA164F1F3E7B3800569ABD /* PSTCollectionView.m in Sources */,
+				BE269D131F49887B00E7A624 /* CommitISBNViewController.swift in Sources */,
 				BE179FD31F369ED600034747 /* MJPhotoProgressView.m in Sources */,
 				BECA162C1F3E7B3700569ABD /* EMCDDeviceManager+Remind.m in Sources */,
 				BEECE55B1F360EE700B5D3C4 /* CameraView.swift in Sources */,
@@ -4150,6 +4186,7 @@
 				BEB94CE11F144DE600181DC2 /* SchoolListViewController.swift in Sources */,
 				BE1A0BE91F20E9880005C632 /* CommentReplyTableViewCell.swift in Sources */,
 				BE57ED981F03BD910091F312 /* UIViewController+HcdSideMenu.m in Sources */,
+				BE269D231F49A1A200E7A624 /* DepositTableViewCell.swift in Sources */,
 				BE179FF51F36F01E00034747 /* OthersHomeViewController.swift in Sources */,
 				BECA16461F3E7B3800569ABD /* NSData+EMImageContentType.m in Sources */,
 				BEECE55F1F360EE700B5D3C4 /* ImageGalleryLayout.swift in Sources */,
@@ -4250,6 +4287,7 @@
 				BEFCA4E21F3B3C8F00FA845F /* AccountLogTableViewCell.swift in Sources */,
 				BECA16771F3E7B3800569ABD /* EaseMessageTimeCell.m in Sources */,
 				BED100581F28D4120028AE6A /* ArticleCommentTableViewCell.swift in Sources */,
+				BE269D111F49752800E7A624 /* InputISBNViewController.swift in Sources */,
 				BECA16751F3E7B3800569ABD /* EaseCustomMessageCell.m in Sources */,
 				BE7CA9DC1F0E452A007CB195 /* ButtonTableViewCell.swift in Sources */,
 				BE179FF11F36BC9500034747 /* UITapImageView.m in Sources */,
@@ -4289,6 +4327,7 @@
 				BE7CAA371F0F3F08007CB195 /* UIScrollView+MJExtension.m in Sources */,
 				BECA16851F3E7B3800569ABD /* EaseFacialView.m in Sources */,
 				BE9AC4231F01495F00C9288A /* FindPasswordViewController.swift in Sources */,
+				BE269D151F49933200E7A624 /* AuthStatusViewController.swift in Sources */,
 				BE179FDE1F36A14900034747 /* YLImageView.m in Sources */,
 				BE91CB031F33658700AF22CE /* FilterDataViewController.swift in Sources */,
 				BE8D53EE1EFBF619003850EB /* UIResponder+STPopup.m in Sources */,
@@ -4311,6 +4350,7 @@
 				BE4907351F1F912F0031024F /* AddCommentBottomView.swift in Sources */,
 				BE91CAF71F320EE400AF22CE /* OrderStatusTableViewCell.swift in Sources */,
 				BE7CAA2B1F0F3F08007CB195 /* MJRefreshAutoGifFooter.m in Sources */,
+				BE269D1F1F49960600E7A624 /* SignleImageTableViewCell.swift in Sources */,
 				BE1A3B2D1F2D966400CC98B3 /* ConfirmBookOrderViewController.swift in Sources */,
 				BECA163C1F3E7B3800569ABD /* MWZoomingScrollView.m in Sources */,
 				BECA165E1F3E7B3800569ABD /* EaseMessageModel.m in Sources */,

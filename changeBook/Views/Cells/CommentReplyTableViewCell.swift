@@ -113,7 +113,7 @@ class CommentReplyTableViewCell: UITableViewCell, TTTAttributedLabelDelegate {
             content = "回复 " + comment.receiver.nickName + ": " + comment.commentContent
         }
         
-        var detailHeight = content.heightWithConstrainedWidth(width: kScreenWidth - 2 * kBasePadding - scaleFromiPhone6Desgin(x: 30), font: UIFont.systemFont(ofSize: 14))
+        var detailHeight = content.heightWithConstrainedWidth(width: kScreenWidth - 2 * kBasePadding - scaleFromiPhone6Desgin(x: 30), font: UIFont.systemFont(ofSize: 14)) + 8
         if detailHeight < 20 {
             detailHeight = 20
         }

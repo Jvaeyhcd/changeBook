@@ -223,4 +223,13 @@ class BookViewModel: ViewModelProtocol {
             self?.request(cacheName: kNoNeedCache, result: result, success: success, fail: fail, loginSuccess: loginSuccess)
         }
     }
+    // 提交ISBN
+    func addISBN(ISBN: String,
+                 success: @escaping DataBlock,
+                 fail: @escaping MessageBlock,
+                 loginSuccess: @escaping VoidBlock) {
+        BookAPIProvider.request(BookAPI.addISBN(ISBN: ISBN)) { [weak self] (result) in
+            self?.request(cacheName: kNoNeedCache, result: result, success: success, fail: fail, loginSuccess: loginSuccess)
+        }
+    }
 }

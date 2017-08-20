@@ -37,7 +37,7 @@ class ScanViewController: LBXScanViewController {
         super.viewDidLoad()
         
         self.showBackButton()
-        self.title = "扫码充电"
+        self.title = "扫一扫"
         
         //需要识别后的图像
         setNeedCodeImage(needCodeImg: false)
@@ -102,8 +102,11 @@ class ScanViewController: LBXScanViewController {
             vc.book = book
             self?.pushViewController(viewContoller: vc, animated: true)
             
-        }, fail: { (message) in
-            self.showHudTipStr(message)
+        }, fail: { [weak self] (message) in
+            self?.showHudTipStr(message)
+            let vc = CommitISBNViewController()
+            vc.ISBN = ISBN
+            self?.pushViewController(viewContoller: vc, animated: true)
         }) { 
             
         }
@@ -217,8 +220,8 @@ class ScanViewController: LBXScanViewController {
     }
     
     func handInputBtnClicked() {
-//        let vc = InputNumberViewController()
-//        self.navigationController?.pushViewController(vc, animated: true)
+        let vc = InputISBNViewController()
+        self.pushViewController(viewContoller: vc, animated: true)
     }
     
     override func leftNavBarButtonClicked() {

@@ -328,7 +328,7 @@ class SettingViewController: BaseViewController, UITableViewDelegate, UITableVie
                 } else if 2 == self.savedUser.isCertification {
                     cell.descLbl.text = "已认证"
                 } else if 3 == self.savedUser.isCertification {
-                    cell.descLbl.text = "未认证"
+                    cell.descLbl.text = "认证失败"
                 }
                 cell.portraitImageView.isHidden = true
             } else if indexPath.row == 1 {
@@ -428,8 +428,19 @@ class SettingViewController: BaseViewController, UITableViewDelegate, UITableVie
             }
         } else if 1 == indexPath.section {
             if 0 == indexPath.row {
-                let vc = RealnameAuthViewController()
-                self.pushViewController(viewContoller: vc, animated: true)
+                if 0 == self.savedUser.isCertification {
+                    let vc = RealnameAuthViewController()
+                    self.pushViewController(viewContoller: vc, animated: true)
+                } else if 1 == self.savedUser.isCertification {
+                    let vc = AuthStatusViewController()
+                    self.pushViewController(viewContoller: vc, animated: true)
+                } else if 2 == self.savedUser.isCertification {
+                    
+                } else if 3 == self.savedUser.isCertification {
+                    let vc = AuthStatusViewController()
+                    self.pushViewController(viewContoller: vc, animated: true)
+                }
+                
             } else if 1 == indexPath.row {
                 let vc = PrivacySettingsViewController()
                 self.pushViewController(viewContoller: vc, animated: true)

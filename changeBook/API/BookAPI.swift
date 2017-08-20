@@ -50,6 +50,8 @@ public enum BookAPI {
     case getBookAddress()
     // 图书扫一扫
     case scanBook(ISBN: String)
+    // 提交ISBN
+    case addISBN(ISBN: String)
 }
 
 extension BookAPI: TargetType {
@@ -89,6 +91,8 @@ extension BookAPI: TargetType {
             return "/book/getBookAddress"
         case .scanBook(ISBN: _):
             return "/book/scanBook"
+        case .addISBN(ISBN: _):
+            return "/bookcycling/addISBN"
         }
     }
     
@@ -205,6 +209,12 @@ extension BookAPI: TargetType {
                 "userId": userId
             ]
         case .scanBook(let ISBN):
+            return [
+                "token": token,
+                "userId": userId,
+                "ISBN": ISBN
+            ]
+        case .addISBN(let ISBN):
             return [
                 "token": token,
                 "userId": userId,

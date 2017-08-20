@@ -23,6 +23,7 @@ class RealnameAuthViewController: UIViewController, UITableViewDataSource, UITab
        let contentTableView = TPKeyboardAvoidingTableView.init()
         contentTableView.register(SimpleInputTableViewCell.self, forCellReuseIdentifier: kCellIdSimpleInputTableViewCell)
         contentTableView.register(SelectPhotoTableViewCell.self, forCellReuseIdentifier: kCellIdSelectPhotoTableViewCell)
+        contentTableView.register(SignleImageTableViewCell.self, forCellReuseIdentifier: kCellIdSignleImageTableViewCell)
         contentTableView.register(TipsTableViewCell.self, forCellReuseIdentifier: kCellIdTipsTableViewCell)
         contentTableView.delegate = self
         contentTableView.dataSource = self
@@ -53,10 +54,13 @@ class RealnameAuthViewController: UIViewController, UITableViewDataSource, UITab
 
     // MARK: - UITableViewDelegate, UITableViewDataSource
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 2 {
+            return 1
+        }
         return 2
     }
     
@@ -85,7 +89,7 @@ class RealnameAuthViewController: UIViewController, UITableViewDataSource, UITab
             tableView.addLineforPlainCell(cell: cell, indexPath: indexPath, leftSpace: 0)
             
             return cell
-        } else {
+        } else if 1 == indexPath.section {
             
             if 0 == indexPath.row {
                 let cell = tableView.dequeueReusableCell(withIdentifier: kCellIdSelectPhotoTableViewCell, for: indexPath) as! SelectPhotoTableViewCell
@@ -128,6 +132,10 @@ class RealnameAuthViewController: UIViewController, UITableViewDataSource, UITab
                 return cell
             }
             
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: kCellIdSignleImageTableViewCell, for: indexPath) as! SignleImageTableViewCell
+            cell.imgView.image = UIImage(named: "vertify_img")
+            return cell
         }
         
     }
@@ -145,6 +153,8 @@ class RealnameAuthViewController: UIViewController, UITableViewDataSource, UITab
                 height = TipsTableViewCell.cellHeightWithStr(str: self.tips)
             }
             
+        } else if 2 == indexPath.section {
+            height = SignleImageTableViewCell.cellHeight()
         }
         return height
     }
@@ -156,14 +166,14 @@ class RealnameAuthViewController: UIViewController, UITableViewDataSource, UITab
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         var height = kBasePadding
         
-        if section == 1 {
+        if 1 == section || 2 == section {
             height = scaleFromiPhone6Desgin(x: 50) + kBasePadding
         }
         return height
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        if 1 == section {
+        if 1 == section || 2 == section {
             let view = UIView.init(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kBasePadding + scaleFromiPhone6Desgin(x: 50)))
             
             let topView = UIView()
@@ -180,7 +190,12 @@ class RealnameAuthViewController: UIViewController, UITableViewDataSource, UITab
             tipsLbl.font = UIFont.systemFont(ofSize: 16)
             tipsLbl.textColor = UIColor(hex: 0x555555)
             tipsLbl.textAlignment = .left
-            tipsLbl.text = "学生证/一卡通照片"
+            if 1 == section {
+                tipsLbl.text = "学生证/一卡通照片"
+            } else if 2 == section {
+                tipsLbl.text = "申请模板"
+            }
+            
             view.addSubview(tipsLbl)
             tipsLbl.snp.makeConstraints({ (make) in
                 make.top.equalTo(topView.snp.bottom)

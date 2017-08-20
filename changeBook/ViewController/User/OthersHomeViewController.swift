@@ -88,7 +88,7 @@ class OthersHomeViewController: BaseViewController, HcdTabBarDelegate {
         
         var userDescLblHeight = self.user.introduce.heightWithConstrainedWidth(width: kScreenWidth - scaleFromiPhone6Desgin(x: 60), font: UIFont.systemFont(ofSize: 13))
         
-        userDescLblHeight = userDescLblHeight > scaleFromiPhone6Desgin(x: 20) ? userDescLblHeight : scaleFromiPhone6Desgin(x: 20)
+        userDescLblHeight = userDescLblHeight > scaleFromiPhone6Desgin(x: 20) ? userDescLblHeight : scaleFromiPhone6Desgin(x: 20) + 8
         
         self.userDetailViewHeight = userDescLblHeight + scaleFromiPhone6Desgin(x: 100) + 2 * kBasePadding
         

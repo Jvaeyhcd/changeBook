@@ -71,6 +71,11 @@ class AccountLogTableViewCell: UITableViewCell {
     func  setAccountLog(accountLog: AccountLog) {
         self.titleLbl.text = accountLog.content
         self.timeLbl.text = NSDate.stringTimesAgo(fromTimeInterval: accountLog.createAt.doubleValue)
+        if accountLog.status == "1" {
+            self.statusLbl.text = "支付成功"
+        } else if accountLog.status == "2" {
+            self.statusLbl.text = "退款成功"
+        }
     }
     
     static func cellHeight() -> CGFloat {

@@ -140,7 +140,7 @@ class CommentTableViewCell: UITableViewCell {
         
         var height = scaleFromiPhone6Desgin(x: 60) + kBasePadding * 2
         
-        var detailHeight = comment.commentContent.heightWithConstrainedWidth(width: kScreenWidth - 2 * kBasePadding, font: UIFont.systemFont(ofSize: 14))
+        var detailHeight = comment.commentContent.heightWithConstrainedWidth(width: kScreenWidth - 2 * kBasePadding, font: UIFont.systemFont(ofSize: 14)) + 8
         if detailHeight < 20 {
             detailHeight = 20
         }
