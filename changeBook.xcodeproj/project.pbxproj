@@ -102,6 +102,7 @@
 		BE269D1F1F49960600E7A624 /* SignleImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE269D1E1F49960600E7A624 /* SignleImageTableViewCell.swift */; };
 		BE269D211F49970C00E7A624 /* vertify_img.png in Resources */ = {isa = PBXBuildFile; fileRef = BE269D201F49970C00E7A624 /* vertify_img.png */; };
 		BE269D231F49A1A200E7A624 /* DepositTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE269D221F49A1A200E7A624 /* DepositTableViewCell.swift */; };
+		BE269D251F49B82700E7A624 /* DepositViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE269D241F49B82700E7A624 /* DepositViewController.swift */; };
 		BE30872F1F304D7A001B2BCB /* UsersBrowListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE30872E1F304D7A001B2BCB /* UsersBrowListViewController.swift */; };
 		BE3251F61F27766400B6B4AF /* ArticleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3251F51F27766400B6B4AF /* ArticleDetailViewController.swift */; };
 		BE3251F81F2783D600B6B4AF /* ArticleDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3251F71F2783D600B6B4AF /* ArticleDetailTableViewCell.swift */; };
@@ -829,6 +830,7 @@
 		BE269D1E1F49960600E7A624 /* SignleImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignleImageTableViewCell.swift; sourceTree = "<group>"; };
 		BE269D201F49970C00E7A624 /* vertify_img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vertify_img.png; sourceTree = "<group>"; };
 		BE269D221F49A1A200E7A624 /* DepositTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepositTableViewCell.swift; sourceTree = "<group>"; };
+		BE269D241F49B82700E7A624 /* DepositViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepositViewController.swift; sourceTree = "<group>"; };
 		BE30872E1F304D7A001B2BCB /* UsersBrowListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersBrowListViewController.swift; sourceTree = "<group>"; };
 		BE3251F51F27766400B6B4AF /* ArticleDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleDetailViewController.swift; sourceTree = "<group>"; };
 		BE3251F71F2783D600B6B4AF /* ArticleDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -1982,6 +1984,7 @@
 			isa = PBXGroup;
 			children = (
 				BE57EDAB1F03E87E0091F312 /* MyDepositViewController.swift */,
+				BE269D241F49B82700E7A624 /* DepositViewController.swift */,
 				BEFCA4DB1F3B38A800FA845F /* DepositDetailViewController.swift */,
 			);
 			path = Deposit;
@@ -3988,6 +3991,7 @@
 			files = (
 				BEB94CF21F147E4900181DC2 /* UIImage+Polesapp.swift in Sources */,
 				BECA16361F3E7B3700569ABD /* MWGridCell.m in Sources */,
+				BE269D251F49B82700E7A624 /* DepositViewController.swift in Sources */,
 				BE1A3B271F2D7A5800CC98B3 /* OtherAPI.swift in Sources */,
 				BE1A3B331F2DBEBA00CC98B3 /* SimpleShowTableViewCell.swift in Sources */,
 				BECA16591F3E7B3800569ABD /* PSTGridLayoutRow.m in Sources */,
@@ -4480,6 +4484,7 @@
 			baseConfigurationReference = 111BB78C520EABAE3CC254D1 /* Pods-changeBook.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
@@ -4519,6 +4524,7 @@
 			baseConfigurationReference = FD24FA76B8D7C13454370158 /* Pods-changeBook.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";

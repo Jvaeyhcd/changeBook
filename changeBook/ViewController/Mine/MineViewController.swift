@@ -164,9 +164,15 @@ class MineViewController: UIViewController, UITableViewDelegate, UITableViewData
                 vc.hidesBottomBarWhenPushed = true
                 self.pushViewController(viewContoller: vc, animated: true)
             } else if indexPath.row == 2 {
-                let vc = MyDepositViewController()
-                vc.hidesBottomBarWhenPushed = true
-                self.pushViewController(viewContoller: vc, animated: true)
+                if sharedGlobal.getSavedUser().isDeposit == INT_TRUE {
+                    let vc = DepositViewController()
+                    vc.hidesBottomBarWhenPushed = true
+                    self.pushViewController(viewContoller: vc, animated: true)
+                } else {
+                    let vc = MyDepositViewController()
+                    vc.hidesBottomBarWhenPushed = true
+                    self.pushViewController(viewContoller: vc, animated: true)
+                }
             } else if indexPath.row == 3 {
                 let vc = MyIntegralViewController()
                 vc.hidesBottomBarWhenPushed = true
