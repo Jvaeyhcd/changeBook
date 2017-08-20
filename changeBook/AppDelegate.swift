@@ -13,6 +13,7 @@ import ReachabilitySwift
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var lastPlaySoundDate: Date?
     var reachability: Reachability = Reachability()!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -26,6 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         confitUShareSettings()
         
         configEMChat()
+        registerRemoteNotification()
         
         return true
     }
@@ -134,7 +136,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
-
+    // 代码注册离线通知
+    func registerRemoteNotification() {
+        let application  = UIApplication.shared
+        application.applicationIconBadgeNumber = 0
+        
+        if application.responds(to: #selector(UIApplication.registerUserNotificationSettings(_:))) {
+            let notificationTypes:UIUserNotificationType = [.badge,.sound,.alert] as UIUserNotificationType
+            let settings = UIUserNotificationSettings.init(types: notificationTypes, categories: nil)
+            application.registerUserNotificationSettings(settings)
+        }
+        application.registerForRemoteNotifications()
+        let notificationTypes:UIUserNotificationType = [.badge,.sound,.alert]
+        let settings = UIUserNotificationSettings.init(types: notificationTypes, categories: nil)
+        application.registerUserNotificationSettings(settings)
+        
+        EMClient.shared().chatManager.add(self, delegateQueue: nil)
+    }
 }
 
 // MARK: - U-Share
@@ -164,5 +182,88 @@ extension AppDelegate {
         UMSocialGlobal.shareInstance().isUsingHttpsWhenShareContent = false
     }
     
+}
+
+extension AppDelegate: EMChatManagerDelegate, EMClientDelegate {
+    
+    func messagesDidReceive(_ aMessages: [Any]!) {
+        let state: UIApplicationState = UIApplication.shared.applicationState
+        switch state {
+        case .active:
+            // 播放声音和振动
+            self.playSoundAndVibration()
+        case .inactive:
+            self.playSoundAndVibration()
+        case .background:
+            for item in aMessages {
+                setupUnreadMessageCount()
+                self.showNotificationWithMessage(message: item as! EMMessage)
+            }
+        }
+    }
+    
+    func playSoundAndVibration() {
+        if self.lastPlaySoundDate == nil || Date().timeIntervalSince(lastPlaySoundDate!) > 3.0 {
+            EMCDDeviceManager.sharedInstance().playNewMessageSound()
+            
+            EMCDDeviceManager.sharedInstance().playVibration()
+            self.lastPlaySoundDate = Date()
+        }
+    }
+    
+    func setupUnreadMessageCount() {
+        let application = UIApplication.shared
+        var applicationUnreadNum = application.applicationIconBadgeNumber + 1
+        if applicationUnreadNum > 99 {
+            applicationUnreadNum = 99
+        }
+        application.applicationIconBadgeNumber = applicationUnreadNum
+    }
+    
+    // 本地消息推送
+    func showNotificationWithMessage(message:EMMessage){
+        let options = EMClient.shared().pushOptions
+        let notification = UILocalNotification()
+        notification.fireDate = Date()
+        if options?.displayStyle == EMPushDisplayStyleMessageSummary {
+            
+        } else {
+            let messageBody = message.body
+            switch messageBody!.type {
+            case EMMessageBodyTypeText:
+                notification.alertBody = "您收到一条文字消息"
+                break
+            case EMMessageBodyTypeImage:
+                notification.alertBody = "您收到一条图片消息"
+                
+                break
+            case EMMessageBodyTypeLocation:
+                notification.alertBody = "您收到一条位置消息"
+                
+                break
+            case EMMessageBodyTypeVoice:
+                notification.alertBody = "您收到一条声音消息"
+                
+                break
+            case EMMessageBodyTypeVideo:
+                notification.alertBody = "您收到一条视频消息"
+                
+                break
+            case EMMessageBodyTypeFile:
+                notification.alertBody = "您收到一条文字消息"
+                break
+            default:
+                break
+            }
+            notification.alertAction = "打开"
+            notification.timeZone = NSTimeZone.default
+            if self.lastPlaySoundDate == nil || Date().timeIntervalSince(self.lastPlaySoundDate!) > 3.0 {
+                notification.soundName = UILocalNotificationDefaultSoundName
+                self.lastPlaySoundDate = Date()
+            }
+            //发送通知
+            UIApplication.shared.scheduleLocalNotification(notification)
+        }
+    }
 }
 

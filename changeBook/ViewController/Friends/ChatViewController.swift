@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChatViewController: EaseMessageViewController, EaseMessageViewControllerDelegate, EaseMessageViewControllerDataSource {
+class ChatViewController: EaseMessageViewController, EaseMessageViewControllerDelegate, EaseMessageViewControllerDataSource, CacheProtocol {
 
     var selectedCallback: EaseSelectAtTargetCallback!
     var userName = ""
@@ -23,6 +23,7 @@ class ChatViewController: EaseMessageViewController, EaseMessageViewControllerDe
         self.dataSource = self
         self.showBackButton()
         self.title = self.nickName
+        self.tableView.reloadData()
     }
     
     deinit {
@@ -37,11 +38,24 @@ class ChatViewController: EaseMessageViewController, EaseMessageViewControllerDe
     
     func messageViewController(_ tableView: UITableView!, cellFor messageModel: IMessageModel!) -> UITableViewCell! {
         
-        return nil
+        let CellIdentifier = EaseMessageCell.cellIdentifier(withModel: messageModel)
+        
+        var sendCell: EaseBaseMessageCell?
+        sendCell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier!) as? EaseBaseMessageCell
+        
+        // Configure the cell...
+        if (sendCell == nil) {
+            sendCell = EaseBaseMessageCell.init(style: .default, reuseIdentifier: CellIdentifier, model: messageModel)
+            sendCell?.selectionStyle = .none
+        }
+        
+        sendCell?.model = messageModel
+        return sendCell
+        
     }
     
     func messageViewController(_ viewController: EaseMessageViewController!, heightFor messageModel: IMessageModel!, withCellWidth cellWidth: CGFloat) -> CGFloat {
-        return 0
+        return EaseBaseMessageCell.cellHeight(withModel: messageModel)
     }
     
     func messageViewController(_ viewController: EaseMessageViewController!, canLongPressRowAt indexPath: IndexPath!) -> Bool {
@@ -68,24 +82,41 @@ class ChatViewController: EaseMessageViewController, EaseMessageViewControllerDe
     func messageViewController(_ viewController: EaseMessageViewController!, modelFor message: EMMessage!) -> IMessageModel! {
         
         let model = EaseMessageModel.init(message: message)
-        let (headPic, nickName) = getUserInfoByConversation(message: message)
+        let (headPic, nickName) = getUserInfoByMessage(message: message)
         model?.nickname = nickName
         model?.avatarURLPath = headPic
         return model
     }
     
-    private func getUserInfoByConversation(message: EMMessage) -> (headPic: String, nickName: String) {
+    private func getUserInfoByMessage(message: EMMessage) -> (headPic: String, nickName: String) {
         
-        var headPic = ""
-        var nickName = ""
+        let headPic = ""
+        let nickName = ""
         
-        let lastExt = message.ext
-        if nil != lastExt && nil != lastExt?[USER_HEAD_IMG] && nil != lastExt?[USER_NAME] {
-            headPic = (lastExt?[USER_HEAD_IMG] as? String)!
-            nickName = (lastExt?[USER_NAME] as? String)!
+        if nil == conversation.latestMessage {
+            return (headPic, nickName)
         }
         
-        return (headPic, nickName)
+        var user: User?
+        user = getCacheUser(userName: message.from.uppercased())
+        
+        if nil != user {
+            return ((user?.headPic)!, (user?.nickName)!)
+        } else {
+            let lastExt = message.ext
+            var headPic = ""
+            var nickName = ""
+            if nil != lastExt && nil != lastExt?[USER_HEAD_IMG] && nil != lastExt?[USER_NAME] {
+                headPic = (lastExt?[USER_HEAD_IMG] as? String)!
+                nickName = (lastExt?[USER_NAME] as? String)!
+            }
+            
+            if headPic != "" && nickName != "" {
+                return (headPic, nickName)
+            }
+            
+            return (sharedGlobal.getSavedUser().headPic, sharedGlobal.getSavedUser().nickName)
+        }
     }
     
     func emotionFormessageViewController(_ viewController: EaseMessageViewController!) -> [Any]! {

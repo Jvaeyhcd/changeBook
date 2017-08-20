@@ -46,6 +46,7 @@ class FriendsHomeViewController: BaseViewController, UITableViewDelegate, UITabl
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         EMClient.shared().chatManager.add(self, delegateQueue: nil)
+        self.reloadData()
     }
     
     private func reloadData() {
@@ -102,12 +103,12 @@ class FriendsHomeViewController: BaseViewController, UITableViewDelegate, UITabl
         }
         
         var user: User?
-        if conversation.latestMessage.to != sharedGlobal.getSavedUser().userName {
-            user = getCacheUser(userName: conversation.latestMessage.to)
-        } else if conversation.latestMessage.from != sharedGlobal.getSavedUser().userName {
-            user = getCacheUser(userName: conversation.latestMessage.from)
-        } else if conversation.latestMessage.from == sharedGlobal.getSavedUser().userName && conversation.latestMessage.to == sharedGlobal.getSavedUser().userName {
-            user = getCacheUser(userName: conversation.latestMessage.from)
+        if conversation.latestMessage.to.uppercased() != sharedGlobal.getSavedUser().userName {
+            user = getCacheUser(userName: conversation.latestMessage.to.uppercased())
+        } else if conversation.latestMessage.from.uppercased() != sharedGlobal.getSavedUser().userName {
+            user = getCacheUser(userName: conversation.latestMessage.from.uppercased())
+        } else if conversation.latestMessage.from.uppercased() == sharedGlobal.getSavedUser().userName && conversation.latestMessage.to.uppercased() == sharedGlobal.getSavedUser().userName {
+            user = getCacheUser(userName: conversation.latestMessage.from.uppercased())
         }
         
         if nil != user {
@@ -120,7 +121,7 @@ class FriendsHomeViewController: BaseViewController, UITableViewDelegate, UITabl
         }
         
         if "" == headPic && "" == nickName {
-            let lastMessage = conversation.latestMessage
+            let lastMessage = conversation.lastReceivedMessage()
             let lastExt = lastMessage?.ext
             if nil != lastExt && nil != lastExt?[USER_HEAD_IMG] && nil != lastExt?[USER_NAME] {
                 headPic = (lastExt?[USER_HEAD_IMG] as? String)!
@@ -170,23 +171,38 @@ class FriendsHomeViewController: BaseViewController, UITableViewDelegate, UITabl
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let conversation = self.conversations[indexPath.row]
-        let (headPic, nickName) = getUserInfoByConversation(conversation: conversation)
         
         var user: User!
-        if conversation.latestMessage.to != sharedGlobal.getSavedUser().userName {
-            user = getCacheUser(userName: conversation.latestMessage.to)
-        } else if conversation.latestMessage.from != sharedGlobal.getSavedUser().userName {
-            user = getCacheUser(userName: conversation.latestMessage.from)
-        } else if conversation.latestMessage.from == sharedGlobal.getSavedUser().userName && conversation.latestMessage.to == sharedGlobal.getSavedUser().userName {
+        if conversation.latestMessage.to.uppercased() != sharedGlobal.getSavedUser().userName {
+            user = getCacheUser(userName: conversation.latestMessage.to.uppercased())
+        } else if conversation.latestMessage.from.uppercased() != sharedGlobal.getSavedUser().userName {
+            user = getCacheUser(userName: conversation.latestMessage.from.uppercased())
+        } else if conversation.latestMessage.from.uppercased() == sharedGlobal.getSavedUser().userName && conversation.latestMessage.to.uppercased() == sharedGlobal.getSavedUser().userName {
             self.showHudTipStr("不能自己和自己聊天")
             user = nil
         }
         
         if nil != user {
-            let vc = ChatViewController.init(conversationChatter: conversation.latestMessage.from, conversationType: EMConversationTypeChat)
+            let vc = ChatViewController.init(conversationChatter: user.userName, conversationType: EMConversationTypeChat)
             vc?.nickName = user.nickName
             vc?.headPic = user.headPic
             vc?.userName = user.userName
+            vc?.hidesBottomBarWhenPushed = true
+            self.pushViewController(viewContoller: vc!, animated: true)
+        } else {
+            
+            let lastMessage = conversation.lastReceivedMessage()
+            let lastExt = lastMessage?.ext
+            var headPic = ""
+            var nickName = ""
+            if nil != lastExt && nil != lastExt?[USER_HEAD_IMG] && nil != lastExt?[USER_NAME] {
+                headPic = (lastExt?[USER_HEAD_IMG] as? String)!
+                nickName = (lastExt?[USER_NAME] as? String)!
+            }
+            let vc = ChatViewController.init(conversationChatter: conversation.lastReceivedMessage().from.uppercased(), conversationType: EMConversationTypeChat)
+            vc?.nickName = nickName
+            vc?.headPic = headPic
+            vc?.userName = conversation.lastReceivedMessage().from
             vc?.hidesBottomBarWhenPushed = true
             self.pushViewController(viewContoller: vc!, animated: true)
         }
@@ -230,7 +246,7 @@ class FriendsHomeViewController: BaseViewController, UITableViewDelegate, UITabl
         } else if unreadCount > 0 {
             self.navigationController?.tabBarItem.badgeValue = "\(unreadCount)"
         } else {
-            self.navigationController?.tabBarItem.badgeValue = ""
+            self.navigationController?.tabBarItem.badgeValue = nil
         }
         self.tableView.reloadData()
     }
