@@ -167,6 +167,7 @@ class BagTableViewCell: UITableViewCell {
             make.right.equalTo(-kBasePadding)
         }
         
+        self.numberButton.isHidden = true
         self.numberButton.resultBlock = {
             [weak self] (number, increaseStatus) in
             self?.book.bookCount = String(format: "%d", number)

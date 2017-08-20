@@ -153,7 +153,7 @@ class HomeViewController: BaseViewController, HcdTabBarDelegate, SDCycleScrollVi
                 self?.pushViewController(viewContoller: vc, animated: true)
                 break
             case 1:
-                let vc = FilterDataViewController()
+                let vc = FilterDocumentViewController()
                 vc.hidesBottomBarWhenPushed = true
                 self?.pushViewController(viewContoller: vc, animated: true)
                 break

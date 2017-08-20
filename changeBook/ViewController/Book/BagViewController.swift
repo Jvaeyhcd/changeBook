@@ -244,12 +244,13 @@ class BagViewController: BaseViewController, UITableViewDelegate, UITableViewDat
         
         if true == self.isEdit {
             BLog(log: "现在是编辑状态")
-            self.totalLbl.isHidden = true
+            self.totalLbl.isHidden = false
+            self.totalLbl.text = "共\(self.delectedIndex.count)本"
             self.okBtn.setTitle("删除", for: .normal)
         } else {
             BLog(log: "现在是非编辑状态")
             self.totalLbl.isHidden = false
-            self.totalLbl.text = "共3本书"
+            self.totalLbl.text = "共\(self.selectedIndex.count)本书"
             self.okBtn.setTitle("立即结算", for: .normal)
         }
         
@@ -269,12 +270,14 @@ class BagViewController: BaseViewController, UITableViewDelegate, UITableViewDat
             } else {
                 self.allBtn.isSelected = false
             }
+            self.totalLbl.text = "共\(self.delectedIndex.count)本"
         } else {
             if self.selectedIndex.count == self.bookList.count {
                 self.allBtn.isSelected = true
             } else {
                 self.allBtn.isSelected = false
             }
+            self.totalLbl.text = "共\(self.selectedIndex.count)本"
         }
     }
     

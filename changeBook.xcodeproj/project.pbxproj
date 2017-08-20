@@ -91,6 +91,7 @@
 		BE269D061F45DD6800E7A624 /* FilterDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE269D051F45DD6800E7A624 /* FilterDocumentViewController.swift */; };
 		BE269D091F471FE200E7A624 /* PersistentBackgroundLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BE269D081F471FE200E7A624 /* PersistentBackgroundLabel.m */; };
 		BE269D0B1F4736B000E7A624 /* default_img.png in Resources */ = {isa = PBXBuildFile; fileRef = BE269D0A1F4736B000E7A624 /* default_img.png */; };
+		BE269D0F1F4956D200E7A624 /* SingleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE269D0E1F4956D200E7A624 /* SingleTableViewCell.swift */; };
 		BE30872F1F304D7A001B2BCB /* UsersBrowListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE30872E1F304D7A001B2BCB /* UsersBrowListViewController.swift */; };
 		BE3251F61F27766400B6B4AF /* ArticleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3251F51F27766400B6B4AF /* ArticleDetailViewController.swift */; };
 		BE3251F81F2783D600B6B4AF /* ArticleDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3251F71F2783D600B6B4AF /* ArticleDetailTableViewCell.swift */; };
@@ -807,6 +808,7 @@
 		BE269D071F471FE200E7A624 /* PersistentBackgroundLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersistentBackgroundLabel.h; sourceTree = "<group>"; };
 		BE269D081F471FE200E7A624 /* PersistentBackgroundLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersistentBackgroundLabel.m; sourceTree = "<group>"; };
 		BE269D0A1F4736B000E7A624 /* default_img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_img.png; sourceTree = "<group>"; };
+		BE269D0E1F4956D200E7A624 /* SingleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleTableViewCell.swift; sourceTree = "<group>"; };
 		BE30872E1F304D7A001B2BCB /* UsersBrowListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersBrowListViewController.swift; sourceTree = "<group>"; };
 		BE3251F51F27766400B6B4AF /* ArticleDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleDetailViewController.swift; sourceTree = "<group>"; };
 		BE3251F71F2783D600B6B4AF /* ArticleDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -2359,6 +2361,7 @@
 				BEF0BA801F38A4E5003A2FC9 /* UsersCommentTableViewCell.swift */,
 				BEFCA4E11F3B3C8F00FA845F /* AccountLogTableViewCell.swift */,
 				BECA168A1F3E839700569ABD /* ConversationListTableViewCell.swift */,
+				BE269D0E1F4956D200E7A624 /* SingleTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -3994,6 +3997,7 @@
 				BE7CA9B71F0BE9D3007CB195 /* RegisterViewModel.swift in Sources */,
 				BE01908C1EFC089400FA040E /* Config.swift in Sources */,
 				BE7CA9A71F0BD3DA007CB195 /* User.swift in Sources */,
+				BE269D0F1F4956D200E7A624 /* SingleTableViewCell.swift in Sources */,
 				BECA16861F3E7B3800569ABD /* EaseChatBarMoreView.m in Sources */,
 				BE49073C1F1F96680031024F /* NSString+Polesapp.m in Sources */,
 				BECA164F1F3E7B3800569ABD /* PSTCollectionView.m in Sources */,
