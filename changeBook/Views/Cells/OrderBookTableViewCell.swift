@@ -23,7 +23,7 @@ class OrderBookTableViewCell: BookListTableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        self.numberLbl.text = "x2"
+        self.numberLbl.text = ""
         self.addSubview(self.numberLbl)
         self.numberLbl.snp.makeConstraints { (make) in
             make.right.equalTo(-kBasePadding)

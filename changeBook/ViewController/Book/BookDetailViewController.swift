@@ -107,6 +107,7 @@ class BookDetailViewController: BaseViewController, UITableViewDelegate, UITable
             make.left.equalTo(0)
         }
         
+        self.buyNowBtn.addTarget(self, action: #selector(buyNowBtnClicked), for: .touchUpInside)
         self.bottomView.addSubview(self.buyNowBtn)
         self.buyNowBtn.snp.makeConstraints { (make) in
             make.top.equalTo(0)
@@ -171,6 +172,17 @@ class BookDetailViewController: BaseViewController, UITableViewDelegate, UITable
             make.height.equalTo(1)
             make.right.equalTo(0)
         }
+    }
+    
+    @objc private func buyNowBtnClicked() {
+        // 立即结算选中的书籍，跳转到提交订单页面
+        let vc = ConfirmBookOrderViewController()
+        var selectedBookList = [Book]()
+        var book = self.book
+        book?.bookCount = "1"
+        selectedBookList.append(book!)
+        vc.bookList = selectedBookList
+        self.pushViewController(viewContoller: vc, animated: true)
     }
     
     override func leftNavBarButtonClicked() {

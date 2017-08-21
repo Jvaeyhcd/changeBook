@@ -90,6 +90,7 @@ class DeliveryModeTableViewCell: UITableViewCell {
             make.centerY.equalTo(self.iconImgView.snp.centerY)
         }
         
+        self.ownPickBtn.isHidden = true
         self.addSubview(self.ownPickBtn)
         self.ownPickBtn.addTarget(self, action: #selector(buttonClicked(btn:)), for: .touchUpInside)
         self.ownPickBtn.snp.makeConstraints { (make) in
