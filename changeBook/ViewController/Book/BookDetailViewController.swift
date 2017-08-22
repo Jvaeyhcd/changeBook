@@ -219,7 +219,9 @@ class BookDetailViewController: BaseViewController, UITableViewDelegate, UITable
                 cell.setBook(book: self.book)
                 cell.seeAnswerBlock = {
                     [weak self] (Void) in
-                    
+                    let vc = ProgressWebViewController()
+                    vc.urlStr = (self?.book.bookFile)!
+                    self?.pushViewController(viewContoller: vc, animated: true)
                 }
                 return cell
             }

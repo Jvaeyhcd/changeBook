@@ -180,9 +180,15 @@ class MineViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
         } else if 1 == indexPath.section {
             if indexPath.row == 0 {
-                
+                let vc = ProgressWebViewController()
+                vc.urlStr = kGuideUrl
+                vc.hidesBottomBarWhenPushed = true
+                self.pushViewController(viewContoller: vc, animated: true)
             } else if indexPath.row == 1 {
-                
+                let vc = ProgressWebViewController()
+                vc.urlStr = kJoinUsUrl
+                vc.hidesBottomBarWhenPushed = true
+                self.pushViewController(viewContoller: vc, animated: true)
             } else if indexPath.row == 2 {
                 if sharedGlobal.getToken().tokenExists {
                     let vc = SettingViewController()

@@ -89,6 +89,7 @@ class DataContentViewController: UIViewController, UIWebViewDelegate, NJKWebView
         let navigationBarBounds = self.navigationController!.navigationBar.bounds
         let barFrame = CGRect(x: 0, y: navigationBarBounds.size.height - progressBarHeight, width: navigationBarBounds.size.width, height: progressBarHeight)
         progressView = NJKWebViewProgressView.init(frame: barFrame)
+        progressView.backgroundColor = UIColor(hex: 0x778899)
         progressView.autoresizingMask = [.flexibleWidth, .flexibleTopMargin]
     }
     

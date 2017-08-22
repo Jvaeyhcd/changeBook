@@ -250,9 +250,9 @@ class SlippedSegmentView: UIView, UIScrollViewDelegate {
      - parameter item: 被点击的Item
      */
     @objc private func tabItemClicked(item: SlippedSegmentItem) {
-        if self.selectedItemIndex == item.index {
-            return
-        }
+//        if self.selectedItemIndex == item.index {
+//            return
+//        }
         setSelectedItemIndex(selectedItemIndex: item.index)
     }
     

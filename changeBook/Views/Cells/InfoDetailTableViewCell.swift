@@ -16,6 +16,7 @@ class InfoDetailTableViewCell: UITableViewCell {
         let lbl = UILabel()
         lbl.font = UIFont.systemFont(ofSize: 14)
         lbl.textColor = UIColor(hex: 0x555555)
+        lbl.numberOfLines = 0
         lbl.textAlignment = .left
         return lbl
     }()
@@ -79,7 +80,7 @@ class InfoDetailTableViewCell: UITableViewCell {
         
         var height = scaleFromiPhone6Desgin(x: 60) + kBasePadding
         
-        var detailHeight = str.heightWithConstrainedWidth(width: kScreenWidth - 2 * kBasePadding, font: UIFont.systemFont(ofSize: 14))
+        var detailHeight = str.heightWithConstrainedWidth(width: kScreenWidth - 2 * kBasePadding, font: UIFont.systemFont(ofSize: 14)) + 8
         if detailHeight < 20 {
             detailHeight = 20
         }
