@@ -93,7 +93,7 @@
     _photoButton.tag = MOREVIEW_BUTTON_TAG;
     CGFloat labelHeight = 20;
     _photoButton.imageEdgeInsets = UIEdgeInsetsMake(0, labelHeight / 2.0, labelHeight, labelHeight / 2.0);
-    _photoButton.titleEdgeInsets = UIEdgeInsetsMake(CHAT_BUTTON_SIZE - labelHeight, -CHAT_BUTTON_SIZE, 0, 0);
+    _photoButton.titleEdgeInsets = UIEdgeInsetsMake(CHAT_BUTTON_SIZE - labelHeight, -CHAT_BUTTON_SIZE-labelHeight / 2.0, 0, 0);
     [_photoButton setTitle:@"照片" forState:UIControlStateNormal];
     [_photoButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     _photoButton.titleLabel.font = [UIFont systemFontOfSize:14];
@@ -107,22 +107,23 @@
     [_locationButton addTarget:self action:@selector(locationAction) forControlEvents:UIControlEventTouchUpInside];
     _locationButton.tag = MOREVIEW_BUTTON_TAG + 1;
     _locationButton.imageEdgeInsets = UIEdgeInsetsMake(0, labelHeight / 2.0, labelHeight, labelHeight / 2.0);
-    _locationButton.titleEdgeInsets = UIEdgeInsetsMake(CHAT_BUTTON_SIZE - labelHeight, -CHAT_BUTTON_SIZE, 0, 0);
+    _locationButton.titleEdgeInsets = UIEdgeInsetsMake(CHAT_BUTTON_SIZE - labelHeight, -CHAT_BUTTON_SIZE-labelHeight / 2.0, 0, 0);
     [_locationButton setTitle:@"位置" forState:UIControlStateNormal];
     [_locationButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     _locationButton.titleLabel.font = [UIFont systemFontOfSize:14];
     _locationButton.titleLabel.textAlignment = NSTextAlignmentCenter;
+    _locationButton.hidden = YES;
     [_scrollview addSubview:_locationButton];
     
     _takePicButton =[UIButton buttonWithType:UIButtonTypeCustom];
-    [_takePicButton setFrame:CGRectMake(insets * 3 + CHAT_BUTTON_SIZE * 2, 10, CHAT_BUTTON_SIZE , CHAT_BUTTON_SIZE)];
+    [_takePicButton setFrame:CGRectMake(insets * 2 + CHAT_BUTTON_SIZE, 10, CHAT_BUTTON_SIZE , CHAT_BUTTON_SIZE)];
     [_takePicButton setImage:[UIImage imageNamed:@"EaseUIResource.bundle/chatBar_colorMore_camera"] forState:UIControlStateNormal];
     [_takePicButton setImage:[UIImage imageNamed:@"EaseUIResource.bundle/chatBar_colorMore_cameraSelected"] forState:UIControlStateHighlighted];
     [_takePicButton addTarget:self action:@selector(takePicAction) forControlEvents:UIControlEventTouchUpInside];
     _takePicButton.tag = MOREVIEW_BUTTON_TAG + 2;
     _maxIndex = 2;
     _takePicButton.imageEdgeInsets = UIEdgeInsetsMake(0, labelHeight / 2.0, labelHeight, labelHeight / 2.0);
-    _takePicButton.titleEdgeInsets = UIEdgeInsetsMake(CHAT_BUTTON_SIZE - labelHeight, -CHAT_BUTTON_SIZE, 0, 0);
+    _takePicButton.titleEdgeInsets = UIEdgeInsetsMake(CHAT_BUTTON_SIZE - labelHeight, -CHAT_BUTTON_SIZE - labelHeight / 2.0, 0, 0);
     [_takePicButton setTitle:@"拍照" forState:UIControlStateNormal];
     [_takePicButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     _takePicButton.titleLabel.font = [UIFont systemFontOfSize:14];

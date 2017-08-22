@@ -215,7 +215,10 @@ class FriendsHomeViewController: BaseViewController, UITableViewDelegate, UITabl
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let deleteAction = UITableViewRowAction.init(style: .default, title: "删除") { (action, indexPath) in
-            
+            let conversation = self.conversations[indexPath.row]
+            EMClient.shared().chatManager.deleteConversation(conversation.conversationId, isDeleteMessages: true, completion: { (conversationId, error) in
+                
+            })
         }
         return [deleteAction]
     }
