@@ -127,6 +127,7 @@ class BookDetailViewController: BaseViewController, UITableViewDelegate, UITable
         
         let btnWidth = (kScreenWidth - scaleFromiPhone6Desgin(x: 240)) / 2
         self.bottomView.addSubview(self.shareBtn)
+        self.shareBtn.addTarget(self, action: #selector(self.shareBtnClicked), for: .touchUpInside)
         self.shareBtn.snp.makeConstraints { (make) in
             make.left.equalTo(0)
             make.top.equalTo(0)
@@ -360,6 +361,13 @@ class BookDetailViewController: BaseViewController, UITableViewDelegate, UITable
     @objc private func bagBtnClicked() {
         let vc = BagViewController()
         self.pushViewController(viewContoller: vc, animated: true)
+    }
+    
+    @objc private func shareBtnClicked() {
+        
+        UMSocialUIManager.showShareMenuViewInWindow { (platformType, userInfo) in
+            // 根据获取的platformType确定所选平台进行下一步操作
+        }
     }
     
     // MARK: - Networking

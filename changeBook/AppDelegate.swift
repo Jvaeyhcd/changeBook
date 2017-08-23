@@ -104,6 +104,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return result
     }
     
+    func application(_ application: UIApplication, handleOpen url: URL) -> Bool {
+        let result = UMSocialManager.default().handleOpen(url)
+        if !result {
+            // 其他如支付等SDK的回调
+        }
+        return result
+    }
+    
     // MARK: - ReachabilitySwift
     
     func reachabilityChanged(note: NSNotification) {
@@ -165,6 +173,10 @@ extension AppDelegate {
         UMSocialManager.default().umSocialAppkey = kUMAppKey
         
         UMSocialManager.default().setPlaform(UMSocialPlatformType.QQ, appKey: kQQAppId, appSecret: kQQAppKey, redirectURL: "http://mobile.umeng.com/social")
+        
+        UMSocialManager.default().setPlaform(UMSocialPlatformType.wechatSession, appKey: kWXAppId, appSecret: kWXAppSecret, redirectURL: nil)
+        
+        UMSocialUIManager.setPreDefinePlatforms([NSNumber(integerLiteral:UMSocialPlatformType.wechatSession.rawValue), NSNumber(integerLiteral:UMSocialPlatformType.wechatTimeLine.rawValue), NSNumber(integerLiteral:UMSocialPlatformType.QQ.rawValue), NSNumber(integerLiteral:UMSocialPlatformType.qzone.rawValue)])
     }
     
     fileprivate func confitUShareSettings() {

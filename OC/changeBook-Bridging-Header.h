@@ -34,5 +34,6 @@
 
 // MARK: - 三方相关
 #import <UMSocialCore/UMSocialCore.h>
+#import <UShareUI/UShareUI.h>
 #import "EMSDK.h"
 #import "EaseUI.h"

@@ -37,6 +37,7 @@ target 'changeBook' do
     
     # 集成环信聊天
     pod 'HyphenateLite_CN', '~> 3.2.2.2'
+    pod 'FDFullscreenPopGesture', '1.1'
 end
 
 post_install do |installer|
