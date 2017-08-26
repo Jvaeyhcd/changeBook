@@ -115,6 +115,7 @@ class BagTableViewCell: UITableViewCell {
         self.selectedBackgroundView = UIView.init(frame: self.frame)
         self.selectedBackgroundView?.backgroundColor = kSelectedCellBgColor
         
+        self.selectedBtn.isUserInteractionEnabled = false
         self.addSubview(self.selectedBtn)
         self.selectedBtn.snp.makeConstraints { (make) in
             make.left.equalTo(kBasePadding)
