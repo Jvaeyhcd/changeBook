@@ -55,6 +55,11 @@ class BookOrderListViewController: UIViewController, UITableViewDelegate, UITabl
             }
             
         }
+        self.tableView.reloadBlock = {
+            [weak self] (Void) in
+            self?.getUserBookOrder(page: 1)
+        }
+        
         self.tableView.snp.makeConstraints { (make) in
             make.top.equalTo(0)
             make.right.equalTo(0)

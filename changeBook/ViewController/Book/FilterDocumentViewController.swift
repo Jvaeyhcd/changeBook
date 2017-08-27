@@ -90,6 +90,11 @@ class FilterDocumentViewController: BaseViewController, HcdTabBarDelegate, UITab
                 self?.filterDocument(page: (self?.pageInfo.nextPage)!)
             }
         }
+        self.tableView.reloadBlock = {
+            [weak self] (Void) in
+            self?.filterDocument(page: 1)
+        }
+        
         self.tableView.setPullingFooter()
         self.tableView.setPullingHeader()
         self.view.addSubview(self.tableView)

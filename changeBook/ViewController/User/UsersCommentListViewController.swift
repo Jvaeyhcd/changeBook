@@ -45,6 +45,10 @@ class UsersCommentListViewController: BaseTableViewController, UITableViewDataSo
                 self?.getUserComment(page: (self?.pageInfo.nextPage)!)
             }
         }
+        tableView.reloadBlock = {
+            [weak self] (Void) in
+            self?.getUserComment(page: 1)
+        }
         tableView.setPullingHeader()
         tableView.setPullingFooter()
         tableView.tableHeaderView = self.tableHeaderView

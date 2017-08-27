@@ -20,6 +20,7 @@ class BookViewModel: ViewModelProtocol {
         var cacheName = kNoNeedCache
         if 1 == page {
             cacheName = "filterBook:\(type)\(page)"
+            self.getCacheData(cacheName: cacheName, cacheData: cache)
         }
         BookAPIProvider.request(BookAPI.filterBook(type: type, page: page)) { (result) in
             self.request(cacheName: cacheName, result: result, success: success, fail: fail, loginSuccess: loginSuccess)

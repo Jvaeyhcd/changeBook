@@ -45,6 +45,10 @@ class UsersBrowListViewController: BaseTableViewController, UITableViewDataSourc
                 self?.userBorrowBook(page: (self?.pageInfo.nextPage)!)
             }
         }
+        tableView.reloadBlock = {
+            [weak self] (Void) in
+            self?.userBorrowBook(page: 1)
+        }
         tableView.setPullingHeader()
         tableView.setPullingFooter()
         tableView.tableHeaderView = self.tableHeaderView

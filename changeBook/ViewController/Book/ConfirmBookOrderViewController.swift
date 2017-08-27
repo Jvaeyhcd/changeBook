@@ -152,6 +152,15 @@ class ConfirmBookOrderViewController: BaseViewController, UITableViewDelegate, U
         popupController.present(in: self)
     }
     
+    @objc private func selectSendTime() {
+        let vc = SelectSendTimeViewController()
+        
+        let popupController = STPopupController.init(rootViewController: vc)
+        popupController.style = STPopupStyle.bottomSheet
+        
+        popupController.present(in: self)
+    }
+    
     // MARK: - Networking
     private func getFreight() {
         self.viewModel.getFreight(cache: { [weak self] (data) in
@@ -409,7 +418,8 @@ class ConfirmBookOrderViewController: BaseViewController, UITableViewDelegate, U
         
         if 0 == indexPath.section {
             if 1 == indexPath.row {
-                
+                // 选择送出时间
+                self.selectSendTime()
             } else if 2 == indexPath.row {
                 let vc = AddressListViewController()
                 vc.selectType = .chose

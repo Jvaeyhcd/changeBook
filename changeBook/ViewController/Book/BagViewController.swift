@@ -131,6 +131,10 @@ class BagViewController: BaseViewController, UITableViewDelegate, UITableViewDat
             make.right.equalTo(self.okBtn.snp.left).offset(-8)
         }
         
+        self.tableView.reloadBlock = {
+            [weak self] (Void) in
+            self?.getBagList()
+        }
         self.view.addSubview(self.tableView)
         self.tableView.delegate = self
         self.tableView.dataSource = self

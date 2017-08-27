@@ -61,6 +61,10 @@ class SearchDocumentViewController: BaseViewController, UISearchBarDelegate, UIT
                 self?.searchDocument(page: (self?.pageInfo.nextPage)!)
             }
         }
+        self.tableView.reloadBlock = {
+            [weak self] (Void) in
+            self?.searchDocument(page: 1)
+        }
         self.tableView.setPullingFooter()
         self.tableView.setPullingHeader()
         self.view.addSubview(self.tableView)

@@ -56,6 +56,7 @@ class ArticleDetailViewController: BaseViewController, UITableViewDelegate, UITa
     private func initSubviews() {
         self.title = "文章详情"
         self.showBackButton()
+        self.showBarButtonItem(position: RIGHT, withImage: UIImage(named: "top_btn_share_white")!)
         
         self.toobarView.goToCommentsBlock = {
             [weak self] (Void) in
@@ -436,6 +437,12 @@ class ArticleDetailViewController: BaseViewController, UITableViewDelegate, UITa
     
     override func leftNavBarButtonClicked() {
         self.popViewController(animated: true)
+    }
+    
+    override func rightNavBarButtonClicked() {
+        UMSocialUIManager.showShareMenuViewInWindow { (platformType, userInfo) in
+            // 根据获取的platformType确定所选平台进行下一步操作
+        }
     }
 
     override func didReceiveMemoryWarning() {

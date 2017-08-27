@@ -109,7 +109,7 @@ class SearchBookViewController: BaseViewController, UISearchBarDelegate, UITable
         self.searchBar.delegate = self
         
         search.barStyle = .default
-        search.placeholder = "搜索资料"
+        search.placeholder = "搜索书籍"
         search.backgroundImage = Bundle.py_imageNamed("bgImage")
         
     }
