@@ -41,15 +41,15 @@ class RootTabBarViewController: UITabBarController {
         articleVC.tabBarItem.selectedImage = UIImage(named: "tab_zixun_pre")
         articleVC.title = "文章"
         
-        let teacherVC = MineViewController()
-        teacherVC.tabBarItem.image = UIImage(named: "tab_laoshi")
-        teacherVC.tabBarItem.selectedImage = UIImage(named: "tab_laoshi_pre")
-        teacherVC.title = "我的"
+        let mineVC = MineViewController()
+        mineVC.tabBarItem.image = UIImage(named: "tab_laoshi")
+        mineVC.tabBarItem.selectedImage = UIImage(named: "tab_laoshi_pre")
+        mineVC.title = "我的"
         
         let nav1 = BaseNavigationController.init(rootViewController: homeVC)
         let nav2 = BaseNavigationController.init(rootViewController: friendsVC)
         let nav3 = BaseNavigationController.init(rootViewController: articleVC)
-        let nav4 = BaseNavigationController.init(rootViewController: teacherVC)
+        let nav4 = BaseNavigationController.init(rootViewController: mineVC)
         
         self.viewControllers = [nav1, nav2, nav3, nav4]
         

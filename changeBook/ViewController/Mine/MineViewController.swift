@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import FDFullscreenPopGesture
 
 class MineViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -42,10 +43,16 @@ class MineViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
         
         initSubviews()
+        self.fd_prefersNavigationBarHidden = true
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.navigationBar.isHidden = true
+        super.viewWillAppear(animated)
         self.refreshUserInfo()
     }
     

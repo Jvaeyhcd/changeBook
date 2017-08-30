@@ -31,6 +31,10 @@ class FriendsHomeViewController: BaseViewController, UITableViewDelegate, UITabl
         
         self.title = "书友"
         
+        self.tableView.reloadBlock = {
+            [weak self] (Void) in
+            self?.reloadData()
+        }
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.view.addSubview(self.tableView)

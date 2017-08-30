@@ -30,8 +30,9 @@ class ChatViewController: EaseMessageViewController, EaseMessageViewControllerDe
         EMClient.shared().removeDelegate(self)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.navigationController?.navigationBar.isHidden = false
     }
 
     // MARK: - EaseMessageViewControllerDelegate

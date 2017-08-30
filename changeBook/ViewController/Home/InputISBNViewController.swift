@@ -44,6 +44,7 @@ class InputISBNViewController: BaseViewController {
         self.showBackButton()
         
         self.view.addSubview(self.ISBNTextField)
+        self.ISBNTextField.becomeFirstResponder()
         self.ISBNTextField.snp.makeConstraints { (make) in
             make.left.equalTo(kBasePadding)
             make.right.equalTo(-kBasePadding)

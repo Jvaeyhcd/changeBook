@@ -26,7 +26,7 @@ class WKWebViewCell: UITableViewCell {
         htmlWebView.backgroundColor = UIColor.white
         return htmlWebView
     }()
-    var scrollView: UIScrollView!
+    var scrollView: FDScrollView!
     
     var cellHeightChanged: ((CGFloat) -> ())!
     var webViewTitle: ((String) -> ())!
@@ -66,7 +66,7 @@ class WKWebViewCell: UITableViewCell {
     private func initUI() {
         
         if nil == scrollView {
-            scrollView = UIScrollView.init(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 1))
+            scrollView = FDScrollView.init(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 1))
             scrollView.backgroundColor = UIColor.white
             self.addSubview(scrollView)
         }

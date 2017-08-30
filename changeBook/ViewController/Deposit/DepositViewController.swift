@@ -59,10 +59,11 @@ class DepositViewController: BaseViewController {
         initSubviews()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         self.navigationController?.navigationBar.isHidden = false
     }
+
     
     private func initSubviews() {
         self.title = "我的押金"

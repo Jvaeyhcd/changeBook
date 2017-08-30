@@ -24,6 +24,7 @@
 #import "MJPhoto.h"
 #import "UITapImageView.h"
 #import "PersistentBackgroundLabel.h"
+#import "FDScrollView.h"
 #import "UITTTAttributedLabel.h"
 #import "PYSearch.h"
 

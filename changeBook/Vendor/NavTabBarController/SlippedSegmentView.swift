@@ -46,7 +46,7 @@ class SlippedSegmentView: UIView, UIScrollViewDelegate {
     private var titles: [String]!
     // 选中的Item的index
     private var selectedItemIndex = -1
-    private var scrollView: UIScrollView?
+    private var scrollView: FDScrollView?
     private var bottomLineView: UIView?
     private var items: [SlippedSegmentItem] = [SlippedSegmentItem]()
     private var itemSelectedBgImageView: UIImageView?
@@ -367,7 +367,7 @@ class SlippedSegmentView: UIView, UIScrollViewDelegate {
             
             let statusBarHeight = UIApplication.shared.statusBarFrame.height
             
-            self.scrollView = UIScrollView.init(frame: CGRect(x: 0, y: statusBarHeight, width: self.bounds.width, height: self.bounds.height - statusBarHeight))
+            self.scrollView = FDScrollView.init(frame: CGRect(x: 0, y: statusBarHeight, width: self.bounds.width, height: self.bounds.height - statusBarHeight))
             self.scrollView?.showsVerticalScrollIndicator = false
             self.scrollView?.showsHorizontalScrollIndicator = false
             

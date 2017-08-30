@@ -486,6 +486,7 @@
 		BE7CAA4D1F0F8EC8007CB195 /* pic_order_null@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE7CAA451F0F8EC8007CB195 /* pic_order_null@3x.png */; };
 		BE7CAA4F1F0F96FE007CB195 /* AddressListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7CAA4E1F0F96FE007CB195 /* AddressListViewController.swift */; };
 		BE7CAA511F0F9F49007CB195 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7CAA501F0F9F49007CB195 /* SettingViewController.swift */; };
+		BE7CE7501F56B16C00CFE08C /* FDScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE7CE74E1F56B16C00CFE08C /* FDScrollView.m */; };
 		BE8D53E81EFBF619003850EB /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE8D53D81EFBF619003850EB /* Info.plist */; };
 		BE8D53E91EFBF619003850EB /* STPopupController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D53DB1EFBF619003850EB /* STPopupController.m */; };
 		BE8D53EA1EFBF619003850EB /* STPopupControllerTransitioningFade.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D53DD1EFBF619003850EB /* STPopupControllerTransitioningFade.m */; };
@@ -1260,6 +1261,8 @@
 		BE7CAA451F0F8EC8007CB195 /* pic_order_null@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pic_order_null@3x.png"; sourceTree = "<group>"; };
 		BE7CAA4E1F0F96FE007CB195 /* AddressListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressListViewController.swift; sourceTree = "<group>"; };
 		BE7CAA501F0F9F49007CB195 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		BE7CE74E1F56B16C00CFE08C /* FDScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDScrollView.m; sourceTree = "<group>"; };
+		BE7CE74F1F56B16C00CFE08C /* FDScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDScrollView.h; sourceTree = "<group>"; };
 		BE8D53D21EFBF5C6003850EB /* changeBook-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "changeBook-Bridging-Header.h"; sourceTree = "<group>"; };
 		BE8D53D81EFBF619003850EB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE8D53D91EFBF619003850EB /* STPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPopup.h; sourceTree = "<group>"; };
@@ -1900,6 +1903,8 @@
 		BE179FEE1F36BC9500034747 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				BE7CE74F1F56B16C00CFE08C /* FDScrollView.h */,
+				BE7CE74E1F56B16C00CFE08C /* FDScrollView.m */,
 				BE269D071F471FE200E7A624 /* PersistentBackgroundLabel.h */,
 				BE269D081F471FE200E7A624 /* PersistentBackgroundLabel.m */,
 				BE179FEF1F36BC9500034747 /* UITapImageView.h */,
@@ -4019,6 +4024,7 @@
 				BE1ED7701F263068000222D6 /* ArticleAPI.swift in Sources */,
 				BECA16371F3E7B3700569ABD /* MWGridViewController.m in Sources */,
 				BECA167F1F3E7B3800569ABD /* EaseBubbleView.m in Sources */,
+				BE7CE7501F56B16C00CFE08C /* FDScrollView.m in Sources */,
 				BEBD37691F224CCB0035E49E /* BookAPI.swift in Sources */,
 				BECA167A1F3E7B3800569ABD /* EaseBubbleView+Image.m in Sources */,
 				BE8D53ED1EFBF619003850EB /* STPopupNavigationBar.m in Sources */,

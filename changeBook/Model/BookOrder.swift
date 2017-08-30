@@ -18,7 +18,8 @@ let kDeliveryModeZhiQu = 1
 let kOrderStatusDaiFaHuo = 1
 let kOrderStatusDaiShouHuo = 2
 let kOrderStatusJieYueZhong = 3
-let kOrderStatusDone = 4
+let kOrderStatusYuQi = 4
+let kOrderStatusDone = 5
 
 struct BookOrder {
     var id: String

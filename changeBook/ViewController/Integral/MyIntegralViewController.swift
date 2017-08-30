@@ -171,7 +171,8 @@ class MyIntegralViewController: BaseViewController, UITableViewDelegate, UITable
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         self.navigationController?.navigationBar.isHidden = false
     }
 

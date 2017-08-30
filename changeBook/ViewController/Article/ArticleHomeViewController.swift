@@ -24,8 +24,8 @@ class ArticleHomeViewController: BaseViewController, HcdTabBarDelegate {
         
     }()
     
-    lazy var scrollView: UIScrollView = {
-        let scrollView = UIScrollView.init(frame: CGRect.init(x: 0, y: 0, width: 0, height: 0))
+    lazy var scrollView: FDScrollView = {
+        let scrollView = FDScrollView.init(frame: CGRect.init(x: 0, y: 0, width: 0, height: 0))
         scrollView.isPagingEnabled = true
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.alwaysBounceVertical = true

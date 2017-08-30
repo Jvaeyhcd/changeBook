@@ -465,7 +465,8 @@ class SettingViewController: BaseViewController, UITableViewDelegate, UITableVie
         picker.dismiss(animated: true, completion: nil)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         self.navigationController?.navigationBar.isHidden = false
     }
 

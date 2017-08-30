@@ -107,7 +107,8 @@ class MyDepositViewController: BaseViewController, UITableViewDelegate, UITableV
         self.pushViewController(viewContoller: vc, animated: true)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         self.navigationController?.navigationBar.isHidden = false
     }
 

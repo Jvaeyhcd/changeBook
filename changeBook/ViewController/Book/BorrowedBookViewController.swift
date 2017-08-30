@@ -11,8 +11,8 @@ import UIKit
 class BorrowedBookViewController: NavTabBarController {
     
     private var viewControllers = [UIViewController]()
-    private var cates = ["全部", "待发货", "待收货", "借阅中", "已归还"];
-    private var orderStatus = [0, kOrderStatusDaiFaHuo, kOrderStatusDaiShouHuo, kOrderStatusJieYueZhong, kOrderStatusDone]
+    private var cates = ["全部", "待发货", "待收货", "借阅中", "已逾期", "已归还"];
+    private var orderStatus = [0, kOrderStatusDaiFaHuo, kOrderStatusDaiShouHuo, kOrderStatusJieYueZhong, kOrderStatusYuQi, kOrderStatusDone]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,7 +71,8 @@ class BorrowedBookViewController: NavTabBarController {
         self.setViewControllers(viewControllers: self.viewControllers)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         self.navigationController?.navigationBar.isHidden = false
     }
 
