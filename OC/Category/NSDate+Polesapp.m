@@ -176,4 +176,21 @@ static NSDateFormatter *_displayFormatter = nil;
     return ret;
 }
 
++ (NSString *)getNextData:(int)days{
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDateComponents *comps;
+    comps = [calendar components:(NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond) fromDate:[[NSDate alloc] init]];
+    
+    int nexthours = 24*days;
+    [comps setHour:+nexthours]; //+24表示获取下一天的date，-24表示获取前一天的date；
+    [comps setMinute:0];
+    [comps setSecond:0];
+    NSDate *nowDate = [calendar dateByAddingComponents:comps toDate:[NSDate date] options:0];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"MM月dd日"];
+    return [formatter stringFromDate:nowDate];
+}
+
+
 @end

@@ -10,7 +10,7 @@ import UIKit
 
 class AuthStatusViewController: BaseViewController {
 
-    var tyep = 1 //1审核中 3审核失败
+    var authType = AUTH_ING //1审核中 3审核失败
     
     lazy var topImg = UIImageView()
     lazy var lbText = UILabel()
@@ -31,11 +31,11 @@ class AuthStatusViewController: BaseViewController {
         
         self.view.backgroundColor = kMainBgColor
         self.automaticallyAdjustsScrollViewInsets = false
-        self.title = "车主认证"
+        self.title = "实名认证"
         self.showBackButton()
         // Do any additional setup after loading the view.
         
-        if 1 == self.tyep {
+        if AUTH_ING == self.authType {
             topImg.image = UIImage(named: "pic_wait")
         }else{
             topImg.image = UIImage(named: "pic_failed")
@@ -46,20 +46,20 @@ class AuthStatusViewController: BaseViewController {
         self.view.addSubview(topImg)
         topImg.snp.makeConstraints{
             make -> Void in
-            make.top.equalTo(scaleFromiPhone6Desgin(x: 141) + kNavHeight)
+            make.top.equalTo(scaleFromiPhone6Desgin(x: 141))
             make.centerX.equalTo(self.view.snp.centerX)
             make.width.equalTo(scaleFromiPhone6Desgin(x: 108))
             make.height.equalTo(scaleFromiPhone6Desgin(x: 100))
         }
         
-        if 1 == self.tyep {
-            lbText.text = "车主认证审核中，请耐心等待"
-        }else{
-            lbText.text = "车主认证审核不通过，请重新提交资料"
+        if AUTH_ING == self.authType {
+            lbText.text = "实名认证审核中，请耐心等待"
+        } else {
+            lbText.text = "实名认证审核不通过，请重新提交资料"
         }
         
         lbText.textColor = UIColor(hex: 0x888888)
-        lbText.font = kBarButtonItemTitleFont
+        lbText.font = UIFont.systemFont(ofSize: 16)
         lbText.numberOfLines = 1
         lbText.textAlignment = .center
         self.view.addSubview(lbText)
@@ -86,7 +86,7 @@ class AuthStatusViewController: BaseViewController {
             make.height.equalTo(scaleFromiPhone6Desgin(x: 33))
             make.top.equalTo(lbText.snp.bottom).offset(scaleFromiPhone6Desgin(x: 29))
         }
-        if 1 == self.tyep {
+        if 1 == self.authType {
             btnReEdit.isHidden = true
         }else{
             btnReEdit.isHidden = false

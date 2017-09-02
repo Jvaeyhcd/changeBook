@@ -56,7 +56,7 @@ class ConfirmOrderTableViewCell: UITableViewCell {
             make.left.equalTo(iconImageView.snp.right).offset(kBasePadding)
             make.height.equalTo(scaleFromiPhone6Desgin(x: 20))
             make.centerY.equalTo(self.snp.centerY)
-            make.width.equalTo(100)
+            make.width.equalTo(70)
         }
         
         self.addSubview(self.descLbl)

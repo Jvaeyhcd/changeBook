@@ -30,7 +30,7 @@ class SimpleInputTableViewCell: UITableViewCell, UITextFieldDelegate {
         lbName.snp.makeConstraints{
             make -> Void in
             make.left.equalTo(kBasePadding)
-            make.width.equalTo(scaleFromiPhone6Desgin(x: 60))
+            make.width.equalTo(scaleFromiPhone6Desgin(x: 100))
             make.height.equalTo(scaleFromiPhone6Desgin(x: 20))
             make.centerY.equalTo(self.snp.centerY)
         }

@@ -30,5 +30,6 @@
 - (NSString *)stringTimesAgo;
 + (NSString *)stringTimesAgoFromTimeInterval:(NSTimeInterval)time;
 + (NSDate *)dateWithTimeIntervalInMilliSecondSince1970:(double)timeIntervalInMilliSecond;
++ (NSString *)getNextData:(int)days;
 
 @end

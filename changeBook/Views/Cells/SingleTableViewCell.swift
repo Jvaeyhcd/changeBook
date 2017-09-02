@@ -19,6 +19,14 @@ class SingleTableViewCell: UITableViewCell {
         lbl.textColor = UIColor(hex: 0x555555)
         return lbl
     }()
+    
+    func setSelected(selected: Bool) {
+        if selected {
+            self.backgroundColor = kSelectedCellBgColor
+        } else {
+            self.backgroundColor = UIColor.white
+        }
+    }
 
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

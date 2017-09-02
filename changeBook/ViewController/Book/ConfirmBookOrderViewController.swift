@@ -27,6 +27,8 @@ class ConfirmBookOrderViewController: BaseViewController, UITableViewDelegate, U
     
     // 配送方式，默认配送
     private var deliveryMode: Int = kDeliveryModePeiSong
+    // 配送时间
+    private var sendTime: String = ""
     
     private lazy var tableView: UIRefreshTableView = {
         let tableView = UIRefreshTableView.init(frame: CGRect.zero, style: .plain)
@@ -154,6 +156,11 @@ class ConfirmBookOrderViewController: BaseViewController, UITableViewDelegate, U
     
     @objc private func selectSendTime() {
         let vc = SelectSendTimeViewController()
+        vc.sendTimeBlock = {
+            [weak self] (sendTime) in
+            self?.sendTime = sendTime
+            self?.tableView.reloadData()
+        }
         
         let popupController = STPopupController.init(rootViewController: vc)
         popupController.style = STPopupStyle.bottomSheet
@@ -214,7 +221,7 @@ class ConfirmBookOrderViewController: BaseViewController, UITableViewDelegate, U
         
         let bookListInfo = nil == self.convertBookListToStr() ? "" : self.convertBookListToStr()
         
-        self.viewModel.generateBookOrder(freight: self.freight, payWay: self.payWay, returnTime: self.returnTime, bookInfoList: bookListInfo!, addressId: address, deliveryMode: self.deliveryMode, sendTime: "2017-08-01", success: { [weak self] (data) in
+        self.viewModel.generateBookOrder(freight: self.freight, payWay: self.payWay, returnTime: self.returnTime, bookInfoList: bookListInfo!, addressId: address, deliveryMode: self.deliveryMode, sendTime: self.sendTime, success: { [weak self] (data) in
             self?.showHudTipStr("提交成功")
         }, fail: { [weak self] (message) in
             self?.showHudTipStr(message)
@@ -280,7 +287,8 @@ class ConfirmBookOrderViewController: BaseViewController, UITableViewDelegate, U
             let cell = tableView.dequeueReusableCell(withIdentifier: kCellIdConfirmOrderTableViewCell, for: indexPath) as! ConfirmOrderTableViewCell
             if 1 == indexPath.row {
                 cell.iconImageView.image = UIImage(named: "dingdan_icon_shijiani")
-                cell.titleLbl.text = "选择送出时间"
+                cell.titleLbl.text = "送出时间"
+                cell.descLbl.text = self.sendTime
             } else if 2 == indexPath.row {
                 cell.iconImageView.image = UIImage(named: "dingdan_icon_dizhi")
                 cell.titleLbl.text = "收货地址"

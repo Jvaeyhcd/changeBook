@@ -321,13 +321,13 @@ class SettingViewController: BaseViewController, UITableViewDelegate, UITableVie
             if indexPath.row == 0 {
                 cell.titleLbl.text = "学生实名认证"
                 cell.descLbl.isHidden = false
-                if 0 == self.savedUser.isCertification {
+                if AUTH_NOT == self.savedUser.isCertification {
                     cell.descLbl.text = "未认证"
-                } else if 1 == self.savedUser.isCertification {
+                } else if AUTH_ING == self.savedUser.isCertification {
                     cell.descLbl.text = "认证中"
-                } else if 2 == self.savedUser.isCertification {
+                } else if AUTH_SUCCESS == self.savedUser.isCertification {
                     cell.descLbl.text = "已认证"
-                } else if 3 == self.savedUser.isCertification {
+                } else if AUTH_FAIL == self.savedUser.isCertification {
                     cell.descLbl.text = "认证失败"
                 }
                 cell.portraitImageView.isHidden = true
@@ -428,16 +428,18 @@ class SettingViewController: BaseViewController, UITableViewDelegate, UITableVie
             }
         } else if 1 == indexPath.section {
             if 0 == indexPath.row {
-                if 0 == self.savedUser.isCertification {
+                if AUTH_NOT == self.savedUser.isCertification {
                     let vc = RealnameAuthViewController()
                     self.pushViewController(viewContoller: vc, animated: true)
-                } else if 1 == self.savedUser.isCertification {
+                } else if AUTH_ING == self.savedUser.isCertification {
                     let vc = AuthStatusViewController()
+                    vc.authType = AUTH_ING
                     self.pushViewController(viewContoller: vc, animated: true)
-                } else if 2 == self.savedUser.isCertification {
+                } else if AUTH_SUCCESS == self.savedUser.isCertification {
                     
-                } else if 3 == self.savedUser.isCertification {
+                } else if AUTH_FAIL == self.savedUser.isCertification {
                     let vc = AuthStatusViewController()
+                    vc.authType = AUTH_FAIL
                     self.pushViewController(viewContoller: vc, animated: true)
                 }
                 

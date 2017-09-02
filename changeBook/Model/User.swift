@@ -9,6 +9,11 @@
 import Foundation
 import SwiftyJSON
 
+let AUTH_NOT = 0
+let AUTH_ING = 1
+let AUTH_SUCCESS = 2
+let AUTH_FAIL = 3
+
 struct User {
     var userId: String = ""
     var userName: String = ""
