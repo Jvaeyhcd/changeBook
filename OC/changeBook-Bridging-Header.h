@@ -28,6 +28,16 @@
 #import "UITTTAttributedLabel.h"
 #import "PYSearch.h"
 
+//微信SDK头文件
+#import "WXApi.h"
+#import "WeiChatPayReq.h"
+
+//支付宝
+#import <AlipaySDK/AlipaySDK.h>
+#import "Order.h"
+#import "AlipayRequestConfig.h"
+#import "AlipayHeader.h"
+
 // MARK: - Category
 #import "UIImage+Polesapp.h"
 #import "NSObject+Polesapp.h"

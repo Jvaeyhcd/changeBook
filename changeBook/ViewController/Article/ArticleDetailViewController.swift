@@ -10,7 +10,7 @@ import UIKit
 import SwiftyJSON
 import HcdActionSheet
 
-class ArticleDetailViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
+class ArticleDetailViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, SharePresenter {
     
     var article: Article!
     var rewordList = [RewardLog]()
@@ -440,8 +440,10 @@ class ArticleDetailViewController: BaseViewController, UITableViewDelegate, UITa
     }
     
     override func rightNavBarButtonClicked() {
+        self.article.shareUrl = "http://www.baidu.com"
         UMSocialUIManager.showShareMenuViewInWindow { (platformType, userInfo) in
             // 根据获取的platformType确定所选平台进行下一步操作
+            self.shareWebPageToPlatformType(platformType: platformType, currentViewController: self, shareUrl: self.article.shareUrl, shareImg: self.article.shareImg, shareTitle: self.article.title, shareDesc: "给您分享了一篇文章" + self.article.title + "，快来看看吧")
         }
     }
 

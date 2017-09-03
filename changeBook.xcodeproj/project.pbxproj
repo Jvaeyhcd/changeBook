@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		726CE75011D31FD74D914887 /* Pods_changeBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F7ABDC689AFA44B179B71C5 /* Pods_changeBook.framework */; };
+		B9040F781F5B94C20094F6B6 /* PayPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9040F771F5B94C20094F6B6 /* PayPresenter.swift */; };
+		B9040F7A1F5BAB8F0094F6B6 /* SharePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9040F791F5BAB8F0094F6B6 /* SharePresenter.swift */; };
 		BE01908C1EFC089400FA040E /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE01908B1EFC089400FA040E /* Config.swift */; };
 		BE01908F1EFC096C00FA040E /* UIColor+Polesapp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE01908E1EFC096C00FA040E /* UIColor+Polesapp.swift */; };
 		BE0190951EFD4A4E00FA040E /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0190941EFD4A4E00FA040E /* BaseNavigationController.swift */; };
@@ -718,6 +720,8 @@
 /* Begin PBXFileReference section */
 		111BB78C520EABAE3CC254D1 /* Pods-changeBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-changeBook.debug.xcconfig"; path = "Pods/Target Support Files/Pods-changeBook/Pods-changeBook.debug.xcconfig"; sourceTree = "<group>"; };
 		6F7ABDC689AFA44B179B71C5 /* Pods_changeBook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_changeBook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9040F771F5B94C20094F6B6 /* PayPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayPresenter.swift; sourceTree = "<group>"; };
+		B9040F791F5BAB8F0094F6B6 /* SharePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharePresenter.swift; sourceTree = "<group>"; };
 		BE01908B1EFC089400FA040E /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		BE01908E1EFC096C00FA040E /* UIColor+Polesapp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Polesapp.swift"; sourceTree = "<group>"; };
 		BE0190941EFD4A4E00FA040E /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
@@ -1752,6 +1756,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B9040F761F5B94C20094F6B6 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				B9040F771F5B94C20094F6B6 /* PayPresenter.swift */,
+				B9040F791F5BAB8F0094F6B6 /* SharePresenter.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		BE01908D1EFC096C00FA040E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -2452,6 +2465,7 @@
 		BE57F9A21EF16E3E008BE6AD /* changeBook */ = {
 			isa = PBXGroup;
 			children = (
+				B9040F761F5B94C20094F6B6 /* Protocol */,
 				BEB94CEE1F147DF900181DC2 /* Manager */,
 				BE7CA9A21F0BD3DA007CB195 /* API */,
 				BE7CA9AE1F0BE7AD007CB195 /* ViewModel */,
@@ -4239,6 +4253,7 @@
 				BE4907331F1F7A4D0031024F /* DocumentCommentListViewController.swift in Sources */,
 				BE0190971EFD4A6400FA040E /* BaseViewController.swift in Sources */,
 				BE57EDA61F03E7CA0091F312 /* BorrowedBookViewController.swift in Sources */,
+				B9040F7A1F5BAB8F0094F6B6 /* SharePresenter.swift in Sources */,
 				BEECE50A1F35666A00B5D3C4 /* WXApiRequestHandler.m in Sources */,
 				BED1005A1F28DD470028AE6A /* ArticleCommentListViewController.swift in Sources */,
 				BE1A3B381F2DFBB600CC98B3 /* SelectPayWayTableViewCell.swift in Sources */,
@@ -4301,6 +4316,7 @@
 				BE30872F1F304D7A001B2BCB /* UsersBrowListViewController.swift in Sources */,
 				BEECE5721F361E0A00B5D3C4 /* LBXScanView.swift in Sources */,
 				BECA16731F3E7B3800569ABD /* EaseUserCell.m in Sources */,
+				B9040F781F5B94C20094F6B6 /* PayPresenter.swift in Sources */,
 				BE57EF851F07A3E50091F312 /* ArticleListViewController.swift in Sources */,
 				BE1ED7621F22E5FF000222D6 /* BookViewModel.swift in Sources */,
 				BECA16421F3E7B3800569ABD /* EMSDWebImageDownloaderOperation.m in Sources */,
@@ -4578,7 +4594,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = SRD7U593R7;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -4618,7 +4634,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = SRD7U593R7;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

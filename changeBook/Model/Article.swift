@@ -22,6 +22,9 @@ struct Article {
     var integral: String
     var isLike: Int
     
+    var shareUrl: String
+    var shareImg: String
+    
     init(json: JSON) {
         self.user = User.fromJSON(json: json["user"].object)
         self.id = json["id"].stringValue
@@ -34,6 +37,9 @@ struct Article {
         self.createAt = json["createAt"].stringValue
         self.integral = json["integral"].stringValue
         self.isLike = json["isLike"].intValue
+        
+        self.shareUrl = json["shareUrl"].stringValue
+        self.shareImg = json["shareImg"].stringValue
     }
 }
 

@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyJSON
 
-class ConfirmBookOrderViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
+class ConfirmBookOrderViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, PayPresenter {
     
     
     var bookList: [Book] = [Book]()
@@ -222,7 +222,19 @@ class ConfirmBookOrderViewController: BaseViewController, UITableViewDelegate, U
         let bookListInfo = nil == self.convertBookListToStr() ? "" : self.convertBookListToStr()
         
         self.viewModel.generateBookOrder(freight: self.freight, payWay: self.payWay, returnTime: self.returnTime, bookInfoList: bookListInfo!, addressId: address, deliveryMode: self.deliveryMode, sendTime: self.sendTime, success: { [weak self] (data) in
-            self?.showHudTipStr("提交成功")
+            
+            if (self?.freight.floatValue == 0.0) {
+                self?.showHudTipStr("提交成功")
+                return
+            }
+            
+            if (self?.payWay == kPayWayAli) {
+                let orderStr = data.stringValue
+                self?.alipayWithOrderStr(orderStr: orderStr)
+            } else if (self?.payWay == kPayWayWechat) {
+                
+            }
+            
         }, fail: { [weak self] (message) in
             self?.showHudTipStr(message)
         }) { 

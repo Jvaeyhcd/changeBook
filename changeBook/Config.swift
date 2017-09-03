@@ -9,6 +9,7 @@
 import Foundation
 
 let isDebug = true
+let kAppScheme = "changeBook"
 
 let kHost = "https://api.bookround.com/"
 //服务器基本地址
@@ -20,7 +21,7 @@ let kJoinUsUrl = "https://api.bookround.com/h5/join_us/index.htm"
 
 // MARK: - 三方相关配置常量
 
-let kWXAppId = "wx9303c94950e63444"
+let kWXAppId = "wx70c63a0c7462d342"
 let kWXAppSecret = "7e566c4b731a6143bfb36f2aa530dcea"
 
 
